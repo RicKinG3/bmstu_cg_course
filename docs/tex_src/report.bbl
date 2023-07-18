@@ -1,0 +1,233 @@
+\begin{thebibliography}{10}
+\def\selectlanguageifdefined#1{
+\expandafter\ifx\csname date#1\endcsname\relax
+\else\language\csname l@#1\endcsname\fi}
+\ifx\undefined\url\def\url#1{{\small #1}}\else\fi
+\ifx\undefined\BibUrl\def\BibUrl#1{\url{#1}}\else\fi
+\ifx\undefined\BibAnnote\long\def\BibAnnote#1{(#1)}\else\fi
+\ifx\undefined\BibEmph\def\BibEmph#1{\emph{#1}}\else\fi
+
+\bibitem{cgv}
+\selectlanguageifdefined{russian}
+Modeling and Simulation of Skelatal Muscle for Computer Graphics: A Survey.
+\newblock Режим доступа:
+  \url{http://www.cs.toronto.edu/pub/reports/na/MuscleSimulationSurvey.pdf}
+  (дата обращения: 07.07.2020).
+\newblock 2011.
+
+\bibitem{bio}
+\selectlanguageifdefined{russian}
+Wilhelms~J. Animals with anatomy~// IEEE Computer Graphics and Applications,
+  vol. 17, no. 3.
+\newblock 1997.
+\newblock {с.}~22–30.
+
+\bibitem{ffd}
+\selectlanguageifdefined{russian}
+J.~E.~Chadwick~D. R.~Haumann, Parent~R.~E. Layered construction for deformable
+  animated characters~// SIGGRAPH Computer Graphics.
+\newblock 1989.
+\newblock {с.}~243–252.
+
+\bibitem{pps}
+\selectlanguageifdefined{russian}
+Komatsu~K. Human skin model capable of natural shape variation~// The Visual
+  Computer, vol. 3, no. 5.
+\newblock 1988.
+\newblock {с.}~265–271.
+
+\bibitem{is1}
+\selectlanguageifdefined{russian}
+Blinn~J.~F. A generalization of algebraic surface drawing~// ACM Transactions
+  on Graphics, vol. 1, no. 3.
+\newblock 1982.
+\newblock {с.}~235–256.
+
+\bibitem{is2}
+\selectlanguageifdefined{russian}
+Bloomenthal~J., Shoemake~K. Convolution surfaces~// SIGGRAPH Computer Graphics.
+\newblock 1991.
+\newblock {с.}~251–256.
+
+\bibitem{mss}
+\selectlanguageifdefined{russian}
+Nedel~L.~P., Thalmann~D. Real time muscle deformations using massspring
+  systems,~// Proceedings of Computer Graphics International, IEEE.
+\newblock 1998.
+
+\bibitem{fem1}
+\selectlanguageifdefined{russian}
+Strang~G., Fix~G. An Analysis of the Finite Element Method. WellesleyCambridge,
+  2nd Edition.
+\newblock 2008.
+
+\bibitem{fem2}
+\selectlanguageifdefined{russian}
+A.~Nealen~M.~Mueller, Carlson~M. Physically based deformable models in computer
+  graphics~// Computer Graphics Forum, vol. 25, no. 4.
+\newblock 2006.
+\newblock {с.}~809–836.
+
+\bibitem{fvm1}
+\selectlanguageifdefined{russian}
+LeVeque~R.~J. Finite Volume Methods for Hyperbolic Problems~// Cambridge
+  University Press.
+\newblock 2002.
+
+\bibitem{fvm2}
+\selectlanguageifdefined{russian}
+J.~Teran~S.~Blemker, Fedkiw~R. Finite volume methods for the simulation of
+  skeletal muscle~// SCA ’03: Proceedings of the 2003 ACM
+  SIGGRAPH/Eurographics Symposium on Computer Animation.
+\newblock 2003.
+\newblock {с.}~68–74.
+
+\bibitem{viper}
+\selectlanguageifdefined{russian}
+VIPER: Volume Invariant Position-based Elastic Rods.
+\newblock Режим доступа:
+  \url{https://media.contentapi.ea.com/content/dam/ea/seed/presentations/viper-volume-invariant-position-based-elastic-rods.pdf}
+  (дата обращения: 04.07.2020).
+
+\bibitem{per}
+\selectlanguageifdefined{russian}
+Position-based elastic rods.
+\newblock Режим доступа:
+  \url{https://dl.acm.org/doi/10.5555/2849517.2849522} (дата
+  обращения: 03.07.2020).
+
+\bibitem{dda}
+\selectlanguageifdefined{russian}
+K.~Min~S.~Baek, Park~C. Anatomically-based modeling and animation of human
+  upper limbs~// Proceedings of International Conference on Human Modeling and
+  Animation.
+\newblock 2000.
+
+\bibitem{xms}
+\selectlanguageifdefined{russian}
+X-Muscle System.
+\newblock Режим доступа:
+  \url{https://blendermarket.com/products/x-muscle-system} (дата
+  обращения: 14.07.2020).
+
+\bibitem{blender}
+\selectlanguageifdefined{russian}
+Blender.
+\newblock Режим доступа: \url{https://www.blender.org/} (дата
+  обращения: 14.07.2020).
+
+\bibitem{raytr}
+\selectlanguageifdefined{russian}
+Трассировка лучей в реальном времени.
+\newblock Режим доступа:
+  \url{https://www.ixbt.com/3dv/directx-raytracing.html} (дата
+  обращения: 13.08.2020).
+
+\bibitem{tracer_proof}
+\selectlanguageifdefined{russian}
+Cost Analysis of a Ray Tracing Algorithm.
+\newblock Режим доступа:
+  \url{https://www.graphics.cornell.edu/~bjw/mca.pdf} (дата
+  обращения: 05.09.2020).
+
+\bibitem{zbuf}
+\selectlanguageifdefined{russian}
+Алгоритм Z-буфера.
+\newblock Режим доступа: \url{http://compgraph.tpu.ru/zbuffer.htm}
+  (дата обращения: 21.08.2020).
+
+\bibitem{robert}
+\selectlanguageifdefined{russian}
+Алгоритм Робертса.
+\newblock Режим доступа: \url{http://compgraph.tpu.ru/roberts.htm}
+  (дата обращения: 14.05.2020).
+
+\bibitem{rogers}
+\selectlanguageifdefined{russian}
+Д.~Роджерс. Алгоритмические основы
+  машинной графики.
+\newblock 1989.
+
+\bibitem{lmodels}
+\selectlanguageifdefined{russian}
+Модели затенения. Плоская модель.
+  Затенение по Гуро и Фонгу.
+\newblock Режим доступа:
+  \url{https://compgraphics.info/3D/lighting/shading_model.php} (дата
+  обращения: 18.06.2020).
+
+\bibitem{rust}
+\selectlanguageifdefined{russian}
+Rust Programming Language [Электронный ресурс].
+\newblock Режим доступа:
+  \url{https://doc.rust-lang.org/std/index.html} (дата обращения:
+  20.07.2020).
+\newblock 2017.
+
+\bibitem{cargo}
+\selectlanguageifdefined{russian}
+The Cargo Book.
+\newblock Режим доступа: \url{https://doc.rust-lang.org/cargo/}
+  (дата обращения: 21.07.2020).
+
+\bibitem{rusttest}
+\selectlanguageifdefined{russian}
+Документация по ЯП Rust: бенчмарки
+  [Электронный ресурс].
+\newblock Режим доступа:
+  \url{https://doc.rust-lang.org/1.7.0/book/benchmark-tests.html} (дата
+  обращения: 21.09.2020).
+
+\bibitem{gtk-rs}
+\selectlanguageifdefined{russian}
+Gtk-rs.
+\newblock Режим доступа: \url{https://gtk-rs.org/} (дата
+  обращения: 21.07.2020).
+
+\bibitem{rls}
+\selectlanguageifdefined{russian}
+Rust Language Server (RLS).
+\newblock Режим доступа: \url{https://github.com/rust-lang/rls}
+  (дата обращения: 21.07.2020).
+
+\bibitem{rust-learn}
+\selectlanguageifdefined{russian}
+Rustbook. What is Ownership?
+\newblock Режим доступа:
+  \url{https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html} (дата
+  обращения: 20.07.2020).
+
+\bibitem{vim}
+\selectlanguageifdefined{russian}
+VIM the editor.
+\newblock Режим доступа: \url{https://www.vim.org/} (дата
+  обращения: 20.07.2020).
+
+\bibitem{vim-plugins}
+\selectlanguageifdefined{russian}
+VimAwesome.
+\newblock Режим доступа: \url{https://vimawesome.com/} (дата
+  обращения: 20.07.2020).
+
+\bibitem{openarm}
+\selectlanguageifdefined{russian}
+OpenArm 2.0.
+\newblock Режим доступа:
+  \url{https://berkeley.app.box.com/v/openarm-2p0-data/file/445757315449}
+  (дата обращения: 11.12.2020).
+
+\bibitem{openarm1}
+\selectlanguageifdefined{russian}
+OpenArm 1.0.
+\newblock Режим доступа:
+  \url{https://berkeley.app.box.com/s/mj9yano1umbtbi1aj0l3b7y2pm864wnb/file/692415066210}
+  (дата обращения: 11.12.2020).
+
+\bibitem{itk}
+\selectlanguageifdefined{russian}
+ITK-SNAP.
+\newblock Режим доступа:
+  \url{http://www.itksnap.org/pmwiki/pmwiki.php} (дата обращения:
+  11.12.2020).
+
+\end{thebibliography}

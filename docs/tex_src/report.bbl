@@ -1,0 +1,35 @@
+\begin{thebibliography}{1}
+\def\selectlanguageifdefined#1{
+\expandafter\ifx\csname date#1\endcsname\relax
+\else\language\csname l@#1\endcsname\fi}
+\ifx\undefined\url\def\url#1{{\small #1}}\else\fi
+\ifx\undefined\BibUrl\def\BibUrl#1{\url{#1}}\else\fi
+\ifx\undefined\BibAnnote\long\def\BibAnnote#1{(#1)}\else\fi
+\ifx\undefined\BibEmph\def\BibEmph#1{\emph{#1}}\else\fi
+
+\bibitem{intro_visualization}
+\selectlanguageifdefined{russian}
+A.~Lovett~K.~Appleton~B. Warren-Kretzschmar. Using 3D visualization methods in
+  landscape planning: An evaluation of options and practical issues~//
+  Landscape and Urban Planning.
+\newblock 2015.
+\newblock {С.}~85--94.
+
+\bibitem{model_geom}
+\selectlanguageifdefined{russian}
+Лисяк~В.В. Основы геометрического
+  моделирования.
+\newblock 2022.
+\newblock {С.}~6--7.
+
+\bibitem{model_geom_01}
+\selectlanguageifdefined{russian}
+В. Ю.~Донченко~Е.Н.~Черевань. Обзор и анализ
+  методов построения геометрических
+  моделей сложных конструкций.
+\newblock Режим доступа:
+  \url{https://dspace.lgpu.org/xmlui/bitstream/handle/123456789/4116/700-19_%20sb.pdf?sequence=1&isAllowed=y#page=17}
+  (дата обращения: 19.07.2023).
+\newblock 2014.
+
+\end{thebibliography}

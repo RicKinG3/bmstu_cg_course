@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.7.16)  19 JUL 2023 19:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.7.16)  19 JUL 2023 20:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1225,14 +1225,8 @@ Overfull \hbox (9.19577pt too wide) in paragraph at lines 68--68
  |[] \T2A/cmr/bx/n/20.74 ќпи-са-ние и фор-ма-ли-за-ци€ объ-ек-тов сце-
  []
 
-[6]
-Overfull \hbox (5.31523pt too wide) in paragraph at lines 83--84
-\T2A/cmr/m/n/14.4 пред-став-л€-ет-с€ с по-мо-щью па-ра-мет-ри-че-ских би-ку-би-
-че-ских кус-ков, где урав-
- []
-
-[7] [8] [9] [10] [11] [12]
-Overfull \hbox (0.7687pt too wide) in paragraph at lines 214--215
+[6] [7] [8] [9] [10] [11] [12]
+Overfull \hbox (0.7687pt too wide) in paragraph at lines 217--218
 []\T2A/cmr/m/n/14.4 ”чет те-ней в ал-го-рит-мах уда-ле-ни€ неви-ди-мых по-верх-
 но-стей мо-жет быть
  []
@@ -1260,11 +1254,11 @@ mlui / bitstream / handle / 123456789 /
 ] (./report.aux (./01-contents.aux) (./02-intro.aux) (./10-analysis.aux)
 (./51-biblio.aux))
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: CC61EE1FD8F2A82885D4F0F4E75AB8CE;2935.
+(rerunfilecheck)             Checksum: 90FFDE9054C5D4CA745394DC9D8207EC;3015.
  ) 
 Here is how much of TeX's memory you used:
- 38048 strings out of 477484
- 893857 string characters out of 5831474
+ 38050 strings out of 477484
+ 893871 string characters out of 5831474
  1858330 words of memory out of 5000000
  57498 multiletter control sequences out of 15000+600000
  520806 words of font info for 47 fonts, out of 8000000 for 9000
@@ -1277,10 +1271,10 @@ ome/max/.texlive2022/texmf-var/fonts/pk/ljfour/lh/lh-t2a/labx2074.600pk> </home
 max/.texlive2022/texmf-var/fonts/pk/ljfour/lh/lh-t2a/larm1440.600pk> </home/max
 /.texlive2022/texmf-var/fonts/pk/ljfour/lh/lh-t2a/labx1440.600pk> </home/max/.t
 exlive2022/texmf-var/fonts/pk/ljfour/lh/lh-t2a/labx2488.600pk>
-Output written on report.pdf (15 pages, 130347 bytes).
+Output written on report.pdf (15 pages, 130274 bytes).
 PDF statistics:
- 506 PDF objects out of 1000 (max. 8388607)
- 193 compressed objects within 2 object streams
- 49 named destinations out of 1000 (max. 500000)
+ 509 PDF objects out of 1000 (max. 8388607)
+ 196 compressed objects within 2 object streams
+ 51 named destinations out of 1000 (max. 500000)
  137 words of extra memory for PDF output out of 10000 (max. 10000000)
 

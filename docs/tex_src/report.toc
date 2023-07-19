@@ -1,12 +1,12 @@
 \babel@toc {russian}{}\relax 
 \contentsline {chapter}{Введение}{2}{chapter*.2}%
 \contentsline {chapter}{\numberline {1}Аналитическая часть}{3}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Способ определения моделей}{3}{section.1.1}%
+\contentsline {section}{\numberline {1.1}Способы определения моделей}{3}{section.1.1}%
 \contentsline {subsection}{\numberline {1.1.1}Каркасная модель}{3}{subsection.1.1.1}%
 \contentsline {subsection}{\numberline {1.1.2}Поверхностная модель}{4}{subsection.1.1.2}%
 \contentsline {subsection}{\numberline {1.1.3}Твердотельная модель}{5}{subsection.1.1.3}%
 \contentsline {section}{\numberline {1.2} Описание и формализация объектов сцены}{6}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Способ задания поверхностных моделей}{7}{section.1.3}%
+\contentsline {section}{\numberline {1.3}Способы представления трехмерных поверхностей}{7}{section.1.3}%
 \contentsline {subsection}{\numberline {1.3.1}Вывод}{9}{subsection.1.3.1}%
 \contentsline {section}{\numberline {1.4}Алгоритмы удаления невидимых линий и поверхностей}{9}{section.1.4}%
 \contentsline {subsection}{\numberline {1.4.1}Вывод}{12}{subsection.1.4.1}%

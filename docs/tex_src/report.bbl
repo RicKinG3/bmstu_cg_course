@@ -32,4 +32,15 @@ A.~Lovett~K.~Appleton~B. Warren-Kretzschmar. Using 3D visualization methods in
   (дата обращения: 19.07.2023).
 \newblock 2014.
 
+\bibitem{polygon_mesh}
+\selectlanguageifdefined{russian}
+А.В.~Киселёв~Г.Н.~Верхотурова. Способы
+  представления и размещения трехмерных
+  моделей для прототипирования ювелирных
+  изделий~// Материалы VI Международной
+  научно-практической конференции
+  (школы-семинара) молодых ученых.
+\newblock 2020.
+\newblock {С.}~840--842.
+
 \end{thebibliography}

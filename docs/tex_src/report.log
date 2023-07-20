@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.7.16)  19 JUL 2023 20:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.7.16)  20 JUL 2023 15:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1225,8 +1225,20 @@ Overfull \hbox (9.19577pt too wide) in paragraph at lines 68--68
  |[] \T2A/cmr/bx/n/20.74 Опи-са-ние и фор-ма-ли-за-ция объ-ек-тов сце-
  []
 
-[6] [7] [8] [9] [10] [11] [12]
-Overfull \hbox (0.7687pt too wide) in paragraph at lines 217--218
+[6] [7]
+Overfull \hbox (12.86066pt too wide) in paragraph at lines 95--96
+[]\T2A/cmr/bx/n/14.4 Наиболее рас-про-стра-нен-ные ме-то-ды пред-став-ле-ния по
+-ли-го-наль-
+ []
+
+[8]
+Overfull \hbox (18.48416pt too wide) in paragraph at lines 140--141
+[]\T2A/cmr/m/n/14.4 Высокие тре-бо-ва-ния к па-мя-ти: Уве-ли-чи-ва-ю-ща-я-ся сл
+ож-ность струк-
+ []
+
+[9] [10] [11] [12]
+Overfull \hbox (0.7687pt too wide) in paragraph at lines 253--254
 []\T2A/cmr/m/n/14.4 Учет те-ней в ал-го-рит-мах уда-ле-ния неви-ди-мых по-верх-
 но-стей мо-жет быть
  []
@@ -1246,6 +1258,12 @@ Underfull \hbox (badness 5147) in paragraph at lines 27--34
 mlui / bitstream / handle / 123456789 /
  []
 
+
+Underfull \hbox (badness 1048) in paragraph at lines 37--45
+\T2A/cmr/m/n/14.4 ния трех-мер-ных мо-де-лей для про-то-ти-пи-ро-ва-ния юве-лир
+-ных из-де-
+ []
+
 )) [15
 
 
@@ -1254,13 +1272,13 @@ mlui / bitstream / handle / 123456789 /
 ] (./report.aux (./01-contents.aux) (./02-intro.aux) (./10-analysis.aux)
 (./51-biblio.aux))
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 90FFDE9054C5D4CA745394DC9D8207EC;3015.
+(rerunfilecheck)             Checksum: F1252002F42DC27FBA741A524D7A8511;3263.
  ) 
 Here is how much of TeX's memory you used:
- 38050 strings out of 477484
- 893871 string characters out of 5831474
+ 38052 strings out of 477484
+ 893902 string characters out of 5831474
  1858330 words of memory out of 5000000
- 57498 multiletter control sequences out of 15000+600000
+ 57499 multiletter control sequences out of 15000+600000
  520806 words of font info for 47 fonts, out of 8000000 for 9000
  452 hyphenation exceptions out of 8191
  106i,6n,99p,7908b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1271,10 +1289,10 @@ ome/max/.texlive2022/texmf-var/fonts/pk/ljfour/lh/lh-t2a/labx2074.600pk> </home
 max/.texlive2022/texmf-var/fonts/pk/ljfour/lh/lh-t2a/larm1440.600pk> </home/max
 /.texlive2022/texmf-var/fonts/pk/ljfour/lh/lh-t2a/labx1440.600pk> </home/max/.t
 exlive2022/texmf-var/fonts/pk/ljfour/lh/lh-t2a/labx2488.600pk>
-Output written on report.pdf (15 pages, 130274 bytes).
+Output written on report.pdf (15 pages, 135923 bytes).
 PDF statistics:
- 509 PDF objects out of 1000 (max. 8388607)
- 196 compressed objects within 2 object streams
- 51 named destinations out of 1000 (max. 500000)
+ 535 PDF objects out of 1000 (max. 8388607)
+ 206 compressed objects within 3 object streams
+ 52 named destinations out of 1000 (max. 500000)
  137 words of extra memory for PDF output out of 10000 (max. 10000000)
 

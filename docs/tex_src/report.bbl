@@ -43,4 +43,10 @@ A.~Lovett~K.~Appleton~B. Warren-Kretzschmar. Using 3D visualization methods in
 \newblock 2020.
 \newblock {С.}~840--842.
 
+\bibitem{light}
+\selectlanguageifdefined{russian}
+Gambetta~G. Computer Graphics from Scratch.
+\newblock 2021.
+\newblock {С.}~47--50.
+
 \end{thebibliography}

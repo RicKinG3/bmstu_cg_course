@@ -49,4 +49,11 @@ Gambetta~G. Computer Graphics from Scratch.
 \newblock 2021.
 \newblock {С.}~47--50.
 
+\bibitem{del_line}
+\selectlanguageifdefined{russian}
+Головнин~А.А. Базовые алгоритмы
+  компьютерной графики.
+\newblock 2016.
+\newblock {С.}~12--16.
+
 \end{thebibliography}

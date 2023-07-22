@@ -9,45 +9,46 @@ The style file: utf8gost705u.bst
 Database file #1: 51-biblio.bib
 Warning--empty journal in model_geom
 Warning--empty journal in light
-You've used 5 entries,
+Warning--empty journal in del_line
+You've used 6 entries,
             2958 wiz_defined-function locations,
-            698 strings with 6423 characters,
-and the built_in function-call counts, 1540 in all, are:
-= -- 202
-> -- 24
-< -- 4
-+ -- 10
-- -- 5
-* -- 57
-:= -- 174
-add.period$ -- 20
-call.type$ -- 5
+            704 strings with 6670 characters,
+and the built_in function-call counts, 1871 in all, are:
+= -- 245
+> -- 29
+< -- 5
++ -- 12
+- -- 6
+* -- 70
+:= -- 209
+add.period$ -- 24
+call.type$ -- 6
 change.case$ -- 0
 chr.to.int$ -- 0
-cite$ -- 7
-duplicate$ -- 75
-empty$ -- 151
-format.name$ -- 5
-if$ -- 411
+cite$ -- 9
+duplicate$ -- 92
+empty$ -- 184
+format.name$ -- 6
+if$ -- 501
 int.to.chr$ -- 0
-int.to.str$ -- 5
+int.to.str$ -- 6
 missing$ -- 0
-newline$ -- 40
-num.names$ -- 13
-pop$ -- 39
+newline$ -- 46
+num.names$ -- 16
+pop$ -- 48
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 54
+skip$ -- 67
 stack$ -- 0
-substring$ -- 80
-swap$ -- 51
+substring$ -- 100
+swap$ -- 62
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 2
-while$ -- 13
-width$ -- 6
-write$ -- 86
-(There were 2 warnings)
+warning$ -- 3
+while$ -- 16
+width$ -- 7
+write$ -- 101
+(There were 3 warnings)

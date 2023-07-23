@@ -56,4 +56,26 @@ Gambetta~G. Computer Graphics from Scratch.
 \newblock 2016.
 \newblock {С.}~12--16.
 
+\bibitem{varnok}
+\selectlanguageifdefined{russian}
+Провкин~В.~А. Построение реалистичных
+  изображений при помощи алгоритма Варнока
+  и сравнение эффективности различных его
+  реализаций.
+\newblock 2017.
+
+\bibitem{ray_tracing}
+\selectlanguageifdefined{russian}
+Янова~Р.~Д. Метод прямой и обратной
+  трассировки~// Вестник науки и
+  образования.
+\newblock 2016.
+\newblock {С.}~29--30.
+
+\bibitem{letion}
+\selectlanguageifdefined{russian}
+Куров~А.В. Конспект лекций по дисциплине
+  компьютерная графика.
+\newblock 2023.
+
 \end{thebibliography}

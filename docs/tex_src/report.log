@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.9)  9 SEP 2023 23:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.9)  11 SEP 2023 01:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -825,6 +825,15 @@ Package: titlesec 2021/07/05 v2.14 Sectioning titles
 \titlewidthlast=\dimen292
 \titlewidthfirst=\dimen293
 )
+(c:/texlive/2023/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2019/06/20 v3.9 Customized lists
+\labelindent=\skip57
+\enit@outerparindent=\dimen294
+\enit@toks=\toks48
+\enit@inbox=\box68
+\enit@count@id=\count306
+\enitdp@description=\count307
+)
 (c:/texlive/2023/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
 )
@@ -832,24 +841,24 @@ Package: setspace 2022/12/04 v6.7b set line spacing
 Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
 )
 (c:/texlive/2023/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count306
-\lst@gtempboxa=\box68
-\lst@token=\toks48
-\lst@length=\count307
-\lst@currlwidth=\dimen294
-\lst@column=\count308
-\lst@pos=\count309
-\lst@lostspace=\dimen295
-\lst@width=\dimen296
-\lst@newlines=\count310
-\lst@lineno=\count311
-\lst@maxwidth=\dimen297
+\lst@mode=\count308
+\lst@gtempboxa=\box69
+\lst@token=\toks49
+\lst@length=\count309
+\lst@currlwidth=\dimen295
+\lst@column=\count310
+\lst@pos=\count311
+\lst@lostspace=\dimen296
+\lst@width=\dimen297
+\lst@newlines=\count312
+\lst@lineno=\count313
+\lst@maxwidth=\dimen298
 
 (c:/texlive/2023/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
-\c@lstnumber=\count312
-\lst@skipnumbers=\count313
-\lst@framebox=\box69
+\c@lstnumber=\count314
+\lst@skipnumbers=\count315
+\lst@framebox=\box70
 )
 (c:/texlive/2023/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2023/02/27 1.9 listings configuration
@@ -864,49 +873,49 @@ Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
 )
 (c:/texlive/2023/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count314
-\calc@Bcount=\count315
-\calc@Adimen=\dimen298
-\calc@Bdimen=\dimen299
-\calc@Askip=\skip57
-\calc@Bskip=\skip58
+\calc@Acount=\count316
+\calc@Bcount=\count317
+\calc@Adimen=\dimen299
+\calc@Bdimen=\dimen300
+\calc@Askip=\skip58
+\calc@Bskip=\skip59
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count316
-\calc@Cskip=\skip59
+\calc@Ccount=\count318
+\calc@Cskip=\skip60
 )
 (c:/texlive/2023/texmf-dist/tex/latex/eso-pic/eso-pic.sty
 Package: eso-pic 2023/05/03 v3.0c eso-pic (RN)
-\ESO@tempdima=\dimen300
-\ESO@tempdimb=\dimen301
+\ESO@tempdima=\dimen301
+\ESO@tempdimb=\dimen302
 )
-\AM@pagewidth=\dimen302
-\AM@pageheight=\dimen303
-\AM@fboxrule=\dimen304
+\AM@pagewidth=\dimen303
+\AM@pageheight=\dimen304
+\AM@fboxrule=\dimen305
 
 (c:/texlive/2023/texmf-dist/tex/latex/pdfpages/pppdftex.def
 File: pppdftex.def 2022/12/19 v0.5x Pdfpages driver for pdfTeX (AM)
 )
-\pdfpages@includegraphics@status=\count317
-\AM@pagebox=\box70
-\AM@global@opts=\toks49
-\AM@pagecnt=\count318
-\AM@toc@title=\toks50
-\AM@lof@heading=\toks51
-\c@AM@survey=\count319
-\AM@templatesizebox=\box71
+\pdfpages@includegraphics@status=\count319
+\AM@pagebox=\box71
+\AM@global@opts=\toks50
+\AM@pagecnt=\count320
+\AM@toc@title=\toks51
+\AM@lof@heading=\toks52
+\c@AM@survey=\count321
+\AM@templatesizebox=\box72
 )
 (c:/texlive/2023/texmf-dist/tex/generic/ulem/ulem.sty
-\UL@box=\box72
-\UL@hyphenbox=\box73
-\UL@skip=\skip60
-\UL@hook=\toks52
-\UL@height=\dimen305
-\UL@pe=\count320
-\UL@pixel=\dimen306
-\ULC@box=\box74
+\UL@box=\box73
+\UL@hyphenbox=\box74
+\UL@skip=\skip61
+\UL@hook=\toks53
+\UL@height=\dimen306
+\UL@pe=\count322
+\UL@pixel=\dimen307
+\ULC@box=\box75
 Package: ulem 2019/11/18
-\ULdepth=\dimen307
+\ULdepth=\dimen308
 )
 (c:/texlive/2023/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 (c:/texlive/2023/texmf-dist/tex/latex/l3kernel/expl3.sty
@@ -914,8 +923,8 @@ Package: expl3 2023-08-29 L3 programming layer (loader)
 
 (c:/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2023-04-19 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count321
-\l__pdf_internal_box=\box75
+\l__color_backend_stack_int=\count323
+\l__pdf_internal_box=\box76
 ))
 Package: xparse 2023-08-29 L3 Experimental document command parser
 )
@@ -928,20 +937,20 @@ code.tex
 File: pgfmoduledatavisualization.code.tex 2023-01-15 v3.1.10 (3.1.10)
 
 (c:/texlive/2023/texmf-dist/tex/generic/pgf/modules/pgfmoduleoo.code.tex
-\pgfoo@objectcount=\count322
-\pgfoothis@count=\count323
-\pgfoo@toks=\toks53
+\pgfoo@objectcount=\count324
+\pgfoothis@count=\count325
+\pgfoo@toks=\toks54
 )
-\pgf@lib@dv@cache@count=\count324
-\pgf@lib@dv@cache@count=\count325
+\pgf@lib@dv@cache@count=\count326
+\pgf@lib@dv@cache@count=\count327
 )
 (c:/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
 brarybackgrounds.code.tex
 File: tikzlibrarybackgrounds.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@layerbox@background=\box76
-\pgf@layerboxsaved@background=\box77
+\pgf@layerbox@background=\box77
+\pgf@layerboxsaved@background=\box78
 )
-\tikzdvvisualizercounter=\count326
+\tikzdvvisualizercounter=\count328
 )
 (c:/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/datavi
 sualization/tikzlibrarydatavisualization.formats.functions.code.tex
@@ -958,18 +967,18 @@ Package: caption 2023/07/31 v3.6n Customizing captions (AR)
 
 (c:/texlive/2023/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
-\caption@tempdima=\dimen308
-\captionmargin=\dimen309
-\caption@leftmargin=\dimen310
-\caption@rightmargin=\dimen311
-\caption@width=\dimen312
-\caption@indent=\dimen313
-\caption@parindent=\dimen314
-\caption@hangindent=\dimen315
+\caption@tempdima=\dimen309
+\captionmargin=\dimen310
+\caption@leftmargin=\dimen311
+\caption@rightmargin=\dimen312
+\caption@width=\dimen313
+\caption@indent=\dimen314
+\caption@parindent=\dimen315
+\caption@hangindent=\dimen316
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count327
-\c@continuedfloat=\count328
+\c@caption@flags=\count329
+\c@continuedfloat=\count330
 Package caption Info: listings package is loaded.
 )
 (c:/texlive/2023/texmf-dist/tex/latex/hyperref/hyperref.sty
@@ -1019,15 +1028,15 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 (c:/texlive/2023/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
-\c@section@level=\count329
+\c@section@level=\count331
 )
 (c:/texlive/2023/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count330
+\etb@tempcnta=\count332
 )
-\@linkdim=\dimen316
-\Hy@linkcounter=\count331
-\Hy@pagecounter=\count332
+\@linkdim=\dimen317
+\Hy@linkcounter=\count333
+\Hy@pagecounter=\count334
 
 (c:/texlive/2023/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2023-07-08 v7.01b Hyperref: PDFDocEncoding definition (HO)
@@ -1037,7 +1046,7 @@ Now handling font encoding PD1 ...
 (c:/texlive/2023/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count333
+\Hy@SavedSpaceFactor=\count335
 
 (c:/texlive/2023/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2023-07-08 v7.01b Hyperref: PDF Unicode definition (HO)
@@ -1053,14 +1062,14 @@ Package hyperref Info: Plain pages OFF on input line 4182.
 Package hyperref Info: Backreferencing OFF on input line 4187.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4434.
-\c@Hy@tempcnt=\count334
+\c@Hy@tempcnt=\count336
 
 (c:/texlive/2023/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4772.
-\XeTeXLinkMargin=\dimen317
+\XeTeXLinkMargin=\dimen318
 
 (c:/texlive/2023/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -1069,9 +1078,9 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count335
-\Field@Width=\dimen318
-\Fld@charsize=\dimen319
+\Fld@menulength=\count337
+\Field@Width=\dimen319
+\Fld@charsize=\dimen320
 Package hyperref Info: Hyper figures OFF on input line 6051.
 Package hyperref Info: Link nesting OFF on input line 6056.
 Package hyperref Info: Hyper index ON on input line 6059.
@@ -1084,9 +1093,9 @@ Package hyperref Info: PDF/A mode OFF on input line 6081.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count336
-\c@Item=\count337
-\c@Hfootnote=\count338
+\Hy@abspage=\count338
+\c@Item=\count339
+\c@Hfootnote=\count340
 )
 Package hyperref Info: Driver: hpdftex.
 
@@ -1098,8 +1107,8 @@ Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
 kage
 with kernel methods
 )
-\Fld@listcount=\count339
-\c@bookmark@seq@number=\count340
+\Fld@listcount=\count341
+\c@bookmark@seq@number=\count342
 
 (c:/texlive/2023/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
@@ -1110,7 +1119,7 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 85.
 )
-\Hy@SectionHShift=\skip61
+\Hy@SectionHShift=\skip62
 )
 (c:/texlive/2023/texmf-dist/tex/latex/was/icomma.sty
 Package: icomma 2002/03/10 v2.0 (WaS)
@@ -1129,9 +1138,9 @@ Package: shellesc 2023/04/15 v1.0d unified shell escape interface for LaTeX
 Package shellesc Info: Restricted shell escape enabled on input line 77.
 )
 \csv@file=\read4
-\c@csvinputline=\count341
-\c@csvrow=\count342
-\c@csvcol=\count343
+\c@csvinputline=\count343
+\c@csvrow=\count344
+\c@csvcol=\count345
 \csv@out=\write4
 )
 (c:/texlive/2023/texmf-dist/tex/latex/algorithms/algorithm.sty
@@ -1140,14 +1149,14 @@ nment
 
 (c:/texlive/2023/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count344
-\float@exts=\toks54
-\float@box=\box78
-\@float@everytoks=\toks55
-\@floatcapt=\box79
+\c@float@type=\count346
+\float@exts=\toks55
+\float@box=\box79
+\@float@everytoks=\toks56
+\@floatcapt=\box80
 )
-\@float@every@algorithm=\toks56
-\c@algorithm=\count345
+\@float@every@algorithm=\toks57
+\c@algorithm=\count347
 )
 (c:/texlive/2023/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
 Package: algpseudocode 
@@ -1156,16 +1165,16 @@ Package: algpseudocode
 Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 
 Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
-\c@ALG@line=\count346
-\c@ALG@rem=\count347
-\c@ALG@nested=\count348
-\ALG@tlm=\skip62
-\ALG@thistlm=\skip63
-\c@ALG@Lnr=\count349
-\c@ALG@blocknr=\count350
-\c@ALG@storecount=\count351
-\c@ALG@tmpcounter=\count352
-\ALG@tmplength=\skip64
+\c@ALG@line=\count348
+\c@ALG@rem=\count349
+\c@ALG@nested=\count350
+\ALG@tlm=\skip63
+\ALG@thistlm=\skip64
+\c@ALG@Lnr=\count351
+\c@ALG@blocknr=\count352
+\c@ALG@storecount=\count353
+\c@ALG@tmpcounter=\count354
+\ALG@tmplength=\skip65
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
 ) (c:/texlive/2023/texmf-dist/tex/latex/svg/svg-extract.sty
@@ -1195,9 +1204,9 @@ Already applied: [0000/00/00] Usage of raw or classic option list on input line
 (c:/texlive/2023/texmf-dist/tex/latex/trimspaces/trimspaces.sty
 Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 )
-\c@svg@param@lastpage=\count353
-\svg@box=\box80
-\c@svg@param@currpage=\count354
+\c@svg@param@lastpage=\count355
+\svg@box=\box81
+\c@svg@param@currpage=\count356
 )
 (c:/texlive/2023/texmf-dist/tex/latex/transparent/transparent.sty
 Package: transparent 2022-10-27 v1.5 Transparency with color stacks
@@ -1206,33 +1215,33 @@ Package: transparent 2022-10-27 v1.5 Transparency with color stacks
 Package: transparent-nometadata 2022-10-27 v1.5 Transparency via pdfTeX's color
  stack (HO)
 ))
-\c@svgx@runs=\count355
-\c@svgx@out@count=\count356
+\c@svgx@runs=\count357
+\c@svgx@out@count=\count358
 ) (c:/texlive/2023/texmf-dist/tex/latex/threeparttable/threeparttable.sty
 Package: threeparttable 2003/06/13  v 3.0
-\@tempboxb=\box81
+\@tempboxb=\box82
 ))
 (c:/texlive/2023/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen320
-\lightrulewidth=\dimen321
-\cmidrulewidth=\dimen322
-\belowrulesep=\dimen323
-\belowbottomsep=\dimen324
-\aboverulesep=\dimen325
-\abovetopsep=\dimen326
-\cmidrulesep=\dimen327
-\cmidrulekern=\dimen328
-\defaultaddspace=\dimen329
-\@cmidla=\count357
-\@cmidlb=\count358
-\@aboverulesep=\dimen330
-\@belowrulesep=\dimen331
-\@thisruleclass=\count359
-\@lastruleclass=\count360
-\@thisrulewidth=\dimen332
+\heavyrulewidth=\dimen321
+\lightrulewidth=\dimen322
+\cmidrulewidth=\dimen323
+\belowrulesep=\dimen324
+\belowbottomsep=\dimen325
+\aboverulesep=\dimen326
+\abovetopsep=\dimen327
+\cmidrulesep=\dimen328
+\cmidrulekern=\dimen329
+\defaultaddspace=\dimen330
+\@cmidla=\count359
+\@cmidlb=\count360
+\@aboverulesep=\dimen331
+\@belowrulesep=\dimen332
+\@thisruleclass=\count361
+\@lastruleclass=\count362
+\@thisrulewidth=\dimen333
 ) (./report.aux
-(./02-intro.aux) (./10-analysis.aux) (./51-biblio.aux))
+(./02-intro.aux) (./10-analysis.aux) (./20-design.aux) (./51-biblio.aux))
 \openout1 = `report.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 4.
@@ -1259,17 +1268,17 @@ LaTeX Info: Redefining \th on input line 4.
 
 (c:/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count361
-\scratchdimen=\dimen333
-\scratchbox=\box82
-\nofMPsegments=\count362
-\nofMParguments=\count363
-\everyMPshowfont=\toks57
-\MPscratchCnt=\count364
-\MPscratchDim=\dimen334
-\MPnumerator=\count365
-\makeMPintoPDFobject=\count366
-\everyMPtoPDFconversion=\toks58
+\scratchcounter=\count363
+\scratchdimen=\dimen334
+\scratchbox=\box83
+\nofMPsegments=\count364
+\nofMParguments=\count365
+\everyMPshowfont=\toks58
+\MPscratchCnt=\count366
+\MPscratchDim=\dimen335
+\MPnumerator=\count367
+\makeMPintoPDFobject=\count368
+\everyMPtoPDFconversion=\toks59
 ) (c:/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -1316,7 +1325,7 @@ enefit from \pgfplotsset{compat=1.18} (current compat level: 1.9).
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\c@lstlisting=\count367
+\c@lstlisting=\count369
 (c:/texlive/2023/texmf-dist/tex/latex/pdflscape/pdflscape.sty
 Package: pdflscape 2022-10-27 v0.13 Display of landscape pages in PDF
 
@@ -1361,122 +1370,134 @@ texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc}]
 
 pdfTeX warning: pdflatex.exe (file ./assets/img/mod1.pdf): PDF inclusion: found
  PDF version <1.6>, but at most version <1.5> allowed
-<assets/img/mod1.pdf, id=118, 412.54124pt x 427.5975pt>
+<assets/img/mod1.pdf, id=141, 412.54124pt x 427.5975pt>
 File: assets/img/mod1.pdf Graphic file (type pdf)
 <use assets/img/mod1.pdf>
 Package pdftex.def Info: assets/img/mod1.pdf  used on input line 25.
-(pdftex.def)             Requested size: 284.52756pt x 294.9121pt.
-[3 <./assets/img/mod1.pdf>] [4
+(pdftex.def)             Requested size: 274.50644pt x 284.52756pt.
+[3 <./assets/img/mod1.pdf>]
 
-] [5]
-Overfull \hbox (22.31737pt too wide) in paragraph at lines 75--75
-|[]\T2A/cmr/bx/n/20.74 Способы пред-став-ле-ния трех-мер-ных по-верх-
- []
+pdfTeX warning: pdflatex.exe (file ./assets/img/mod2.pdf): PDF inclusion: found
+ PDF version <1.6>, but at most version <1.5> allowed
+<assets/img/mod2.pdf, id=166, 348.40764pt x 350.68916pt>
+File: assets/img/mod2.pdf Graphic file (type pdf)
+<use assets/img/mod2.pdf>
+Package pdftex.def Info: assets/img/mod2.pdf  used on input line 41.
+(pdftex.def)             Requested size: 254.40457pt x 256.0748pt.
+[4
 
-[6]
-Overfull \hbox (12.86066pt too wide) in paragraph at lines 90--91
+ <./assets/img/mod2.pdf>] [5
+
+] [6]
+
+pdfTeX warning: pdflatex.exe (file ./assets/img/mod3.pdf): PDF inclusion: found
+ PDF version <1.6>, but at most version <1.5> allowed
+<assets/img/mod3.pdf, id=224, 295.10149pt x 297.64pt>
+File: assets/img/mod3.pdf Graphic file (type pdf)
+<use assets/img/mod3.pdf>
+Package pdftex.def Info: assets/img/mod3.pdf  used on input line 86.
+(pdftex.def)             Requested size: 253.8994pt x 256.0748pt.
+[7 <./assets/img/mod3.pdf>]
+Overfull \hbox (12.86066pt too wide) in paragraph at lines 92--93
 []\T2A/cmr/bx/n/14.4 Наиболее рас-про-стра-нен-ные ме-то-ды пред-став-ле-ния по
 -ли-го-наль-
  []
 
-[7]
-Overfull \hbox (18.48416pt too wide) in paragraph at lines 135--136
+[8
+
+]
+Overfull \hbox (18.48416pt too wide) in paragraph at lines 137--138
 []\T2A/cmr/m/n/14.4 Высокие тре-бо-ва-ния к па-мя-ти: Уве-ли-чи-ва-ю-ща-я-ся сл
 ож-ность струк-
  []
 
-[8]
-Overfull \hbox (1.54323pt too wide) in paragraph at lines 157--158
+[9]
+Overfull \hbox (1.54323pt too wide) in paragraph at lines 159--160
 []\T2A/cmr/m/n/14.4 <<Стандартный>> дом: од-но-этаж-ное зда-ние, за-ни-ма-ю-щее
  три квад-
  []
 
 
-Overfull \hbox (5.73558pt too wide) in paragraph at lines 162--163
+Overfull \hbox (5.73558pt too wide) in paragraph at lines 164--165
 []\T2A/cmr/m/n/14.4 Стены: фор-ми-ру-ют-ся вер-ти-каль-ны-ми плос-ко-стя-ми, бе
 -же-во-го цве-
  []
 
-[9] [10]
-Overfull \hbox (1.87424pt too wide) in paragraph at lines 193--193
-|[]\T2A/cmr/bx/n/20.74 Алгоритмы уда-ле-ния скры-тых ли-ний и по-
- []
-
-<<ot1.cmap>><<oml.cmap>><<oms.cmap>><<omx.cmap>> [11]
-Overfull \hbox (2.66177pt too wide) in paragraph at lines 209--210
+[10] [11] [12]<<ot1.cmap>><<oml.cmap>><<oms.cmap>><<omx.cmap>>
+Overfull \hbox (2.66177pt too wide) in paragraph at lines 211--212
 \T2A/cmr/m/n/14.4 ди-мо-сти уда-ля-ют-ся нели-це-вые плос-ко-сти. За-тем про-ис
 -хо-дит срав-не-ние каж-
  []
 
-[12]
-Overfull \hbox (4.08449pt too wide) in paragraph at lines 234--234
+[13]
+Overfull \hbox (4.08449pt too wide) in paragraph at lines 236--236
  |[]\T2A/cmr/bx/n/17.28 Алгоритм, ис-поль-зу-ю-щий спи-сок при-о-ри-те-тов.| 
  []
 
-
-Overfull \hbox (16.2613pt too wide) in paragraph at lines 240--241
+[14]
+Overfull \hbox (16.2613pt too wide) in paragraph at lines 242--243
 []\T2A/cmr/m/it/14.4 Масштабируемость\T2A/cmr/m/n/14.4 : Вре-мен-ная слож-ность
  ал-го-рит-ма ху-дож-ни-ка силь-
  []
 
-[13]
-Overfull \hbox (8.75896pt too wide) in paragraph at lines 247--248
+
+Overfull \hbox (8.75896pt too wide) in paragraph at lines 249--250
 []\T2A/cmr/m/n/14.4 Алгоритм Вар-но-ка ис-поль-зу-ет прин-цип ко-ге-рент-но-сти
 , по ко-то-ро-му боль-
  []
 
-[14]
-Underfull \hbox (badness 10000) in paragraph at lines 288--288
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 290--290
 []|\T2A/cmr/bx/n/14.4 Обратная
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 288--288
+Underfull \hbox (badness 10000) in paragraph at lines 290--290
 \T2A/cmr/bx/n/14.4 трас-си-ров-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 288--288
+Underfull \hbox (badness 10000) in paragraph at lines 290--290
 []|\T2A/cmr/bx/n/14.4 Вычисл.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 288--288
+Underfull \hbox (badness 10000) in paragraph at lines 290--290
 []|\T2A/cmr/bx/n/14.4 Рабочее
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 288--288
+Underfull \hbox (badness 10000) in paragraph at lines 290--290
 \T2A/cmr/bx/n/14.4 про-стран-
  []
 
 
-Overfull \hbox (1.97556pt too wide) in paragraph at lines 288--288
+Overfull \hbox (1.97556pt too wide) in paragraph at lines 290--290
 []|\T2A/cmr/m/n/14.4 Изображение| 
  []
 
 
-Overfull \hbox (1.97556pt too wide) in paragraph at lines 288--288
+Overfull \hbox (1.97556pt too wide) in paragraph at lines 290--290
 []|\T2A/cmr/m/n/14.4 Изображение| 
  []
 
 
-Overfull \hbox (1.97556pt too wide) in paragraph at lines 288--288
+Overfull \hbox (1.97556pt too wide) in paragraph at lines 290--290
 []|\T2A/cmr/m/n/14.4 Изображение| 
  []
 
 
-Overfull \hbox (1.44843pt too wide) in paragraph at lines 288--288
+Overfull \hbox (1.44843pt too wide) in paragraph at lines 290--290
 \T2A/cmr/bx/n/14.4 реализации| 
  []
 
 
-Overfull \hbox (7.09703pt too wide) in paragraph at lines 288--288
+Overfull \hbox (7.09703pt too wide) in paragraph at lines 290--290
 []|\T2A/cmr/bx/n/14.4 Производит.
  []
 
 
-Underfull \hbox (badness 2726) in paragraph at lines 288--288
+Underfull \hbox (badness 2726) in paragraph at lines 290--290
 \T2A/cmr/bx/n/14.4 при слож-
  []
 
@@ -1484,12 +1505,94 @@ Underfull \hbox (badness 2726) in paragraph at lines 288--288
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Overfull \hbox (0.7687pt too wide) in paragraph at lines 300--301
+Overfull \hbox (0.7687pt too wide) in paragraph at lines 302--303
 []\T2A/cmr/m/n/14.4 Учјт те-ней в ал-го-рит-мах уда-ле-ния неви-ди-мых по-верх-
 но-стей мо-жет быть
  []
 
-[15] [16]) [17] [18]
+[16] [17]) [18] [19]
+\openout2 = `20-design.aux'.
+
+ (./20-design.tex
+{\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 2.
+
+Overfull \hbox (3.08109pt too wide) in paragraph at lines 29--30
+[]\T2A/cmr/m/n/14.4 сравнить глу-би-ну $\OML/cmm/m/it/14.4 z\OT1/cmr/m/n/14.4 (
+\OML/cmm/m/it/14.4 x; y\OT1/cmr/m/n/14.4 )$ \T2A/cmr/m/n/14.4 со зна-че-ни-ем $
+\OML/cmm/m/it/14.4 z[]$\T2A/cmr/m/n/14.4 , хра-ня-щим-ся в $\OML/cmm/m/it/14.4 
+z[]$
+ []
+
+[20
+
+
+
+
+]
+
+pdfTeX warning: pdflatex.exe (file ./assets/img/zbuf.pdf): PDF inclusion: found
+ PDF version <1.6>, but at most version <1.5> allowed
+<assets/img/zbuf.pdf, id=351, 522.16277pt x 401.1758pt>
+File: assets/img/zbuf.pdf Graphic file (type pdf)
+<use assets/img/zbuf.pdf>
+Package pdftex.def Info: assets/img/zbuf.pdf  used on input line 40.
+(pdftex.def)             Requested size: 370.34775pt x 284.52756pt.
+[21 <./assets/img/zbuf.pdf>]
+
+pdfTeX warning: pdflatex.exe (file ./assets/img/zalg.pdf): PDF inclusion: found
+ PDF version <1.7>, but at most version <1.5> allowed
+<assets/img/zalg.pdf, id=383, 598.15468pt x 847.24525pt>
+File: assets/img/zalg.pdf Graphic file (type pdf)
+<use assets/img/zalg.pdf>
+Package pdftex.def Info: assets/img/zalg.pdf  used on input line 44.
+(pdftex.def)             Requested size: 502.21832pt x 711.3189pt.
+
+Overfull \hbox (32.74783pt too wide) in paragraph at lines 44--44
+ [] 
+ []
+
+
+LaTeX Warning: Float too large for page by 8.08305pt on input line 44.
+
+[22 <./assets/img/zalg.pdf>]
+
+LaTeX Warning: Command \CYRB invalid in math mode on input line 67.
+
+
+LaTeX Warning: Command \CYRT invalid in math mode on input line 67.
+
+Missing character: There is no Б in font cmr12!
+Missing character: There is no Т in font cmr12!
+
+
+pdfTeX warning: pdflatex.exe (file ./assets/img/zb.pdf): PDF inclusion: found P
+DF version <1.6>, but at most version <1.5> allowed
+<assets/img/zb.pdf, id=420, 383.09023pt x 337.74782pt>
+File: assets/img/zb.pdf Graphic file (type pdf)
+<use assets/img/zb.pdf>
+Package pdftex.def Info: assets/img/zb.pdf  used on input line 75.
+(pdftex.def)             Requested size: 258.18893pt x 227.62204pt.
+[23
+
+
+] [24 <./assets/img/zb.pdf>]
+
+pdfTeX warning: pdflatex.exe (file ./assets/img/zzalg.pdf): PDF inclusion: foun
+d PDF version <1.7>, but at most version <1.5> allowed
+<assets/img/zzalg.pdf, id=477, 598.15468pt x 847.24525pt>
+File: assets/img/zzalg.pdf Graphic file (type pdf)
+<use assets/img/zzalg.pdf>
+Package pdftex.def Info: assets/img/zzalg.pdf  used on input line 78.
+(pdftex.def)             Requested size: 502.21832pt x 711.3189pt.
+
+Overfull \hbox (32.74783pt too wide) in paragraph at lines 78--78
+ [] 
+ []
+
+
+LaTeX Warning: Float too large for page by 8.08305pt on input line 78.
+
+[25 <./assets/img/zzalg.pdf>])
 \openout2 = `51-biblio.aux'.
 
  (./51-biblio.tex (./report.bbl
@@ -1510,27 +1613,30 @@ Underfull \hbox (badness 1048) in paragraph at lines 37--45
 -ных из-де-
  []
 
-)) [19
+)) [26
 
 
 
 
-] (./report.aux (./02-intro.aux) (./10-analysis.aux) (./51-biblio.aux))
+
+
+] (./report.aux (./02-intro.aux) (./10-analysis.aux) (./20-design.aux)
+(./51-biblio.aux))
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-08-29>
  ***********
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: B2ABEC572E8CA65828789D02AA457C85;6024.
+(rerunfilecheck)             Checksum: F67A1D1DC74ED6497A212E4151A597E6;7175.
  ) 
 Here is how much of TeX's memory you used:
- 40687 strings out of 474933
- 937216 string characters out of 5763794
+ 41142 strings out of 474933
+ 945480 string characters out of 5763794
  1929801 words of memory out of 5000000
- 61454 multiletter control sequences out of 15000+600000
- 567227 words of font info for 52 fonts, out of 8000000 for 9000
+ 61865 multiletter control sequences out of 15000+600000
+ 568830 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 116i,11n,112p,1408b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 116i,11n,112p,1422b,724s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/tex
 live/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist
@@ -1538,13 +1644,14 @@ texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist
 pe1/public/cm-super/sfbx1440.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public
 /cm-super/sfbx1728.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/
 sfbx2074.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx2488.p
-fb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb><c:/tex
-live/2023/texmf-dist/fonts/type1/public/cm-super/sfti1440.pfb><c:/texlive/2023/
-texmf-dist/fonts/type1/public/cm-super/sftt1440.pfb>
-Output written on report.pdf (19 pages, 528955 bytes).
+fb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><c:/tex
+live/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb><c:/texlive/2023/
+texmf-dist/fonts/type1/public/cm-super/sfti1440.pfb><c:/texlive/2023/texmf-dist
+/fonts/type1/public/cm-super/sftt1440.pfb>
+Output written on report.pdf (26 pages, 2158090 bytes).
 PDF statistics:
- 335 PDF objects out of 1000 (max. 8388607)
- 287 compressed objects within 3 object streams
- 76 named destinations out of 1000 (max. 500000)
- 214 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 588 PDF objects out of 1000 (max. 8388607)
+ 459 compressed objects within 5 object streams
+ 105 named destinations out of 1000 (max. 500000)
+ 284 words of extra memory for PDF output out of 10000 (max. 10000000)
 

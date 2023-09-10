@@ -22,12 +22,13 @@
 {\normalsize\bfseries}
 {\thesection}
 {1em}{}
+\usepackage{enumitem}
+
 
 % Задание интервалов между заголовками и текстом:
 \titlespacing*{\chapter}{0pt}{-30pt}{8pt}
 \titlespacing*{\section}{\parindent}{*0.5}{*0.5}
 \titlespacing*{\subsection}{\parindent}{*0.5}{*0.5}
-\titlespacing*{\section}{0pt}{12pt}{12pt}
 
 
 % Пакет для установки интервалов между строками.
@@ -99,6 +100,9 @@
 		\label{img-#2}
 	\end{figure}
 }
+
+
+
 \newcommand{\mycomment}[1]{}
 \usepackage[justification=centering]{caption} % Настройка подписей float объектов
 \usepackage[unicode,pdftex]{hyperref} % Ссылки в pdf

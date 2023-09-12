@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.9)  11 SEP 2023 01:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.9)  12 SEP 2023 23:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1241,7 +1241,8 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \@lastruleclass=\count362
 \@thisrulewidth=\dimen333
 ) (./report.aux
-(./02-intro.aux) (./10-analysis.aux) (./20-design.aux) (./51-biblio.aux))
+(./00-title.aux) (./01-contents.aux) (./02-intro.aux) (./10-analysis.aux)
+(./20-design.aux) (./51-biblio.aux))
 \openout1 = `report.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 4.
@@ -1349,19 +1350,40 @@ Package hyperref Info: Link coloring OFF on input line 4.
 \@outlinefile=\write5
 \openout5 = `report.out'.
 
-\openout2 = `02-intro.aux'.
+\openout2 = `00-title.aux'.
 
- (./02-intro.tex) [1
+
+No file 00-title.tex.
+\openout2 = `01-contents.aux'.
+
+(./01-contents.tex (./report.toc<<ot1.cmap>><<oml.cmap>><<oms.cmap>><<omx.cmap>
+> [1
+
+
+
 
 
 
 {c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/texlive/2023/
-texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc}]
+texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc}])
+\tf@toc=\write6
+\openout6 = `report.toc'.
+
+) [2]
+\openout2 = `02-intro.aux'.
+
+
+(./02-intro.tex) [3
+
+
+
+
+]
 \openout2 = `10-analysis.aux'.
 
  (./10-analysis.tex
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 1.
-[2
+[4
 
 
 
@@ -1370,147 +1392,272 @@ texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc}]
 
 pdfTeX warning: pdflatex.exe (file ./assets/img/mod1.pdf): PDF inclusion: found
  PDF version <1.6>, but at most version <1.5> allowed
-<assets/img/mod1.pdf, id=141, 412.54124pt x 427.5975pt>
+<assets/img/mod1.pdf, id=228, 412.54124pt x 427.5975pt>
 File: assets/img/mod1.pdf Graphic file (type pdf)
 <use assets/img/mod1.pdf>
 Package pdftex.def Info: assets/img/mod1.pdf  used on input line 25.
 (pdftex.def)             Requested size: 274.50644pt x 284.52756pt.
-[3 <./assets/img/mod1.pdf>]
+[5 <./assets/img/mod1.pdf>]
 
 pdfTeX warning: pdflatex.exe (file ./assets/img/mod2.pdf): PDF inclusion: found
  PDF version <1.6>, but at most version <1.5> allowed
-<assets/img/mod2.pdf, id=166, 348.40764pt x 350.68916pt>
+<assets/img/mod2.pdf, id=253, 243.07814pt x 219.22pt>
 File: assets/img/mod2.pdf Graphic file (type pdf)
 <use assets/img/mod2.pdf>
 Package pdftex.def Info: assets/img/mod2.pdf  used on input line 41.
-(pdftex.def)             Requested size: 254.40457pt x 256.0748pt.
-[4
+(pdftex.def)             Requested size: 283.94405pt x 256.0748pt.
+[6
 
- <./assets/img/mod2.pdf>] [5
+ <./assets/img/mod2.pdf>] [7
 
-] [6]
+] [8]
 
 pdfTeX warning: pdflatex.exe (file ./assets/img/mod3.pdf): PDF inclusion: found
  PDF version <1.6>, but at most version <1.5> allowed
-<assets/img/mod3.pdf, id=224, 295.10149pt x 297.64pt>
+<assets/img/mod3.pdf, id=310, 295.10149pt x 297.64pt>
 File: assets/img/mod3.pdf Graphic file (type pdf)
 <use assets/img/mod3.pdf>
 Package pdftex.def Info: assets/img/mod3.pdf  used on input line 86.
 (pdftex.def)             Requested size: 253.8994pt x 256.0748pt.
-[7 <./assets/img/mod3.pdf>]
-Overfull \hbox (12.86066pt too wide) in paragraph at lines 92--93
+[9 <./assets/img/mod3.pdf>]
+Overfull \hbox (12.86066pt too wide) in paragraph at lines 94--95
 []\T2A/cmr/bx/n/14.4 Наиболее рас-про-стра-нен-ные ме-то-ды пред-став-ле-ния по
 -ли-го-наль-
  []
 
-[8
 
-]
-Overfull \hbox (18.48416pt too wide) in paragraph at lines 137--138
-[]\T2A/cmr/m/n/14.4 Высокие тре-бо-ва-ния к па-мя-ти: Уве-ли-чи-ва-ю-ща-я-ся сл
+
+pdfTeX warning: pdflatex.exe (file ./assets/img/vf.pdf): PDF inclusion: found P
+DF version <1.6>, but at most version <1.5> allowed
+<assets/img/vf.pdf, id=334, 410.68231pt x 146.95001pt>
+File: assets/img/vf.pdf Graphic file (type pdf)
+<use assets/img/vf.pdf>
+Package pdftex.def Info: assets/img/vf.pdf  used on input line 99.
+(pdftex.def)             Requested size: 397.61563pt x 142.26378pt.
+
+Overfull \hbox (0.83752pt too wide) in paragraph at lines 104--105
+[]\T2A/cmr/m/it/14.4 возможность ди-на-ми-че-ско-го об-нов-ле-ния фор-мы\T2A/cm
+r/m/n/14.4 : ис-поль-зуя гра-
+ []
+
+[10
+
+ <./assets/img/vf.pdf>]
+
+pdfTeX warning: pdflatex.exe (file ./assets/img/vf1.pdf): PDF inclusion: found 
+PDF version <1.6>, but at most version <1.5> allowed
+<assets/img/vf1.pdf, id=369, 426.13402pt x 146.95001pt>
+File: assets/img/vf1.pdf Graphic file (type pdf)
+<use assets/img/vf1.pdf>
+Package pdftex.def Info: assets/img/vf1.pdf  used on input line 132.
+(pdftex.def)             Requested size: 412.57573pt x 142.26378pt.
+[11 <./assets/img/vf1.pdf>]
+Overfull \hbox (12.58072pt too wide) in paragraph at lines 144--145
+[]\T2A/cmr/m/n/14.4 высокие тре-бо-ва-ния к па-мя-ти: уве-ли-чи-ва-ю-ща-я-ся сл
 ож-ность струк-
  []
 
-[9]
-Overfull \hbox (1.54323pt too wide) in paragraph at lines 159--160
-[]\T2A/cmr/m/n/14.4 <<Стандартный>> дом: од-но-этаж-ное зда-ние, за-ни-ма-ю-щее
- три квад-
+
+
+pdfTeX warning: pdflatex.exe (file ./assets/img/vf2.pdf): PDF inclusion: found 
+PDF version <1.6>, but at most version <1.5> allowed
+<assets/img/vf2.pdf, id=404, 455.44553pt x 187.35597pt>
+File: assets/img/vf2.pdf Graphic file (type pdf)
+<use assets/img/vf2.pdf>
+Package pdftex.def Info: assets/img/vf2.pdf  used on input line 147.
+(pdftex.def)             Requested size: 415.01897pt x 170.71652pt.
+[12 <./assets/img/vf2.pdf>]
+Overfull \hbox (6.07645pt too wide) in paragraph at lines 173--174
+[]\T2A/cmr/m/it/14.4 <<стандартный>> дом: \T2A/cmr/m/n/14.4 од-но-этаж-ное зда-
+ние, за-ни-ма-ю-щее три квад-
  []
 
 
-Overfull \hbox (5.73558pt too wide) in paragraph at lines 164--165
-[]\T2A/cmr/m/n/14.4 Стены: фор-ми-ру-ют-ся вер-ти-каль-ны-ми плос-ко-стя-ми, бе
+Overfull \hbox (1.92422pt too wide) in paragraph at lines 179--180
+[]\T2A/cmr/m/n/14.4 стены: фор-ми-ру-ют-ся вер-ти-каль-ны-ми плос-ко-стя-ми, бе
 -же-во-го цве-
  []
 
-[10] [11] [12]<<ot1.cmap>><<oml.cmap>><<oms.cmap>><<omx.cmap>>
-Overfull \hbox (2.66177pt too wide) in paragraph at lines 211--212
-\T2A/cmr/m/n/14.4 ди-мо-сти уда-ля-ют-ся нели-це-вые плос-ко-сти. За-тем про-ис
--хо-дит срав-не-ние каж-
- []
+[13] [14] [15] [16]
 
-[13]
-Overfull \hbox (4.08449pt too wide) in paragraph at lines 236--236
+pdfTeX warning: pdflatex.exe (file ./assets/img/exz.pdf): PDF inclusion: found 
+PDF version <1.6>, but at most version <1.5> allowed
+<assets/img/exz.pdf, id=475, 968.08372pt x 436.03pt>
+File: assets/img/exz.pdf Graphic file (type pdf)
+<use assets/img/exz.pdf>
+Package pdftex.def Info: assets/img/exz.pdf  used on input line 237.
+(pdftex.def)             Requested size: 442.20708pt x 199.16928pt.
+
+Overfull \hbox (4.08449pt too wide) in paragraph at lines 257--257
  |[]\T2A/cmr/bx/n/17.28 Алгоритм, ис-поль-зу-ю-щий спи-сок при-о-ри-те-тов.| 
  []
 
-[14]
-Overfull \hbox (16.2613pt too wide) in paragraph at lines 242--243
-[]\T2A/cmr/m/it/14.4 Масштабируемость\T2A/cmr/m/n/14.4 : Вре-мен-ная слож-ность
+[17 <./assets/img/exz.pdf>]
+Overfull \hbox (11.62206pt too wide) in paragraph at lines 263--264
+[]\T2A/cmr/m/it/14.4 масштабируемость: \T2A/cmr/m/n/14.4 вре-мен-ная слож-ность
  ал-го-рит-ма ху-дож-ни-ка силь-
  []
 
 
-Overfull \hbox (8.75896pt too wide) in paragraph at lines 249--250
+Overfull \hbox (8.75896pt too wide) in paragraph at lines 270--271
 []\T2A/cmr/m/n/14.4 Алгоритм Вар-но-ка ис-поль-зу-ет прин-цип ко-ге-рент-но-сти
 , по ко-то-ро-му боль-
  []
 
-[15]
-Underfull \hbox (badness 10000) in paragraph at lines 290--290
+[18]
+
+pdfTeX warning: pdflatex.exe (file ./assets/img/lightback.pdf): PDF inclusion: 
+found PDF version <1.6>, but at most version <1.5> allowed
+<assets/img/lightback.pdf, id=516, 371.30118pt x 288.41452pt>
+File: assets/img/lightback.pdf Graphic file (type pdf)
+<use assets/img/lightback.pdf>
+Package pdftex.def Info: assets/img/lightback.pdf  used on input line 286.
+(pdftex.def)             Requested size: 256.41338pt x 199.16928pt.
+[19 <./assets/img/lightback.pdf>]
+
+LaTeX Warning: Command \CYRS invalid in math mode on input line 299.
+
+Missing character: There is no С in font cmr12!
+
+Underfull \hbox (badness 10000) in paragraph at lines 320--320
 []|\T2A/cmr/bx/n/14.4 Обратная
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 290--290
+Underfull \hbox (badness 10000) in paragraph at lines 320--320
 \T2A/cmr/bx/n/14.4 трас-си-ров-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 290--290
+Underfull \hbox (badness 10000) in paragraph at lines 320--320
 []|\T2A/cmr/bx/n/14.4 Вычисл.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 290--290
+Underfull \hbox (badness 10000) in paragraph at lines 320--320
 []|\T2A/cmr/bx/n/14.4 Рабочее
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 290--290
+Underfull \hbox (badness 10000) in paragraph at lines 320--320
 \T2A/cmr/bx/n/14.4 про-стран-
  []
 
 
-Overfull \hbox (1.97556pt too wide) in paragraph at lines 290--290
+Overfull \hbox (1.97556pt too wide) in paragraph at lines 320--320
 []|\T2A/cmr/m/n/14.4 Изображение| 
  []
 
 
-Overfull \hbox (1.97556pt too wide) in paragraph at lines 290--290
+Overfull \hbox (1.97556pt too wide) in paragraph at lines 320--320
 []|\T2A/cmr/m/n/14.4 Изображение| 
  []
 
 
-Overfull \hbox (1.97556pt too wide) in paragraph at lines 290--290
+Overfull \hbox (1.97556pt too wide) in paragraph at lines 320--320
 []|\T2A/cmr/m/n/14.4 Изображение| 
  []
 
 
-Overfull \hbox (1.44843pt too wide) in paragraph at lines 290--290
+Overfull \hbox (1.44843pt too wide) in paragraph at lines 320--320
 \T2A/cmr/bx/n/14.4 реализации| 
  []
 
 
-Overfull \hbox (7.09703pt too wide) in paragraph at lines 290--290
+Overfull \hbox (7.09703pt too wide) in paragraph at lines 320--320
 []|\T2A/cmr/bx/n/14.4 Производит.
  []
 
 
-Underfull \hbox (badness 2726) in paragraph at lines 290--290
+Underfull \hbox (badness 2726) in paragraph at lines 320--320
 \T2A/cmr/bx/n/14.4 при слож-
  []
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Overfull \hbox (0.7687pt too wide) in paragraph at lines 302--303
-[]\T2A/cmr/m/n/14.4 Учјт те-ней в ал-го-рит-мах уда-ле-ния неви-ди-мых по-верх-
-но-стей мо-жет быть
+Overfull \hbox (13.87653pt too wide) in paragraph at lines 320--320
+[]|\T2A/cmr/bx/n/14.4 Распростран.
  []
 
-[16] [17]) [18] [19]
+
+Underfull \hbox (badness 10000) in paragraph at lines 320--320
+\T2A/cmr/bx/n/14.4 в со-вре-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 320--320
+\T2A/cmr/bx/n/14.4 мен-ном
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 320--320
+[]|\T2A/cmr/bx/n/14.4 Использов.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 320--320
+\T2A/cmr/bx/n/14.4 ре-кур-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 320--320
+\T2A/cmr/bx/n/14.4 сив-ных
+ []
+
+[20]
+
+LaTeX Warning: Citation `lightmodf' on page 21 undefined on input line 341.
+
+
+
+pdfTeX warning: pdflatex.exe (file ./assets/img/light.pdf): PDF inclusion: foun
+d PDF version <1.6>, but at most version <1.5> allowed
+<assets/img/light.pdf, id=554, 837.55408pt x 184.87871pt>
+File: assets/img/light.pdf Graphic file (type pdf)
+<use assets/img/light.pdf>
+Package pdftex.def Info: assets/img/light.pdf  used on input line 342.
+(pdftex.def)             Requested size: 451.14783pt x 99.58464pt.
+
+LaTeX Warning: Citation `lightmodf' on page 21 undefined on input line 344.
+
+[21 <./assets/img/light.pdf>]
+
+! LaTeX Error: Unicode character вЂ‹ (U+200B)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.356 	\item $k_{a}$вЂ‹
+                        --- РєРѕСЌС„С„РёС†РёРµРЅС‚, С…Р°СЂР°РєС‚РµСЂРёР·СѓСЋ...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Unicode character вЂ‹ (U+200B)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.357 	\item $i_{a}$вЂ‹
+                        --- РёРЅС‚РµРЅСЃРёРІРЅРѕСЃС‚СЊ С„РѕРЅРѕРІРѕРіРѕ РѕСЃ...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+
+pdfTeX warning: pdflatex.exe (file ./assets/img/zb.pdf): PDF inclusion: found P
+DF version <1.6>, but at most version <1.5> allowed
+<assets/img/zb.pdf, id=591, 383.09023pt x 337.74782pt>
+File: assets/img/zb.pdf Graphic file (type pdf)
+<use assets/img/zb.pdf>
+Package pdftex.def Info: assets/img/zb.pdf  used on input line 371.
+(pdftex.def)             Requested size: 258.18893pt x 227.62204pt.
+[22] [23 <./assets/img/zb.pdf>]) [24]
 \openout2 = `20-design.aux'.
 
  (./20-design.tex
@@ -1523,7 +1670,7 @@ Overfull \hbox (3.08109pt too wide) in paragraph at lines 29--30
 z[]$
  []
 
-[20
+[25
 
 
 
@@ -1532,16 +1679,16 @@ z[]$
 
 pdfTeX warning: pdflatex.exe (file ./assets/img/zbuf.pdf): PDF inclusion: found
  PDF version <1.6>, but at most version <1.5> allowed
-<assets/img/zbuf.pdf, id=351, 522.16277pt x 401.1758pt>
+<assets/img/zbuf.pdf, id=662, 522.16277pt x 401.1758pt>
 File: assets/img/zbuf.pdf Graphic file (type pdf)
 <use assets/img/zbuf.pdf>
 Package pdftex.def Info: assets/img/zbuf.pdf  used on input line 40.
 (pdftex.def)             Requested size: 370.34775pt x 284.52756pt.
-[21 <./assets/img/zbuf.pdf>]
+[26 <./assets/img/zbuf.pdf>]
 
 pdfTeX warning: pdflatex.exe (file ./assets/img/zalg.pdf): PDF inclusion: found
  PDF version <1.7>, but at most version <1.5> allowed
-<assets/img/zalg.pdf, id=383, 598.15468pt x 847.24525pt>
+<assets/img/zalg.pdf, id=694, 598.15468pt x 847.24525pt>
 File: assets/img/zalg.pdf Graphic file (type pdf)
 <use assets/img/zalg.pdf>
 Package pdftex.def Info: assets/img/zalg.pdf  used on input line 44.
@@ -1554,7 +1701,7 @@ Overfull \hbox (32.74783pt too wide) in paragraph at lines 44--44
 
 LaTeX Warning: Float too large for page by 8.08305pt on input line 44.
 
-[22 <./assets/img/zalg.pdf>]
+[27 <./assets/img/zalg.pdf>]
 
 LaTeX Warning: Command \CYRB invalid in math mode on input line 67.
 
@@ -1565,34 +1712,27 @@ Missing character: There is no Б in font cmr12!
 Missing character: There is no Т in font cmr12!
 
 
-pdfTeX warning: pdflatex.exe (file ./assets/img/zb.pdf): PDF inclusion: found P
-DF version <1.6>, but at most version <1.5> allowed
-<assets/img/zb.pdf, id=420, 383.09023pt x 337.74782pt>
-File: assets/img/zb.pdf Graphic file (type pdf)
-<use assets/img/zb.pdf>
-Package pdftex.def Info: assets/img/zb.pdf  used on input line 75.
-(pdftex.def)             Requested size: 258.18893pt x 227.62204pt.
-[23
-
-
-] [24 <./assets/img/zb.pdf>]
-
 pdfTeX warning: pdflatex.exe (file ./assets/img/zzalg.pdf): PDF inclusion: foun
 d PDF version <1.7>, but at most version <1.5> allowed
-<assets/img/zzalg.pdf, id=477, 598.15468pt x 847.24525pt>
+<assets/img/zzalg.pdf, id=731, 598.15468pt x 847.24525pt>
 File: assets/img/zzalg.pdf Graphic file (type pdf)
 <use assets/img/zzalg.pdf>
-Package pdftex.def Info: assets/img/zzalg.pdf  used on input line 78.
+Package pdftex.def Info: assets/img/zzalg.pdf  used on input line 75.
 (pdftex.def)             Requested size: 502.21832pt x 711.3189pt.
 
-Overfull \hbox (32.74783pt too wide) in paragraph at lines 78--78
+Overfull \hbox (32.74783pt too wide) in paragraph at lines 75--75
  [] 
  []
 
 
-LaTeX Warning: Float too large for page by 8.08305pt on input line 78.
+LaTeX Warning: Float too large for page by 8.08305pt on input line 75.
 
-[25 <./assets/img/zzalg.pdf>])
+[28
+
+
+] [29 <./assets/img/zzalg.pdf>]) [30
+
+]
 \openout2 = `51-biblio.aux'.
 
  (./51-biblio.tex (./report.bbl
@@ -1613,45 +1753,49 @@ Underfull \hbox (badness 1048) in paragraph at lines 37--45
 -ных из-де-
  []
 
-)) [26
+)) [31
 
 
 
 
-
-
-] (./report.aux (./02-intro.aux) (./10-analysis.aux) (./20-design.aux)
-(./51-biblio.aux))
+] (./report.aux (./00-title.aux) (./01-contents.aux) (./02-intro.aux)
+(./10-analysis.aux) (./20-design.aux) (./51-biblio.aux))
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-08-29>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: F67A1D1DC74ED6497A212E4151A597E6;7175.
+(rerunfilecheck)             Checksum: 19901BC81CF50369AAFD906E2A331ADD;9101.
  ) 
 Here is how much of TeX's memory you used:
- 41142 strings out of 474933
- 945480 string characters out of 5763794
- 1929801 words of memory out of 5000000
- 61865 multiletter control sequences out of 15000+600000
- 568830 words of font info for 54 fonts, out of 8000000 for 9000
+ 41303 strings out of 474933
+ 948845 string characters out of 5763794
+ 1936801 words of memory out of 5000000
+ 61971 multiletter control sequences out of 15000+600000
+ 569721 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 116i,11n,112p,1422b,724s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/tex
-live/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/ty
-pe1/public/cm-super/sfbx1440.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public
-/cm-super/sfbx1728.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/
-sfbx2074.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx2488.p
-fb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><c:/tex
-live/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb><c:/texlive/2023/
-texmf-dist/fonts/type1/public/cm-super/sfti1440.pfb><c:/texlive/2023/texmf-dist
-/fonts/type1/public/cm-super/sftt1440.pfb>
-Output written on report.pdf (26 pages, 2158090 bytes).
+ 116i,11n,112p,1475b,727s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/tex
+live/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2023
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/publi
+c/cm-super/sfbi1440.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super
+/sfbx1440.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1728.
+pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb><c:/te
+xlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb><c:/texlive/2023
+/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><c:/texlive/2023/texmf-dis
+t/fonts/type1/public/cm-super/sfrm1440.pfb><c:/texlive/2023/texmf-dist/fonts/ty
+pe1/public/cm-super/sfti1440.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public
+/cm-super/sftt1440.pfb>
+Output written on report.pdf (31 pages, 4495306 bytes).
 PDF statistics:
- 588 PDF objects out of 1000 (max. 8388607)
- 459 compressed objects within 5 object streams
- 105 named destinations out of 1000 (max. 500000)
- 284 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 879 PDF objects out of 1000 (max. 8388607)
+ 667 compressed objects within 7 object streams
+ 143 named destinations out of 1000 (max. 500000)
+ 386 words of extra memory for PDF output out of 10000 (max. 10000000)
 

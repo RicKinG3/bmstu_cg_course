@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 \def\selectlanguageifdefined#1{
 \expandafter\ifx\csname date#1\endcsname\relax
 \else\language\csname l@#1\endcsname\fi}
@@ -71,6 +71,15 @@ Gambetta~G. Computer Graphics from Scratch.
   образования.
 \newblock 2016.
 \newblock {С.}~29--30.
+
+\bibitem{lightmodf}
+\selectlanguageifdefined{russian}
+Чернявская~A.~Э. Простые модели освещения
+  3D-объектов. Особенности цифрового
+  моделирования света~// Современные
+  вопросы науки и практики.
+\newblock 2021.
+\newblock {С.}~45 -- 47.
 
 \bibitem{letion}
 \selectlanguageifdefined{russian}

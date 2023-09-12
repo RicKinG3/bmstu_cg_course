@@ -22,16 +22,17 @@
 \contentsline {subsection}{\numberline {1.4.6}Алгоритм прямой и обратной трассировки лучей}{19}{subsection.1.4.6}%
 \contentsline {subsection}{\numberline {1.4.7}Выбор алгоритма удаления скрытых линий и поверхностей}{20}{subsection.1.4.7}%
 \contentsline {section}{\numberline {1.5}Модель освещения}{21}{section.1.5}%
-\contentsline {section}{\numberline {1.6}Алгоритмы построения теней}{21}{section.1.6}%
-\contentsline {subsection}{\numberline {1.6.1}Простая модель}{21}{subsection.1.6.1}%
-\contentsline {subsection}{\numberline {1.6.2}Модификация Z-буфера}{22}{subsection.1.6.2}%
-\contentsline {subsection}{\numberline {1.6.3}Модификация Вейлера-Азертона}{23}{subsection.1.6.3}%
-\contentsline {section}{\numberline {1.7}Вывод.}{24}{section.1.7}%
-\contentsline {chapter}{\numberline {2}Конструкторская часть}{25}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Z-буферный алгоритм}{25}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Формальная запись}{25}{subsection.2.1.1}%
-\contentsline {section}{\numberline {2.2}Модифицированный Z-буферный алгоритм}{28}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Формальная запись}{28}{subsection.2.2.1}%
-\contentsline {section}{\numberline {2.3}Выбор используемых типов и структур данных}{30}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Вывод}{30}{section.2.4}%
-\contentsline {chapter}{Литература}{31}{Item.50}%
+\contentsline {subsection}{\numberline {1.5.1}Простая модель}{21}{subsection.1.5.1}%
+\contentsline {subsection}{\numberline {1.5.2}Модель Ламберта}{23}{subsection.1.5.2}%
+\contentsline {section}{\numberline {1.6}Алгоритмы построения теней}{23}{section.1.6}%
+\contentsline {subsection}{\numberline {1.6.1}Модификация Z-буфера}{23}{subsection.1.6.1}%
+\contentsline {subsection}{\numberline {1.6.2}Модификация Вейлера-Азертона}{24}{subsection.1.6.2}%
+\contentsline {section}{\numberline {1.7}Вывод}{25}{section.1.7}%
+\contentsline {chapter}{\numberline {2}Конструкторская часть}{26}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Z-буферный алгоритм}{26}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Формальная запись}{26}{subsection.2.1.1}%
+\contentsline {section}{\numberline {2.2}Модифицированный Z-буферный алгоритм}{29}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Формальная запись}{29}{subsection.2.2.1}%
+\contentsline {section}{\numberline {2.3}Выбор используемых типов и структур данных}{31}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Вывод}{31}{section.2.4}%
+\contentsline {chapter}{Литература}{32}{Item.50}%

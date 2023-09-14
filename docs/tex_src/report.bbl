@@ -72,6 +72,14 @@ Gambetta~G. Computer Graphics from Scratch.
 \newblock 2016.
 \newblock {С.}~29--30.
 
+\bibitem{lightmodfv}
+\selectlanguageifdefined{russian}
+Задорожный~А.Г. Модели освещения и
+  алгоритмы затенения в компьютерной
+  графике.
+\newblock 2020.
+\newblock {С.}~27--35.
+
 \bibitem{lightmodf}
 \selectlanguageifdefined{russian}
 Чернявская~A.~Э. Простые модели освещения

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.9)  14 SEP 2023 01:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.9)  14 SEP 2023 14:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1242,7 +1242,7 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \@thisrulewidth=\dimen333
 ) (./report.aux
 (./00-title.aux) (./tz.aux) (./01-contents.aux) (./02-intro.aux)
-(./10-analysis.aux) (./20-design.aux) (./51-biblio.aux))
+(./10-analysis.aux) (./20-design.aux) (./50-conclusion.aux) (./51-biblio.aux))
 \openout1 = `report.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 4.
@@ -1353,7 +1353,7 @@ Package hyperref Info: Link coloring OFF on input line 4.
 \openout2 = `00-title.aux'.
 
  (./00-title.tex
-<./assets/img/bmstu_logo.jpg, id=160, 155.6214pt x 178.7478pt>
+<./assets/img/bmstu_logo.jpg, id=163, 155.6214pt x 178.7478pt>
 File: ./assets/img/bmstu_logo.jpg Graphic file (type jpg)
 <use ./assets/img/bmstu_logo.jpg>
 Package pdftex.def Info: ./assets/img/bmstu_logo.jpg  used on input line 27.
@@ -1438,7 +1438,7 @@ l.10 \include{tz}
 
 pdfTeX warning: pdflatex.exe (file ./assets/img/mod1.pdf): PDF inclusion: found
  PDF version <1.6>, but at most version <1.5> allowed
-<assets/img/mod1.pdf, id=253, 412.54124pt x 427.5975pt>
+<assets/img/mod1.pdf, id=257, 412.54124pt x 427.5975pt>
 File: assets/img/mod1.pdf Graphic file (type pdf)
 <use assets/img/mod1.pdf>
 Package pdftex.def Info: assets/img/mod1.pdf  used on input line 25.
@@ -1447,7 +1447,7 @@ Package pdftex.def Info: assets/img/mod1.pdf  used on input line 25.
 
 pdfTeX warning: pdflatex.exe (file ./assets/img/mod2.pdf): PDF inclusion: found
  PDF version <1.6>, but at most version <1.5> allowed
-<assets/img/mod2.pdf, id=257, 243.07814pt x 219.22pt>
+<assets/img/mod2.pdf, id=261, 243.07814pt x 219.22pt>
 File: assets/img/mod2.pdf Graphic file (type pdf)
 <use assets/img/mod2.pdf>
 Package pdftex.def Info: assets/img/mod2.pdf  used on input line 35.
@@ -1456,7 +1456,7 @@ Package pdftex.def Info: assets/img/mod2.pdf  used on input line 35.
 
 pdfTeX warning: pdflatex.exe (file ./assets/img/mod3.pdf): PDF inclusion: found
  PDF version <1.6>, but at most version <1.5> allowed
-<assets/img/mod3.pdf, id=330, 295.10149pt x 297.64pt>
+<assets/img/mod3.pdf, id=334, 295.10149pt x 297.64pt>
 File: assets/img/mod3.pdf Graphic file (type pdf)
 <use assets/img/mod3.pdf>
 Package pdftex.def Info: assets/img/mod3.pdf  used on input line 87.
@@ -1477,7 +1477,7 @@ r/m/n/14.4 : ис-поль-зуя гра-
 
 pdfTeX warning: pdflatex.exe (file ./assets/img/vf.pdf): PDF inclusion: found P
 DF version <1.6>, but at most version <1.5> allowed
-<assets/img/vf.pdf, id=357, 410.68231pt x 146.95001pt>
+<assets/img/vf.pdf, id=361, 410.68231pt x 146.95001pt>
 File: assets/img/vf.pdf Graphic file (type pdf)
 <use assets/img/vf.pdf>
 Package pdftex.def Info: assets/img/vf.pdf  used on input line 113.
@@ -1486,7 +1486,7 @@ Package pdftex.def Info: assets/img/vf.pdf  used on input line 113.
 
 pdfTeX warning: pdflatex.exe (file ./assets/img/vf1.pdf): PDF inclusion: found 
 PDF version <1.6>, but at most version <1.5> allowed
-<assets/img/vf1.pdf, id=359, 426.13402pt x 146.95001pt>
+<assets/img/vf1.pdf, id=363, 426.13402pt x 146.95001pt>
 File: assets/img/vf1.pdf Graphic file (type pdf)
 <use assets/img/vf1.pdf>
 Package pdftex.def Info: assets/img/vf1.pdf  used on input line 117.
@@ -1495,7 +1495,7 @@ Package pdftex.def Info: assets/img/vf1.pdf  used on input line 117.
 
 pdfTeX warning: pdflatex.exe (file ./assets/img/vf2.pdf): PDF inclusion: found 
 PDF version <1.6>, but at most version <1.5> allowed
-<assets/img/vf2.pdf, id=417, 455.44553pt x 187.35597pt>
+<assets/img/vf2.pdf, id=421, 455.44553pt x 187.35597pt>
 File: assets/img/vf2.pdf Graphic file (type pdf)
 <use assets/img/vf2.pdf>
 Package pdftex.def Info: assets/img/vf2.pdf  used on input line 136.
@@ -1522,7 +1522,7 @@ Overfull \hbox (1.92422pt too wide) in paragraph at lines 182--183
 
 pdfTeX warning: pdflatex.exe (file ./assets/img/exz.pdf): PDF inclusion: found 
 PDF version <1.6>, but at most version <1.5> allowed
-<assets/img/exz.pdf, id=486, 968.08372pt x 436.03pt>
+<assets/img/exz.pdf, id=490, 968.08372pt x 436.03pt>
 File: assets/img/exz.pdf Graphic file (type pdf)
 <use assets/img/exz.pdf>
 Package pdftex.def Info: assets/img/exz.pdf  used on input line 240.
@@ -1638,19 +1638,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 322--322
 
 pdfTeX warning: pdflatex.exe (file ./assets/img/lightback.pdf): PDF inclusion: 
 found PDF version <1.6>, but at most version <1.5> allowed
-<assets/img/lightback.pdf, id=536, 371.30118pt x 288.41452pt>
+<assets/img/lightback.pdf, id=540, 371.30118pt x 288.41452pt>
 File: assets/img/lightback.pdf Graphic file (type pdf)
 <use assets/img/lightback.pdf>
 Package pdftex.def Info: assets/img/lightback.pdf  used on input line 326.
 (pdftex.def)             Requested size: 256.41338pt x 199.16928pt.
 
-LaTeX Warning: Citation `lightmod' on page 18 undefined on input line 334.
+LaTeX Warning: Citation `lightmodfv' on page 18 undefined on input line 334.
 
 [18]
 
 pdfTeX warning: pdflatex.exe (file ./assets/img/light.pdf): PDF inclusion: foun
 d PDF version <1.6>, but at most version <1.5> allowed
-<assets/img/light.pdf, id=544, 837.55408pt x 184.87871pt>
+<assets/img/light.pdf, id=548, 837.55408pt x 184.87871pt>
 File: assets/img/light.pdf Graphic file (type pdf)
 <use assets/img/light.pdf>
 Package pdftex.def Info: assets/img/light.pdf  used on input line 341.
@@ -1685,7 +1685,7 @@ You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-LaTeX Warning: Citation `lightmod' on page 20 undefined on input line 399.
+LaTeX Warning: Citation `lightmodfv' on page 20 undefined on input line 399.
 
 
 ! LaTeX Error: Unicode character вЂ‹ (U+200B)
@@ -1733,19 +1733,19 @@ You may provide a definition with
 
 pdfTeX warning: pdflatex.exe (file ./assets/img/lamber.pdf): PDF inclusion: fou
 nd PDF version <1.6>, but at most version <1.5> allowed
-<assets/img/lamber.pdf, id=607, 185.75699pt x 193.20781pt>
+<assets/img/lamber.pdf, id=611, 185.75699pt x 193.20781pt>
 File: assets/img/lamber.pdf Graphic file (type pdf)
 <use assets/img/lamber.pdf>
 Package pdftex.def Info: assets/img/lamber.pdf  used on input line 414.
 (pdftex.def)             Requested size: 136.77774pt x 142.26378pt.
 
-LaTeX Warning: Citation `lightmod' on page 20 undefined on input line 421.
+LaTeX Warning: Citation `lightmodfv' on page 20 undefined on input line 421.
 
 [20]
 
 pdfTeX warning: pdflatex.exe (file ./assets/img/lamber1.pdf): PDF inclusion: fo
 und PDF version <1.6>, but at most version <1.5> allowed
-<assets/img/lamber1.pdf, id=616, 276.64955pt x 193.20781pt>
+<assets/img/lamber1.pdf, id=621, 276.64955pt x 193.20781pt>
 File: assets/img/lamber1.pdf Graphic file (type pdf)
 <use assets/img/lamber1.pdf>
 Package pdftex.def Info: assets/img/lamber1.pdf  used on input line 423.
@@ -2005,53 +2005,59 @@ Things are pretty mixed up, but I think the worst is over.
 
 pdfTeX warning: pdflatex.exe (file ./assets/img/zb.pdf): PDF inclusion: found P
 DF version <1.6>, but at most version <1.5> allowed
-<assets/img/zb.pdf, id=672, 383.09023pt x 337.74782pt>
+<assets/img/zb.pdf, id=676, 383.09023pt x 337.74782pt>
 File: assets/img/zb.pdf Graphic file (type pdf)
 <use assets/img/zb.pdf>
 Package pdftex.def Info: assets/img/zb.pdf  used on input line 462.
 (pdftex.def)             Requested size: 258.18893pt x 227.62204pt.
-) [23 <./assets/img/zb.pdf>]
+)
+Overfull \hbox (2.64047pt too wide) in paragraph at lines 469--20
+\T2A/cmr/m/n/14.4 верх-ност-ных мо-де-лей, ме-то-да по-ли-го-наль-ных се-ток в 
+ка-че-стве спо-со-ба пред-
+ []
+
+[23 <./assets/img/zb.pdf>]
 \openout2 = `20-design.aux'.
 
  (./20-design.tex
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 2.
-
-
-pdfTeX warning: pdflatex.exe (file ./assets/img/zbuf.pdf): PDF inclusion: found
- PDF version <1.6>, but at most version <1.5> allowed
-<assets/img/zbuf.pdf, id=715, 522.16277pt x 401.1758pt>
-File: assets/img/zbuf.pdf Graphic file (type pdf)
-<use assets/img/zbuf.pdf>
-Package pdftex.def Info: assets/img/zbuf.pdf  used on input line 40.
-(pdftex.def)             Requested size: 370.34775pt x 284.52756pt.
 [24
 
 
 
 
-] [25 <./assets/img/zbuf.pdf>]
+]
+
+pdfTeX warning: pdflatex.exe (file ./assets/img/zbuf.pdf): PDF inclusion: found
+ PDF version <1.6>, but at most version <1.5> allowed
+<assets/img/zbuf.pdf, id=730, 522.16277pt x 401.1758pt>
+File: assets/img/zbuf.pdf Graphic file (type pdf)
+<use assets/img/zbuf.pdf>
+Package pdftex.def Info: assets/img/zbuf.pdf  used on input line 42.
+(pdftex.def)             Requested size: 370.34775pt x 284.52756pt.
+[25 <./assets/img/zbuf.pdf>]
 
 pdfTeX warning: pdflatex.exe (file ./assets/img/zalg.pdf): PDF inclusion: found
  PDF version <1.7>, but at most version <1.5> allowed
-<assets/img/zalg.pdf, id=757, 598.15468pt x 847.24525pt>
+<assets/img/zalg.pdf, id=761, 598.15468pt x 847.24525pt>
 File: assets/img/zalg.pdf Graphic file (type pdf)
 <use assets/img/zalg.pdf>
-Package pdftex.def Info: assets/img/zalg.pdf  used on input line 44.
+Package pdftex.def Info: assets/img/zalg.pdf  used on input line 46.
 (pdftex.def)             Requested size: 502.21832pt x 711.3189pt.
 
-Overfull \hbox (32.74783pt too wide) in paragraph at lines 44--44
+Overfull \hbox (32.74783pt too wide) in paragraph at lines 46--46
  [] 
  []
 
 
-LaTeX Warning: Float too large for page by 8.08305pt on input line 44.
+LaTeX Warning: Float too large for page by 8.08305pt on input line 46.
 
 [26 <./assets/img/zalg.pdf>]
 
-LaTeX Warning: Command \CYRB invalid in math mode on input line 67.
+LaTeX Warning: Command \CYRB invalid in math mode on input line 69.
 
 
-LaTeX Warning: Command \CYRT invalid in math mode on input line 67.
+LaTeX Warning: Command \CYRT invalid in math mode on input line 69.
 
 Missing character: There is no Б in font cmr12!
 Missing character: There is no Т in font cmr12!
@@ -2059,18 +2065,18 @@ Missing character: There is no Т in font cmr12!
 
 pdfTeX warning: pdflatex.exe (file ./assets/img/zzalg.pdf): PDF inclusion: foun
 d PDF version <1.7>, but at most version <1.5> allowed
-<assets/img/zzalg.pdf, id=795, 598.15468pt x 847.24525pt>
+<assets/img/zzalg.pdf, id=799, 598.15468pt x 847.24525pt>
 File: assets/img/zzalg.pdf Graphic file (type pdf)
 <use assets/img/zzalg.pdf>
-Package pdftex.def Info: assets/img/zzalg.pdf  used on input line 75.
+Package pdftex.def Info: assets/img/zzalg.pdf  used on input line 77.
 (pdftex.def)             Requested size: 502.21832pt x 711.3189pt.
 
-Overfull \hbox (32.74783pt too wide) in paragraph at lines 75--75
+Overfull \hbox (32.74783pt too wide) in paragraph at lines 77--77
  [] 
  []
 
 
-LaTeX Warning: Float too large for page by 8.08305pt on input line 75.
+LaTeX Warning: Float too large for page by 8.08305pt on input line 77.
 
 [27
 
@@ -2078,22 +2084,31 @@ LaTeX Warning: Float too large for page by 8.08305pt on input line 75.
 ] [28 <./assets/img/zzalg.pdf>]) [29
 
 ]
+\openout2 = `50-conclusion.aux'.
+
+ (./50-conclusion.tex) [30
+
+
+
+
+]
 \openout2 = `51-biblio.aux'.
 
- (./51-biblio.tex (./report.bbl
+
+(./51-biblio.tex (./report.bbl
 LaTeX Font Info:    Trying to load font information for T2A+cmtt on input line 
 31.
 
 (c:/texlive/2023/texmf-dist/tex/latex/cyrillic/t2acmtt.fd
 File: t2acmtt.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
-))) [30
+))) [31
 
 
 
 
 ] (./report.aux (./00-title.aux) (./tz.aux) (./01-contents.aux) (./02-intro.aux
 )
-(./10-analysis.aux) (./20-design.aux) (./51-biblio.aux))
+(./10-analysis.aux) (./20-design.aux) (./50-conclusion.aux) (./51-biblio.aux))
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-08-29>
@@ -2107,13 +2122,13 @@ LaTeX Font Warning: Size substitutions with differences
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 1F648D87DBEB31491D6CA70F1C6A2639;9436.
+(rerunfilecheck)             Checksum: 065D848EEDA23BD78CFB5FDF2B9108D9;9566.
  ) 
 Here is how much of TeX's memory you used:
- 41481 strings out of 474933
- 952194 string characters out of 5763794
+ 41508 strings out of 474933
+ 952913 string characters out of 5763794
  1935801 words of memory out of 5000000
- 62089 multiletter control sequences out of 15000+600000
+ 62107 multiletter control sequences out of 15000+600000
  579094 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  116i,11n,112p,1475b,723s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2134,10 +2149,10 @@ sfrm1200.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1440.p
 fb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb><c:/tex
 live/2023/texmf-dist/fonts/type1/public/cm-super/sfti1440.pfb><c:/texlive/2023/
 texmf-dist/fonts/type1/public/cm-super/sftt1440.pfb>
-Output written on report.pdf (31 pages, 5621731 bytes).
+Output written on report.pdf (32 pages, 5623971 bytes).
 PDF statistics:
- 959 PDF objects out of 1000 (max. 8388607)
- 721 compressed objects within 8 object streams
- 148 named destinations out of 1000 (max. 500000)
- 417 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 968 PDF objects out of 1000 (max. 8388607)
+ 729 compressed objects within 8 object streams
+ 150 named destinations out of 1000 (max. 500000)
+ 425 words of extra memory for PDF output out of 10000 (max. 10000000)
 

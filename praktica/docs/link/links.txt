@@ -1,0 +1,9 @@
+1 - https://www.sciencedirect.com/science/article/abs/pii/S0169204615000535
+
+2 - https://elibrary.ru/item.asp?id=44814107
+3 - http://www.opengl-tutorial.org/intermediate-tutorials/tutorial-16-shadow-mapping/#spot-lights
+4- https://www.ixbt.com/video/realtimeshadows.shtml
+
+
+\/*////
+Пример определения тени, алгоритмом модификации Z-буфера.} 

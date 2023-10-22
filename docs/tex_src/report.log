@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.7.16)  23 JUL 2023 23:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.7.16)  24 JUL 2023 00:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -37,10 +37,16 @@ LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 LaTeX Warning: \include should only be used after \begin{document} on input lin
 e 3.
 
-(./preamble.inc.tex (/usr/share/texlive/texmf-dist/tex/latex/cmap/cmap.sty
-Package: cmap 2021/02/06 v1.0j CMap support: searchable PDF
+(./preamble.inc.tex (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 )
-(/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/cmap/cmap.sty
+Package: cmap 2021/02/06 v1.0j CMap support: searchable PDF
+
+
+Package cmap Warning: fontenc already loaded - some fonts may be unprocessed.
+
+) (/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
 Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
 
 (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
@@ -313,41 +319,6 @@ Package babel Info: Importing font and identification data for russian
 (/usr/share/texlive/texmf-dist/tex/generic/babel/locale/en/babel-english.tex
 Package babel Info: Importing font and identification data for english
 (babel)             from babel-en.ini. Reported on input line 11.
-)
-(/usr/share/texmf/tex/latex/lm/lmodern.sty
-Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
-LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
-LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
-(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 23.
-LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
-(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 24.
-LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
-(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 25.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.
-LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
-(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 27.
-LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
-(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 28.
-LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
-(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 29.
-LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 31.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 33.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
-LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 35.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2022/04/08 v2.17n AMS math features
@@ -1150,17 +1121,8 @@ Package shellesc Info: Restricted shell escape enabled on input line 77.
 \c@csvrow=\count335
 \c@csvcol=\count336
 \csv@out=\write4
-)
-LaTeX Font Info:    Trying to load font information for T2A+lmr on input line 5
-.
-LaTeX Font Info:    No file T2Almr.fd. on input line 5.
-
-
-LaTeX Font Warning: Font shape `T2A/lmr/m/n' undefined
-(Font)              using `T2A/cmr/m/n' instead on input line 5.
-
-(./report.aux (./01-contents.aux) (./02-intro.aux) (./10-analysis.aux)
-(./51-biblio.aux))
+) (./report.aux
+(./01-contents.aux) (./02-intro.aux) (./10-analysis.aux) (./51-biblio.aux))
 \openout1 = `report.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
@@ -1258,43 +1220,8 @@ Package hyperref Info: Link coloring OFF on input line 5.
 
 \openout2 = `01-contents.aux'.
 
- (./01-contents.tex
-
-LaTeX Font Warning: Font shape `T2A/lmr/bx/n' undefined
-(Font)              using `T2A/lmr/m/n' instead on input line 1.
-
-(./report.toc
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
-.
- (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
-File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)<<ot1.cmap>>
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 4
-.
-
-(/usr/share/texmf/tex/latex/lm/omllmm.fd
-File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)<<oml.cmap>>
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-4.
-
-(/usr/share/texmf/tex/latex/lm/omslmsy.fd
-File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)<<oms.cmap>>
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-4.
-
-(/usr/share/texmf/tex/latex/lm/omxlmex.fd
-File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 4.
-<<omx.cmap>>
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 4.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 4.
-)
+ (./01-contents.tex (./report.toc<<ot1.cmap>><<oml.cmap>><<oms.cmap>><<omx.cmap
+>>)
 \tf@toc=\write6
 \openout6 = `report.toc'.
 
@@ -1305,13 +1232,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 \openout2 = `02-intro.aux'.
 
- (./02-intro.tex
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-1.
-
-(/usr/share/texmf/tex/latex/lm/ts1lmr.fd
-File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)) [2
+ (./02-intro.tex) [2
 
 
 
@@ -1326,95 +1247,106 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 
 
 
-] [4] [5] [6] [7]
+] [4] [5] [6]
+Overfull \hbox (12.86066pt too wide) in paragraph at lines 86--87
+[]\T2A/cmr/bx/n/14.4 Наиболее рас-про-стра-нен-ные ме-то-ды пред-став-ле-ния по
+-ли-го-наль-
+ []
+
+[7]
 Overfull \hbox (18.48416pt too wide) in paragraph at lines 131--132
-[]\T2A/lmr/bx/n/14.4 Высокие тре-бо-ва-ния к па-мя-ти: Уве-ли-чи-ва-ю-ща-я-ся с
-лож-ность струк-
+[]\T2A/cmr/m/n/14.4 Высокие тре-бо-ва-ния к па-мя-ти: Уве-ли-чи-ва-ю-ща-я-ся сл
+ож-ность струк-
  []
 
 [8]
 Overfull \hbox (1.54323pt too wide) in paragraph at lines 153--154
-[]\T2A/lmr/bx/n/14.4 <<Стандартный>> дом: од-но-этаж-ное зда-ние, за-ни-ма-ю-ще
-е три квад-
+[]\T2A/cmr/m/n/14.4 <<Стандартный>> дом: од-но-этаж-ное зда-ние, за-ни-ма-ю-щее
+ три квад-
  []
 
 
 Overfull \hbox (5.73558pt too wide) in paragraph at lines 158--159
-[]\T2A/lmr/bx/n/14.4 Стены: фор-ми-ру-ют-ся вер-ти-каль-ны-ми плос-ко-стя-ми, б
-е-же-во-го цве-
+[]\T2A/cmr/m/n/14.4 Стены: фор-ми-ру-ют-ся вер-ти-каль-ны-ми плос-ко-стя-ми, бе
+-же-во-го цве-
  []
 
-[9] [10]
-Overfull \hbox (4.72252pt too wide) in paragraph at lines 189--189
- |[]\T2A/lmr/bx/n/20.74 Алгоритмы уда-ле-ния скры-тых ли-ний и по-верх-
- []
-
-[11]
+[9] [10] [11]
 Overfull \hbox (2.66177pt too wide) in paragraph at lines 205--206
-\T2A/lmr/bx/n/14.4 ди-мо-сти уда-ля-ют-ся нели-це-вые плос-ко-сти. За-тем про-и
-с-хо-дит срав-не-ние каж-
+\T2A/cmr/m/n/14.4 ди-мо-сти уда-ля-ют-ся нели-це-вые плос-ко-сти. За-тем про-ис
+-хо-дит срав-не-ние каж-
  []
 
-[12] [13]
+[12]
+Overfull \hbox (4.08449pt too wide) in paragraph at lines 230--230
+ |[]\T2A/cmr/bx/n/17.28 Алгоритм, ис-поль-зу-ю-щий спи-сок при-о-ри-те-тов.| 
+ []
 
-LaTeX Font Warning: Font shape `T2A/lmr/m/it' undefined
-(Font)              using `T2A/lmr/m/n' instead on input line 236.
-
-
-Overfull \hbox (6.31685pt too wide) in paragraph at lines 236--237
-[]\T2A/lmr/bx/n/14.4 Масштабируемость: Вре-мен-ная слож-ность ал-го-рит-ма ху-д
-ож-ни-ка силь-
+[13]
+Overfull \hbox (16.2613pt too wide) in paragraph at lines 236--237
+[]\T2A/cmr/m/it/14.4 Масштабируемость\T2A/cmr/m/n/14.4 : Вре-мен-ная слож-ность
+ ал-го-рит-ма ху-дож-ни-ка силь-
  []
 
 
 Overfull \hbox (8.75896pt too wide) in paragraph at lines 243--244
-[]\T2A/lmr/m/it/14.4 Алгоритм Вар-но-ка ис-поль-зу-ет прин-цип ко-ге-рент-но-ст
-и, по ко-то-ро-му боль-
+[]\T2A/cmr/m/n/14.4 Алгоритм Вар-но-ка ис-поль-зу-ет прин-цип ко-ге-рент-но-сти
+, по ко-то-ро-му боль-
  []
 
 [14]
 Underfull \hbox (badness 10000) in paragraph at lines 284--284
-[]|\T2A/lmr/m/it/14.4 Обратная
+[]|\T2A/cmr/bx/n/14.4 Обратная
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 284--284
-\T2A/lmr/m/it/14.4 трас-си-ров-ка
+\T2A/cmr/bx/n/14.4 трас-си-ров-
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 284--284
-[]|\T2A/lmr/m/it/14.4 Вычисл.
- []
-
-
-Underfull \hbox (badness 3646) in paragraph at lines 284--284
-\T2A/lmr/m/it/14.4 N ^^U кол-во
- []
-
-
-Underfull \hbox (badness 3930) in paragraph at lines 284--284
-\T2A/lmr/m/it/14.4 C ^^U кол-во
- []
-
-
-Overfull \hbox (1.97556pt too wide) in paragraph at lines 284--284
-[]|\T2A/lmr/m/it/14.4 Изображение| 
- []
-
-
-Overfull \hbox (1.97556pt too wide) in paragraph at lines 284--284
-[]|\T2A/lmr/m/it/14.4 Изображение| 
- []
-
-
-Overfull \hbox (1.97556pt too wide) in paragraph at lines 284--284
-[]|\T2A/lmr/m/it/14.4 Изображение| 
+[]|\T2A/cmr/bx/n/14.4 Вычисл.
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 284--284
-[]|\T2A/lmr/m/it/14.4 Производит.
+[]|\T2A/cmr/bx/n/14.4 Рабочее
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 284--284
+\T2A/cmr/bx/n/14.4 про-стран-
+ []
+
+
+Overfull \hbox (1.97556pt too wide) in paragraph at lines 284--284
+[]|\T2A/cmr/m/n/14.4 Изображение| 
+ []
+
+
+Overfull \hbox (1.97556pt too wide) in paragraph at lines 284--284
+[]|\T2A/cmr/m/n/14.4 Изображение| 
+ []
+
+
+Overfull \hbox (1.97556pt too wide) in paragraph at lines 284--284
+[]|\T2A/cmr/m/n/14.4 Изображение| 
+ []
+
+
+Overfull \hbox (1.44843pt too wide) in paragraph at lines 284--284
+\T2A/cmr/bx/n/14.4 реализации| 
+ []
+
+
+Overfull \hbox (7.09703pt too wide) in paragraph at lines 284--284
+[]|\T2A/cmr/bx/n/14.4 Производит.
+ []
+
+
+Underfull \hbox (badness 2726) in paragraph at lines 284--284
+\T2A/cmr/bx/n/14.4 при слож-
  []
 
 
@@ -1422,32 +1354,29 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [15]
 Overfull \hbox (0.7687pt too wide) in paragraph at lines 296--297
-[]\T2A/lmr/m/it/14.4 Учјт те-ней в ал-го-рит-мах уда-ле-ния неви-ди-мых по-верх
--но-стей мо-жет быть
+[]\T2A/cmr/m/n/14.4 Учјт те-ней в ал-го-рит-мах уда-ле-ния неви-ди-мых по-верх-
+но-стей мо-жет быть
  []
 
 [16]) [17] [18]
 \openout2 = `51-biblio.aux'.
 
  (./51-biblio.tex (./report.bbl
-LaTeX Font Info:    Trying to load font information for T2A+lmtt on input line 
+LaTeX Font Info:    Trying to load font information for T2A+cmtt on input line 
 31.
-LaTeX Font Info:    No file T2Almtt.fd. on input line 31.
 
-
-LaTeX Font Warning: Font shape `T2A/lmtt/m/n' undefined
-(Font)              using `T2A/cmr/m/n' instead on input line 31.
-
-
-Underfull \hbox (badness 6412) in paragraph at lines 27--34
-\T2A/lmr/m/it/14.4 700-[]19 _ %20sb . pdf ? sequence = 1 & isAllowed = y # page
- = 17$[] (да-та об-ра-ще-
+(/usr/share/texlive/texmf-dist/tex/latex/cyrillic/t2acmtt.fd
+File: t2acmtt.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
+)
+Underfull \hbox (badness 5147) in paragraph at lines 27--34
+\T2A/cmr/m/n/14.4 па: []$\T2A/cmtt/m/n/14.4 https : / / dspace . lgpu . org / x
+mlui / bitstream / handle / 123456789 /
  []
 
 
 Underfull \hbox (badness 1048) in paragraph at lines 37--45
-\T2A/lmr/m/it/14.4 ния трех-мер-ных мо-де-лей для про-то-ти-пи-ро-ва-ния юве-ли
-р-ных из-де-
+\T2A/cmr/m/n/14.4 ния трех-мер-ных мо-де-лей для про-то-ти-пи-ро-ва-ния юве-лир
+-ных из-де-
  []
 
 )) [19
@@ -1457,33 +1386,32 @@ Underfull \hbox (badness 1048) in paragraph at lines 37--45
 
 ] (./report.aux (./01-contents.aux) (./02-intro.aux) (./10-analysis.aux)
 (./51-biblio.aux))
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
 Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: 56BBCB490B7C8EECCAF4E5D2C56F4ACD;6024.
  ) 
 Here is how much of TeX's memory you used:
- 38356 strings out of 477484
- 899326 string characters out of 5831474
+ 38229 strings out of 477484
+ 896722 string characters out of 5831474
  1863330 words of memory out of 5000000
- 57751 multiletter control sequences out of 15000+600000
- 527225 words of font info for 48 fonts, out of 8000000 for 9000
+ 57642 multiletter control sequences out of 15000+600000
+ 522448 words of font info for 49 fonts, out of 8000000 for 9000
  452 hyphenation exceptions out of 8191
  106i,11n,99p,7908b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dv
-ips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc} </home
-/max/.texlive2022/texmf-var/fonts/pk/ljfour/lh/lh-t2a/larm1728.600pk> </home/ma
-x/.texlive2022/texmf-var/fonts/pk/ljfour/lh/lh-t2a/larm2074.600pk>{/usr/share/t
-exmf/fonts/enc/dvips/lm/lm-ts1.enc} </home/max/.texlive2022/texmf-var/fonts/pk/
-ljfour/lh/lh-t2a/larm1440.600pk> </home/max/.texlive2022/texmf-var/fonts/pk/ljf
-our/lh/lh-t2a/larm2488.600pk></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb
-></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type
-1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb>
-Output written on report.pdf (19 pages, 170252 bytes).
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t2a.enc}{/usr/share/texmf
+/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></u
+sr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf/fonts
+/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf/fonts/type1/public/cm-sup
+er/sfbx2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1440.pfb></us
+r/share/texmf/fonts/type1/public/cm-super/sfti1440.pfb></usr/share/texmf/fonts/
+type1/public/cm-super/sftt1440.pfb>
+Output written on report.pdf (19 pages, 226743 bytes).
 PDF statistics:
- 576 PDF objects out of 1000 (max. 8388607)
- 303 compressed objects within 4 object streams
+ 349 PDF objects out of 1000 (max. 8388607)
+ 306 compressed objects within 4 object streams
  76 named destinations out of 1000 (max. 500000)
  209 words of extra memory for PDF output out of 10000 (max. 10000000)
 

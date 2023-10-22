@@ -5,7 +5,12 @@ all: RPZ
 TZ:
 	soffice --headless --convert-to pdf word_src/TZ_Perestoronin.doc
 	mv TZ_Perestoronin.pdf pdfs
-
+report:
+	soffice --headless --convert-to pdf word_src/TZ.docx
+	cd tex_src/ && make -f Makefile_tex
+	pdfunite TZ.pdf tex_src/report.pdf report.pdf
+	rm TZ.pdf
+	mv report.pdf pdfs
 RPZ:
 	soffice --headless --convert-to pdf word_src/RPZ_title.doc
 	cd tex_src/ && make -f Makefile_tex

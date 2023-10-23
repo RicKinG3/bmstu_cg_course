@@ -80,7 +80,7 @@
                   </widget>
                  </item>
                  <item row="2" column="0">
-                  <widget class="QSpinBox" name="spinBox"/>
+                  <widget class="QSpinBox" name="x_set_obj"/>
                  </item>
                 </layout>
                </widget>
@@ -93,7 +93,7 @@
                </widget>
               </item>
               <item row="0" column="0" colspan="2">
-               <widget class="QComboBox" name="comboBox">
+               <widget class="QComboBox" name="chose_obj">
                 <property name="whatsThis">
                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Выберите один из объектов сцены для его размещения на  сцене&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
@@ -241,6 +241,14 @@
           </layout>
          </widget>
          <widget class="QWidget" name="page_9">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>324</width>
+            <height>418</height>
+           </rect>
+          </property>
           <attribute name="label">
            <string>Измение Сцены</string>
           </attribute>

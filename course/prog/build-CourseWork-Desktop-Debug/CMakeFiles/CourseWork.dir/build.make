@@ -111,11 +111,41 @@ CMakeFiles/CourseWork.dir/mainwindow.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CourseWork.dir/mainwindow.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/mainwindow.cpp -o CMakeFiles/CourseWork.dir/mainwindow.cpp.s
 
+CMakeFiles/CourseWork.dir/facade/Facade.cpp.o: CMakeFiles/CourseWork.dir/flags.make
+CMakeFiles/CourseWork.dir/facade/Facade.cpp.o: /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/facade/Facade.cpp
+CMakeFiles/CourseWork.dir/facade/Facade.cpp.o: CMakeFiles/CourseWork.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/build-CourseWork-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/CourseWork.dir/facade/Facade.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CourseWork.dir/facade/Facade.cpp.o -MF CMakeFiles/CourseWork.dir/facade/Facade.cpp.o.d -o CMakeFiles/CourseWork.dir/facade/Facade.cpp.o -c /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/facade/Facade.cpp
+
+CMakeFiles/CourseWork.dir/facade/Facade.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CourseWork.dir/facade/Facade.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/facade/Facade.cpp > CMakeFiles/CourseWork.dir/facade/Facade.cpp.i
+
+CMakeFiles/CourseWork.dir/facade/Facade.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CourseWork.dir/facade/Facade.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/facade/Facade.cpp -o CMakeFiles/CourseWork.dir/facade/Facade.cpp.s
+
+CMakeFiles/CourseWork.dir/drawer/AbstractDrawerFactory.cpp.o: CMakeFiles/CourseWork.dir/flags.make
+CMakeFiles/CourseWork.dir/drawer/AbstractDrawerFactory.cpp.o: /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/drawer/AbstractDrawerFactory.cpp
+CMakeFiles/CourseWork.dir/drawer/AbstractDrawerFactory.cpp.o: CMakeFiles/CourseWork.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/build-CourseWork-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/CourseWork.dir/drawer/AbstractDrawerFactory.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CourseWork.dir/drawer/AbstractDrawerFactory.cpp.o -MF CMakeFiles/CourseWork.dir/drawer/AbstractDrawerFactory.cpp.o.d -o CMakeFiles/CourseWork.dir/drawer/AbstractDrawerFactory.cpp.o -c /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/drawer/AbstractDrawerFactory.cpp
+
+CMakeFiles/CourseWork.dir/drawer/AbstractDrawerFactory.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CourseWork.dir/drawer/AbstractDrawerFactory.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/drawer/AbstractDrawerFactory.cpp > CMakeFiles/CourseWork.dir/drawer/AbstractDrawerFactory.cpp.i
+
+CMakeFiles/CourseWork.dir/drawer/AbstractDrawerFactory.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CourseWork.dir/drawer/AbstractDrawerFactory.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/drawer/AbstractDrawerFactory.cpp -o CMakeFiles/CourseWork.dir/drawer/AbstractDrawerFactory.cpp.s
+
 # Object files for target CourseWork
 CourseWork_OBJECTS = \
 "CMakeFiles/CourseWork.dir/CourseWork_autogen/mocs_compilation.cpp.o" \
 "CMakeFiles/CourseWork.dir/main.cpp.o" \
-"CMakeFiles/CourseWork.dir/mainwindow.cpp.o"
+"CMakeFiles/CourseWork.dir/mainwindow.cpp.o" \
+"CMakeFiles/CourseWork.dir/facade/Facade.cpp.o" \
+"CMakeFiles/CourseWork.dir/drawer/AbstractDrawerFactory.cpp.o"
 
 # External object files for target CourseWork
 CourseWork_EXTERNAL_OBJECTS =
@@ -123,12 +153,14 @@ CourseWork_EXTERNAL_OBJECTS =
 CourseWork: CMakeFiles/CourseWork.dir/CourseWork_autogen/mocs_compilation.cpp.o
 CourseWork: CMakeFiles/CourseWork.dir/main.cpp.o
 CourseWork: CMakeFiles/CourseWork.dir/mainwindow.cpp.o
+CourseWork: CMakeFiles/CourseWork.dir/facade/Facade.cpp.o
+CourseWork: CMakeFiles/CourseWork.dir/drawer/AbstractDrawerFactory.cpp.o
 CourseWork: CMakeFiles/CourseWork.dir/build.make
 CourseWork: /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.8
 CourseWork: /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.15.8
 CourseWork: /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.15.8
 CourseWork: CMakeFiles/CourseWork.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/build-CourseWork-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable CourseWork"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/build-CourseWork-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable CourseWork"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/CourseWork.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

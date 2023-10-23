@@ -53,9 +53,9 @@ public:
     QSpinBox *spinBox_2;
     QLabel *label_3;
     QLabel *label_4;
-    QSpinBox *spinBox;
+    QSpinBox *x_set_obj;
     QPushButton *pushButton;
-    QComboBox *comboBox;
+    QComboBox *chose_obj;
     QGroupBox *groupBox_6;
     QGridLayout *gridLayout_10;
     QLabel *label_2;
@@ -151,10 +151,10 @@ public:
 
         gridLayout_9->addWidget(label_4, 1, 1, 1, 1);
 
-        spinBox = new QSpinBox(groupBox_5);
-        spinBox->setObjectName(QString::fromUtf8("spinBox"));
+        x_set_obj = new QSpinBox(groupBox_5);
+        x_set_obj->setObjectName(QString::fromUtf8("x_set_obj"));
 
-        gridLayout_9->addWidget(spinBox, 2, 0, 1, 1);
+        gridLayout_9->addWidget(x_set_obj, 2, 0, 1, 1);
 
 
         gridLayout_2->addWidget(groupBox_5, 1, 0, 1, 2);
@@ -164,17 +164,17 @@ public:
 
         gridLayout_2->addWidget(pushButton, 2, 0, 1, 2);
 
-        comboBox = new QComboBox(groupBox_2);
-        comboBox->addItem(QString());
-        comboBox->addItem(QString());
-        comboBox->addItem(QString());
-        comboBox->addItem(QString());
-        comboBox->addItem(QString());
-        comboBox->addItem(QString());
-        comboBox->addItem(QString());
-        comboBox->setObjectName(QString::fromUtf8("comboBox"));
+        chose_obj = new QComboBox(groupBox_2);
+        chose_obj->addItem(QString());
+        chose_obj->addItem(QString());
+        chose_obj->addItem(QString());
+        chose_obj->addItem(QString());
+        chose_obj->addItem(QString());
+        chose_obj->addItem(QString());
+        chose_obj->addItem(QString());
+        chose_obj->setObjectName(QString::fromUtf8("chose_obj"));
 
-        gridLayout_2->addWidget(comboBox, 0, 0, 1, 2);
+        gridLayout_2->addWidget(chose_obj, 0, 0, 1, 2);
 
         groupBox_6 = new QGroupBox(groupBox_2);
         groupBox_6->setObjectName(QString::fromUtf8("groupBox_6"));
@@ -271,6 +271,7 @@ public:
         toolBox->addItem(page_8, QString::fromUtf8("\320\230\320\267\320\274\320\265\320\275\320\265\320\275\320\270\320\265 \320\236\320\261\321\212\320\265\320\272\321\202\320\276\320\262"));
         page_9 = new QWidget();
         page_9->setObjectName(QString::fromUtf8("page_9"));
+        page_9->setGeometry(QRect(0, 0, 324, 418));
         gridLayout_8 = new QGridLayout(page_9);
         gridLayout_8->setObjectName(QString::fromUtf8("gridLayout_8"));
         groupBox_4 = new QGroupBox(page_9);
@@ -372,16 +373,16 @@ public:
         label_3->setText(QCoreApplication::translate("MainWindow", "X", nullptr));
         label_4->setText(QCoreApplication::translate("MainWindow", "Y", nullptr));
         pushButton->setText(QCoreApplication::translate("MainWindow", "\320\243\321\201\321\202\320\260\320\275\320\276\320\262\321\202\321\214 \320\276\320\261\321\212\320\265\320\272\321\202 \320\275\320\260 \321\201\321\206\320\265\320\275\321\203", nullptr));
-        comboBox->setItemText(0, QCoreApplication::translate("MainWindow", "\320\224\320\276\320\274 \302\253\321\201\321\202\320\260\320\275\320\264\320\260\321\200\321\202\320\275\321\213\320\271\302\273", nullptr));
-        comboBox->setItemText(1, QCoreApplication::translate("MainWindow", "\320\224\320\276\320\274 \302\253\320\277\321\200\320\265\320\274\320\270\320\260\320\273\321\214\320\275\321\213\320\271\302\273", nullptr));
-        comboBox->setItemText(2, QCoreApplication::translate("MainWindow", "\320\224\320\276\321\200\320\276\320\263\320\260", nullptr));
-        comboBox->setItemText(3, QCoreApplication::translate("MainWindow", "\320\234\320\260\321\210\320\270\320\275\320\260 (\321\201\320\265\321\200\320\260\321\217)", nullptr));
-        comboBox->setItemText(4, QCoreApplication::translate("MainWindow", "\320\234\320\260\321\210\320\270\320\275\320\260 (\320\272\321\200\320\260\321\201\320\275\320\260\321\217)", nullptr));
-        comboBox->setItemText(5, QCoreApplication::translate("MainWindow", "\320\224\320\265\321\200\320\265\320\262\320\276", nullptr));
-        comboBox->setItemText(6, QCoreApplication::translate("MainWindow", "\320\232\321\203\321\201\321\202", nullptr));
+        chose_obj->setItemText(0, QCoreApplication::translate("MainWindow", "\320\224\320\276\320\274 \302\253\321\201\321\202\320\260\320\275\320\264\320\260\321\200\321\202\320\275\321\213\320\271\302\273", nullptr));
+        chose_obj->setItemText(1, QCoreApplication::translate("MainWindow", "\320\224\320\276\320\274 \302\253\320\277\321\200\320\265\320\274\320\270\320\260\320\273\321\214\320\275\321\213\320\271\302\273", nullptr));
+        chose_obj->setItemText(2, QCoreApplication::translate("MainWindow", "\320\224\320\276\321\200\320\276\320\263\320\260", nullptr));
+        chose_obj->setItemText(3, QCoreApplication::translate("MainWindow", "\320\234\320\260\321\210\320\270\320\275\320\260 (\321\201\320\265\321\200\320\260\321\217)", nullptr));
+        chose_obj->setItemText(4, QCoreApplication::translate("MainWindow", "\320\234\320\260\321\210\320\270\320\275\320\260 (\320\272\321\200\320\260\321\201\320\275\320\260\321\217)", nullptr));
+        chose_obj->setItemText(5, QCoreApplication::translate("MainWindow", "\320\224\320\265\321\200\320\265\320\262\320\276", nullptr));
+        chose_obj->setItemText(6, QCoreApplication::translate("MainWindow", "\320\232\321\203\321\201\321\202", nullptr));
 
 #if QT_CONFIG(whatsthis)
-        comboBox->setWhatsThis(QCoreApplication::translate("MainWindow", "<html><head/><body><p>\320\222\321\213\320\261\320\265\321\200\320\270\321\202\320\265 \320\276\320\264\320\270\320\275 \320\270\320\267 \320\276\320\261\321\212\320\265\320\272\321\202\320\276\320\262 \321\201\321\206\320\265\320\275\321\213 \320\264\320\273\321\217 \320\265\320\263\320\276 \321\200\320\260\320\267\320\274\320\265\321\211\320\265\320\275\320\270\321\217 \320\275\320\260  \321\201\321\206\320\265\320\275\320\265</p></body></html>", nullptr));
+        chose_obj->setWhatsThis(QCoreApplication::translate("MainWindow", "<html><head/><body><p>\320\222\321\213\320\261\320\265\321\200\320\270\321\202\320\265 \320\276\320\264\320\270\320\275 \320\270\320\267 \320\276\320\261\321\212\320\265\320\272\321\202\320\276\320\262 \321\201\321\206\320\265\320\275\321\213 \320\264\320\273\321\217 \320\265\320\263\320\276 \321\200\320\260\320\267\320\274\320\265\321\211\320\265\320\275\320\270\321\217 \320\275\320\260  \321\201\321\206\320\265\320\275\320\265</p></body></html>", nullptr));
 #endif // QT_CONFIG(whatsthis)
         groupBox_6->setTitle(QCoreApplication::translate("MainWindow", "\320\243\320\272\320\260\320\266\320\270\321\202\320\265 \320\277\320\276\320\273\320\276\320\266\320\265\320\275\320\270\320\265 \320\270\321\201\321\202\320\276\321\207\320\275\320\270\320\272\320\260 \321\201\320\262\320\265\321\202\320\260", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "\320\243\320\263\320\276\320\273 Y", nullptr));

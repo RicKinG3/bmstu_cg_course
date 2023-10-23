@@ -17,7 +17,18 @@ set(PROJECT_SOURCES
         mainwindow.cpp
         mainwindow.h
         mainwindow.ui
+        facade/Facade.cpp
+        facade/Facade.h
+        drawer/AbstractDrawerFactory.h
+        drawer/BaseDrawer.h
+        drawer/QtDrawerFactory.cpp
+        drawer/QtDrawerFactory.h
+        drawer/QtDrawer.cpp
+        drawer/QtDrawer.h
+        objects/primitives/point.cpp
+        objects/primitives/point.h
 )
+
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(CourseWork

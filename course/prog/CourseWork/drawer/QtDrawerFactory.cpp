@@ -1,0 +1,14 @@
+//
+// Created by max on 23.10.23.
+//
+
+#include "QtDrawerFactory.h"
+#include "QtDrawer.h"
+
+QtDrawerFactory::QtDrawerFactory(std::shared_ptr<QGraphicsScene> &src_scene) : scene(src_scene) {}
+
+
+std::unique_ptr<BaseDrawer> QtDrawerFactory::create()
+{
+    return std::make_unique<QtDrawer>(scene);
+}

@@ -211,6 +211,54 @@ CourseWork_autogen/mocs_compilation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/CourseWork_autogen/mocs_compilation.cpp.s
 .PHONY : CourseWork_autogen/mocs_compilation.cpp.s
 
+drawer/AbstractDrawerFactory.o: drawer/AbstractDrawerFactory.cpp.o
+.PHONY : drawer/AbstractDrawerFactory.o
+
+# target to build an object file
+drawer/AbstractDrawerFactory.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/drawer/AbstractDrawerFactory.cpp.o
+.PHONY : drawer/AbstractDrawerFactory.cpp.o
+
+drawer/AbstractDrawerFactory.i: drawer/AbstractDrawerFactory.cpp.i
+.PHONY : drawer/AbstractDrawerFactory.i
+
+# target to preprocess a source file
+drawer/AbstractDrawerFactory.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/drawer/AbstractDrawerFactory.cpp.i
+.PHONY : drawer/AbstractDrawerFactory.cpp.i
+
+drawer/AbstractDrawerFactory.s: drawer/AbstractDrawerFactory.cpp.s
+.PHONY : drawer/AbstractDrawerFactory.s
+
+# target to generate assembly for a file
+drawer/AbstractDrawerFactory.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/drawer/AbstractDrawerFactory.cpp.s
+.PHONY : drawer/AbstractDrawerFactory.cpp.s
+
+facade/Facade.o: facade/Facade.cpp.o
+.PHONY : facade/Facade.o
+
+# target to build an object file
+facade/Facade.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/facade/Facade.cpp.o
+.PHONY : facade/Facade.cpp.o
+
+facade/Facade.i: facade/Facade.cpp.i
+.PHONY : facade/Facade.i
+
+# target to preprocess a source file
+facade/Facade.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/facade/Facade.cpp.i
+.PHONY : facade/Facade.cpp.i
+
+facade/Facade.s: facade/Facade.cpp.s
+.PHONY : facade/Facade.s
+
+# target to generate assembly for a file
+facade/Facade.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/facade/Facade.cpp.s
+.PHONY : facade/Facade.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -276,6 +324,12 @@ help:
 	@echo "... CourseWork_autogen/mocs_compilation.o"
 	@echo "... CourseWork_autogen/mocs_compilation.i"
 	@echo "... CourseWork_autogen/mocs_compilation.s"
+	@echo "... drawer/AbstractDrawerFactory.o"
+	@echo "... drawer/AbstractDrawerFactory.i"
+	@echo "... drawer/AbstractDrawerFactory.s"
+	@echo "... facade/Facade.o"
+	@echo "... facade/Facade.i"
+	@echo "... facade/Facade.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

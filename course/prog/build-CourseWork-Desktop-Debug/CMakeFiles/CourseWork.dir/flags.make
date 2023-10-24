@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/g++
 CXX_DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
 
-CXX_INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/build-CourseWork-Desktop-Debug/CourseWork_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++
+CXX_INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/build-CourseWork-Desktop-Debug/CourseWork_autogen/include -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/drawer -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/facade -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/managers -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/managers/draw -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/objects -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/objects/primitives -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++
 
 CXX_FLAGS = -DQT_QML_DEBUG -g -fPIC -std=gnu++17
 

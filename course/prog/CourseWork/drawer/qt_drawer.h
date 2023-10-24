@@ -1,0 +1,23 @@
+#ifndef LAB_03_QT_DRAWER_H
+#define LAB_03_QT_DRAWER_H
+#include <QGraphicsScene>
+#include "base_drawer.h"
+
+
+class QtDrawer : public BaseDrawer
+{
+public:
+    QtDrawer() = delete;
+    explicit QtDrawer(std::shared_ptr<QGraphicsScene> &srcScene);
+    QtDrawer(const QtDrawer &srcDrawer);
+    ~QtDrawer() override = default;
+
+    void drawLine(const Point &point1, const Point &point2) override;
+    void clearScene() override;
+
+private:
+    std::shared_ptr<QGraphicsScene> scene;
+};
+
+
+#endif //LAB_03_QT_DRAWER_H

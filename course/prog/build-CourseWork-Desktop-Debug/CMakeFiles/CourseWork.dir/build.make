@@ -83,24 +83,10 @@ CMakeFiles/CourseWork.dir/CourseWork_autogen/mocs_compilation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CourseWork.dir/CourseWork_autogen/mocs_compilation.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/build-CourseWork-Desktop-Debug/CourseWork_autogen/mocs_compilation.cpp -o CMakeFiles/CourseWork.dir/CourseWork_autogen/mocs_compilation.cpp.s
 
-CMakeFiles/CourseWork.dir/main.cpp.o: CMakeFiles/CourseWork.dir/flags.make
-CMakeFiles/CourseWork.dir/main.cpp.o: /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/main.cpp
-CMakeFiles/CourseWork.dir/main.cpp.o: CMakeFiles/CourseWork.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/build-CourseWork-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/CourseWork.dir/main.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CourseWork.dir/main.cpp.o -MF CMakeFiles/CourseWork.dir/main.cpp.o.d -o CMakeFiles/CourseWork.dir/main.cpp.o -c /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/main.cpp
-
-CMakeFiles/CourseWork.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CourseWork.dir/main.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/main.cpp > CMakeFiles/CourseWork.dir/main.cpp.i
-
-CMakeFiles/CourseWork.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CourseWork.dir/main.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/main.cpp -o CMakeFiles/CourseWork.dir/main.cpp.s
-
 CMakeFiles/CourseWork.dir/mainwindow.cpp.o: CMakeFiles/CourseWork.dir/flags.make
 CMakeFiles/CourseWork.dir/mainwindow.cpp.o: /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/mainwindow.cpp
 CMakeFiles/CourseWork.dir/mainwindow.cpp.o: CMakeFiles/CourseWork.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/build-CourseWork-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/CourseWork.dir/mainwindow.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/build-CourseWork-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/CourseWork.dir/mainwindow.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CourseWork.dir/mainwindow.cpp.o -MF CMakeFiles/CourseWork.dir/mainwindow.cpp.o.d -o CMakeFiles/CourseWork.dir/mainwindow.cpp.o -c /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/mainwindow.cpp
 
 CMakeFiles/CourseWork.dir/mainwindow.cpp.i: cmake_force
@@ -111,56 +97,534 @@ CMakeFiles/CourseWork.dir/mainwindow.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CourseWork.dir/mainwindow.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/mainwindow.cpp -o CMakeFiles/CourseWork.dir/mainwindow.cpp.s
 
-CMakeFiles/CourseWork.dir/facade/Facade.cpp.o: CMakeFiles/CourseWork.dir/flags.make
-CMakeFiles/CourseWork.dir/facade/Facade.cpp.o: /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/facade/Facade.cpp
-CMakeFiles/CourseWork.dir/facade/Facade.cpp.o: CMakeFiles/CourseWork.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/build-CourseWork-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/CourseWork.dir/facade/Facade.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CourseWork.dir/facade/Facade.cpp.o -MF CMakeFiles/CourseWork.dir/facade/Facade.cpp.o.d -o CMakeFiles/CourseWork.dir/facade/Facade.cpp.o -c /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/facade/Facade.cpp
+CMakeFiles/CourseWork.dir/drawer/qt_drawer.cpp.o: CMakeFiles/CourseWork.dir/flags.make
+CMakeFiles/CourseWork.dir/drawer/qt_drawer.cpp.o: /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/drawer/qt_drawer.cpp
+CMakeFiles/CourseWork.dir/drawer/qt_drawer.cpp.o: CMakeFiles/CourseWork.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/build-CourseWork-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/CourseWork.dir/drawer/qt_drawer.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CourseWork.dir/drawer/qt_drawer.cpp.o -MF CMakeFiles/CourseWork.dir/drawer/qt_drawer.cpp.o.d -o CMakeFiles/CourseWork.dir/drawer/qt_drawer.cpp.o -c /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/drawer/qt_drawer.cpp
 
-CMakeFiles/CourseWork.dir/facade/Facade.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CourseWork.dir/facade/Facade.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/facade/Facade.cpp > CMakeFiles/CourseWork.dir/facade/Facade.cpp.i
+CMakeFiles/CourseWork.dir/drawer/qt_drawer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CourseWork.dir/drawer/qt_drawer.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/drawer/qt_drawer.cpp > CMakeFiles/CourseWork.dir/drawer/qt_drawer.cpp.i
 
-CMakeFiles/CourseWork.dir/facade/Facade.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CourseWork.dir/facade/Facade.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/facade/Facade.cpp -o CMakeFiles/CourseWork.dir/facade/Facade.cpp.s
+CMakeFiles/CourseWork.dir/drawer/qt_drawer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CourseWork.dir/drawer/qt_drawer.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/drawer/qt_drawer.cpp -o CMakeFiles/CourseWork.dir/drawer/qt_drawer.cpp.s
 
-CMakeFiles/CourseWork.dir/drawer/AbstractDrawerFactory.cpp.o: CMakeFiles/CourseWork.dir/flags.make
-CMakeFiles/CourseWork.dir/drawer/AbstractDrawerFactory.cpp.o: /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/drawer/AbstractDrawerFactory.cpp
-CMakeFiles/CourseWork.dir/drawer/AbstractDrawerFactory.cpp.o: CMakeFiles/CourseWork.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/build-CourseWork-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/CourseWork.dir/drawer/AbstractDrawerFactory.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CourseWork.dir/drawer/AbstractDrawerFactory.cpp.o -MF CMakeFiles/CourseWork.dir/drawer/AbstractDrawerFactory.cpp.o.d -o CMakeFiles/CourseWork.dir/drawer/AbstractDrawerFactory.cpp.o -c /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/drawer/AbstractDrawerFactory.cpp
+CMakeFiles/CourseWork.dir/drawer/qt_drawer_factory.cpp.o: CMakeFiles/CourseWork.dir/flags.make
+CMakeFiles/CourseWork.dir/drawer/qt_drawer_factory.cpp.o: /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/drawer/qt_drawer_factory.cpp
+CMakeFiles/CourseWork.dir/drawer/qt_drawer_factory.cpp.o: CMakeFiles/CourseWork.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/build-CourseWork-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/CourseWork.dir/drawer/qt_drawer_factory.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CourseWork.dir/drawer/qt_drawer_factory.cpp.o -MF CMakeFiles/CourseWork.dir/drawer/qt_drawer_factory.cpp.o.d -o CMakeFiles/CourseWork.dir/drawer/qt_drawer_factory.cpp.o -c /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/drawer/qt_drawer_factory.cpp
 
-CMakeFiles/CourseWork.dir/drawer/AbstractDrawerFactory.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CourseWork.dir/drawer/AbstractDrawerFactory.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/drawer/AbstractDrawerFactory.cpp > CMakeFiles/CourseWork.dir/drawer/AbstractDrawerFactory.cpp.i
+CMakeFiles/CourseWork.dir/drawer/qt_drawer_factory.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CourseWork.dir/drawer/qt_drawer_factory.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/drawer/qt_drawer_factory.cpp > CMakeFiles/CourseWork.dir/drawer/qt_drawer_factory.cpp.i
 
-CMakeFiles/CourseWork.dir/drawer/AbstractDrawerFactory.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CourseWork.dir/drawer/AbstractDrawerFactory.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/drawer/AbstractDrawerFactory.cpp -o CMakeFiles/CourseWork.dir/drawer/AbstractDrawerFactory.cpp.s
+CMakeFiles/CourseWork.dir/drawer/qt_drawer_factory.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CourseWork.dir/drawer/qt_drawer_factory.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/drawer/qt_drawer_factory.cpp -o CMakeFiles/CourseWork.dir/drawer/qt_drawer_factory.cpp.s
+
+CMakeFiles/CourseWork.dir/visitor/draw_visitor.cpp.o: CMakeFiles/CourseWork.dir/flags.make
+CMakeFiles/CourseWork.dir/visitor/draw_visitor.cpp.o: /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/visitor/draw_visitor.cpp
+CMakeFiles/CourseWork.dir/visitor/draw_visitor.cpp.o: CMakeFiles/CourseWork.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/build-CourseWork-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/CourseWork.dir/visitor/draw_visitor.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CourseWork.dir/visitor/draw_visitor.cpp.o -MF CMakeFiles/CourseWork.dir/visitor/draw_visitor.cpp.o.d -o CMakeFiles/CourseWork.dir/visitor/draw_visitor.cpp.o -c /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/visitor/draw_visitor.cpp
+
+CMakeFiles/CourseWork.dir/visitor/draw_visitor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CourseWork.dir/visitor/draw_visitor.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/visitor/draw_visitor.cpp > CMakeFiles/CourseWork.dir/visitor/draw_visitor.cpp.i
+
+CMakeFiles/CourseWork.dir/visitor/draw_visitor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CourseWork.dir/visitor/draw_visitor.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/visitor/draw_visitor.cpp -o CMakeFiles/CourseWork.dir/visitor/draw_visitor.cpp.s
+
+CMakeFiles/CourseWork.dir/visitor/transform_visitor.cpp.o: CMakeFiles/CourseWork.dir/flags.make
+CMakeFiles/CourseWork.dir/visitor/transform_visitor.cpp.o: /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/visitor/transform_visitor.cpp
+CMakeFiles/CourseWork.dir/visitor/transform_visitor.cpp.o: CMakeFiles/CourseWork.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/build-CourseWork-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/CourseWork.dir/visitor/transform_visitor.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CourseWork.dir/visitor/transform_visitor.cpp.o -MF CMakeFiles/CourseWork.dir/visitor/transform_visitor.cpp.o.d -o CMakeFiles/CourseWork.dir/visitor/transform_visitor.cpp.o -c /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/visitor/transform_visitor.cpp
+
+CMakeFiles/CourseWork.dir/visitor/transform_visitor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CourseWork.dir/visitor/transform_visitor.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/visitor/transform_visitor.cpp > CMakeFiles/CourseWork.dir/visitor/transform_visitor.cpp.i
+
+CMakeFiles/CourseWork.dir/visitor/transform_visitor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CourseWork.dir/visitor/transform_visitor.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/visitor/transform_visitor.cpp -o CMakeFiles/CourseWork.dir/visitor/transform_visitor.cpp.s
+
+CMakeFiles/CourseWork.dir/builder/camera/camera_builder.cpp.o: CMakeFiles/CourseWork.dir/flags.make
+CMakeFiles/CourseWork.dir/builder/camera/camera_builder.cpp.o: /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/builder/camera/camera_builder.cpp
+CMakeFiles/CourseWork.dir/builder/camera/camera_builder.cpp.o: CMakeFiles/CourseWork.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/build-CourseWork-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/CourseWork.dir/builder/camera/camera_builder.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CourseWork.dir/builder/camera/camera_builder.cpp.o -MF CMakeFiles/CourseWork.dir/builder/camera/camera_builder.cpp.o.d -o CMakeFiles/CourseWork.dir/builder/camera/camera_builder.cpp.o -c /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/builder/camera/camera_builder.cpp
+
+CMakeFiles/CourseWork.dir/builder/camera/camera_builder.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CourseWork.dir/builder/camera/camera_builder.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/builder/camera/camera_builder.cpp > CMakeFiles/CourseWork.dir/builder/camera/camera_builder.cpp.i
+
+CMakeFiles/CourseWork.dir/builder/camera/camera_builder.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CourseWork.dir/builder/camera/camera_builder.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/builder/camera/camera_builder.cpp -o CMakeFiles/CourseWork.dir/builder/camera/camera_builder.cpp.s
+
+CMakeFiles/CourseWork.dir/builder/model/model_builder.cpp.o: CMakeFiles/CourseWork.dir/flags.make
+CMakeFiles/CourseWork.dir/builder/model/model_builder.cpp.o: /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/builder/model/model_builder.cpp
+CMakeFiles/CourseWork.dir/builder/model/model_builder.cpp.o: CMakeFiles/CourseWork.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/build-CourseWork-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/CourseWork.dir/builder/model/model_builder.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CourseWork.dir/builder/model/model_builder.cpp.o -MF CMakeFiles/CourseWork.dir/builder/model/model_builder.cpp.o.d -o CMakeFiles/CourseWork.dir/builder/model/model_builder.cpp.o -c /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/builder/model/model_builder.cpp
+
+CMakeFiles/CourseWork.dir/builder/model/model_builder.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CourseWork.dir/builder/model/model_builder.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/builder/model/model_builder.cpp > CMakeFiles/CourseWork.dir/builder/model/model_builder.cpp.i
+
+CMakeFiles/CourseWork.dir/builder/model/model_builder.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CourseWork.dir/builder/model/model_builder.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/builder/model/model_builder.cpp -o CMakeFiles/CourseWork.dir/builder/model/model_builder.cpp.s
+
+CMakeFiles/CourseWork.dir/config/config.cpp.o: CMakeFiles/CourseWork.dir/flags.make
+CMakeFiles/CourseWork.dir/config/config.cpp.o: /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/config/config.cpp
+CMakeFiles/CourseWork.dir/config/config.cpp.o: CMakeFiles/CourseWork.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/build-CourseWork-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/CourseWork.dir/config/config.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CourseWork.dir/config/config.cpp.o -MF CMakeFiles/CourseWork.dir/config/config.cpp.o.d -o CMakeFiles/CourseWork.dir/config/config.cpp.o -c /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/config/config.cpp
+
+CMakeFiles/CourseWork.dir/config/config.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CourseWork.dir/config/config.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/config/config.cpp > CMakeFiles/CourseWork.dir/config/config.cpp.i
+
+CMakeFiles/CourseWork.dir/config/config.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CourseWork.dir/config/config.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/config/config.cpp -o CMakeFiles/CourseWork.dir/config/config.cpp.s
+
+CMakeFiles/CourseWork.dir/config/config_solution.cpp.o: CMakeFiles/CourseWork.dir/flags.make
+CMakeFiles/CourseWork.dir/config/config_solution.cpp.o: /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/config/config_solution.cpp
+CMakeFiles/CourseWork.dir/config/config_solution.cpp.o: CMakeFiles/CourseWork.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/build-CourseWork-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/CourseWork.dir/config/config_solution.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CourseWork.dir/config/config_solution.cpp.o -MF CMakeFiles/CourseWork.dir/config/config_solution.cpp.o.d -o CMakeFiles/CourseWork.dir/config/config_solution.cpp.o -c /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/config/config_solution.cpp
+
+CMakeFiles/CourseWork.dir/config/config_solution.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CourseWork.dir/config/config_solution.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/config/config_solution.cpp > CMakeFiles/CourseWork.dir/config/config_solution.cpp.i
+
+CMakeFiles/CourseWork.dir/config/config_solution.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CourseWork.dir/config/config_solution.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/config/config_solution.cpp -o CMakeFiles/CourseWork.dir/config/config_solution.cpp.s
+
+CMakeFiles/CourseWork.dir/transformer/matrix.cpp.o: CMakeFiles/CourseWork.dir/flags.make
+CMakeFiles/CourseWork.dir/transformer/matrix.cpp.o: /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/transformer/matrix.cpp
+CMakeFiles/CourseWork.dir/transformer/matrix.cpp.o: CMakeFiles/CourseWork.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/build-CourseWork-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/CourseWork.dir/transformer/matrix.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CourseWork.dir/transformer/matrix.cpp.o -MF CMakeFiles/CourseWork.dir/transformer/matrix.cpp.o.d -o CMakeFiles/CourseWork.dir/transformer/matrix.cpp.o -c /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/transformer/matrix.cpp
+
+CMakeFiles/CourseWork.dir/transformer/matrix.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CourseWork.dir/transformer/matrix.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/transformer/matrix.cpp > CMakeFiles/CourseWork.dir/transformer/matrix.cpp.i
+
+CMakeFiles/CourseWork.dir/transformer/matrix.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CourseWork.dir/transformer/matrix.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/transformer/matrix.cpp -o CMakeFiles/CourseWork.dir/transformer/matrix.cpp.s
+
+CMakeFiles/CourseWork.dir/transformer/transformer_factory.cpp.o: CMakeFiles/CourseWork.dir/flags.make
+CMakeFiles/CourseWork.dir/transformer/transformer_factory.cpp.o: /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/transformer/transformer_factory.cpp
+CMakeFiles/CourseWork.dir/transformer/transformer_factory.cpp.o: CMakeFiles/CourseWork.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/build-CourseWork-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/CourseWork.dir/transformer/transformer_factory.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CourseWork.dir/transformer/transformer_factory.cpp.o -MF CMakeFiles/CourseWork.dir/transformer/transformer_factory.cpp.o.d -o CMakeFiles/CourseWork.dir/transformer/transformer_factory.cpp.o -c /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/transformer/transformer_factory.cpp
+
+CMakeFiles/CourseWork.dir/transformer/transformer_factory.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CourseWork.dir/transformer/transformer_factory.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/transformer/transformer_factory.cpp > CMakeFiles/CourseWork.dir/transformer/transformer_factory.cpp.i
+
+CMakeFiles/CourseWork.dir/transformer/transformer_factory.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CourseWork.dir/transformer/transformer_factory.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/transformer/transformer_factory.cpp -o CMakeFiles/CourseWork.dir/transformer/transformer_factory.cpp.s
+
+CMakeFiles/CourseWork.dir/transformer/transformer.cpp.o: CMakeFiles/CourseWork.dir/flags.make
+CMakeFiles/CourseWork.dir/transformer/transformer.cpp.o: /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/transformer/transformer.cpp
+CMakeFiles/CourseWork.dir/transformer/transformer.cpp.o: CMakeFiles/CourseWork.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/build-CourseWork-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/CourseWork.dir/transformer/transformer.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CourseWork.dir/transformer/transformer.cpp.o -MF CMakeFiles/CourseWork.dir/transformer/transformer.cpp.o.d -o CMakeFiles/CourseWork.dir/transformer/transformer.cpp.o -c /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/transformer/transformer.cpp
+
+CMakeFiles/CourseWork.dir/transformer/transformer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CourseWork.dir/transformer/transformer.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/transformer/transformer.cpp > CMakeFiles/CourseWork.dir/transformer/transformer.cpp.i
+
+CMakeFiles/CourseWork.dir/transformer/transformer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CourseWork.dir/transformer/transformer.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/transformer/transformer.cpp -o CMakeFiles/CourseWork.dir/transformer/transformer.cpp.s
+
+CMakeFiles/CourseWork.dir/scene/scene.cpp.o: CMakeFiles/CourseWork.dir/flags.make
+CMakeFiles/CourseWork.dir/scene/scene.cpp.o: /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/scene/scene.cpp
+CMakeFiles/CourseWork.dir/scene/scene.cpp.o: CMakeFiles/CourseWork.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/build-CourseWork-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/CourseWork.dir/scene/scene.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CourseWork.dir/scene/scene.cpp.o -MF CMakeFiles/CourseWork.dir/scene/scene.cpp.o.d -o CMakeFiles/CourseWork.dir/scene/scene.cpp.o -c /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/scene/scene.cpp
+
+CMakeFiles/CourseWork.dir/scene/scene.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CourseWork.dir/scene/scene.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/scene/scene.cpp > CMakeFiles/CourseWork.dir/scene/scene.cpp.i
+
+CMakeFiles/CourseWork.dir/scene/scene.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CourseWork.dir/scene/scene.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/scene/scene.cpp -o CMakeFiles/CourseWork.dir/scene/scene.cpp.s
+
+CMakeFiles/CourseWork.dir/loader/camera/file_camera_loader.cpp.o: CMakeFiles/CourseWork.dir/flags.make
+CMakeFiles/CourseWork.dir/loader/camera/file_camera_loader.cpp.o: /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/loader/camera/file_camera_loader.cpp
+CMakeFiles/CourseWork.dir/loader/camera/file_camera_loader.cpp.o: CMakeFiles/CourseWork.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/build-CourseWork-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/CourseWork.dir/loader/camera/file_camera_loader.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CourseWork.dir/loader/camera/file_camera_loader.cpp.o -MF CMakeFiles/CourseWork.dir/loader/camera/file_camera_loader.cpp.o.d -o CMakeFiles/CourseWork.dir/loader/camera/file_camera_loader.cpp.o -c /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/loader/camera/file_camera_loader.cpp
+
+CMakeFiles/CourseWork.dir/loader/camera/file_camera_loader.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CourseWork.dir/loader/camera/file_camera_loader.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/loader/camera/file_camera_loader.cpp > CMakeFiles/CourseWork.dir/loader/camera/file_camera_loader.cpp.i
+
+CMakeFiles/CourseWork.dir/loader/camera/file_camera_loader.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CourseWork.dir/loader/camera/file_camera_loader.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/loader/camera/file_camera_loader.cpp -o CMakeFiles/CourseWork.dir/loader/camera/file_camera_loader.cpp.s
+
+CMakeFiles/CourseWork.dir/loader/model/file_model_loader.cpp.o: CMakeFiles/CourseWork.dir/flags.make
+CMakeFiles/CourseWork.dir/loader/model/file_model_loader.cpp.o: /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/loader/model/file_model_loader.cpp
+CMakeFiles/CourseWork.dir/loader/model/file_model_loader.cpp.o: CMakeFiles/CourseWork.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/build-CourseWork-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/CourseWork.dir/loader/model/file_model_loader.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CourseWork.dir/loader/model/file_model_loader.cpp.o -MF CMakeFiles/CourseWork.dir/loader/model/file_model_loader.cpp.o.d -o CMakeFiles/CourseWork.dir/loader/model/file_model_loader.cpp.o -c /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/loader/model/file_model_loader.cpp
+
+CMakeFiles/CourseWork.dir/loader/model/file_model_loader.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CourseWork.dir/loader/model/file_model_loader.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/loader/model/file_model_loader.cpp > CMakeFiles/CourseWork.dir/loader/model/file_model_loader.cpp.i
+
+CMakeFiles/CourseWork.dir/loader/model/file_model_loader.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CourseWork.dir/loader/model/file_model_loader.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/loader/model/file_model_loader.cpp -o CMakeFiles/CourseWork.dir/loader/model/file_model_loader.cpp.s
+
+CMakeFiles/CourseWork.dir/loader/loader_solution.cpp.o: CMakeFiles/CourseWork.dir/flags.make
+CMakeFiles/CourseWork.dir/loader/loader_solution.cpp.o: /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/loader/loader_solution.cpp
+CMakeFiles/CourseWork.dir/loader/loader_solution.cpp.o: CMakeFiles/CourseWork.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/build-CourseWork-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/CourseWork.dir/loader/loader_solution.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CourseWork.dir/loader/loader_solution.cpp.o -MF CMakeFiles/CourseWork.dir/loader/loader_solution.cpp.o.d -o CMakeFiles/CourseWork.dir/loader/loader_solution.cpp.o -c /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/loader/loader_solution.cpp
+
+CMakeFiles/CourseWork.dir/loader/loader_solution.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CourseWork.dir/loader/loader_solution.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/loader/loader_solution.cpp > CMakeFiles/CourseWork.dir/loader/loader_solution.cpp.i
+
+CMakeFiles/CourseWork.dir/loader/loader_solution.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CourseWork.dir/loader/loader_solution.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/loader/loader_solution.cpp -o CMakeFiles/CourseWork.dir/loader/loader_solution.cpp.s
+
+CMakeFiles/CourseWork.dir/director/camera/camera_director.cpp.o: CMakeFiles/CourseWork.dir/flags.make
+CMakeFiles/CourseWork.dir/director/camera/camera_director.cpp.o: /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/director/camera/camera_director.cpp
+CMakeFiles/CourseWork.dir/director/camera/camera_director.cpp.o: CMakeFiles/CourseWork.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/build-CourseWork-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/CourseWork.dir/director/camera/camera_director.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CourseWork.dir/director/camera/camera_director.cpp.o -MF CMakeFiles/CourseWork.dir/director/camera/camera_director.cpp.o.d -o CMakeFiles/CourseWork.dir/director/camera/camera_director.cpp.o -c /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/director/camera/camera_director.cpp
+
+CMakeFiles/CourseWork.dir/director/camera/camera_director.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CourseWork.dir/director/camera/camera_director.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/director/camera/camera_director.cpp > CMakeFiles/CourseWork.dir/director/camera/camera_director.cpp.i
+
+CMakeFiles/CourseWork.dir/director/camera/camera_director.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CourseWork.dir/director/camera/camera_director.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/director/camera/camera_director.cpp -o CMakeFiles/CourseWork.dir/director/camera/camera_director.cpp.s
+
+CMakeFiles/CourseWork.dir/director/director_solution.cpp.o: CMakeFiles/CourseWork.dir/flags.make
+CMakeFiles/CourseWork.dir/director/director_solution.cpp.o: /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/director/director_solution.cpp
+CMakeFiles/CourseWork.dir/director/director_solution.cpp.o: CMakeFiles/CourseWork.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/build-CourseWork-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/CourseWork.dir/director/director_solution.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CourseWork.dir/director/director_solution.cpp.o -MF CMakeFiles/CourseWork.dir/director/director_solution.cpp.o.d -o CMakeFiles/CourseWork.dir/director/director_solution.cpp.o -c /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/director/director_solution.cpp
+
+CMakeFiles/CourseWork.dir/director/director_solution.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CourseWork.dir/director/director_solution.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/director/director_solution.cpp > CMakeFiles/CourseWork.dir/director/director_solution.cpp.i
+
+CMakeFiles/CourseWork.dir/director/director_solution.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CourseWork.dir/director/director_solution.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/director/director_solution.cpp -o CMakeFiles/CourseWork.dir/director/director_solution.cpp.s
+
+CMakeFiles/CourseWork.dir/director/model/model_director.cpp.o: CMakeFiles/CourseWork.dir/flags.make
+CMakeFiles/CourseWork.dir/director/model/model_director.cpp.o: /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/director/model/model_director.cpp
+CMakeFiles/CourseWork.dir/director/model/model_director.cpp.o: CMakeFiles/CourseWork.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/build-CourseWork-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/CourseWork.dir/director/model/model_director.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CourseWork.dir/director/model/model_director.cpp.o -MF CMakeFiles/CourseWork.dir/director/model/model_director.cpp.o.d -o CMakeFiles/CourseWork.dir/director/model/model_director.cpp.o -c /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/director/model/model_director.cpp
+
+CMakeFiles/CourseWork.dir/director/model/model_director.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CourseWork.dir/director/model/model_director.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/director/model/model_director.cpp > CMakeFiles/CourseWork.dir/director/model/model_director.cpp.i
+
+CMakeFiles/CourseWork.dir/director/model/model_director.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CourseWork.dir/director/model/model_director.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/director/model/model_director.cpp -o CMakeFiles/CourseWork.dir/director/model/model_director.cpp.s
+
+CMakeFiles/CourseWork.dir/managers/load/load_manager.cpp.o: CMakeFiles/CourseWork.dir/flags.make
+CMakeFiles/CourseWork.dir/managers/load/load_manager.cpp.o: /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/managers/load/load_manager.cpp
+CMakeFiles/CourseWork.dir/managers/load/load_manager.cpp.o: CMakeFiles/CourseWork.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/build-CourseWork-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/CourseWork.dir/managers/load/load_manager.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CourseWork.dir/managers/load/load_manager.cpp.o -MF CMakeFiles/CourseWork.dir/managers/load/load_manager.cpp.o.d -o CMakeFiles/CourseWork.dir/managers/load/load_manager.cpp.o -c /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/managers/load/load_manager.cpp
+
+CMakeFiles/CourseWork.dir/managers/load/load_manager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CourseWork.dir/managers/load/load_manager.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/managers/load/load_manager.cpp > CMakeFiles/CourseWork.dir/managers/load/load_manager.cpp.i
+
+CMakeFiles/CourseWork.dir/managers/load/load_manager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CourseWork.dir/managers/load/load_manager.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/managers/load/load_manager.cpp -o CMakeFiles/CourseWork.dir/managers/load/load_manager.cpp.s
+
+CMakeFiles/CourseWork.dir/managers/draw/draw_manager.cpp.o: CMakeFiles/CourseWork.dir/flags.make
+CMakeFiles/CourseWork.dir/managers/draw/draw_manager.cpp.o: /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/managers/draw/draw_manager.cpp
+CMakeFiles/CourseWork.dir/managers/draw/draw_manager.cpp.o: CMakeFiles/CourseWork.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/build-CourseWork-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/CourseWork.dir/managers/draw/draw_manager.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CourseWork.dir/managers/draw/draw_manager.cpp.o -MF CMakeFiles/CourseWork.dir/managers/draw/draw_manager.cpp.o.d -o CMakeFiles/CourseWork.dir/managers/draw/draw_manager.cpp.o -c /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/managers/draw/draw_manager.cpp
+
+CMakeFiles/CourseWork.dir/managers/draw/draw_manager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CourseWork.dir/managers/draw/draw_manager.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/managers/draw/draw_manager.cpp > CMakeFiles/CourseWork.dir/managers/draw/draw_manager.cpp.i
+
+CMakeFiles/CourseWork.dir/managers/draw/draw_manager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CourseWork.dir/managers/draw/draw_manager.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/managers/draw/draw_manager.cpp -o CMakeFiles/CourseWork.dir/managers/draw/draw_manager.cpp.s
+
+CMakeFiles/CourseWork.dir/managers/scene/scene_manager.cpp.o: CMakeFiles/CourseWork.dir/flags.make
+CMakeFiles/CourseWork.dir/managers/scene/scene_manager.cpp.o: /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/managers/scene/scene_manager.cpp
+CMakeFiles/CourseWork.dir/managers/scene/scene_manager.cpp.o: CMakeFiles/CourseWork.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/build-CourseWork-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/CourseWork.dir/managers/scene/scene_manager.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CourseWork.dir/managers/scene/scene_manager.cpp.o -MF CMakeFiles/CourseWork.dir/managers/scene/scene_manager.cpp.o.d -o CMakeFiles/CourseWork.dir/managers/scene/scene_manager.cpp.o -c /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/managers/scene/scene_manager.cpp
+
+CMakeFiles/CourseWork.dir/managers/scene/scene_manager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CourseWork.dir/managers/scene/scene_manager.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/managers/scene/scene_manager.cpp > CMakeFiles/CourseWork.dir/managers/scene/scene_manager.cpp.i
+
+CMakeFiles/CourseWork.dir/managers/scene/scene_manager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CourseWork.dir/managers/scene/scene_manager.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/managers/scene/scene_manager.cpp -o CMakeFiles/CourseWork.dir/managers/scene/scene_manager.cpp.s
+
+CMakeFiles/CourseWork.dir/managers/transform/transform_manager.cpp.o: CMakeFiles/CourseWork.dir/flags.make
+CMakeFiles/CourseWork.dir/managers/transform/transform_manager.cpp.o: /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/managers/transform/transform_manager.cpp
+CMakeFiles/CourseWork.dir/managers/transform/transform_manager.cpp.o: CMakeFiles/CourseWork.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/build-CourseWork-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/CourseWork.dir/managers/transform/transform_manager.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CourseWork.dir/managers/transform/transform_manager.cpp.o -MF CMakeFiles/CourseWork.dir/managers/transform/transform_manager.cpp.o.d -o CMakeFiles/CourseWork.dir/managers/transform/transform_manager.cpp.o -c /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/managers/transform/transform_manager.cpp
+
+CMakeFiles/CourseWork.dir/managers/transform/transform_manager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CourseWork.dir/managers/transform/transform_manager.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/managers/transform/transform_manager.cpp > CMakeFiles/CourseWork.dir/managers/transform/transform_manager.cpp.i
+
+CMakeFiles/CourseWork.dir/managers/transform/transform_manager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CourseWork.dir/managers/transform/transform_manager.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/managers/transform/transform_manager.cpp -o CMakeFiles/CourseWork.dir/managers/transform/transform_manager.cpp.s
+
+CMakeFiles/CourseWork.dir/facade/facade.cpp.o: CMakeFiles/CourseWork.dir/flags.make
+CMakeFiles/CourseWork.dir/facade/facade.cpp.o: /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/facade/facade.cpp
+CMakeFiles/CourseWork.dir/facade/facade.cpp.o: CMakeFiles/CourseWork.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/build-CourseWork-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/CourseWork.dir/facade/facade.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CourseWork.dir/facade/facade.cpp.o -MF CMakeFiles/CourseWork.dir/facade/facade.cpp.o.d -o CMakeFiles/CourseWork.dir/facade/facade.cpp.o -c /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/facade/facade.cpp
+
+CMakeFiles/CourseWork.dir/facade/facade.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CourseWork.dir/facade/facade.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/facade/facade.cpp > CMakeFiles/CourseWork.dir/facade/facade.cpp.i
+
+CMakeFiles/CourseWork.dir/facade/facade.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CourseWork.dir/facade/facade.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/facade/facade.cpp -o CMakeFiles/CourseWork.dir/facade/facade.cpp.s
+
+CMakeFiles/CourseWork.dir/objects/camera/camera_structure.cpp.o: CMakeFiles/CourseWork.dir/flags.make
+CMakeFiles/CourseWork.dir/objects/camera/camera_structure.cpp.o: /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/objects/camera/camera_structure.cpp
+CMakeFiles/CourseWork.dir/objects/camera/camera_structure.cpp.o: CMakeFiles/CourseWork.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/build-CourseWork-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/CourseWork.dir/objects/camera/camera_structure.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CourseWork.dir/objects/camera/camera_structure.cpp.o -MF CMakeFiles/CourseWork.dir/objects/camera/camera_structure.cpp.o.d -o CMakeFiles/CourseWork.dir/objects/camera/camera_structure.cpp.o -c /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/objects/camera/camera_structure.cpp
+
+CMakeFiles/CourseWork.dir/objects/camera/camera_structure.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CourseWork.dir/objects/camera/camera_structure.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/objects/camera/camera_structure.cpp > CMakeFiles/CourseWork.dir/objects/camera/camera_structure.cpp.i
+
+CMakeFiles/CourseWork.dir/objects/camera/camera_structure.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CourseWork.dir/objects/camera/camera_structure.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/objects/camera/camera_structure.cpp -o CMakeFiles/CourseWork.dir/objects/camera/camera_structure.cpp.s
+
+CMakeFiles/CourseWork.dir/objects/camera/camera.cpp.o: CMakeFiles/CourseWork.dir/flags.make
+CMakeFiles/CourseWork.dir/objects/camera/camera.cpp.o: /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/objects/camera/camera.cpp
+CMakeFiles/CourseWork.dir/objects/camera/camera.cpp.o: CMakeFiles/CourseWork.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/build-CourseWork-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/CourseWork.dir/objects/camera/camera.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CourseWork.dir/objects/camera/camera.cpp.o -MF CMakeFiles/CourseWork.dir/objects/camera/camera.cpp.o.d -o CMakeFiles/CourseWork.dir/objects/camera/camera.cpp.o -c /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/objects/camera/camera.cpp
+
+CMakeFiles/CourseWork.dir/objects/camera/camera.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CourseWork.dir/objects/camera/camera.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/objects/camera/camera.cpp > CMakeFiles/CourseWork.dir/objects/camera/camera.cpp.i
+
+CMakeFiles/CourseWork.dir/objects/camera/camera.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CourseWork.dir/objects/camera/camera.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/objects/camera/camera.cpp -o CMakeFiles/CourseWork.dir/objects/camera/camera.cpp.s
+
+CMakeFiles/CourseWork.dir/objects/composite/composite.cpp.o: CMakeFiles/CourseWork.dir/flags.make
+CMakeFiles/CourseWork.dir/objects/composite/composite.cpp.o: /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/objects/composite/composite.cpp
+CMakeFiles/CourseWork.dir/objects/composite/composite.cpp.o: CMakeFiles/CourseWork.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/build-CourseWork-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/CourseWork.dir/objects/composite/composite.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CourseWork.dir/objects/composite/composite.cpp.o -MF CMakeFiles/CourseWork.dir/objects/composite/composite.cpp.o.d -o CMakeFiles/CourseWork.dir/objects/composite/composite.cpp.o -c /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/objects/composite/composite.cpp
+
+CMakeFiles/CourseWork.dir/objects/composite/composite.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CourseWork.dir/objects/composite/composite.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/objects/composite/composite.cpp > CMakeFiles/CourseWork.dir/objects/composite/composite.cpp.i
+
+CMakeFiles/CourseWork.dir/objects/composite/composite.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CourseWork.dir/objects/composite/composite.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/objects/composite/composite.cpp -o CMakeFiles/CourseWork.dir/objects/composite/composite.cpp.s
+
+CMakeFiles/CourseWork.dir/objects/primitives/edge.cpp.o: CMakeFiles/CourseWork.dir/flags.make
+CMakeFiles/CourseWork.dir/objects/primitives/edge.cpp.o: /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/objects/primitives/edge.cpp
+CMakeFiles/CourseWork.dir/objects/primitives/edge.cpp.o: CMakeFiles/CourseWork.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/build-CourseWork-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/CourseWork.dir/objects/primitives/edge.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CourseWork.dir/objects/primitives/edge.cpp.o -MF CMakeFiles/CourseWork.dir/objects/primitives/edge.cpp.o.d -o CMakeFiles/CourseWork.dir/objects/primitives/edge.cpp.o -c /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/objects/primitives/edge.cpp
+
+CMakeFiles/CourseWork.dir/objects/primitives/edge.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CourseWork.dir/objects/primitives/edge.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/objects/primitives/edge.cpp > CMakeFiles/CourseWork.dir/objects/primitives/edge.cpp.i
+
+CMakeFiles/CourseWork.dir/objects/primitives/edge.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CourseWork.dir/objects/primitives/edge.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/objects/primitives/edge.cpp -o CMakeFiles/CourseWork.dir/objects/primitives/edge.cpp.s
+
+CMakeFiles/CourseWork.dir/objects/primitives/point.cpp.o: CMakeFiles/CourseWork.dir/flags.make
+CMakeFiles/CourseWork.dir/objects/primitives/point.cpp.o: /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/objects/primitives/point.cpp
+CMakeFiles/CourseWork.dir/objects/primitives/point.cpp.o: CMakeFiles/CourseWork.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/build-CourseWork-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/CourseWork.dir/objects/primitives/point.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CourseWork.dir/objects/primitives/point.cpp.o -MF CMakeFiles/CourseWork.dir/objects/primitives/point.cpp.o.d -o CMakeFiles/CourseWork.dir/objects/primitives/point.cpp.o -c /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/objects/primitives/point.cpp
+
+CMakeFiles/CourseWork.dir/objects/primitives/point.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CourseWork.dir/objects/primitives/point.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/objects/primitives/point.cpp > CMakeFiles/CourseWork.dir/objects/primitives/point.cpp.i
+
+CMakeFiles/CourseWork.dir/objects/primitives/point.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CourseWork.dir/objects/primitives/point.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/objects/primitives/point.cpp -o CMakeFiles/CourseWork.dir/objects/primitives/point.cpp.s
+
+CMakeFiles/CourseWork.dir/objects/model/model_structure.cpp.o: CMakeFiles/CourseWork.dir/flags.make
+CMakeFiles/CourseWork.dir/objects/model/model_structure.cpp.o: /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/objects/model/model_structure.cpp
+CMakeFiles/CourseWork.dir/objects/model/model_structure.cpp.o: CMakeFiles/CourseWork.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/build-CourseWork-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/CourseWork.dir/objects/model/model_structure.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CourseWork.dir/objects/model/model_structure.cpp.o -MF CMakeFiles/CourseWork.dir/objects/model/model_structure.cpp.o.d -o CMakeFiles/CourseWork.dir/objects/model/model_structure.cpp.o -c /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/objects/model/model_structure.cpp
+
+CMakeFiles/CourseWork.dir/objects/model/model_structure.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CourseWork.dir/objects/model/model_structure.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/objects/model/model_structure.cpp > CMakeFiles/CourseWork.dir/objects/model/model_structure.cpp.i
+
+CMakeFiles/CourseWork.dir/objects/model/model_structure.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CourseWork.dir/objects/model/model_structure.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/objects/model/model_structure.cpp -o CMakeFiles/CourseWork.dir/objects/model/model_structure.cpp.s
+
+CMakeFiles/CourseWork.dir/objects/model/frame_model.cpp.o: CMakeFiles/CourseWork.dir/flags.make
+CMakeFiles/CourseWork.dir/objects/model/frame_model.cpp.o: /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/objects/model/frame_model.cpp
+CMakeFiles/CourseWork.dir/objects/model/frame_model.cpp.o: CMakeFiles/CourseWork.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/build-CourseWork-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/CourseWork.dir/objects/model/frame_model.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CourseWork.dir/objects/model/frame_model.cpp.o -MF CMakeFiles/CourseWork.dir/objects/model/frame_model.cpp.o.d -o CMakeFiles/CourseWork.dir/objects/model/frame_model.cpp.o -c /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/objects/model/frame_model.cpp
+
+CMakeFiles/CourseWork.dir/objects/model/frame_model.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CourseWork.dir/objects/model/frame_model.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/objects/model/frame_model.cpp > CMakeFiles/CourseWork.dir/objects/model/frame_model.cpp.i
+
+CMakeFiles/CourseWork.dir/objects/model/frame_model.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CourseWork.dir/objects/model/frame_model.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/objects/model/frame_model.cpp -o CMakeFiles/CourseWork.dir/objects/model/frame_model.cpp.s
+
+CMakeFiles/CourseWork.dir/main.cpp.o: CMakeFiles/CourseWork.dir/flags.make
+CMakeFiles/CourseWork.dir/main.cpp.o: /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/main.cpp
+CMakeFiles/CourseWork.dir/main.cpp.o: CMakeFiles/CourseWork.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/build-CourseWork-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/CourseWork.dir/main.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CourseWork.dir/main.cpp.o -MF CMakeFiles/CourseWork.dir/main.cpp.o.d -o CMakeFiles/CourseWork.dir/main.cpp.o -c /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/main.cpp
+
+CMakeFiles/CourseWork.dir/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CourseWork.dir/main.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/main.cpp > CMakeFiles/CourseWork.dir/main.cpp.i
+
+CMakeFiles/CourseWork.dir/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CourseWork.dir/main.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/main.cpp -o CMakeFiles/CourseWork.dir/main.cpp.s
+
+CMakeFiles/CourseWork.dir/objects/primitives/face.cpp.o: CMakeFiles/CourseWork.dir/flags.make
+CMakeFiles/CourseWork.dir/objects/primitives/face.cpp.o: /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/objects/primitives/face.cpp
+CMakeFiles/CourseWork.dir/objects/primitives/face.cpp.o: CMakeFiles/CourseWork.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/build-CourseWork-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/CourseWork.dir/objects/primitives/face.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CourseWork.dir/objects/primitives/face.cpp.o -MF CMakeFiles/CourseWork.dir/objects/primitives/face.cpp.o.d -o CMakeFiles/CourseWork.dir/objects/primitives/face.cpp.o -c /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/objects/primitives/face.cpp
+
+CMakeFiles/CourseWork.dir/objects/primitives/face.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CourseWork.dir/objects/primitives/face.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/objects/primitives/face.cpp > CMakeFiles/CourseWork.dir/objects/primitives/face.cpp.i
+
+CMakeFiles/CourseWork.dir/objects/primitives/face.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CourseWork.dir/objects/primitives/face.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/objects/primitives/face.cpp -o CMakeFiles/CourseWork.dir/objects/primitives/face.cpp.s
 
 # Object files for target CourseWork
 CourseWork_OBJECTS = \
 "CMakeFiles/CourseWork.dir/CourseWork_autogen/mocs_compilation.cpp.o" \
-"CMakeFiles/CourseWork.dir/main.cpp.o" \
 "CMakeFiles/CourseWork.dir/mainwindow.cpp.o" \
-"CMakeFiles/CourseWork.dir/facade/Facade.cpp.o" \
-"CMakeFiles/CourseWork.dir/drawer/AbstractDrawerFactory.cpp.o"
+"CMakeFiles/CourseWork.dir/drawer/qt_drawer.cpp.o" \
+"CMakeFiles/CourseWork.dir/drawer/qt_drawer_factory.cpp.o" \
+"CMakeFiles/CourseWork.dir/visitor/draw_visitor.cpp.o" \
+"CMakeFiles/CourseWork.dir/visitor/transform_visitor.cpp.o" \
+"CMakeFiles/CourseWork.dir/builder/camera/camera_builder.cpp.o" \
+"CMakeFiles/CourseWork.dir/builder/model/model_builder.cpp.o" \
+"CMakeFiles/CourseWork.dir/config/config.cpp.o" \
+"CMakeFiles/CourseWork.dir/config/config_solution.cpp.o" \
+"CMakeFiles/CourseWork.dir/transformer/matrix.cpp.o" \
+"CMakeFiles/CourseWork.dir/transformer/transformer_factory.cpp.o" \
+"CMakeFiles/CourseWork.dir/transformer/transformer.cpp.o" \
+"CMakeFiles/CourseWork.dir/scene/scene.cpp.o" \
+"CMakeFiles/CourseWork.dir/loader/camera/file_camera_loader.cpp.o" \
+"CMakeFiles/CourseWork.dir/loader/model/file_model_loader.cpp.o" \
+"CMakeFiles/CourseWork.dir/loader/loader_solution.cpp.o" \
+"CMakeFiles/CourseWork.dir/director/camera/camera_director.cpp.o" \
+"CMakeFiles/CourseWork.dir/director/director_solution.cpp.o" \
+"CMakeFiles/CourseWork.dir/director/model/model_director.cpp.o" \
+"CMakeFiles/CourseWork.dir/managers/load/load_manager.cpp.o" \
+"CMakeFiles/CourseWork.dir/managers/draw/draw_manager.cpp.o" \
+"CMakeFiles/CourseWork.dir/managers/scene/scene_manager.cpp.o" \
+"CMakeFiles/CourseWork.dir/managers/transform/transform_manager.cpp.o" \
+"CMakeFiles/CourseWork.dir/facade/facade.cpp.o" \
+"CMakeFiles/CourseWork.dir/objects/camera/camera_structure.cpp.o" \
+"CMakeFiles/CourseWork.dir/objects/camera/camera.cpp.o" \
+"CMakeFiles/CourseWork.dir/objects/composite/composite.cpp.o" \
+"CMakeFiles/CourseWork.dir/objects/primitives/edge.cpp.o" \
+"CMakeFiles/CourseWork.dir/objects/primitives/point.cpp.o" \
+"CMakeFiles/CourseWork.dir/objects/model/model_structure.cpp.o" \
+"CMakeFiles/CourseWork.dir/objects/model/frame_model.cpp.o" \
+"CMakeFiles/CourseWork.dir/main.cpp.o" \
+"CMakeFiles/CourseWork.dir/objects/primitives/face.cpp.o"
 
 # External object files for target CourseWork
 CourseWork_EXTERNAL_OBJECTS =
 
 CourseWork: CMakeFiles/CourseWork.dir/CourseWork_autogen/mocs_compilation.cpp.o
-CourseWork: CMakeFiles/CourseWork.dir/main.cpp.o
 CourseWork: CMakeFiles/CourseWork.dir/mainwindow.cpp.o
-CourseWork: CMakeFiles/CourseWork.dir/facade/Facade.cpp.o
-CourseWork: CMakeFiles/CourseWork.dir/drawer/AbstractDrawerFactory.cpp.o
+CourseWork: CMakeFiles/CourseWork.dir/drawer/qt_drawer.cpp.o
+CourseWork: CMakeFiles/CourseWork.dir/drawer/qt_drawer_factory.cpp.o
+CourseWork: CMakeFiles/CourseWork.dir/visitor/draw_visitor.cpp.o
+CourseWork: CMakeFiles/CourseWork.dir/visitor/transform_visitor.cpp.o
+CourseWork: CMakeFiles/CourseWork.dir/builder/camera/camera_builder.cpp.o
+CourseWork: CMakeFiles/CourseWork.dir/builder/model/model_builder.cpp.o
+CourseWork: CMakeFiles/CourseWork.dir/config/config.cpp.o
+CourseWork: CMakeFiles/CourseWork.dir/config/config_solution.cpp.o
+CourseWork: CMakeFiles/CourseWork.dir/transformer/matrix.cpp.o
+CourseWork: CMakeFiles/CourseWork.dir/transformer/transformer_factory.cpp.o
+CourseWork: CMakeFiles/CourseWork.dir/transformer/transformer.cpp.o
+CourseWork: CMakeFiles/CourseWork.dir/scene/scene.cpp.o
+CourseWork: CMakeFiles/CourseWork.dir/loader/camera/file_camera_loader.cpp.o
+CourseWork: CMakeFiles/CourseWork.dir/loader/model/file_model_loader.cpp.o
+CourseWork: CMakeFiles/CourseWork.dir/loader/loader_solution.cpp.o
+CourseWork: CMakeFiles/CourseWork.dir/director/camera/camera_director.cpp.o
+CourseWork: CMakeFiles/CourseWork.dir/director/director_solution.cpp.o
+CourseWork: CMakeFiles/CourseWork.dir/director/model/model_director.cpp.o
+CourseWork: CMakeFiles/CourseWork.dir/managers/load/load_manager.cpp.o
+CourseWork: CMakeFiles/CourseWork.dir/managers/draw/draw_manager.cpp.o
+CourseWork: CMakeFiles/CourseWork.dir/managers/scene/scene_manager.cpp.o
+CourseWork: CMakeFiles/CourseWork.dir/managers/transform/transform_manager.cpp.o
+CourseWork: CMakeFiles/CourseWork.dir/facade/facade.cpp.o
+CourseWork: CMakeFiles/CourseWork.dir/objects/camera/camera_structure.cpp.o
+CourseWork: CMakeFiles/CourseWork.dir/objects/camera/camera.cpp.o
+CourseWork: CMakeFiles/CourseWork.dir/objects/composite/composite.cpp.o
+CourseWork: CMakeFiles/CourseWork.dir/objects/primitives/edge.cpp.o
+CourseWork: CMakeFiles/CourseWork.dir/objects/primitives/point.cpp.o
+CourseWork: CMakeFiles/CourseWork.dir/objects/model/model_structure.cpp.o
+CourseWork: CMakeFiles/CourseWork.dir/objects/model/frame_model.cpp.o
+CourseWork: CMakeFiles/CourseWork.dir/main.cpp.o
+CourseWork: CMakeFiles/CourseWork.dir/objects/primitives/face.cpp.o
 CourseWork: CMakeFiles/CourseWork.dir/build.make
 CourseWork: /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.8
 CourseWork: /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.15.8
 CourseWork: /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.15.8
 CourseWork: CMakeFiles/CourseWork.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/build-CourseWork-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable CourseWork"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/build-CourseWork-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Linking CXX executable CourseWork"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/CourseWork.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

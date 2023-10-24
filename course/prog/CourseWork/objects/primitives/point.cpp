@@ -1,8 +1,7 @@
-//
-// Created by max on 24.10.23.
-//
-
 #include "point.h"
+#include <cmath>
+
+// TODO: Matrix operations in rotation
 
 
 Point::Point(const double srcX, const double srcY, const double srcZ) {

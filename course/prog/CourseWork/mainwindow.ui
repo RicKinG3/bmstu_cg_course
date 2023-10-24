@@ -6,362 +6,962 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>1082</width>
+    <height>620</height>
    </rect>
-  </property>
-  <property name="font">
-   <font>
-    <family>Ubuntu</family>
-   </font>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="0">
-     <widget class="QGroupBox" name="groupBox">
-      <property name="maximumSize">
-       <size>
-        <width>350</width>
-        <height>16777215</height>
-       </size>
-      </property>
-      <property name="title">
-       <string/>
-      </property>
-      <layout class="QVBoxLayout" name="verticalLayout">
-       <item>
-        <widget class="QToolBox" name="toolBox">
-         <property name="currentIndex">
-          <number>0</number>
-         </property>
-         <widget class="QWidget" name="page_7">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>0</y>
-            <width>324</width>
-            <height>418</height>
-           </rect>
-          </property>
-          <attribute name="label">
-           <string>Объекты сцены</string>
-          </attribute>
-          <layout class="QGridLayout" name="gridLayout_3">
-           <item row="0" column="0">
-            <widget class="QGroupBox" name="groupBox_2">
-             <property name="title">
-              <string/>
-             </property>
-             <layout class="QGridLayout" name="gridLayout_2">
-              <item row="1" column="0" colspan="2">
-               <widget class="QGroupBox" name="groupBox_5">
-                <property name="title">
-                 <string>Укажите положение объекта на сцене</string>
-                </property>
-                <layout class="QGridLayout" name="gridLayout_9">
-                 <item row="2" column="1">
-                  <widget class="QSpinBox" name="spinBox_2"/>
-                 </item>
-                 <item row="1" column="0">
-                  <widget class="QLabel" name="label_3">
-                   <property name="text">
-                    <string>X</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="1" column="1">
-                  <widget class="QLabel" name="label_4">
-                   <property name="text">
-                    <string>Y</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="2" column="0">
-                  <widget class="QSpinBox" name="x_set_obj"/>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-              <item row="2" column="0" colspan="2">
-               <widget class="QPushButton" name="pushButton">
-                <property name="text">
-                 <string>Установть объект на сцену</string>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="0" colspan="2">
-               <widget class="QComboBox" name="chose_obj">
-                <property name="whatsThis">
-                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Выберите один из объектов сцены для его размещения на  сцене&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                </property>
-                <item>
-                 <property name="text">
-                  <string>Дом «стандартный»</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Дом «премиальный»</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Дорога</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Машина (серая)</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Машина (красная)</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Дерево</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Куст</string>
-                 </property>
-                </item>
-               </widget>
-              </item>
-              <item row="4" column="0" colspan="2">
-               <widget class="QGroupBox" name="groupBox_6">
-                <property name="title">
-                 <string>Укажите положение источника света</string>
-                </property>
-                <layout class="QGridLayout" name="gridLayout_10">
-                 <item row="0" column="1">
-                  <widget class="QLabel" name="label_2">
-                   <property name="text">
-                    <string>Угол Y</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="0">
-                  <widget class="QLabel" name="label">
-                   <property name="text">
-                    <string>Угол X</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="1" column="0">
-                  <widget class="QDoubleSpinBox" name="doubleSpinBox"/>
-                 </item>
-                 <item row="1" column="1">
-                  <widget class="QDoubleSpinBox" name="doubleSpinBox_2"/>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-              <item row="7" column="0" colspan="2">
-               <widget class="QPushButton" name="pushButton_5">
-                <property name="text">
-                 <string>Установить источник света</string>
-                </property>
-               </widget>
-              </item>
-              <item row="3" column="0">
-               <spacer name="verticalSpacer">
-                <property name="orientation">
-                 <enum>Qt::Vertical</enum>
-                </property>
-                <property name="sizeHint" stdset="0">
-                 <size>
-                  <width>20</width>
-                  <height>40</height>
-                 </size>
-                </property>
-               </spacer>
-              </item>
-             </layout>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-         <widget class="QWidget" name="page_8">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>0</y>
-            <width>324</width>
-            <height>418</height>
-           </rect>
-          </property>
-          <attribute name="label">
-           <string>Изменение Объектов</string>
-          </attribute>
-          <layout class="QGridLayout" name="gridLayout_6">
-           <item row="0" column="0">
-            <widget class="QGroupBox" name="groupBox_3">
-             <property name="title">
-              <string/>
-             </property>
-             <layout class="QGridLayout" name="gridLayout_5">
-              <item row="1" column="1">
-               <widget class="QLineEdit" name="lineEdit_7"/>
-              </item>
-              <item row="2" column="2">
-               <widget class="QDoubleSpinBox" name="doubleSpinBox_7"/>
-              </item>
-              <item row="3" column="0" colspan="3">
-               <widget class="QPushButton" name="pushButton_3">
-                <property name="text">
-                 <string>PushButton</string>
-                </property>
-               </widget>
-              </item>
-              <item row="1" column="0">
-               <widget class="QLineEdit" name="lineEdit_8"/>
-              </item>
-              <item row="0" column="0" colspan="3">
-               <widget class="QComboBox" name="comboBox_3"/>
-              </item>
-              <item row="2" column="0">
-               <widget class="QDoubleSpinBox" name="doubleSpinBox_8"/>
-              </item>
-              <item row="2" column="1">
-               <widget class="QDoubleSpinBox" name="doubleSpinBox_9"/>
-              </item>
-              <item row="1" column="2">
-               <widget class="QLineEdit" name="lineEdit_9"/>
-              </item>
-             </layout>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-         <widget class="QWidget" name="page_9">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>0</y>
-            <width>324</width>
-            <height>418</height>
-           </rect>
-          </property>
-          <attribute name="label">
-           <string>Измение Сцены</string>
-          </attribute>
-          <layout class="QGridLayout" name="gridLayout_8">
-           <item row="0" column="0">
-            <widget class="QGroupBox" name="groupBox_4">
-             <property name="title">
-              <string/>
-             </property>
-             <layout class="QGridLayout" name="gridLayout_7">
-              <item row="1" column="1">
-               <widget class="QLineEdit" name="lineEdit_10"/>
-              </item>
-              <item row="2" column="2">
-               <widget class="QDoubleSpinBox" name="doubleSpinBox_10"/>
-              </item>
-              <item row="3" column="0" colspan="3">
-               <widget class="QPushButton" name="pushButton_4">
-                <property name="text">
-                 <string>PushButton</string>
-                </property>
-               </widget>
-              </item>
-              <item row="1" column="0">
-               <widget class="QLineEdit" name="lineEdit_11"/>
-              </item>
-              <item row="0" column="0" colspan="3">
-               <widget class="QComboBox" name="comboBox_4"/>
-              </item>
-              <item row="2" column="0">
-               <widget class="QDoubleSpinBox" name="doubleSpinBox_11"/>
-              </item>
-              <item row="2" column="1">
-               <widget class="QDoubleSpinBox" name="doubleSpinBox_12"/>
-              </item>
-              <item row="1" column="2">
-               <widget class="QLineEdit" name="lineEdit_12"/>
-              </item>
-             </layout>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </item>
-    <item row="0" column="1">
-     <widget class="QGraphicsView" name="graphicsView"/>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>800</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <widget class="QMenu" name="menu">
+   <widget class="QGraphicsView" name="graphicsView">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>10</y>
+      <width>600</width>
+      <height>600</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="clearSceneButton">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>520</y>
+      <width>441</width>
+      <height>40</height>
+     </rect>
+    </property>
     <property name="font">
      <font>
-      <family>Ubuntu</family>
+      <pointsize>9</pointsize>
      </font>
     </property>
-    <property name="title">
-     <string>Меню</string>
-    </property>
-    <addaction name="action_1"/>
-    <addaction name="action_2"/>
-   </widget>
-   <widget class="QMenu" name="menu_2">
-    <property name="title">
-     <string>Меню</string>
+    <property name="text">
+     <string>Очистить сцену</string>
     </property>
    </widget>
-   <addaction name="menu"/>
-   <addaction name="menu_2"/>
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>441</width>
+      <height>451</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="currentIndex">
+     <number>1</number>
+    </property>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>Модель</string>
+     </attribute>
+     <widget class="QGroupBox" name="groupBox_6">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>421</width>
+        <height>181</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
+      <property name="title">
+       <string>Выбор модели</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <widget class="QComboBox" name="modelsList">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>401</width>
+         <height>28</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="deleteModelButton">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>70</y>
+         <width>401</width>
+         <height>29</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Удалить выбранную</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="deleteAllModelsButton">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>100</y>
+         <width>401</width>
+         <height>29</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Удалить все модели</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="loadModelButton">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>140</y>
+         <width>401</width>
+         <height>29</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Загрузить модель</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_3">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>200</y>
+        <width>111</width>
+        <height>181</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
+      <property name="title">
+       <string>Перенос</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <widget class="QDoubleSpinBox" name="dxModelInput">
+       <property name="geometry">
+        <rect>
+         <x>38</x>
+         <y>34</y>
+         <width>67</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="minimum">
+        <double>-1000.000000000000000</double>
+       </property>
+       <property name="maximum">
+        <double>1000.000000000000000</double>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="dyModelInput">
+       <property name="geometry">
+        <rect>
+         <x>38</x>
+         <y>64</y>
+         <width>67</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="minimum">
+        <double>-1000.000000000000000</double>
+       </property>
+       <property name="maximum">
+        <double>1000.000000000000000</double>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="dzModelInput">
+       <property name="geometry">
+        <rect>
+         <x>38</x>
+         <y>94</y>
+         <width>67</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="minimum">
+        <double>-1000.000000000000000</double>
+       </property>
+       <property name="maximum">
+        <double>1000.000000000000000</double>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>34</y>
+         <width>21</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>dx:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_2">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>64</y>
+         <width>21</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>dy:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_3">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>94</y>
+         <width>21</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>dz:</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="moveModelButton">
+       <property name="geometry">
+        <rect>
+         <x>2</x>
+         <y>140</y>
+         <width>107</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Перенести</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_4">
+      <property name="geometry">
+       <rect>
+        <x>165</x>
+        <y>200</y>
+        <width>111</width>
+        <height>181</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
+      <property name="title">
+       <string>Масштабирование</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <widget class="QDoubleSpinBox" name="kzModelInput">
+       <property name="geometry">
+        <rect>
+         <x>38</x>
+         <y>94</y>
+         <width>67</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="minimum">
+        <double>-1000.000000000000000</double>
+       </property>
+       <property name="maximum">
+        <double>1000.000000000000000</double>
+       </property>
+       <property name="value">
+        <double>1.000000000000000</double>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_4">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>34</y>
+         <width>21</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>kx:</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="kxModelInput">
+       <property name="geometry">
+        <rect>
+         <x>38</x>
+         <y>34</y>
+         <width>67</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="minimum">
+        <double>-1000.000000000000000</double>
+       </property>
+       <property name="maximum">
+        <double>1000.000000000000000</double>
+       </property>
+       <property name="value">
+        <double>1.000000000000000</double>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_5">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>94</y>
+         <width>21</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>kz:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_6">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>64</y>
+         <width>21</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>ky:</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="kyModelInput">
+       <property name="geometry">
+        <rect>
+         <x>38</x>
+         <y>64</y>
+         <width>67</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="minimum">
+        <double>-1000.000000000000000</double>
+       </property>
+       <property name="maximum">
+        <double>1000.000000000000000</double>
+       </property>
+       <property name="value">
+        <double>1.000000000000000</double>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="scaleModelButton">
+       <property name="geometry">
+        <rect>
+         <x>2</x>
+         <y>140</y>
+         <width>107</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Масштабировать</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_5">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>200</y>
+        <width>111</width>
+        <height>181</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
+      <property name="title">
+       <string>Поворот</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <widget class="QDoubleSpinBox" name="ozModelInput">
+       <property name="geometry">
+        <rect>
+         <x>38</x>
+         <y>94</y>
+         <width>67</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="minimum">
+        <double>-1000.000000000000000</double>
+       </property>
+       <property name="maximum">
+        <double>1000.000000000000000</double>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_7">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>34</y>
+         <width>21</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>ox:</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="oxModelInput">
+       <property name="geometry">
+        <rect>
+         <x>38</x>
+         <y>34</y>
+         <width>67</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="minimum">
+        <double>-1000.000000000000000</double>
+       </property>
+       <property name="maximum">
+        <double>1000.000000000000000</double>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_8">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>94</y>
+         <width>21</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>oz:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_9">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>64</y>
+         <width>21</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>oy:</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="oyModelInput">
+       <property name="geometry">
+        <rect>
+         <x>38</x>
+         <y>64</y>
+         <width>67</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="minimum">
+        <double>-1000.000000000000000</double>
+       </property>
+       <property name="maximum">
+        <double>1000.000000000000000</double>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="rotateModelButton">
+       <property name="geometry">
+        <rect>
+         <x>2</x>
+         <y>140</y>
+         <width>107</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Повернуть</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>Камера</string>
+     </attribute>
+     <widget class="QGroupBox" name="groupBox_9">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>200</y>
+        <width>171</width>
+        <height>181</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
+      <property name="title">
+       <string>Поворот</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <widget class="QDoubleSpinBox" name="ozCameraInput">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>94</y>
+         <width>67</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="minimum">
+        <double>-1000.000000000000000</double>
+       </property>
+       <property name="maximum">
+        <double>1000.000000000000000</double>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_13">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>34</y>
+         <width>21</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>ox:</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="oxCameraInput">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>34</y>
+         <width>67</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="minimum">
+        <double>-1000.000000000000000</double>
+       </property>
+       <property name="maximum">
+        <double>1000.000000000000000</double>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_14">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>94</y>
+         <width>21</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>oz:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_15">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>64</y>
+         <width>21</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>oy:</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="oyCameraInput">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>64</y>
+         <width>67</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="minimum">
+        <double>-1000.000000000000000</double>
+       </property>
+       <property name="maximum">
+        <double>1000.000000000000000</double>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="rotateCameraButton">
+       <property name="geometry">
+        <rect>
+         <x>5</x>
+         <y>140</y>
+         <width>161</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Повернуть</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_8">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>200</y>
+        <width>171</width>
+        <height>181</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
+      <property name="title">
+       <string>Перенос</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <widget class="QDoubleSpinBox" name="dxCameraInput">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>34</y>
+         <width>67</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="minimum">
+        <double>-1000.000000000000000</double>
+       </property>
+       <property name="maximum">
+        <double>1000.000000000000000</double>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="dyCameraInput">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>64</y>
+         <width>67</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="minimum">
+        <double>-1000.000000000000000</double>
+       </property>
+       <property name="maximum">
+        <double>1000.000000000000000</double>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_10">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>34</y>
+         <width>21</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>dx:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_11">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>64</y>
+         <width>21</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>dy:</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="moveCameraButton">
+       <property name="geometry">
+        <rect>
+         <x>5</x>
+         <y>140</y>
+         <width>161</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Перенести</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_10">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>10</y>
+        <width>211</width>
+        <height>181</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
+      <property name="title">
+       <string>Добавление камеры</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <widget class="QPushButton" name="addCameraButton">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>140</y>
+         <width>191</width>
+         <height>29</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Добавить камеру</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_16">
+       <property name="geometry">
+        <rect>
+         <x>12</x>
+         <y>70</y>
+         <width>21</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>y:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_17">
+       <property name="geometry">
+        <rect>
+         <x>12</x>
+         <y>40</y>
+         <width>21</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>x:</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="xCameraInput">
+       <property name="geometry">
+        <rect>
+         <x>28</x>
+         <y>40</y>
+         <width>67</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="minimum">
+        <double>-1000.000000000000000</double>
+       </property>
+       <property name="maximum">
+        <double>1000.000000000000000</double>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="yCameraInput">
+       <property name="geometry">
+        <rect>
+         <x>28</x>
+         <y>70</y>
+         <width>67</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="minimum">
+        <double>-1000.000000000000000</double>
+       </property>
+       <property name="maximum">
+        <double>1000.000000000000000</double>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_19">
+       <property name="geometry">
+        <rect>
+         <x>108</x>
+         <y>100</y>
+         <width>21</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>oz:</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="oxCameraInput_2">
+       <property name="geometry">
+        <rect>
+         <x>134</x>
+         <y>40</y>
+         <width>67</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="minimum">
+        <double>-1000.000000000000000</double>
+       </property>
+       <property name="maximum">
+        <double>1000.000000000000000</double>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="oyCameraInput_2">
+       <property name="geometry">
+        <rect>
+         <x>134</x>
+         <y>70</y>
+         <width>67</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="minimum">
+        <double>-1000.000000000000000</double>
+       </property>
+       <property name="maximum">
+        <double>1000.000000000000000</double>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_20">
+       <property name="geometry">
+        <rect>
+         <x>108</x>
+         <y>40</y>
+         <width>21</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>ox:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_21">
+       <property name="geometry">
+        <rect>
+         <x>108</x>
+         <y>70</y>
+         <width>21</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>oy:</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="ozCameraInput_2">
+       <property name="geometry">
+        <rect>
+         <x>134</x>
+         <y>100</y>
+         <width>67</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="minimum">
+        <double>-1000.000000000000000</double>
+       </property>
+       <property name="maximum">
+        <double>1000.000000000000000</double>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_7">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>191</width>
+        <height>181</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
+      <property name="title">
+       <string>Выбор камеры</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <widget class="QComboBox" name="camerasList">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>171</width>
+         <height>28</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="deleteCameraButton">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>70</y>
+         <width>171</width>
+         <height>29</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Удалить выбранную</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="loadCameraButton">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>140</y>
+         <width>171</width>
+         <height>29</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Загрузить камеру</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
-  <action name="action_1">
-   <property name="text">
-    <string>что - то 1</string>
-   </property>
-   <property name="font">
-    <font>
-     <family>Ubuntu</family>
-    </font>
-   </property>
-  </action>
-  <action name="action_2">
-   <property name="text">
-    <string>что - то 2</string>
-   </property>
-   <property name="font">
-    <font>
-     <family>Ubuntu</family>
-    </font>
-   </property>
-  </action>
-  <action name="action_3">
-   <property name="text">
-    <string>что - то 3</string>
-   </property>
-  </action>
-  <action name="action_4">
-   <property name="text">
-    <string> - то 3</string>
-   </property>
-  </action>
  </widget>
  <resources/>
  <connections/>

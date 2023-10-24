@@ -211,53 +211,317 @@ CourseWork_autogen/mocs_compilation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/CourseWork_autogen/mocs_compilation.cpp.s
 .PHONY : CourseWork_autogen/mocs_compilation.cpp.s
 
-drawer/AbstractDrawerFactory.o: drawer/AbstractDrawerFactory.cpp.o
-.PHONY : drawer/AbstractDrawerFactory.o
+builder/camera/camera_builder.o: builder/camera/camera_builder.cpp.o
+.PHONY : builder/camera/camera_builder.o
 
 # target to build an object file
-drawer/AbstractDrawerFactory.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/drawer/AbstractDrawerFactory.cpp.o
-.PHONY : drawer/AbstractDrawerFactory.cpp.o
+builder/camera/camera_builder.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/builder/camera/camera_builder.cpp.o
+.PHONY : builder/camera/camera_builder.cpp.o
 
-drawer/AbstractDrawerFactory.i: drawer/AbstractDrawerFactory.cpp.i
-.PHONY : drawer/AbstractDrawerFactory.i
+builder/camera/camera_builder.i: builder/camera/camera_builder.cpp.i
+.PHONY : builder/camera/camera_builder.i
 
 # target to preprocess a source file
-drawer/AbstractDrawerFactory.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/drawer/AbstractDrawerFactory.cpp.i
-.PHONY : drawer/AbstractDrawerFactory.cpp.i
+builder/camera/camera_builder.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/builder/camera/camera_builder.cpp.i
+.PHONY : builder/camera/camera_builder.cpp.i
 
-drawer/AbstractDrawerFactory.s: drawer/AbstractDrawerFactory.cpp.s
-.PHONY : drawer/AbstractDrawerFactory.s
+builder/camera/camera_builder.s: builder/camera/camera_builder.cpp.s
+.PHONY : builder/camera/camera_builder.s
 
 # target to generate assembly for a file
-drawer/AbstractDrawerFactory.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/drawer/AbstractDrawerFactory.cpp.s
-.PHONY : drawer/AbstractDrawerFactory.cpp.s
+builder/camera/camera_builder.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/builder/camera/camera_builder.cpp.s
+.PHONY : builder/camera/camera_builder.cpp.s
 
-facade/Facade.o: facade/Facade.cpp.o
-.PHONY : facade/Facade.o
+builder/model/model_builder.o: builder/model/model_builder.cpp.o
+.PHONY : builder/model/model_builder.o
 
 # target to build an object file
-facade/Facade.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/facade/Facade.cpp.o
-.PHONY : facade/Facade.cpp.o
+builder/model/model_builder.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/builder/model/model_builder.cpp.o
+.PHONY : builder/model/model_builder.cpp.o
 
-facade/Facade.i: facade/Facade.cpp.i
-.PHONY : facade/Facade.i
+builder/model/model_builder.i: builder/model/model_builder.cpp.i
+.PHONY : builder/model/model_builder.i
 
 # target to preprocess a source file
-facade/Facade.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/facade/Facade.cpp.i
-.PHONY : facade/Facade.cpp.i
+builder/model/model_builder.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/builder/model/model_builder.cpp.i
+.PHONY : builder/model/model_builder.cpp.i
 
-facade/Facade.s: facade/Facade.cpp.s
-.PHONY : facade/Facade.s
+builder/model/model_builder.s: builder/model/model_builder.cpp.s
+.PHONY : builder/model/model_builder.s
 
 # target to generate assembly for a file
-facade/Facade.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/facade/Facade.cpp.s
-.PHONY : facade/Facade.cpp.s
+builder/model/model_builder.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/builder/model/model_builder.cpp.s
+.PHONY : builder/model/model_builder.cpp.s
+
+config/config.o: config/config.cpp.o
+.PHONY : config/config.o
+
+# target to build an object file
+config/config.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/config/config.cpp.o
+.PHONY : config/config.cpp.o
+
+config/config.i: config/config.cpp.i
+.PHONY : config/config.i
+
+# target to preprocess a source file
+config/config.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/config/config.cpp.i
+.PHONY : config/config.cpp.i
+
+config/config.s: config/config.cpp.s
+.PHONY : config/config.s
+
+# target to generate assembly for a file
+config/config.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/config/config.cpp.s
+.PHONY : config/config.cpp.s
+
+config/config_solution.o: config/config_solution.cpp.o
+.PHONY : config/config_solution.o
+
+# target to build an object file
+config/config_solution.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/config/config_solution.cpp.o
+.PHONY : config/config_solution.cpp.o
+
+config/config_solution.i: config/config_solution.cpp.i
+.PHONY : config/config_solution.i
+
+# target to preprocess a source file
+config/config_solution.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/config/config_solution.cpp.i
+.PHONY : config/config_solution.cpp.i
+
+config/config_solution.s: config/config_solution.cpp.s
+.PHONY : config/config_solution.s
+
+# target to generate assembly for a file
+config/config_solution.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/config/config_solution.cpp.s
+.PHONY : config/config_solution.cpp.s
+
+director/camera/camera_director.o: director/camera/camera_director.cpp.o
+.PHONY : director/camera/camera_director.o
+
+# target to build an object file
+director/camera/camera_director.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/director/camera/camera_director.cpp.o
+.PHONY : director/camera/camera_director.cpp.o
+
+director/camera/camera_director.i: director/camera/camera_director.cpp.i
+.PHONY : director/camera/camera_director.i
+
+# target to preprocess a source file
+director/camera/camera_director.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/director/camera/camera_director.cpp.i
+.PHONY : director/camera/camera_director.cpp.i
+
+director/camera/camera_director.s: director/camera/camera_director.cpp.s
+.PHONY : director/camera/camera_director.s
+
+# target to generate assembly for a file
+director/camera/camera_director.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/director/camera/camera_director.cpp.s
+.PHONY : director/camera/camera_director.cpp.s
+
+director/director_solution.o: director/director_solution.cpp.o
+.PHONY : director/director_solution.o
+
+# target to build an object file
+director/director_solution.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/director/director_solution.cpp.o
+.PHONY : director/director_solution.cpp.o
+
+director/director_solution.i: director/director_solution.cpp.i
+.PHONY : director/director_solution.i
+
+# target to preprocess a source file
+director/director_solution.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/director/director_solution.cpp.i
+.PHONY : director/director_solution.cpp.i
+
+director/director_solution.s: director/director_solution.cpp.s
+.PHONY : director/director_solution.s
+
+# target to generate assembly for a file
+director/director_solution.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/director/director_solution.cpp.s
+.PHONY : director/director_solution.cpp.s
+
+director/model/model_director.o: director/model/model_director.cpp.o
+.PHONY : director/model/model_director.o
+
+# target to build an object file
+director/model/model_director.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/director/model/model_director.cpp.o
+.PHONY : director/model/model_director.cpp.o
+
+director/model/model_director.i: director/model/model_director.cpp.i
+.PHONY : director/model/model_director.i
+
+# target to preprocess a source file
+director/model/model_director.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/director/model/model_director.cpp.i
+.PHONY : director/model/model_director.cpp.i
+
+director/model/model_director.s: director/model/model_director.cpp.s
+.PHONY : director/model/model_director.s
+
+# target to generate assembly for a file
+director/model/model_director.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/director/model/model_director.cpp.s
+.PHONY : director/model/model_director.cpp.s
+
+drawer/qt_drawer.o: drawer/qt_drawer.cpp.o
+.PHONY : drawer/qt_drawer.o
+
+# target to build an object file
+drawer/qt_drawer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/drawer/qt_drawer.cpp.o
+.PHONY : drawer/qt_drawer.cpp.o
+
+drawer/qt_drawer.i: drawer/qt_drawer.cpp.i
+.PHONY : drawer/qt_drawer.i
+
+# target to preprocess a source file
+drawer/qt_drawer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/drawer/qt_drawer.cpp.i
+.PHONY : drawer/qt_drawer.cpp.i
+
+drawer/qt_drawer.s: drawer/qt_drawer.cpp.s
+.PHONY : drawer/qt_drawer.s
+
+# target to generate assembly for a file
+drawer/qt_drawer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/drawer/qt_drawer.cpp.s
+.PHONY : drawer/qt_drawer.cpp.s
+
+drawer/qt_drawer_factory.o: drawer/qt_drawer_factory.cpp.o
+.PHONY : drawer/qt_drawer_factory.o
+
+# target to build an object file
+drawer/qt_drawer_factory.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/drawer/qt_drawer_factory.cpp.o
+.PHONY : drawer/qt_drawer_factory.cpp.o
+
+drawer/qt_drawer_factory.i: drawer/qt_drawer_factory.cpp.i
+.PHONY : drawer/qt_drawer_factory.i
+
+# target to preprocess a source file
+drawer/qt_drawer_factory.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/drawer/qt_drawer_factory.cpp.i
+.PHONY : drawer/qt_drawer_factory.cpp.i
+
+drawer/qt_drawer_factory.s: drawer/qt_drawer_factory.cpp.s
+.PHONY : drawer/qt_drawer_factory.s
+
+# target to generate assembly for a file
+drawer/qt_drawer_factory.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/drawer/qt_drawer_factory.cpp.s
+.PHONY : drawer/qt_drawer_factory.cpp.s
+
+facade/facade.o: facade/facade.cpp.o
+.PHONY : facade/facade.o
+
+# target to build an object file
+facade/facade.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/facade/facade.cpp.o
+.PHONY : facade/facade.cpp.o
+
+facade/facade.i: facade/facade.cpp.i
+.PHONY : facade/facade.i
+
+# target to preprocess a source file
+facade/facade.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/facade/facade.cpp.i
+.PHONY : facade/facade.cpp.i
+
+facade/facade.s: facade/facade.cpp.s
+.PHONY : facade/facade.s
+
+# target to generate assembly for a file
+facade/facade.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/facade/facade.cpp.s
+.PHONY : facade/facade.cpp.s
+
+loader/camera/file_camera_loader.o: loader/camera/file_camera_loader.cpp.o
+.PHONY : loader/camera/file_camera_loader.o
+
+# target to build an object file
+loader/camera/file_camera_loader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/loader/camera/file_camera_loader.cpp.o
+.PHONY : loader/camera/file_camera_loader.cpp.o
+
+loader/camera/file_camera_loader.i: loader/camera/file_camera_loader.cpp.i
+.PHONY : loader/camera/file_camera_loader.i
+
+# target to preprocess a source file
+loader/camera/file_camera_loader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/loader/camera/file_camera_loader.cpp.i
+.PHONY : loader/camera/file_camera_loader.cpp.i
+
+loader/camera/file_camera_loader.s: loader/camera/file_camera_loader.cpp.s
+.PHONY : loader/camera/file_camera_loader.s
+
+# target to generate assembly for a file
+loader/camera/file_camera_loader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/loader/camera/file_camera_loader.cpp.s
+.PHONY : loader/camera/file_camera_loader.cpp.s
+
+loader/loader_solution.o: loader/loader_solution.cpp.o
+.PHONY : loader/loader_solution.o
+
+# target to build an object file
+loader/loader_solution.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/loader/loader_solution.cpp.o
+.PHONY : loader/loader_solution.cpp.o
+
+loader/loader_solution.i: loader/loader_solution.cpp.i
+.PHONY : loader/loader_solution.i
+
+# target to preprocess a source file
+loader/loader_solution.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/loader/loader_solution.cpp.i
+.PHONY : loader/loader_solution.cpp.i
+
+loader/loader_solution.s: loader/loader_solution.cpp.s
+.PHONY : loader/loader_solution.s
+
+# target to generate assembly for a file
+loader/loader_solution.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/loader/loader_solution.cpp.s
+.PHONY : loader/loader_solution.cpp.s
+
+loader/model/file_model_loader.o: loader/model/file_model_loader.cpp.o
+.PHONY : loader/model/file_model_loader.o
+
+# target to build an object file
+loader/model/file_model_loader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/loader/model/file_model_loader.cpp.o
+.PHONY : loader/model/file_model_loader.cpp.o
+
+loader/model/file_model_loader.i: loader/model/file_model_loader.cpp.i
+.PHONY : loader/model/file_model_loader.i
+
+# target to preprocess a source file
+loader/model/file_model_loader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/loader/model/file_model_loader.cpp.i
+.PHONY : loader/model/file_model_loader.cpp.i
+
+loader/model/file_model_loader.s: loader/model/file_model_loader.cpp.s
+.PHONY : loader/model/file_model_loader.s
+
+# target to generate assembly for a file
+loader/model/file_model_loader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/loader/model/file_model_loader.cpp.s
+.PHONY : loader/model/file_model_loader.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
@@ -307,6 +571,438 @@ mainwindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/mainwindow.cpp.s
 .PHONY : mainwindow.cpp.s
 
+managers/draw/draw_manager.o: managers/draw/draw_manager.cpp.o
+.PHONY : managers/draw/draw_manager.o
+
+# target to build an object file
+managers/draw/draw_manager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/managers/draw/draw_manager.cpp.o
+.PHONY : managers/draw/draw_manager.cpp.o
+
+managers/draw/draw_manager.i: managers/draw/draw_manager.cpp.i
+.PHONY : managers/draw/draw_manager.i
+
+# target to preprocess a source file
+managers/draw/draw_manager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/managers/draw/draw_manager.cpp.i
+.PHONY : managers/draw/draw_manager.cpp.i
+
+managers/draw/draw_manager.s: managers/draw/draw_manager.cpp.s
+.PHONY : managers/draw/draw_manager.s
+
+# target to generate assembly for a file
+managers/draw/draw_manager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/managers/draw/draw_manager.cpp.s
+.PHONY : managers/draw/draw_manager.cpp.s
+
+managers/load/load_manager.o: managers/load/load_manager.cpp.o
+.PHONY : managers/load/load_manager.o
+
+# target to build an object file
+managers/load/load_manager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/managers/load/load_manager.cpp.o
+.PHONY : managers/load/load_manager.cpp.o
+
+managers/load/load_manager.i: managers/load/load_manager.cpp.i
+.PHONY : managers/load/load_manager.i
+
+# target to preprocess a source file
+managers/load/load_manager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/managers/load/load_manager.cpp.i
+.PHONY : managers/load/load_manager.cpp.i
+
+managers/load/load_manager.s: managers/load/load_manager.cpp.s
+.PHONY : managers/load/load_manager.s
+
+# target to generate assembly for a file
+managers/load/load_manager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/managers/load/load_manager.cpp.s
+.PHONY : managers/load/load_manager.cpp.s
+
+managers/scene/scene_manager.o: managers/scene/scene_manager.cpp.o
+.PHONY : managers/scene/scene_manager.o
+
+# target to build an object file
+managers/scene/scene_manager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/managers/scene/scene_manager.cpp.o
+.PHONY : managers/scene/scene_manager.cpp.o
+
+managers/scene/scene_manager.i: managers/scene/scene_manager.cpp.i
+.PHONY : managers/scene/scene_manager.i
+
+# target to preprocess a source file
+managers/scene/scene_manager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/managers/scene/scene_manager.cpp.i
+.PHONY : managers/scene/scene_manager.cpp.i
+
+managers/scene/scene_manager.s: managers/scene/scene_manager.cpp.s
+.PHONY : managers/scene/scene_manager.s
+
+# target to generate assembly for a file
+managers/scene/scene_manager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/managers/scene/scene_manager.cpp.s
+.PHONY : managers/scene/scene_manager.cpp.s
+
+managers/transform/transform_manager.o: managers/transform/transform_manager.cpp.o
+.PHONY : managers/transform/transform_manager.o
+
+# target to build an object file
+managers/transform/transform_manager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/managers/transform/transform_manager.cpp.o
+.PHONY : managers/transform/transform_manager.cpp.o
+
+managers/transform/transform_manager.i: managers/transform/transform_manager.cpp.i
+.PHONY : managers/transform/transform_manager.i
+
+# target to preprocess a source file
+managers/transform/transform_manager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/managers/transform/transform_manager.cpp.i
+.PHONY : managers/transform/transform_manager.cpp.i
+
+managers/transform/transform_manager.s: managers/transform/transform_manager.cpp.s
+.PHONY : managers/transform/transform_manager.s
+
+# target to generate assembly for a file
+managers/transform/transform_manager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/managers/transform/transform_manager.cpp.s
+.PHONY : managers/transform/transform_manager.cpp.s
+
+objects/camera/camera.o: objects/camera/camera.cpp.o
+.PHONY : objects/camera/camera.o
+
+# target to build an object file
+objects/camera/camera.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/objects/camera/camera.cpp.o
+.PHONY : objects/camera/camera.cpp.o
+
+objects/camera/camera.i: objects/camera/camera.cpp.i
+.PHONY : objects/camera/camera.i
+
+# target to preprocess a source file
+objects/camera/camera.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/objects/camera/camera.cpp.i
+.PHONY : objects/camera/camera.cpp.i
+
+objects/camera/camera.s: objects/camera/camera.cpp.s
+.PHONY : objects/camera/camera.s
+
+# target to generate assembly for a file
+objects/camera/camera.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/objects/camera/camera.cpp.s
+.PHONY : objects/camera/camera.cpp.s
+
+objects/camera/camera_structure.o: objects/camera/camera_structure.cpp.o
+.PHONY : objects/camera/camera_structure.o
+
+# target to build an object file
+objects/camera/camera_structure.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/objects/camera/camera_structure.cpp.o
+.PHONY : objects/camera/camera_structure.cpp.o
+
+objects/camera/camera_structure.i: objects/camera/camera_structure.cpp.i
+.PHONY : objects/camera/camera_structure.i
+
+# target to preprocess a source file
+objects/camera/camera_structure.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/objects/camera/camera_structure.cpp.i
+.PHONY : objects/camera/camera_structure.cpp.i
+
+objects/camera/camera_structure.s: objects/camera/camera_structure.cpp.s
+.PHONY : objects/camera/camera_structure.s
+
+# target to generate assembly for a file
+objects/camera/camera_structure.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/objects/camera/camera_structure.cpp.s
+.PHONY : objects/camera/camera_structure.cpp.s
+
+objects/composite/composite.o: objects/composite/composite.cpp.o
+.PHONY : objects/composite/composite.o
+
+# target to build an object file
+objects/composite/composite.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/objects/composite/composite.cpp.o
+.PHONY : objects/composite/composite.cpp.o
+
+objects/composite/composite.i: objects/composite/composite.cpp.i
+.PHONY : objects/composite/composite.i
+
+# target to preprocess a source file
+objects/composite/composite.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/objects/composite/composite.cpp.i
+.PHONY : objects/composite/composite.cpp.i
+
+objects/composite/composite.s: objects/composite/composite.cpp.s
+.PHONY : objects/composite/composite.s
+
+# target to generate assembly for a file
+objects/composite/composite.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/objects/composite/composite.cpp.s
+.PHONY : objects/composite/composite.cpp.s
+
+objects/model/frame_model.o: objects/model/frame_model.cpp.o
+.PHONY : objects/model/frame_model.o
+
+# target to build an object file
+objects/model/frame_model.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/objects/model/frame_model.cpp.o
+.PHONY : objects/model/frame_model.cpp.o
+
+objects/model/frame_model.i: objects/model/frame_model.cpp.i
+.PHONY : objects/model/frame_model.i
+
+# target to preprocess a source file
+objects/model/frame_model.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/objects/model/frame_model.cpp.i
+.PHONY : objects/model/frame_model.cpp.i
+
+objects/model/frame_model.s: objects/model/frame_model.cpp.s
+.PHONY : objects/model/frame_model.s
+
+# target to generate assembly for a file
+objects/model/frame_model.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/objects/model/frame_model.cpp.s
+.PHONY : objects/model/frame_model.cpp.s
+
+objects/model/model_structure.o: objects/model/model_structure.cpp.o
+.PHONY : objects/model/model_structure.o
+
+# target to build an object file
+objects/model/model_structure.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/objects/model/model_structure.cpp.o
+.PHONY : objects/model/model_structure.cpp.o
+
+objects/model/model_structure.i: objects/model/model_structure.cpp.i
+.PHONY : objects/model/model_structure.i
+
+# target to preprocess a source file
+objects/model/model_structure.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/objects/model/model_structure.cpp.i
+.PHONY : objects/model/model_structure.cpp.i
+
+objects/model/model_structure.s: objects/model/model_structure.cpp.s
+.PHONY : objects/model/model_structure.s
+
+# target to generate assembly for a file
+objects/model/model_structure.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/objects/model/model_structure.cpp.s
+.PHONY : objects/model/model_structure.cpp.s
+
+objects/primitives/edge.o: objects/primitives/edge.cpp.o
+.PHONY : objects/primitives/edge.o
+
+# target to build an object file
+objects/primitives/edge.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/objects/primitives/edge.cpp.o
+.PHONY : objects/primitives/edge.cpp.o
+
+objects/primitives/edge.i: objects/primitives/edge.cpp.i
+.PHONY : objects/primitives/edge.i
+
+# target to preprocess a source file
+objects/primitives/edge.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/objects/primitives/edge.cpp.i
+.PHONY : objects/primitives/edge.cpp.i
+
+objects/primitives/edge.s: objects/primitives/edge.cpp.s
+.PHONY : objects/primitives/edge.s
+
+# target to generate assembly for a file
+objects/primitives/edge.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/objects/primitives/edge.cpp.s
+.PHONY : objects/primitives/edge.cpp.s
+
+objects/primitives/face.o: objects/primitives/face.cpp.o
+.PHONY : objects/primitives/face.o
+
+# target to build an object file
+objects/primitives/face.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/objects/primitives/face.cpp.o
+.PHONY : objects/primitives/face.cpp.o
+
+objects/primitives/face.i: objects/primitives/face.cpp.i
+.PHONY : objects/primitives/face.i
+
+# target to preprocess a source file
+objects/primitives/face.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/objects/primitives/face.cpp.i
+.PHONY : objects/primitives/face.cpp.i
+
+objects/primitives/face.s: objects/primitives/face.cpp.s
+.PHONY : objects/primitives/face.s
+
+# target to generate assembly for a file
+objects/primitives/face.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/objects/primitives/face.cpp.s
+.PHONY : objects/primitives/face.cpp.s
+
+objects/primitives/point.o: objects/primitives/point.cpp.o
+.PHONY : objects/primitives/point.o
+
+# target to build an object file
+objects/primitives/point.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/objects/primitives/point.cpp.o
+.PHONY : objects/primitives/point.cpp.o
+
+objects/primitives/point.i: objects/primitives/point.cpp.i
+.PHONY : objects/primitives/point.i
+
+# target to preprocess a source file
+objects/primitives/point.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/objects/primitives/point.cpp.i
+.PHONY : objects/primitives/point.cpp.i
+
+objects/primitives/point.s: objects/primitives/point.cpp.s
+.PHONY : objects/primitives/point.s
+
+# target to generate assembly for a file
+objects/primitives/point.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/objects/primitives/point.cpp.s
+.PHONY : objects/primitives/point.cpp.s
+
+scene/scene.o: scene/scene.cpp.o
+.PHONY : scene/scene.o
+
+# target to build an object file
+scene/scene.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/scene/scene.cpp.o
+.PHONY : scene/scene.cpp.o
+
+scene/scene.i: scene/scene.cpp.i
+.PHONY : scene/scene.i
+
+# target to preprocess a source file
+scene/scene.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/scene/scene.cpp.i
+.PHONY : scene/scene.cpp.i
+
+scene/scene.s: scene/scene.cpp.s
+.PHONY : scene/scene.s
+
+# target to generate assembly for a file
+scene/scene.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/scene/scene.cpp.s
+.PHONY : scene/scene.cpp.s
+
+transformer/matrix.o: transformer/matrix.cpp.o
+.PHONY : transformer/matrix.o
+
+# target to build an object file
+transformer/matrix.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/transformer/matrix.cpp.o
+.PHONY : transformer/matrix.cpp.o
+
+transformer/matrix.i: transformer/matrix.cpp.i
+.PHONY : transformer/matrix.i
+
+# target to preprocess a source file
+transformer/matrix.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/transformer/matrix.cpp.i
+.PHONY : transformer/matrix.cpp.i
+
+transformer/matrix.s: transformer/matrix.cpp.s
+.PHONY : transformer/matrix.s
+
+# target to generate assembly for a file
+transformer/matrix.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/transformer/matrix.cpp.s
+.PHONY : transformer/matrix.cpp.s
+
+transformer/transformer.o: transformer/transformer.cpp.o
+.PHONY : transformer/transformer.o
+
+# target to build an object file
+transformer/transformer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/transformer/transformer.cpp.o
+.PHONY : transformer/transformer.cpp.o
+
+transformer/transformer.i: transformer/transformer.cpp.i
+.PHONY : transformer/transformer.i
+
+# target to preprocess a source file
+transformer/transformer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/transformer/transformer.cpp.i
+.PHONY : transformer/transformer.cpp.i
+
+transformer/transformer.s: transformer/transformer.cpp.s
+.PHONY : transformer/transformer.s
+
+# target to generate assembly for a file
+transformer/transformer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/transformer/transformer.cpp.s
+.PHONY : transformer/transformer.cpp.s
+
+transformer/transformer_factory.o: transformer/transformer_factory.cpp.o
+.PHONY : transformer/transformer_factory.o
+
+# target to build an object file
+transformer/transformer_factory.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/transformer/transformer_factory.cpp.o
+.PHONY : transformer/transformer_factory.cpp.o
+
+transformer/transformer_factory.i: transformer/transformer_factory.cpp.i
+.PHONY : transformer/transformer_factory.i
+
+# target to preprocess a source file
+transformer/transformer_factory.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/transformer/transformer_factory.cpp.i
+.PHONY : transformer/transformer_factory.cpp.i
+
+transformer/transformer_factory.s: transformer/transformer_factory.cpp.s
+.PHONY : transformer/transformer_factory.s
+
+# target to generate assembly for a file
+transformer/transformer_factory.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/transformer/transformer_factory.cpp.s
+.PHONY : transformer/transformer_factory.cpp.s
+
+visitor/draw_visitor.o: visitor/draw_visitor.cpp.o
+.PHONY : visitor/draw_visitor.o
+
+# target to build an object file
+visitor/draw_visitor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/visitor/draw_visitor.cpp.o
+.PHONY : visitor/draw_visitor.cpp.o
+
+visitor/draw_visitor.i: visitor/draw_visitor.cpp.i
+.PHONY : visitor/draw_visitor.i
+
+# target to preprocess a source file
+visitor/draw_visitor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/visitor/draw_visitor.cpp.i
+.PHONY : visitor/draw_visitor.cpp.i
+
+visitor/draw_visitor.s: visitor/draw_visitor.cpp.s
+.PHONY : visitor/draw_visitor.s
+
+# target to generate assembly for a file
+visitor/draw_visitor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/visitor/draw_visitor.cpp.s
+.PHONY : visitor/draw_visitor.cpp.s
+
+visitor/transform_visitor.o: visitor/transform_visitor.cpp.o
+.PHONY : visitor/transform_visitor.o
+
+# target to build an object file
+visitor/transform_visitor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/visitor/transform_visitor.cpp.o
+.PHONY : visitor/transform_visitor.cpp.o
+
+visitor/transform_visitor.i: visitor/transform_visitor.cpp.i
+.PHONY : visitor/transform_visitor.i
+
+# target to preprocess a source file
+visitor/transform_visitor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/visitor/transform_visitor.cpp.i
+.PHONY : visitor/transform_visitor.cpp.i
+
+visitor/transform_visitor.s: visitor/transform_visitor.cpp.s
+.PHONY : visitor/transform_visitor.s
+
+# target to generate assembly for a file
+visitor/transform_visitor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/visitor/transform_visitor.cpp.s
+.PHONY : visitor/transform_visitor.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -324,18 +1020,105 @@ help:
 	@echo "... CourseWork_autogen/mocs_compilation.o"
 	@echo "... CourseWork_autogen/mocs_compilation.i"
 	@echo "... CourseWork_autogen/mocs_compilation.s"
-	@echo "... drawer/AbstractDrawerFactory.o"
-	@echo "... drawer/AbstractDrawerFactory.i"
-	@echo "... drawer/AbstractDrawerFactory.s"
-	@echo "... facade/Facade.o"
-	@echo "... facade/Facade.i"
-	@echo "... facade/Facade.s"
+	@echo "... builder/camera/camera_builder.o"
+	@echo "... builder/camera/camera_builder.i"
+	@echo "... builder/camera/camera_builder.s"
+	@echo "... builder/model/model_builder.o"
+	@echo "... builder/model/model_builder.i"
+	@echo "... builder/model/model_builder.s"
+	@echo "... config/config.o"
+	@echo "... config/config.i"
+	@echo "... config/config.s"
+	@echo "... config/config_solution.o"
+	@echo "... config/config_solution.i"
+	@echo "... config/config_solution.s"
+	@echo "... director/camera/camera_director.o"
+	@echo "... director/camera/camera_director.i"
+	@echo "... director/camera/camera_director.s"
+	@echo "... director/director_solution.o"
+	@echo "... director/director_solution.i"
+	@echo "... director/director_solution.s"
+	@echo "... director/model/model_director.o"
+	@echo "... director/model/model_director.i"
+	@echo "... director/model/model_director.s"
+	@echo "... drawer/qt_drawer.o"
+	@echo "... drawer/qt_drawer.i"
+	@echo "... drawer/qt_drawer.s"
+	@echo "... drawer/qt_drawer_factory.o"
+	@echo "... drawer/qt_drawer_factory.i"
+	@echo "... drawer/qt_drawer_factory.s"
+	@echo "... facade/facade.o"
+	@echo "... facade/facade.i"
+	@echo "... facade/facade.s"
+	@echo "... loader/camera/file_camera_loader.o"
+	@echo "... loader/camera/file_camera_loader.i"
+	@echo "... loader/camera/file_camera_loader.s"
+	@echo "... loader/loader_solution.o"
+	@echo "... loader/loader_solution.i"
+	@echo "... loader/loader_solution.s"
+	@echo "... loader/model/file_model_loader.o"
+	@echo "... loader/model/file_model_loader.i"
+	@echo "... loader/model/file_model_loader.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
 	@echo "... mainwindow.o"
 	@echo "... mainwindow.i"
 	@echo "... mainwindow.s"
+	@echo "... managers/draw/draw_manager.o"
+	@echo "... managers/draw/draw_manager.i"
+	@echo "... managers/draw/draw_manager.s"
+	@echo "... managers/load/load_manager.o"
+	@echo "... managers/load/load_manager.i"
+	@echo "... managers/load/load_manager.s"
+	@echo "... managers/scene/scene_manager.o"
+	@echo "... managers/scene/scene_manager.i"
+	@echo "... managers/scene/scene_manager.s"
+	@echo "... managers/transform/transform_manager.o"
+	@echo "... managers/transform/transform_manager.i"
+	@echo "... managers/transform/transform_manager.s"
+	@echo "... objects/camera/camera.o"
+	@echo "... objects/camera/camera.i"
+	@echo "... objects/camera/camera.s"
+	@echo "... objects/camera/camera_structure.o"
+	@echo "... objects/camera/camera_structure.i"
+	@echo "... objects/camera/camera_structure.s"
+	@echo "... objects/composite/composite.o"
+	@echo "... objects/composite/composite.i"
+	@echo "... objects/composite/composite.s"
+	@echo "... objects/model/frame_model.o"
+	@echo "... objects/model/frame_model.i"
+	@echo "... objects/model/frame_model.s"
+	@echo "... objects/model/model_structure.o"
+	@echo "... objects/model/model_structure.i"
+	@echo "... objects/model/model_structure.s"
+	@echo "... objects/primitives/edge.o"
+	@echo "... objects/primitives/edge.i"
+	@echo "... objects/primitives/edge.s"
+	@echo "... objects/primitives/face.o"
+	@echo "... objects/primitives/face.i"
+	@echo "... objects/primitives/face.s"
+	@echo "... objects/primitives/point.o"
+	@echo "... objects/primitives/point.i"
+	@echo "... objects/primitives/point.s"
+	@echo "... scene/scene.o"
+	@echo "... scene/scene.i"
+	@echo "... scene/scene.s"
+	@echo "... transformer/matrix.o"
+	@echo "... transformer/matrix.i"
+	@echo "... transformer/matrix.s"
+	@echo "... transformer/transformer.o"
+	@echo "... transformer/transformer.i"
+	@echo "... transformer/transformer.s"
+	@echo "... transformer/transformer_factory.o"
+	@echo "... transformer/transformer_factory.i"
+	@echo "... transformer/transformer_factory.s"
+	@echo "... visitor/draw_visitor.o"
+	@echo "... visitor/draw_visitor.i"
+	@echo "... visitor/draw_visitor.s"
+	@echo "... visitor/transform_visitor.o"
+	@echo "... visitor/transform_visitor.i"
+	@echo "... visitor/transform_visitor.s"
 .PHONY : help
 
 

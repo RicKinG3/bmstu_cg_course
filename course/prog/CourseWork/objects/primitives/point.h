@@ -1,10 +1,9 @@
 //
-// Created by max on 24.10.23.
+// Created by User on 29.05.2023.
 //
 
-#ifndef COURSEWORK_POINT_H
-#define COURSEWORK_POINT_H
-
+#ifndef LAB_03_POINT_H
+#define LAB_03_POINT_H
 
 
 #include <cmath>
@@ -55,4 +54,4 @@ private:
     double x, y, z;
 };
 
-#endif //COURSEWORK_POINT_H
+#endif //LAB_03_POINT_H

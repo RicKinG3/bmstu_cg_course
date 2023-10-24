@@ -40,10 +40,10 @@ std::shared_ptr<Object> FileModelLoader::load(std::shared_ptr<BaseBuilder> srcBu
     for (int i = 0; i < pointsCount; i++)
         builder->buildPoint(readPoint());
 
-    int edges_count = readCount();
-
-    for (int i = 0; i < edges_count; i++)
-        builder->buildEdge(readEdge());
+//    int edges_count = readCount();
+//
+//    for (int i = 0; i < edges_count; i++)
+//        builder->buildEdge(readEdge());
 
     int face_count = readCount();
     for (int i = 0; i < face_count; i++)

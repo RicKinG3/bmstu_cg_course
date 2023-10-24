@@ -16,13 +16,26 @@ DrawVisitor::DrawVisitor(const std::shared_ptr<BaseDrawer> &drawer_arg, const st
 void DrawVisitor::visit(FrameModel &model) {
     auto points = model.getModelStructure()->getPoints();
     auto edges = model.getModelStructure()->getEdges();
-
+    auto faces = model.getModelStructure()->getFaces();
 
     auto center = model.getCenter();
 
-    for (const auto &edge: edges)
-        drawer->drawLine(projectPoint(points[edge.getStartIndex()], center),
-                         projectPoint(points[edge.getEndIndex()], center));
+
+    for (const auto &face: faces) {
+        // Получаем индексы точек, составляющих текущий полигон
+        std::size_t pointIndex1 = face[0];
+        std::size_t pointIndex2 = face[1];
+        std::size_t pointIndex3 = face[2];
+
+        // Рисуем полигон, используя три точки
+        drawer->drawPolygon(
+                                    projectPoint(points[pointIndex1], center),
+                                    projectPoint(points[pointIndex2], center),
+                                    projectPoint(points[pointIndex3], center)
+                            );
+    }
+
+
 }
 
 
@@ -51,5 +64,3 @@ DrawVisitorFactory::DrawVisitorFactory(std::shared_ptr<BaseDrawer> &drawer_arg,
 std::shared_ptr<Visitor> DrawVisitorFactory::create() {
     return std::make_unique<DrawVisitor>(drawer, camera);
 }
-
-// TODO: delete

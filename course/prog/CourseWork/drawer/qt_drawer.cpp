@@ -17,7 +17,7 @@ void QtDrawer::drawLine(const Point &point1, const Point &point2) {
     scene->addLine(point1.getX(), -point1.getY(), point2.getX(), -point2.getY(), pen);
 }
 
-
+//TODO need algos
 void QtDrawer::drawPolygon(const Point &point1, const Point &point2, const Point &point3) {
     // Получаем указатель на QGraphicsScene из shared_ptr
     QGraphicsScene* scenePtr = scene.get();
@@ -34,7 +34,7 @@ void QtDrawer::drawPolygon(const Point &point1, const Point &point2, const Point
          << QPoint(point3.getX(), -point3.getY());
 
     // Создаем кисть с белым цветом
-    QBrush brush(Qt::white);
+    QBrush brush(Qt::red);
 
     // Создаем графический элемент (полигон) в сцене
     QGraphicsPolygonItem* polygonItem = new QGraphicsPolygonItem(poly);

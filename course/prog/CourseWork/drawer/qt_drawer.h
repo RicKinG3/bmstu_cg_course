@@ -15,8 +15,6 @@ public:
     void drawLine(const Point &point1, const Point &point2) override;
     void clearScene() override;
     void drawPolygon(const Point &point1, const Point &point2,  const Point &point3);
-    float interpolate(int y1, int y2, float x1, float x2, int y) ;
-
         private:
     std::shared_ptr<QGraphicsScene> scene;
 };

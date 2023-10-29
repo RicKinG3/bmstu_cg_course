@@ -29,12 +29,10 @@ void DrawVisitor::visit(FrameModel &model) {
     int bufWidth = 500, bufHeight = 500;
 
     // init
-    for (size_t i = 0; i < bufWidth; i++)
-    {
+    for (size_t i = 0; i < bufWidth; i++) {
         depthBuffer.push_back(std::vector<double>(bufHeight, 0));
         frameBuffer.push_back(std::vector<size_t>(bufHeight, 0));
     }
-
 
 
     for (const auto &face: faces) {
@@ -45,10 +43,10 @@ void DrawVisitor::visit(FrameModel &model) {
 
         // Рисуем полигон, используя три точки
         drawer->drawPolygon(
-                                    projectPoint(points[pointIndex1], center),
-                                    projectPoint(points[pointIndex2], center),
-                                    projectPoint(points[pointIndex3], center)
-                            );
+                projectPoint(points[pointIndex1], center),
+                projectPoint(points[pointIndex2], center),
+                projectPoint(points[pointIndex3], center)
+        );
     }
 
 
@@ -70,6 +68,7 @@ Point DrawVisitor::projectPoint(const Point &point, const Point &center) {
 
 void DrawVisitor::visit(Camera &model) {}
 
+void DrawVisitor::visit(Light &model) {}
 
 DrawVisitorFactory::DrawVisitorFactory(std::shared_ptr<BaseDrawer> &drawer_arg,
                                        std::shared_ptr<Camera> &camera_arg) {

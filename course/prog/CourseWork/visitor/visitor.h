@@ -12,6 +12,8 @@ class Composite;
 
 class Scene;
 
+class Light;
+
 class Visitor {
 public:
     Visitor() = default;
@@ -22,7 +24,11 @@ public:
 
     virtual void visit(Camera &model) = 0;
 
+    virtual void visit(Light &model) = 0;
+
+
     // TODO : delete
+    // todo need add light
 };
 
 

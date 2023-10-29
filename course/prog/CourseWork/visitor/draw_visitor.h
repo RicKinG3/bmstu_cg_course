@@ -17,10 +17,13 @@ public:
 
     void visit(Camera &model) override;
 
+    void visit(Light &model) override;
+
 private:
 
     std::shared_ptr<BaseDrawer> drawer;
     std::shared_ptr<Camera> camera;
+    std::shared_ptr<Light> light;
 
     Point projectPoint(const Point &point, const Point &center);
 };
@@ -37,6 +40,8 @@ public:
 private:
     std::shared_ptr<BaseDrawer> drawer;
     std::shared_ptr<Camera> camera;
+    std::shared_ptr<Light> light;
+
 };
 
 #endif //LAB_03_DRAW_VISITOR_H

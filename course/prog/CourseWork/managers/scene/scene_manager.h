@@ -6,7 +6,7 @@
 #include "../base_manager.h"
 #include "../../scene/scene.h"
 #include "../../objects/camera/camera.h"
-
+#include "Light.h"
 
 class SceneManager : public BaseManager
 {
@@ -20,6 +20,9 @@ public:
     void setCamera(size_t &id);
 
     void addCamera(const Point &position, const Point &direction);
+    void addLight(const Point &position, const Point &direction);
+
+
     void removeObject(size_t &id) { scene->removeObject(id);}
 
     size_t countCamera() {return scene->getCameraNum();}

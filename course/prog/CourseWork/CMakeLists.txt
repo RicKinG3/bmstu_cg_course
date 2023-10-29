@@ -113,6 +113,12 @@ set(PROJECT_SOURCES
 
         objects/primitives/face.cpp
         objects/primitives/face.h
+        commands/light/light_commands.h
+        objects/light/Light.cpp
+        objects/light/Light.h
+        objects/light/BaseLight.h
+        objects/light/LightStructure.cpp
+        objects/light/LightStructure.h
 )
 
 
@@ -148,6 +154,16 @@ target_include_directories(CourseWork PRIVATE
         managers/draw
         objects
         objects/primitives
+        objects/light
+        commands
+        commands/camera
+        commands/light
+        commands/model
+        commands/scene
+        transformer
+        visitor
+
+
 )
 
 set_target_properties(CourseWork PROPERTIES

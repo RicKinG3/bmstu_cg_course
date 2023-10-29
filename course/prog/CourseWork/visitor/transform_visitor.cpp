@@ -5,7 +5,7 @@
 #include "transform_visitor.h"
 #include "../objects/model/frame_model.h"
 #include "../objects/camera/camera.h"
-
+#include "Light.h"
 TransformVisitor::TransformVisitor(const std::shared_ptr<BaseTransformer> &transformer_) :
         transformer(transformer_) {}
 
@@ -30,6 +30,18 @@ void TransformVisitor::visit(Camera &model) {
     model.getCameraStructure()->setDirection(direction);
     model.getCameraStructure()->setPosition(position);
 }
+
+//todo &? ???
+void TransformVisitor::visit(Light &model) {
+    auto direction = model.getLightStructure()->getDirection();
+    auto position = model.getLightStructure()->getPosition();
+
+    transformer->transform(direction, position);
+
+    model.getLightStructure()->setDirection(direction);
+    model.getLightStructure()->setPosition(position);
+}
+
 
 TransformVisitorFactory::TransformVisitorFactory(std::shared_ptr<BaseTransformer> &transformer_) :
         transformer(transformer_) {

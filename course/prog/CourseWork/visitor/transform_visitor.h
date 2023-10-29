@@ -16,6 +16,7 @@ public:
     void visit(FrameModel &model) override;
 
     void visit(Camera &model) override;
+    void visit(Light &model) override;
 
 private:
     std::shared_ptr<BaseTransformer> transformer;

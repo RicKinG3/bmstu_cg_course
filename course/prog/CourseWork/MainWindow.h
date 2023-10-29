@@ -35,6 +35,9 @@ private slots:
     void on_camerasList_currentIndexChanged(int index);
     void on_clearSceneButton_clicked();
 
+
+    void on_add_illum_clicked();
+
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();

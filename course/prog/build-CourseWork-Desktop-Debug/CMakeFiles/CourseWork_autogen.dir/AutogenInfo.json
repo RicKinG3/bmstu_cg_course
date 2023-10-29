@@ -121,6 +121,12 @@
 			null
 		],
 		[
+			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/commands/light/light_commands.h",
+			"MU",
+			"JSSWLMUQGD/moc_light_commands.cpp",
+			null
+		],
+		[
 			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/commands/model/model_commands.h",
 			"MU",
 			"HGBGEMDJEK/moc_model_commands.cpp",
@@ -337,6 +343,24 @@
 			null
 		],
 		[
+			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/objects/light/BaseLight.h",
+			"MU",
+			"PZWFWGCA25/moc_BaseLight.cpp",
+			null
+		],
+		[
+			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/objects/light/Light.h",
+			"MU",
+			"PZWFWGCA25/moc_Light.cpp",
+			null
+		],
+		[
+			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/objects/light/LightStructure.h",
+			"MU",
+			"PZWFWGCA25/moc_LightStructure.cpp",
+			null
+		],
+		[
 			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/objects/model/frame_model.h",
 			"MU",
 			"PA4WMRQDPX/moc_frame_model.cpp",
@@ -458,6 +482,14 @@
 		"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/managers/draw",
 		"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/objects",
 		"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/objects/primitives",
+		"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/objects/light",
+		"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/commands",
+		"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/commands/camera",
+		"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/commands/light",
+		"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/commands/model",
+		"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/commands/scene",
+		"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/transformer",
+		"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/visitor",
 		"/usr/include/x86_64-linux-gnu/qt5",
 		"/usr/include/x86_64-linux-gnu/qt5/QtWidgets",
 		"/usr/include/x86_64-linux-gnu/qt5/QtGui",
@@ -602,6 +634,16 @@
 		],
 		[
 			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/objects/composite/composite.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/objects/light/Light.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/objects/light/LightStructure.cpp",
 			"MU",
 			null
 		],

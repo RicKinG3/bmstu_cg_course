@@ -23,6 +23,12 @@ public:
         drawer = drawer_;
     }
 
+    explicit DrawSceneCommand(Action a, std::shared_ptr<BaseDrawer> &drawer_, size_t w, size_t h ) : act(a)
+    {
+        drawer = drawer_;
+    }
+
+
     void execute(std::shared_ptr<Manager> mng) override { ((*mng).*act)(drawer); }
 
 private:

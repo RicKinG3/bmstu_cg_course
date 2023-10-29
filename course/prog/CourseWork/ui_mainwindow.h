@@ -71,12 +71,13 @@ public:
     QSpacerItem *horizontalSpacer;
     QGroupBox *groupBox_11;
     QGridLayout *gridLayout_13;
-    QLabel *label_23;
     QDoubleSpinBox *deg_ox_illum;
     QDoubleSpinBox *deg_oy_Illim;
-    QPushButton *add_illum;
     QLabel *label_18;
+    QLabel *label_23;
+    QPushButton *add_illum;
     QSpacerItem *verticalSpacer;
+    QComboBox *listLight;
     QSpacerItem *horizontalSpacer_2;
     QWidget *tab_2;
     QGridLayout *gridLayout_7;
@@ -327,7 +328,7 @@ public:
         gridLayout_12->setObjectName(QString::fromUtf8("gridLayout_12"));
         horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        gridLayout_12->addItem(horizontalSpacer, 0, 0, 1, 1);
+        gridLayout_12->addItem(horizontalSpacer, 1, 0, 1, 1);
 
         groupBox_11 = new QGroupBox(tab_3);
         groupBox_11->setObjectName(QString::fromUtf8("groupBox_11"));
@@ -335,11 +336,6 @@ public:
         groupBox_11->setAlignment(Qt::AlignCenter);
         gridLayout_13 = new QGridLayout(groupBox_11);
         gridLayout_13->setObjectName(QString::fromUtf8("gridLayout_13"));
-        label_23 = new QLabel(groupBox_11);
-        label_23->setObjectName(QString::fromUtf8("label_23"));
-
-        gridLayout_13->addWidget(label_23, 1, 0, 1, 1);
-
         deg_ox_illum = new QDoubleSpinBox(groupBox_11);
         deg_ox_illum->setObjectName(QString::fromUtf8("deg_ox_illum"));
         deg_ox_illum->setMinimum(-1000.000000000000000);
@@ -354,26 +350,36 @@ public:
 
         gridLayout_13->addWidget(deg_oy_Illim, 1, 1, 1, 1);
 
-        add_illum = new QPushButton(groupBox_11);
-        add_illum->setObjectName(QString::fromUtf8("add_illum"));
-
-        gridLayout_13->addWidget(add_illum, 2, 0, 1, 2);
-
         label_18 = new QLabel(groupBox_11);
         label_18->setObjectName(QString::fromUtf8("label_18"));
 
         gridLayout_13->addWidget(label_18, 0, 0, 1, 1);
 
+        label_23 = new QLabel(groupBox_11);
+        label_23->setObjectName(QString::fromUtf8("label_23"));
+
+        gridLayout_13->addWidget(label_23, 1, 0, 1, 1);
+
+        add_illum = new QPushButton(groupBox_11);
+        add_illum->setObjectName(QString::fromUtf8("add_illum"));
+
+        gridLayout_13->addWidget(add_illum, 2, 0, 1, 2);
+
         verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        gridLayout_13->addItem(verticalSpacer, 3, 0, 1, 1);
+        gridLayout_13->addItem(verticalSpacer, 4, 0, 1, 1);
+
+        listLight = new QComboBox(groupBox_11);
+        listLight->setObjectName(QString::fromUtf8("listLight"));
+
+        gridLayout_13->addWidget(listLight, 3, 0, 1, 2);
 
 
-        gridLayout_12->addWidget(groupBox_11, 0, 1, 1, 1);
+        gridLayout_12->addWidget(groupBox_11, 1, 1, 1, 1);
 
         horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        gridLayout_12->addItem(horizontalSpacer_2, 0, 2, 1, 1);
+        gridLayout_12->addItem(horizontalSpacer_2, 1, 2, 1, 1);
 
         tabWidget->addTab(tab_3, QString());
         tab_2 = new QWidget();
@@ -585,7 +591,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -615,9 +621,9 @@ public:
         deleteModelButton->setText(QCoreApplication::translate("MainWindow", "\320\243\320\264\320\260\320\273\320\270\321\202\321\214 \320\262\321\213\320\261\321\200\320\260\320\275\320\275\321\203\321\216", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab), QCoreApplication::translate("MainWindow", "\320\234\320\276\320\264\320\265\320\273\321\214", nullptr));
         groupBox_11->setTitle(QCoreApplication::translate("MainWindow", "\320\270\321\201\321\202\320\276\321\207\320\275\320\270\320\272 \321\201\320\262\320\265\321\202\320\260", nullptr));
+        label_18->setText(QCoreApplication::translate("MainWindow", "ox:", nullptr));
         label_23->setText(QCoreApplication::translate("MainWindow", "oy:", nullptr));
         add_illum->setText(QCoreApplication::translate("MainWindow", "\320\224\320\276\320\261\320\260\320\262\320\270\321\202\321\214", nullptr));
-        label_18->setText(QCoreApplication::translate("MainWindow", "ox:", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_3), QCoreApplication::translate("MainWindow", "\320\241\320\262\320\265\321\202", nullptr));
         groupBox_7->setTitle(QCoreApplication::translate("MainWindow", "\320\222\321\213\320\261\320\276\321\200 \320\272\320\260\320\274\320\265\321\200\321\213", nullptr));
         deleteCameraButton->setText(QCoreApplication::translate("MainWindow", "\320\243\320\264\320\260\320\273\320\270\321\202\321\214 \320\262\321\213\320\261\321\200\320\260\320\275\320\275\321\203\321\216", nullptr));

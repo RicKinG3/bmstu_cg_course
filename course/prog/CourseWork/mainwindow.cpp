@@ -1,5 +1,7 @@
 #include <QFileDialog>
 #include <QMessageBox>
+#include <QDebug>
+#include <QResizeEvent>
 
 #include <string>
 #include <vector>
@@ -61,13 +63,35 @@ void MainWindow::setup_scene() {
     ui->graphicsView->setScene(scene.get());
     ui->graphicsView->setAlignment(Qt::AlignTop | Qt::AlignLeft);
 
-    scene->setSceneRect(-(ui->graphicsView->width()) / 2, -(ui->graphicsView->height()) / 2,
-                        ui->graphicsView->width() / 2, ui->graphicsView->height() / 2);
-
+    setGraphicsView();
     std::unique_ptr<AbstractDrawerFactory> factory = std::make_unique<QtDrawerFactory>(scene);
     drawer = factory->create();
 }
 
+void MainWindow::setGraphicsView() {
+    scene->setSceneRect(-(ui->graphicsView->width()) / 2, -(ui->graphicsView->height()) / 2,
+                        ui->graphicsView->width() / 2, ui->graphicsView->height() / 2);
+}
+
+//todo почему то изначально другие параметры ( ока нужно смтреть
+// Переопределение события изменения размера окна
+void MainWindow::resizeEvent(QResizeEvent *event) {
+    // Вызываем базовую реализацию события
+    QMainWindow::resizeEvent(event);
+
+    // Ваш код для обработки изменения размера окна
+    QSize newSize = event->size();
+    //qDebug() << "Window resized to: " << newSize.width() << "x" << newSize.height();
+    setGraphicsView();
+    drawer->setHeight(ui->graphicsView->height() / 2);
+    drawer->setWight(ui->graphicsView->width() / 2);
+
+    std::shared_ptr<BaseCommand<DrawManager>> cmd =
+            std::make_shared<DrawSceneCommand<DrawManager>>(&DrawManager::updateSizePaint, drawer);
+
+    facade->execute(cmd);
+
+}
 
 void MainWindow::update_scene() {
     std::shared_ptr<BaseCommand<DrawManager>> cmd =
@@ -90,13 +114,11 @@ void MainWindow::on_add_illum_clicked() {
                     position, direction);
 
     facade->execute(add_cmd);
-    
+
     update_scene();
 
-    // todo add light
-    //
-    //    ui->camerasList->addItem("Camera");
-    //    ui->camerasList->setCurrentIndex(ui->camerasList->count() - 1);
+    ui->listLight->addItem("light");
+    ui->listLight->setCurrentIndex(ui->listLight->count() - 1);
 }
 
 void MainWindow::on_loadModelButton_clicked() {

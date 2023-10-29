@@ -16,43 +16,61 @@ QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 
-class MainWindow : public QMainWindow
-{
+class MainWindow : public QMainWindow {
 Q_OBJECT
 
 private slots:
-    void on_loadModelButton_clicked();
-    void on_deleteModelButton_clicked();
-    void on_deleteAllModelsButton_clicked();
-    void on_loadCameraButton_clicked();
-    void on_addCameraButton_clicked();
-    void on_deleteCameraButton_clicked();
-    void on_moveModelButton_clicked();
-    void on_scaleModelButton_clicked();
-    void on_rotateModelButton_clicked();
-    void on_moveCameraButton_clicked();
-    void on_rotateCameraButton_clicked();
-    void on_camerasList_currentIndexChanged(int index);
-    void on_clearSceneButton_clicked();
 
+    void on_loadModelButton_clicked();
+
+    void on_deleteModelButton_clicked();
+
+    void on_deleteAllModelsButton_clicked();
+
+    void on_loadCameraButton_clicked();
+
+    void on_addCameraButton_clicked();
+
+    void on_deleteCameraButton_clicked();
+
+    void on_moveModelButton_clicked();
+
+    void on_scaleModelButton_clicked();
+
+    void on_rotateModelButton_clicked();
+
+    void on_moveCameraButton_clicked();
+
+    void on_rotateCameraButton_clicked();
+
+    void on_camerasList_currentIndexChanged(int index);
+
+    void on_clearSceneButton_clicked();
 
     void on_add_illum_clicked();
 
 public:
     MainWindow(QWidget *parent = nullptr);
+
     ~MainWindow();
+
+    void resizeEvent(QResizeEvent *event);
+    void setGraphicsView();
+
 
 protected:
     void setup_scene();
+
     void update_scene();
 
 private:
     Ui::MainWindow *ui;
-    std::shared_ptr<Facade>         facade;
+    std::shared_ptr<Facade> facade;
     std::shared_ptr<QGraphicsScene> scene;
-    std::shared_ptr<BaseDrawer>     drawer;
+    std::shared_ptr<BaseDrawer> drawer;
 
     size_t get_camera_count();
+
     size_t get_models_count();
 };
 

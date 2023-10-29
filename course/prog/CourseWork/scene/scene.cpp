@@ -7,7 +7,7 @@ void Scene::addObject(const std::shared_ptr<Object> &object)
     if (object->isVisible())
         modelNum += 1;
     else
-        cameraNum += 1;
+        cameraNum += 1; // todo light
 
     objects->add(object);
 }

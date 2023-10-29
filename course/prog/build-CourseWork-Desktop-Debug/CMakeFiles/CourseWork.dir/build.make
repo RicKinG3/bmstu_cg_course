@@ -545,6 +545,34 @@ CMakeFiles/CourseWork.dir/objects/primitives/face.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CourseWork.dir/objects/primitives/face.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/objects/primitives/face.cpp -o CMakeFiles/CourseWork.dir/objects/primitives/face.cpp.s
 
+CMakeFiles/CourseWork.dir/objects/light/Light.cpp.o: CMakeFiles/CourseWork.dir/flags.make
+CMakeFiles/CourseWork.dir/objects/light/Light.cpp.o: /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/objects/light/Light.cpp
+CMakeFiles/CourseWork.dir/objects/light/Light.cpp.o: CMakeFiles/CourseWork.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/build-CourseWork-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/CourseWork.dir/objects/light/Light.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CourseWork.dir/objects/light/Light.cpp.o -MF CMakeFiles/CourseWork.dir/objects/light/Light.cpp.o.d -o CMakeFiles/CourseWork.dir/objects/light/Light.cpp.o -c /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/objects/light/Light.cpp
+
+CMakeFiles/CourseWork.dir/objects/light/Light.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CourseWork.dir/objects/light/Light.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/objects/light/Light.cpp > CMakeFiles/CourseWork.dir/objects/light/Light.cpp.i
+
+CMakeFiles/CourseWork.dir/objects/light/Light.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CourseWork.dir/objects/light/Light.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/objects/light/Light.cpp -o CMakeFiles/CourseWork.dir/objects/light/Light.cpp.s
+
+CMakeFiles/CourseWork.dir/objects/light/LightStructure.cpp.o: CMakeFiles/CourseWork.dir/flags.make
+CMakeFiles/CourseWork.dir/objects/light/LightStructure.cpp.o: /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/objects/light/LightStructure.cpp
+CMakeFiles/CourseWork.dir/objects/light/LightStructure.cpp.o: CMakeFiles/CourseWork.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/build-CourseWork-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/CourseWork.dir/objects/light/LightStructure.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CourseWork.dir/objects/light/LightStructure.cpp.o -MF CMakeFiles/CourseWork.dir/objects/light/LightStructure.cpp.o.d -o CMakeFiles/CourseWork.dir/objects/light/LightStructure.cpp.o -c /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/objects/light/LightStructure.cpp
+
+CMakeFiles/CourseWork.dir/objects/light/LightStructure.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CourseWork.dir/objects/light/LightStructure.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/objects/light/LightStructure.cpp > CMakeFiles/CourseWork.dir/objects/light/LightStructure.cpp.i
+
+CMakeFiles/CourseWork.dir/objects/light/LightStructure.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CourseWork.dir/objects/light/LightStructure.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/objects/light/LightStructure.cpp -o CMakeFiles/CourseWork.dir/objects/light/LightStructure.cpp.s
+
 # Object files for target CourseWork
 CourseWork_OBJECTS = \
 "CMakeFiles/CourseWork.dir/CourseWork_autogen/mocs_compilation.cpp.o" \
@@ -580,7 +608,9 @@ CourseWork_OBJECTS = \
 "CMakeFiles/CourseWork.dir/objects/model/model_structure.cpp.o" \
 "CMakeFiles/CourseWork.dir/objects/model/frame_model.cpp.o" \
 "CMakeFiles/CourseWork.dir/main.cpp.o" \
-"CMakeFiles/CourseWork.dir/objects/primitives/face.cpp.o"
+"CMakeFiles/CourseWork.dir/objects/primitives/face.cpp.o" \
+"CMakeFiles/CourseWork.dir/objects/light/Light.cpp.o" \
+"CMakeFiles/CourseWork.dir/objects/light/LightStructure.cpp.o"
 
 # External object files for target CourseWork
 CourseWork_EXTERNAL_OBJECTS =
@@ -619,12 +649,14 @@ CourseWork: CMakeFiles/CourseWork.dir/objects/model/model_structure.cpp.o
 CourseWork: CMakeFiles/CourseWork.dir/objects/model/frame_model.cpp.o
 CourseWork: CMakeFiles/CourseWork.dir/main.cpp.o
 CourseWork: CMakeFiles/CourseWork.dir/objects/primitives/face.cpp.o
+CourseWork: CMakeFiles/CourseWork.dir/objects/light/Light.cpp.o
+CourseWork: CMakeFiles/CourseWork.dir/objects/light/LightStructure.cpp.o
 CourseWork: CMakeFiles/CourseWork.dir/build.make
 CourseWork: /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.8
 CourseWork: /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.15.8
 CourseWork: /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.15.8
 CourseWork: CMakeFiles/CourseWork.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/build-CourseWork-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Linking CXX executable CourseWork"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/build-CourseWork-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Linking CXX executable CourseWork"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/CourseWork.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

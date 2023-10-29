@@ -90,19 +90,13 @@ void MainWindow::on_add_illum_clicked() {
                     position, direction);
 
     facade->execute(add_cmd);
-
-    size_t id = 0;
-
-    std::shared_ptr<BaseCommand<SceneManager>> set_cmd =
-            std::make_shared<SetCameraCommand<SceneManager>>(
-                    &SceneManager::setCamera, id);
-
-    facade->execute(set_cmd);
-
+    
     update_scene();
 
-    ui->camerasList->addItem("Camera");
-    ui->camerasList->setCurrentIndex(ui->camerasList->count() - 1);
+    // todo add light
+    //
+    //    ui->camerasList->addItem("Camera");
+    //    ui->camerasList->setCurrentIndex(ui->camerasList->count() - 1);
 }
 
 void MainWindow::on_loadModelButton_clicked() {

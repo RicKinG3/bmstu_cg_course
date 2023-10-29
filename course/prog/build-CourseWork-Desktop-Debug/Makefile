@@ -739,6 +739,54 @@ objects/composite/composite.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/objects/composite/composite.cpp.s
 .PHONY : objects/composite/composite.cpp.s
 
+objects/light/Light.o: objects/light/Light.cpp.o
+.PHONY : objects/light/Light.o
+
+# target to build an object file
+objects/light/Light.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/objects/light/Light.cpp.o
+.PHONY : objects/light/Light.cpp.o
+
+objects/light/Light.i: objects/light/Light.cpp.i
+.PHONY : objects/light/Light.i
+
+# target to preprocess a source file
+objects/light/Light.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/objects/light/Light.cpp.i
+.PHONY : objects/light/Light.cpp.i
+
+objects/light/Light.s: objects/light/Light.cpp.s
+.PHONY : objects/light/Light.s
+
+# target to generate assembly for a file
+objects/light/Light.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/objects/light/Light.cpp.s
+.PHONY : objects/light/Light.cpp.s
+
+objects/light/LightStructure.o: objects/light/LightStructure.cpp.o
+.PHONY : objects/light/LightStructure.o
+
+# target to build an object file
+objects/light/LightStructure.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/objects/light/LightStructure.cpp.o
+.PHONY : objects/light/LightStructure.cpp.o
+
+objects/light/LightStructure.i: objects/light/LightStructure.cpp.i
+.PHONY : objects/light/LightStructure.i
+
+# target to preprocess a source file
+objects/light/LightStructure.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/objects/light/LightStructure.cpp.i
+.PHONY : objects/light/LightStructure.cpp.i
+
+objects/light/LightStructure.s: objects/light/LightStructure.cpp.s
+.PHONY : objects/light/LightStructure.s
+
+# target to generate assembly for a file
+objects/light/LightStructure.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CourseWork.dir/build.make CMakeFiles/CourseWork.dir/objects/light/LightStructure.cpp.s
+.PHONY : objects/light/LightStructure.cpp.s
+
 objects/model/frame_model.o: objects/model/frame_model.cpp.o
 .PHONY : objects/model/frame_model.o
 
@@ -1086,6 +1134,12 @@ help:
 	@echo "... objects/composite/composite.o"
 	@echo "... objects/composite/composite.i"
 	@echo "... objects/composite/composite.s"
+	@echo "... objects/light/Light.o"
+	@echo "... objects/light/Light.i"
+	@echo "... objects/light/Light.s"
+	@echo "... objects/light/LightStructure.o"
+	@echo "... objects/light/LightStructure.i"
+	@echo "... objects/light/LightStructure.s"
 	@echo "... objects/model/frame_model.o"
 	@echo "... objects/model/frame_model.i"
 	@echo "... objects/model/frame_model.s"

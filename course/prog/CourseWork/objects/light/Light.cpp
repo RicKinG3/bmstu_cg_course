@@ -25,5 +25,5 @@ LightFactory::LightFactory(const Point &positionArg, const Point &directionArg) 
 }
 
 std::shared_ptr<BaseLight> LightFactory::create() {
-    return std::make_shared<Light>(position, direction);
+    return std::make_shared<Light>(std::make_shared<LightStructure>(position, direction));
 }

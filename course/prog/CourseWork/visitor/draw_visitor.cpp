@@ -12,13 +12,29 @@
 DrawVisitor::DrawVisitor(const std::shared_ptr<BaseDrawer> &drawer_arg, const std::shared_ptr<Camera> &camera_arg) :
         drawer(drawer_arg), camera(camera_arg) {};
 
-
+//TODO del edges
 void DrawVisitor::visit(FrameModel &model) {
     auto points = model.getModelStructure()->getPoints();
     auto edges = model.getModelStructure()->getEdges();
     auto faces = model.getModelStructure()->getFaces();
 
     auto center = model.getCenter();
+
+
+    // для каждых объктов есть
+    // типа начала zbuf alg
+    std::vector<std::vector<double>> depthBuffer;
+    std::vector<std::vector<size_t>> frameBuffer;
+    //TODO пробросить размеры окна или что - то придумать потому что прокидывать буфера нужно сюда 
+    int bufWidth = 500, bufHeight = 500;
+
+    // init
+    for (size_t i = 0; i < bufWidth; i++)
+    {
+        depthBuffer.push_back(std::vector<double>(bufHeight, 0));
+        frameBuffer.push_back(std::vector<size_t>(bufHeight, 0));
+    }
+
 
 
     for (const auto &face: faces) {

@@ -109,9 +109,10 @@ set(PROJECT_SOURCES
         ./main.cpp
 
         ./mainwindow.ui
+        ./ui_mainwindow.h
+
         objects/primitives/face.cpp
         objects/primitives/face.h
-
 )
 
 

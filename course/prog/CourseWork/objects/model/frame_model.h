@@ -28,6 +28,7 @@ protected:
     std::shared_ptr<FrameModelStructure> getModelStructure() const;
 
 private:
+    //массив со всеми нашими объектами
     std::shared_ptr<FrameModelStructure> modelStructure;
 };
 

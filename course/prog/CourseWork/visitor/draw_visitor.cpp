@@ -14,6 +14,7 @@ DrawVisitor::DrawVisitor(const std::shared_ptr<BaseDrawer> &drawer_arg, const st
 
 //TODO del edges
 void DrawVisitor::visit(FrameModel &model) {
+
     auto points = model.getModelStructure()->getPoints();
     auto edges = model.getModelStructure()->getEdges();
     auto faces = model.getModelStructure()->getFaces();

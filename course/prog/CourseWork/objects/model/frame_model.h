@@ -23,9 +23,8 @@ public:
     virtual Point getCenter() override;
 
     void accept(std::shared_ptr<Visitor> visitor) override;
-
-protected:
     std::shared_ptr<FrameModelStructure> getModelStructure() const;
+
 
 private:
     //массив со всеми нашими объектами

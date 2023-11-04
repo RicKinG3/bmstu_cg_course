@@ -4,6 +4,7 @@
 
 #ifndef LAB_03_FRAME_MODEL_STRUCTURE_H
 #define LAB_03_FRAME_MODEL_STRUCTURE_H
+#include <QDebug>
 
 
 #include <memory>

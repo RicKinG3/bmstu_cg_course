@@ -25,6 +25,8 @@ bool Composite::add(const std::shared_ptr<Object> &object) {
     return true;
 }
 
+
+
 bool Composite::remove(const Iterator &iter) {
     objects.erase(iter);
     updateCenter();

@@ -162,7 +162,7 @@ target_include_directories(CourseWork PRIVATE
         commands/scene
         transformer
         visitor
-
+        objects/model/
 
 )
 

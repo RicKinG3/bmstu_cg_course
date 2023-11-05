@@ -1,0 +1,14 @@
+\babel@toc {russian}{}\relax 
+\contentsline {chapter}{ОПРЕДЕЛЕНИЯ}{3}{chapter*.3}%
+\contentsline {chapter}{ОБОЗНАЧЕНИЯ И СОКРАЩЕНИЯ}{4}{chapter*.4}%
+\contentsline {chapter}{ВВЕДЕНИЕ}{5}{chapter*.5}%
+\contentsline {chapter}{\numberline {1}Аналитический раздел}{6}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Способы определения моделей}{6}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Методы представления трехмерных поверхностей}{7}{section.1.2}%
+\contentsline {chapter}{\numberline {2}Конструкторский раздел}{10}{chapter.2}%
+\contentsline {chapter}{\numberline {3}Технологический раздел}{11}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Исследовательская часть}{12}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Вывод}{12}{section.4.1}%
+\contentsline {chapter}{ЗАКЛЮЧЕНИЕ}{13}{chapter*.9}%
+\contentsline {chapter}{СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ}{14}{chapter*.10}%
+\contentsline {chapter}{ПРИЛОЖЕНИЕ \numberline {\CYRA }}{15}{appendix.1.A}%

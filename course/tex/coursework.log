@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.9)  5 NOV 2023 23:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.9)  6 NOV 2023 18:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1756,7 +1756,7 @@ Package hyperref Info: Link coloring OFF on input line 6.
 \@outlinefile=\write6
 \openout6 = `coursework.out'.
 
-<bmstu-logo.pdf, id=59, 500.95255pt x 591.38255pt>
+<bmstu-logo.pdf, id=87, 500.95255pt x 591.38255pt>
 File: bmstu-logo.pdf Graphic file (type pdf)
 <use bmstu-logo.pdf>
 Package pdftex.def Info: bmstu-logo.pdf  used on input line 14.
@@ -1847,10 +1847,10 @@ LaTeX Font Warning: Font shape `T2A/cmr/bx/n' in size <16> not available
 
 pdfTeX warning: pdflatex.exe (file ./inc/img/mod1.pdf): PDF inclusion: found PD
 F version <1.6>, but at most version <1.5> allowed
-<inc/img/mod1.pdf, id=113, 412.54124pt x 427.5975pt>
+<inc/img/mod1.pdf, id=148, 412.54124pt x 427.5975pt>
 File: inc/img/mod1.pdf Graphic file (type pdf)
 <use inc/img/mod1.pdf>
-Package pdftex.def Info: inc/img/mod1.pdf  used on input line 22.
+Package pdftex.def Info: inc/img/mod1.pdf  used on input line 23.
 (pdftex.def)             Requested size: 145.11053pt x 150.40517pt.
 [6
 
@@ -1861,49 +1861,167 @@ Package pdftex.def Info: inc/img/mod1.pdf  used on input line 22.
 
 pdfTeX warning: pdflatex.exe (file ./inc/img/mod2.pdf): PDF inclusion: found PD
 F version <1.6>, but at most version <1.5> allowed
-<inc/img/mod2.pdf, id=139, 243.07814pt x 219.22pt>
+<inc/img/mod2.pdf, id=175, 243.07814pt x 219.22pt>
 File: inc/img/mod2.pdf Graphic file (type pdf)
 <use inc/img/mod2.pdf>
-Package pdftex.def Info: inc/img/mod2.pdf  used on input line 38.
+Package pdftex.def Info: inc/img/mod2.pdf  used on input line 39.
 (pdftex.def)             Requested size: 145.11053pt x 130.87404pt.
-
+[7 <./inc/img/mod2.pdf>]
 
 pdfTeX warning: pdflatex.exe (file ./inc/img/mod3.pdf): PDF inclusion: found PD
 F version <1.6>, but at most version <1.5> allowed
-<inc/img/mod3.pdf, id=145, 295.10149pt x 297.64pt>
+<inc/img/mod3.pdf, id=213, 295.10149pt x 297.64pt>
 File: inc/img/mod3.pdf Graphic file (type pdf)
 <use inc/img/mod3.pdf>
-Package pdftex.def Info: inc/img/mod3.pdf  used on input line 67.
+Package pdftex.def Info: inc/img/mod3.pdf  used on input line 69.
 (pdftex.def)             Requested size: 145.11053pt x 146.35808pt.
+[8 <./inc/img/mod3.pdf>] [9] [10]
+
+pdfTeX warning: pdflatex.exe (file ./inc/img/exz.pdf): PDF inclusion: found PDF
+ version <1.6>, but at most version <1.5> allowed
+<inc/img/exz.pdf, id=267, 968.08372pt x 436.03pt>
+File: inc/img/exz.pdf Graphic file (type pdf)
+<use inc/img/exz.pdf>
+Package pdftex.def Info: inc/img/exz.pdf  used on input line 195.
+(pdftex.def)             Requested size: 338.58632pt x 152.49968pt.
+[11 <./inc/img/exz.pdf>]
+
+pdfTeX warning: pdflatex.exe (file ./inc/img/lightback.pdf): PDF inclusion: fou
+nd PDF version <1.6>, but at most version <1.5> allowed
+<inc/img/lightback.pdf, id=309, 371.30118pt x 288.41452pt>
+File: inc/img/lightback.pdf Graphic file (type pdf)
+<use inc/img/lightback.pdf>
+Package pdftex.def Info: inc/img/lightback.pdf  used on input line 251.
+(pdftex.def)             Requested size: 241.84843pt x 187.85889pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[7 <./inc/img/mod2.pdf>]) [8 <./inc/img/mod3.pdf>] [9]
+
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
+[]|\T2A/cmr/bx/n/14.4 (+20) Обратная
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
+\T2A/cmr/bx/n/14.4 (+20) трас-си-ров-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
+[]|\T2A/cmr/bx/n/14.4 (+20) Вычисл.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
+[]|\T2A/cmr/bx/n/14.4 (+20) Рабочее
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
+\T2A/cmr/bx/n/14.4 (+20) про-стран-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
+\T2A/cmr/bx/n/14.4 (+20) при слож-
+ []
+
+
+Overfull \hbox (6.0444pt too wide) in paragraph at lines 277--277
+[]|\T2A/cmr/bx/n/14.4 (-20) Распростран.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
+[]|\T2A/cmr/bx/n/14.4 (+20) Использов.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
+\T2A/cmr/bx/n/14.4 (+20) ре-кур-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
+\T2A/cmr/bx/n/14.4 (+20) сив-ных
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[12] [13 <./inc/img/lightback.pdf>]
+
+pdfTeX warning: pdflatex.exe (file ./inc/img/zb.pdf): PDF inclusion: found PDF 
+version <1.6>, but at most version <1.5> allowed
+<inc/img/zb.pdf, id=349, 383.09023pt x 337.74782pt>
+File: inc/img/zb.pdf Graphic file (type pdf)
+<use inc/img/zb.pdf>
+Package pdftex.def Info: inc/img/zb.pdf  used on input line 430.
+(pdftex.def)             Requested size: 241.84843pt x 213.22545pt.
+[14 <./inc/img/zb.pdf>]) [15]
 \openout2 = `05-design.aux'.
 
  (./05-design.tex
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 2.
-) [10
+[16
 
 
 
+
+]
+
+pdfTeX warning: pdflatex.exe (file ./inc/img/zbuf.pdf): PDF inclusion: found PD
+F version <1.6>, but at most version <1.5> allowed
+<inc/img/zbuf.pdf, id=411, 522.16277pt x 401.1758pt>
+File: inc/img/zbuf.pdf Graphic file (type pdf)
+<use inc/img/zbuf.pdf>
+Package pdftex.def Info: inc/img/zbuf.pdf  used on input line 48.
+(pdftex.def)             Requested size: 145.11053pt x 111.48369pt.
+[17 <./inc/img/zbuf.pdf>]
+
+pdfTeX warning: pdflatex.exe (file ./inc/img/zalg.pdf): PDF inclusion: found PD
+F version <1.7>, but at most version <1.5> allowed
+<inc/img/zalg.pdf, id=442, 598.15468pt x 847.24525pt>
+File: inc/img/zalg.pdf Graphic file (type pdf)
+<use inc/img/zalg.pdf>
+Package pdftex.def Info: inc/img/zalg.pdf  used on input line 59.
+(pdftex.def)             Requested size: 145.11053pt x 205.54076pt.
+[18
+
+ <./inc/img/zalg.pdf>]
+
+LaTeX Warning: Command \CYRB invalid in math mode on input line 84.
+
+
+LaTeX Warning: Command \CYRT invalid in math mode on input line 84.
+
+Missing character: There is no Б in font cmr12!
+Missing character: There is no Т in font cmr12!
+
+
+pdfTeX warning: pdflatex.exe (file ./inc/img/zzalg.pdf): PDF inclusion: found P
+DF version <1.7>, but at most version <1.5> allowed
+<inc/img/zzalg.pdf, id=480, 598.15468pt x 847.24525pt>
+File: inc/img/zzalg.pdf Graphic file (type pdf)
+<use inc/img/zzalg.pdf>
+Package pdftex.def Info: inc/img/zzalg.pdf  used on input line 97.
+(pdftex.def)             Requested size: 145.11053pt x 205.54076pt.
+[19
+
+ <./inc/img/zzalg.pdf>]) [20
 
 ]
 \openout2 = `06-implementation.aux'.
 
- (./06-implementation.tex
-{\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 3.
-) [11
-
-
-
-
-]
+ (./06-implementation.tex)
 \openout2 = `07-research.aux'.
 
  (./07-research.tex
-{\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 4.
-) [12
+{\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 3.
+) [21
+
+
+
 
 
 
@@ -1911,12 +2029,12 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 ]
 \openout2 = `08-conclusion.aux'.
 
- (./08-conclusion.tex) [13
+ (./08-conclusion.tex) [22
 
 
 
 
-] [14
+] [23
 
 
 
@@ -1931,7 +2049,7 @@ ers.1}) has been already used, duplicate ignored
 l.2 	\chapter{}
                
 РџР РР›РћР–Р•РќРР• \CYRA .
-) [15
+) [24
 
 
 ] 
@@ -1949,32 +2067,44 @@ L3 programming layer <2023-08-29>
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.28pt have occurred.
 
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `coursework.out' has not changed.
-(rerunfilecheck)             Checksum: B51EE68BACE94EA4E104D724CBBE7D50;2677.
+(rerunfilecheck)             Checksum: 066074DDC19B773A8978C8BACB479501;4748.
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                coursework
+(biblatex)                and rerun LaTeX afterwards.
+
 Package logreq Info: Writing requests to 'coursework.run.xml'.
 \openout1 = `coursework.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 50538 strings out of 474933
- 1100203 string characters out of 5763794
- 2239045 words of memory out of 5000000
- 71040 multiletter control sequences out of 15000+600000
- 581199 words of font info for 146 fonts, out of 8000000 for 9000
+ 50810 strings out of 474933
+ 1105305 string characters out of 5763794
+ 2240094 words of memory out of 5000000
+ 71201 multiletter control sequences out of 15000+600000
+ 584919 words of font info for 171 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 126i,19n,129p,1155b,3209s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb><c:/texl
-ive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb><c:/texlive/2023/t
-exmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb><c:/texlive/2023/texmf-dist/
-fonts/type1/public/cm-super/sfrm0800.pfb><c:/texlive/2023/texmf-dist/fonts/type
-1/public/cm-super/sfrm1200.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/c
-m-super/sfrm1440.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sf
-ti1440.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfti2074.pfb
->
-Output written on coursework.pdf (15 pages, 1326911 bytes).
+ 126i,19n,129p,1506b,3209s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/tex
+live/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/ty
+pe1/public/cm-super/sfbx1440.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public
+/cm-super/sfbx1728.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/
+sfbx2074.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm0800.p
+fb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><c:/tex
+live/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><c:/texlive/2023/
+texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb><c:/texlive/2023/texmf-dist
+/fonts/type1/public/cm-super/sfti1440.pfb><c:/texlive/2023/texmf-dist/fonts/typ
+e1/public/cm-super/sfti2074.pfb>
+Output written on coursework.pdf (24 pages, 3011386 bytes).
 PDF statistics:
- 286 PDF objects out of 1000 (max. 8388607)
- 224 compressed objects within 3 object streams
- 45 named destinations out of 1000 (max. 500000)
- 39049 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 637 PDF objects out of 1000 (max. 8388607)
+ 480 compressed objects within 5 object streams
+ 108 named destinations out of 1000 (max. 500000)
+ 43231 words of extra memory for PDF output out of 51595 (max. 10000000)
 

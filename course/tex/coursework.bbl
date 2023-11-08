@@ -1,0 +1,266 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{model_geom}{article}{}
+      \name{author}{1}{}{%
+        {{hash=88b1421369133f2efc7567556e5476eb}{%
+           family={Лисяк\bibnamedelima В.\bibnamedelimi В.},
+           familyi={Л\bibinitperiod\bibinitdelim В\bibinitperiod\bibinitdelim В\bibinitperiod}}}%
+      }
+      \strng{namehash}{88b1421369133f2efc7567556e5476eb}
+      \strng{fullhash}{88b1421369133f2efc7567556e5476eb}
+      \strng{bibnamehash}{88b1421369133f2efc7567556e5476eb}
+      \strng{authorbibnamehash}{88b1421369133f2efc7567556e5476eb}
+      \strng{authornamehash}{88b1421369133f2efc7567556e5476eb}
+      \strng{authorfullhash}{88b1421369133f2efc7567556e5476eb}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Основы геометрического моделирования}
+      \field{year}{2022}
+      \field{pages}{6\bibrangedash 7}
+      \range{pages}{2}
+    \endentry
+    \entry{intro_visualization}{article}{}
+      \name{author}{1}{}{%
+        {{hash=f2660aeef215f7fb0d56b22b9f3de86e}{%
+           family={Lovett\bibnamedelima A.},
+           familyi={L\bibinitperiod\bibinitdelim A\bibinitperiod},
+           given={Warren-Kretzschmar\bibnamedelima B.},
+           giveni={W\bibinithyphendelim K\bibinitperiod\bibinitdelim B\bibinitperiod},
+           suffix={Appleton\bibnamedelima K.},
+           suffixi={A\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \strng{namehash}{f2660aeef215f7fb0d56b22b9f3de86e}
+      \strng{fullhash}{f2660aeef215f7fb0d56b22b9f3de86e}
+      \strng{bibnamehash}{f2660aeef215f7fb0d56b22b9f3de86e}
+      \strng{authorbibnamehash}{f2660aeef215f7fb0d56b22b9f3de86e}
+      \strng{authornamehash}{f2660aeef215f7fb0d56b22b9f3de86e}
+      \strng{authorfullhash}{f2660aeef215f7fb0d56b22b9f3de86e}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Landscape and Urban Planning}
+      \field{title}{Using 3D visualization methods in landscape planning: An evaluation of options and practical issues}
+      \field{year}{2015}
+      \field{pages}{85\bibrangedash 94}
+      \range{pages}{10}
+    \endentry
+    \entry{model_geom_01}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=392d7d7225f8ac279afb713cbec66097}{%
+           family={Донченко\bibnamedelima В.\bibnamedelimi Ю.},
+           familyi={Д\bibinitperiod\bibinitdelim В\bibinitperiod\bibinitdelim Ю\bibinitperiod},
+           given={Черевань\bibnamedelima Е.\bibnamedelimi Н.},
+           giveni={Ч\bibinitperiod\bibinitdelim Е\bibinitperiod\bibinitdelim Н\bibinitperiod}}}%
+      }
+      \strng{namehash}{392d7d7225f8ac279afb713cbec66097}
+      \strng{fullhash}{392d7d7225f8ac279afb713cbec66097}
+      \strng{bibnamehash}{392d7d7225f8ac279afb713cbec66097}
+      \strng{authorbibnamehash}{392d7d7225f8ac279afb713cbec66097}
+      \strng{authornamehash}{392d7d7225f8ac279afb713cbec66097}
+      \strng{authorfullhash}{392d7d7225f8ac279afb713cbec66097}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Обзор и анализ методов построения геометрических моделей сложных конструкций}
+      \field{year}{2014}
+      \field{pages}{17\bibrangedash 21}
+      \range{pages}{5}
+    \endentry
+    \entry{polygon_mesh}{article}{}
+      \name{author}{1}{}{%
+        {{hash=56d58d52829e257f1844ac70ca60c3ec}{%
+           family={Киселёв\bibnamedelima А.\bibnamedelimi В.},
+           familyi={К\bibinitperiod\bibinitdelim А\bibinitperiod\bibinitdelim В\bibinitperiod},
+           given={Верхотурова\bibnamedelima Г.\bibnamedelimi Н.},
+           giveni={В\bibinitperiod\bibinitdelim Г\bibinitperiod\bibinitdelim Н\bibinitperiod}}}%
+      }
+      \strng{namehash}{56d58d52829e257f1844ac70ca60c3ec}
+      \strng{fullhash}{56d58d52829e257f1844ac70ca60c3ec}
+      \strng{bibnamehash}{56d58d52829e257f1844ac70ca60c3ec}
+      \strng{authorbibnamehash}{56d58d52829e257f1844ac70ca60c3ec}
+      \strng{authornamehash}{56d58d52829e257f1844ac70ca60c3ec}
+      \strng{authorfullhash}{56d58d52829e257f1844ac70ca60c3ec}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Материалы VI Международной научно-практической конференции (школы-семинара) молодых ученых.}
+      \field{title}{Способы представления и размещения трехмерных моделей для прототипирования ювелирных изделий}
+      \field{year}{2020}
+      \field{pages}{840\bibrangedash 842}
+      \range{pages}{3}
+    \endentry
+    \entry{light}{article}{}
+      \name{author}{1}{}{%
+        {{hash=2a47d76b860324cc4ca04055b9c4ae0d}{%
+           family={Gambetta\bibnamedelima G.},
+           familyi={G\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \strng{namehash}{2a47d76b860324cc4ca04055b9c4ae0d}
+      \strng{fullhash}{2a47d76b860324cc4ca04055b9c4ae0d}
+      \strng{bibnamehash}{2a47d76b860324cc4ca04055b9c4ae0d}
+      \strng{authorbibnamehash}{2a47d76b860324cc4ca04055b9c4ae0d}
+      \strng{authornamehash}{2a47d76b860324cc4ca04055b9c4ae0d}
+      \strng{authorfullhash}{2a47d76b860324cc4ca04055b9c4ae0d}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Computer Graphics from Scratch}
+      \field{year}{2021}
+      \field{pages}{47\bibrangedash 50}
+      \range{pages}{4}
+    \endentry
+    \entry{del_line}{article}{}
+      \name{author}{1}{}{%
+        {{hash=facdaae0b273e3cc3192e5e2749c652c}{%
+           family={Головнин\bibnamedelima А.\bibnamedelimi А.},
+           familyi={Г\bibinitperiod\bibinitdelim А\bibinitperiod\bibinitdelim А\bibinitperiod}}}%
+      }
+      \strng{namehash}{facdaae0b273e3cc3192e5e2749c652c}
+      \strng{fullhash}{facdaae0b273e3cc3192e5e2749c652c}
+      \strng{bibnamehash}{facdaae0b273e3cc3192e5e2749c652c}
+      \strng{authorbibnamehash}{facdaae0b273e3cc3192e5e2749c652c}
+      \strng{authornamehash}{facdaae0b273e3cc3192e5e2749c652c}
+      \strng{authorfullhash}{facdaae0b273e3cc3192e5e2749c652c}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Базовые алгоритмы компьютерной графики}
+      \field{year}{2016}
+      \field{pages}{12\bibrangedash 16}
+      \range{pages}{5}
+    \endentry
+    \entry{varnok}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=07eefc724540b96e72cb4b30ee830e3a}{%
+           family={Провкин\bibnamedelima В.\bibnamedelimi А.},
+           familyi={П\bibinitperiod\bibinitdelim В\bibinitperiod\bibinitdelim А\bibinitperiod}}}%
+      }
+      \strng{namehash}{07eefc724540b96e72cb4b30ee830e3a}
+      \strng{fullhash}{07eefc724540b96e72cb4b30ee830e3a}
+      \strng{bibnamehash}{07eefc724540b96e72cb4b30ee830e3a}
+      \strng{authorbibnamehash}{07eefc724540b96e72cb4b30ee830e3a}
+      \strng{authornamehash}{07eefc724540b96e72cb4b30ee830e3a}
+      \strng{authorfullhash}{07eefc724540b96e72cb4b30ee830e3a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Построение реалистичных изображений при помощи алгоритма Варнока и сравнение эффективности различных его реализаций}
+      \field{year}{2017}
+      \field{pages}{9\bibrangedash 12}
+      \range{pages}{4}
+    \endentry
+    \entry{ray_tracing}{article}{}
+      \name{author}{1}{}{%
+        {{hash=1dcf1623550baba5037bac3a4f6840db}{%
+           family={Янова\bibnamedelima Р.\bibnamedelimi Д.},
+           familyi={Я\bibinitperiod\bibinitdelim Р\bibinitperiod\bibinitdelim Д\bibinitperiod}}}%
+      }
+      \strng{namehash}{1dcf1623550baba5037bac3a4f6840db}
+      \strng{fullhash}{1dcf1623550baba5037bac3a4f6840db}
+      \strng{bibnamehash}{1dcf1623550baba5037bac3a4f6840db}
+      \strng{authorbibnamehash}{1dcf1623550baba5037bac3a4f6840db}
+      \strng{authornamehash}{1dcf1623550baba5037bac3a4f6840db}
+      \strng{authorfullhash}{1dcf1623550baba5037bac3a4f6840db}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Вестник науки и образования}
+      \field{title}{Метод прямой и обратной трассировки}
+      \field{year}{2016}
+      \field{pages}{29\bibrangedash 30}
+      \range{pages}{2}
+    \endentry
+    \entry{lightmodfv}{article}{}
+      \name{author}{1}{}{%
+        {{hash=edac1bb3519a7fe812aee8ad311ec4ac}{%
+           family={Задорожный\bibnamedelima А.\bibnamedelimi Г.},
+           familyi={З\bibinitperiod\bibinitdelim А\bibinitperiod\bibinitdelim Г\bibinitperiod}}}%
+      }
+      \strng{namehash}{edac1bb3519a7fe812aee8ad311ec4ac}
+      \strng{fullhash}{edac1bb3519a7fe812aee8ad311ec4ac}
+      \strng{bibnamehash}{edac1bb3519a7fe812aee8ad311ec4ac}
+      \strng{authorbibnamehash}{edac1bb3519a7fe812aee8ad311ec4ac}
+      \strng{authornamehash}{edac1bb3519a7fe812aee8ad311ec4ac}
+      \strng{authorfullhash}{edac1bb3519a7fe812aee8ad311ec4ac}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Модели освещения и алгоритмы затенения в компьютерной графике}
+      \field{year}{2020}
+      \field{pages}{27\bibrangedash 35}
+      \range{pages}{9}
+    \endentry
+    \entry{lightmodf}{article}{}
+      \name{author}{1}{}{%
+        {{hash=66ed8dbb33b2eac26d2704f70cd69f23}{%
+           family={Чернявская\bibnamedelima A.\bibnamedelimi Э.},
+           familyi={Ч\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim Э\bibinitperiod}}}%
+      }
+      \strng{namehash}{66ed8dbb33b2eac26d2704f70cd69f23}
+      \strng{fullhash}{66ed8dbb33b2eac26d2704f70cd69f23}
+      \strng{bibnamehash}{66ed8dbb33b2eac26d2704f70cd69f23}
+      \strng{authorbibnamehash}{66ed8dbb33b2eac26d2704f70cd69f23}
+      \strng{authornamehash}{66ed8dbb33b2eac26d2704f70cd69f23}
+      \strng{authorfullhash}{66ed8dbb33b2eac26d2704f70cd69f23}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Современные вопросы науки и практики}
+      \field{title}{Простые модели освещения 3D-объектов. Особенности цифрового моделирования света}
+      \field{year}{2021}
+      \field{pages}{45\bibrangedash 47}
+      \range{pages}{3}
+    \endentry
+    \entry{letion}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=f33df1d29f52af2a9446cfc93c51953b}{%
+           family={Куров\bibnamedelima А.\bibnamedelimi В.},
+           familyi={К\bibinitperiod\bibinitdelim А\bibinitperiod\bibinitdelim В\bibinitperiod}}}%
+      }
+      \strng{namehash}{f33df1d29f52af2a9446cfc93c51953b}
+      \strng{fullhash}{f33df1d29f52af2a9446cfc93c51953b}
+      \strng{bibnamehash}{f33df1d29f52af2a9446cfc93c51953b}
+      \strng{authorbibnamehash}{f33df1d29f52af2a9446cfc93c51953b}
+      \strng{authornamehash}{f33df1d29f52af2a9446cfc93c51953b}
+      \strng{authorfullhash}{f33df1d29f52af2a9446cfc93c51953b}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Конспект лекций по дисциплине компьютерная графика}
+      \field{year}{2023}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

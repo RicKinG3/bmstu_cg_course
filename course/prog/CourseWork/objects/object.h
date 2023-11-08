@@ -5,6 +5,8 @@
 #ifndef LAB_03_OBJECT_H
 #define LAB_03_OBJECT_H
 
+#include "/usr/include/eigen3/Eigen/Dense"
+
 #include <memory>
 #include <vector>
 #include "primitives/point.h"
@@ -27,7 +29,8 @@ public:
 
     virtual bool remove(const Iterator &) { return false; };
 
-    virtual void accept(std::shared_ptr<Visitor> visitor) = 0;
+
+    virtual void accept(std::shared_ptr<Visitor> visitor, Eigen::Matrix4f mtr, std::shared_ptr<Light> light, size_t bufW, size_t bufH) = 0;
 
     virtual Iterator begin() { return Iterator(); };
 

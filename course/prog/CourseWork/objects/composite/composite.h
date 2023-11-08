@@ -24,7 +24,7 @@ public:
 
     virtual Point getCenter() override;
 
-    void accept(std::shared_ptr <Visitor> visitor) override;
+    void accept(std::shared_ptr<Visitor> visitor, Eigen::Matrix4f mtr, std::shared_ptr<Light> light, size_t bufW, size_t bufH) override;
 
     Iterator begin() override;
 

@@ -22,7 +22,7 @@ public:
 
     void set_camera(const std::shared_ptr<Camera> srcCamera);
 
-    void zBufAlg(std::shared_ptr<Scene> scene, std::shared_ptr<Visitor> visitor);
+    void zBufAlg(std::shared_ptr<Scene> scene, std::shared_ptr<Visitor> visitor, std:: shared_ptr<Light> );
 
     void updateSizePaint(std::shared_ptr<BaseDrawer> &srcDrawer);
 

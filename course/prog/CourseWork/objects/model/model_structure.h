@@ -46,7 +46,7 @@ public:
 
     void printFaces() const;
 
-    friend void DrawVisitor::visit(FrameModel &model);
+    friend void DrawVisitor::visit(FrameModel &model, Eigen::Matrix4f mtr, std::shared_ptr<Light> light, size_t bufW, size_t bufH);
 
 private:
     Point center{};

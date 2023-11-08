@@ -5,6 +5,8 @@
 #ifndef COURSEWORK_LIGHT_H
 #define COURSEWORK_LIGHT_H
 
+#include "/usr/include/eigen3/Eigen/Dense"
+
 #include "BaseLight.h"
 #include "LightStructure.h"
 #include "transform_visitor.h"
@@ -26,10 +28,11 @@ public:
 
     virtual Point getCenter() override;
 
-    void accept(std::shared_ptr<Visitor> visitor) override;
+    void accept(std::shared_ptr<Visitor> visitor, Eigen::Matrix4f mtr, std::shared_ptr<Light> light, size_t bufW,
+                size_t bufH) override;
 
-protected:
     std::shared_ptr<LightStructure> getLightStructure() const;
+
 
 private:
     std::shared_ptr<LightStructure> lightStructure;
@@ -47,6 +50,9 @@ public:
 private:
     Point position{};
     Point direction{0, 0, 0};
+    //todo
+    std::vector<std::vector<double>> shadowMap;
+    Eigen::Matrix4f transMatrix;
 };
 
 

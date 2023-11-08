@@ -3,6 +3,7 @@
 
 #include <memory>
 
+#include "/usr/include/eigen3/Eigen/Dense"
 
 class FrameModel;
 
@@ -20,11 +21,11 @@ public:
 
     virtual ~Visitor() = default;
 
-    virtual void visit(FrameModel &model) = 0;
+    virtual void visit(FrameModel &model, Eigen::Matrix4f mtr, std::shared_ptr<Light> light, size_t bufW, size_t bufH ) = 0;
 
-    virtual void visit(Camera &model) = 0;
+    virtual void visit(Camera &model, Eigen::Matrix4f mtr, std::shared_ptr<Light> light, size_t bufW, size_t bufH ) = 0;
 
-    virtual void visit(Light &model) = 0;
+    virtual void visit(Light &model, Eigen::Matrix4f mtr, std::shared_ptr<Light> light, size_t bufW, size_t bufH ) = 0;
 
 
     // TODO : delete

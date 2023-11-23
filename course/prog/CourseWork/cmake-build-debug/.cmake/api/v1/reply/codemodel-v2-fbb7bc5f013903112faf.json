@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-9734ff848fc969fe5d28.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "CourseWork",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "CourseWork::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CourseWork-Debug-afe5c187fd3150d5a720.json",
+					"name" : "CourseWork",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "CourseWork_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CourseWork_autogen-Debug-b55bc9a621ac324da51e.json",
+					"name" : "CourseWork_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "CourseWork_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CourseWork_autogen_timestamp_deps-Debug-35df3764a0b23f8f92eb.json",
+					"name" : "CourseWork_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork/cmake-build-debug",
+		"source" : "/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/prog/CourseWork"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 5
+	}
+}

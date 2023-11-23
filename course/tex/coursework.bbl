@@ -198,49 +198,6 @@
       \field{pages}{29\bibrangedash 30}
       \range{pages}{2}
     \endentry
-    \entry{lightmodfv}{article}{}
-      \name{author}{1}{}{%
-        {{hash=edac1bb3519a7fe812aee8ad311ec4ac}{%
-           family={Задорожный\bibnamedelima А.\bibnamedelimi Г.},
-           familyi={З\bibinitperiod\bibinitdelim А\bibinitperiod\bibinitdelim Г\bibinitperiod}}}%
-      }
-      \strng{namehash}{edac1bb3519a7fe812aee8ad311ec4ac}
-      \strng{fullhash}{edac1bb3519a7fe812aee8ad311ec4ac}
-      \strng{bibnamehash}{edac1bb3519a7fe812aee8ad311ec4ac}
-      \strng{authorbibnamehash}{edac1bb3519a7fe812aee8ad311ec4ac}
-      \strng{authornamehash}{edac1bb3519a7fe812aee8ad311ec4ac}
-      \strng{authorfullhash}{edac1bb3519a7fe812aee8ad311ec4ac}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Модели освещения и алгоритмы затенения в компьютерной графике}
-      \field{year}{2020}
-      \field{pages}{27\bibrangedash 35}
-      \range{pages}{9}
-    \endentry
-    \entry{lightmodf}{article}{}
-      \name{author}{1}{}{%
-        {{hash=66ed8dbb33b2eac26d2704f70cd69f23}{%
-           family={Чернявская\bibnamedelima A.\bibnamedelimi Э.},
-           familyi={Ч\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim Э\bibinitperiod}}}%
-      }
-      \strng{namehash}{66ed8dbb33b2eac26d2704f70cd69f23}
-      \strng{fullhash}{66ed8dbb33b2eac26d2704f70cd69f23}
-      \strng{bibnamehash}{66ed8dbb33b2eac26d2704f70cd69f23}
-      \strng{authorbibnamehash}{66ed8dbb33b2eac26d2704f70cd69f23}
-      \strng{authornamehash}{66ed8dbb33b2eac26d2704f70cd69f23}
-      \strng{authorfullhash}{66ed8dbb33b2eac26d2704f70cd69f23}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Современные вопросы науки и практики}
-      \field{title}{Простые модели освещения 3D-объектов. Особенности цифрового моделирования света}
-      \field{year}{2021}
-      \field{pages}{45\bibrangedash 47}
-      \range{pages}{3}
-    \endentry
     \entry{letion}{misc}{}
       \name{author}{1}{}{%
         {{hash=f33df1d29f52af2a9446cfc93c51953b}{%
@@ -253,8 +210,8 @@
       \strng{authorbibnamehash}{f33df1d29f52af2a9446cfc93c51953b}
       \strng{authornamehash}{f33df1d29f52af2a9446cfc93c51953b}
       \strng{authorfullhash}{f33df1d29f52af2a9446cfc93c51953b}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Конспект лекций по дисциплине компьютерная графика}

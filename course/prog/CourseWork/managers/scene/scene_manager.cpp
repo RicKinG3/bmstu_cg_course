@@ -19,6 +19,14 @@ std::shared_ptr<Camera> SceneManager::getCamera() {
     return camera.lock();
 }
 
+std::shared_ptr<Light> SceneManager::getLight() {
+    if (light.lock() == nullptr) {
+        //todo first iter need
+    }
+
+    return light.lock();
+}
+
 void SceneManager::setScene(std::shared_ptr<Scene> &sceneArg) {
     scene = sceneArg;
 }

@@ -8,9 +8,12 @@
 #include "../../visitor/transform_visitor.h"
 
 class FrameModel : public Model {
-    friend void DrawVisitor::visit(FrameModel &model);
+    friend void
+    DrawVisitor::visit(FrameModel &model, Eigen::Matrix4f mtr, std::shared_ptr<Light> light, size_t bufW, size_t bufH);
 
-    friend void TransformVisitor::visit(FrameModel &model);
+    friend void
+    TransformVisitor::visit(FrameModel &model, Eigen::Matrix4f mtr, std::shared_ptr<Light> light, size_t bufW,
+                            size_t bufH);
 
 public:
     FrameModel() = default;
@@ -22,10 +25,12 @@ public:
 
     virtual Point getCenter() override;
 
-    void accept(std::shared_ptr<Visitor> visitor) override;
 
-protected:
+    void accept(std::shared_ptr<Visitor> visitor, Eigen::Matrix4f mtr, std::shared_ptr<Light> light,
+                size_t bufW, size_t bufH);
+
     std::shared_ptr<FrameModelStructure> getModelStructure() const;
+
 
 private:
     //массив со всеми нашими объектами

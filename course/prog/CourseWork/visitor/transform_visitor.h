@@ -13,10 +13,10 @@ public:
 
     ~TransformVisitor() override = default;
 
-    void visit(FrameModel &model) override;
+    void visit(FrameModel &model, Eigen::Matrix4f mtr, std::shared_ptr<Light> light, size_t bufW, size_t bufH) override;
 
-    void visit(Camera &model) override;
-    void visit(Light &model) override;
+    void visit(Camera &model, Eigen::Matrix4f mtr, std::shared_ptr<Light> light, size_t bufW, size_t bufH ) override;
+    void visit(Light &model, Eigen::Matrix4f mtr, std::shared_ptr<Light> light, size_t bufW, size_t bufH ) override;
 
 private:
     std::shared_ptr<BaseTransformer> transformer;

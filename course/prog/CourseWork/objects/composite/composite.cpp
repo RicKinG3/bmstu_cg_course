@@ -25,6 +25,8 @@ bool Composite::add(const std::shared_ptr<Object> &object) {
     return true;
 }
 
+
+
 bool Composite::remove(const Iterator &iter) {
     objects.erase(iter);
     updateCenter();
@@ -63,12 +65,12 @@ Point Composite::getCenter() {
     return center;
 }
 
-void Composite::accept(std::shared_ptr<Visitor> visitor) {
+
+void Composite::accept(std::shared_ptr<Visitor> visitor,  Eigen::Matrix4f mtr, std::shared_ptr<Light> light, size_t bufW, size_t bufH) {
     for (const auto &object: objects) {
-        object->accept(visitor);
+        object->accept(visitor, mtr, light, bufW, bufH);
     }
 }
-
 
 Iterator Composite::begin() {
     return objects.begin();

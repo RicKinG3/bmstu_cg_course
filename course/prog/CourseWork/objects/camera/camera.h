@@ -19,8 +19,8 @@ public:
     ~Camera() override = default;
 
     virtual Point getCenter() override;
+    void accept(std::shared_ptr<Visitor> visitor, Eigen::Matrix4f mtr, std::shared_ptr<Light> light, size_t bufW, size_t bufH  ) override;
 
-    void accept(std::shared_ptr<Visitor> visitor) override;
 
 protected:
     std::shared_ptr<CameraStructure> getCameraStructure() const;

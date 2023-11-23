@@ -4,6 +4,7 @@
 
 #ifndef LAB_03_FRAME_MODEL_STRUCTURE_H
 #define LAB_03_FRAME_MODEL_STRUCTURE_H
+#include <QDebug>
 
 
 #include <memory>
@@ -45,7 +46,7 @@ public:
 
     void printFaces() const;
 
-    friend void DrawVisitor::visit(FrameModel &model);
+    friend void DrawVisitor::visit(FrameModel &model, Eigen::Matrix4f mtr, std::shared_ptr<Light> light, size_t bufW, size_t bufH);
 
 private:
     Point center{};

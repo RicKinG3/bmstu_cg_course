@@ -32,6 +32,11 @@ public:
         return os;
     }
 
+    std::size_t getFaceX() { return face[0]; }
+
+    std::size_t getFaceY() { return face[1]; }
+
+    std::size_t getFaceZ() { return face[2]; }
 
 private:
     std::size_t face[3];

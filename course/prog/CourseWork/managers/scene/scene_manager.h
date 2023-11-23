@@ -30,9 +30,13 @@ public:
 
     std::shared_ptr<Scene>  getScene();
     std::shared_ptr<Camera> getCamera();
+    std::shared_ptr<Light> getLight();
+
 
 private:
     std::shared_ptr<Scene>  scene;
+    std::weak_ptr<Light>  light;
+
     std::weak_ptr<Camera>  camera;
 };
 

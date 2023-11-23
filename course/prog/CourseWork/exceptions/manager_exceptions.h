@@ -27,5 +27,4 @@ public:
             ManagerException(filename, classname, cur_line, time, info) {};
 };
 
-
 #endif //LAB_03_MANAGER_EXCEPTIONS_H

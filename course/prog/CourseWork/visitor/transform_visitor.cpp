@@ -9,7 +9,7 @@
 TransformVisitor::TransformVisitor(const std::shared_ptr<BaseTransformer> &transformer_) :
         transformer(transformer_) {}
 
-void TransformVisitor::visit(FrameModel &model) {
+void TransformVisitor::visit(FrameModel &model, Eigen::Matrix4f mtr, std::shared_ptr<Light> light, size_t bufW, size_t bufH) {
     auto points = model.getModelStructure()->getPoints();
     auto center = model.getCenter();
 
@@ -20,7 +20,7 @@ void TransformVisitor::visit(FrameModel &model) {
     model.getModelStructure()->setCenter(center);
 }
 
-void TransformVisitor::visit(Camera &model) {
+void TransformVisitor::visit(Camera &model, Eigen::Matrix4f mtr, std::shared_ptr<Light> light, size_t bufW, size_t bufH ) {
     auto direction = model.getCameraStructure()->getDirection();
     auto position = model.getCameraStructure()->getPosition();
 
@@ -32,7 +32,7 @@ void TransformVisitor::visit(Camera &model) {
 }
 
 //todo &? ???
-void TransformVisitor::visit(Light &model) {
+void TransformVisitor::visit(Light &model, Eigen::Matrix4f mtr, std::shared_ptr<Light> light, size_t bufW, size_t bufH ) {
     auto direction = model.getLightStructure()->getDirection();
     auto position = model.getLightStructure()->getPosition();
 

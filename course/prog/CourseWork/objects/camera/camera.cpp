@@ -6,13 +6,15 @@ std::shared_ptr<CameraStructure> Camera::getCameraStructure() const {
     return cameraStructure;
 }
 
+void
+Camera::accept(std::shared_ptr<Visitor> visitor, Eigen::Matrix4f mtr, std::shared_ptr<Light> light,
+               size_t bufW, size_t bufH) {
+    visitor->visit(*this, mtr, light, bufW, bufH);
+}
+
 
 Point Camera::getCenter() {
     return cameraStructure->getPosition();
-}
-
-void Camera::accept(std::shared_ptr<Visitor> visitor) {
-    visitor->visit(*this);
 }
 
 

@@ -5,6 +5,8 @@
 #ifndef COURSEWORK_LIGHTSTRUCTURE_H
 #define COURSEWORK_LIGHTSTRUCTURE_H
 
+#include "/usr/include/eigen3/Eigen/Dense"
+
 #include "point.h"
 
 #include <memory>
@@ -14,7 +16,7 @@ class LightStructure {
 public:
     LightStructure() = default;
 
-    LightStructure(const Point &positionArg, const Point &directionArg);
+    LightStructure(const Point &positionArg, const Point &directionArg, Eigen::Matrix4f &transMatrix_);
 
     ~LightStructure() = default;
 
@@ -26,11 +28,26 @@ public:
 
     const Point getPosition();
 
+
+    //todo
+    void setShadowMap(std::vector<std::vector<double>> &setShadowMap);
+
+    std::vector<std::vector<double>> &getShadowMap();
+
+    void clearShadowMap();
+
+
+    void setTransMat(Eigen::Matrix4f &mat);
+
+    Eigen::Matrix4f &getTransMat();
+
 private:
     Point position{};
     Point direction{0, 0, 0};
+    //todo
+    std::vector<std::vector<double>> shadowMap;
+    Eigen::Matrix4f transMatrix;
 };
-
 
 
 #endif //COURSEWORK_LIGHTSTRUCTURE_H

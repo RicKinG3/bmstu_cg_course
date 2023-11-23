@@ -9,7 +9,15 @@ void TransformManager::transform(size_t id, const Point &move_params,
     //(*object_iter)->transform(move_params, scale_params, rotate_params);
     auto transformer = TransformerFactory(rotate_params, scale_params, move_params).create();
     std::shared_ptr<Visitor> visitor = TransformVisitorFactory(transformer).create();
-    (*object_iter)->accept(visitor);
+    Eigen::Matrix4f transMatrix; // todo up in obj
+
+    auto sceneManager = SceneManagerCreator().getManager();
+    auto scene = sceneManager->getScene();
+    auto lights = sceneManager->getLight();
+    ;
+
+
+    (*object_iter)->accept(visitor, transMatrix,lights, 4,7 );
 }
 
 

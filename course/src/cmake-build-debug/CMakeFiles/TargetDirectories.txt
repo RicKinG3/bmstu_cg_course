@@ -1,9 +1,9 @@
-/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/CMakeFiles/programm.dir
+/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/CMakeFiles/src.dir
 /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/CMakeFiles/edit_cache.dir
 /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/CMakeFiles/list_install_components.dir
 /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/CMakeFiles/install.dir
 /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/CMakeFiles/install/local.dir
 /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/CMakeFiles/install/strip.dir
-/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/CMakeFiles/programm_autogen_timestamp_deps.dir
-/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/CMakeFiles/programm_autogen.dir
+/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/CMakeFiles/src_autogen_timestamp_deps.dir
+/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/CMakeFiles/src_autogen.dir

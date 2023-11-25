@@ -122,7 +122,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=programm
+CMAKE_PROJECT_NAME:STATIC=src
 
 //Value Computed by CMake
 CMAKE_PROJECT_VERSION:STATIC=0.1
@@ -233,6 +233,15 @@ programm_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 programm_SOURCE_DIR:STATIC=/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src
+
+//Value Computed by CMake
+src_BINARY_DIR:STATIC=/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug
+
+//Value Computed by CMake
+src_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+src_SOURCE_DIR:STATIC=/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src
 
 
 ########################

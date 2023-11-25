@@ -52,31 +52,31 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   file(INSTALL DESTINATION "/usr/local/forms" TYPE FILE FILES
-    "/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/illuminantplacechooser.ui"
-    "/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/mainwindow.ui"
-    "/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/movechooser.ui"
-    "/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/objectchanger.ui"
-    "/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/objecthangman.ui"
-    "/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/placecarсhooser.ui"
-    "/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/placehousechooser.ui"
-    "/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/placeroadсhooser.ui"
-    "/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/placetreechooser.ui"
-    "/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/sizechooser.ui"
+    "/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/illuminantplacechooser.ui"
+    "/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/mainwindow.ui"
+    "/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/movechooser.ui"
+    "/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/objectchanger.ui"
+    "/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/objecthangman.ui"
+    "/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/placecarсhooser.ui"
+    "/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/placehousechooser.ui"
+    "/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/placeroadсhooser.ui"
+    "/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/placetreechooser.ui"
+    "/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/sizechooser.ui"
     )
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/programm" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/programm")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/src" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/src")
     file(RPATH_CHECK
-         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/programm"
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/src"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/programm")
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/programm" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/programm")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/src")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/src" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/src")
     if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/programm")
+      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/src")
     endif()
   endif()
 endif()

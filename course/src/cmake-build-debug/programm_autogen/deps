@@ -1,74 +1,15 @@
 programm_autogen/timestamp: \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeCXXCompiler.cmake.in \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeCXXCompilerABI.cpp \
 	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeCXXInformation.cmake \
 	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeCompilerIdDetection.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeDetermineCXXCompiler.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeDetermineCompileFeatures.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeDetermineCompiler.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeDetermineCompilerABI.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeDetermineCompilerId.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeDetermineSystem.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeFindBinUtils.cmake \
 	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeGenericSystem.cmake \
 	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake \
 	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake \
 	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeParseArguments.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeParseImplicitIncludeInfo.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeParseImplicitLinkInfo.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeParseLibraryArchitecture.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeSystem.cmake.in \
 	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake \
 	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeTestCXXCompiler.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeTestCompilerCommon.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/ADSP-DetermineCompiler.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/ARMCC-DetermineCompiler.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/ARMClang-DetermineCompiler.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/AppleClang-DetermineCompiler.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/Borland-DetermineCompiler.cmake \
 	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/Clang-DetermineCompiler.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/Clang-DetermineCompilerInternal.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/Cray-DetermineCompiler.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/Embarcadero-DetermineCompiler.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/Fujitsu-DetermineCompiler.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/GHS-DetermineCompiler.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake \
 	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/GNU-CXX.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/GNU-FindBinUtils.cmake \
 	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/GNU.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/HP-CXX-DetermineCompiler.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/IAR-DetermineCompiler.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/Intel-DetermineCompiler.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/MSVC-DetermineCompiler.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/NVHPC-DetermineCompiler.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/NVIDIA-DetermineCompiler.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/PGI-DetermineCompiler.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/PathScale-DetermineCompiler.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/SCO-DetermineCompiler.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/TI-DetermineCompiler.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/Tasking-DetermineCompiler.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/Watcom-DetermineCompiler.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/XL-CXX-DetermineCompiler.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/FindOpenMP.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/FindPackageHandleStandardArgs.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/FindPackageMessage.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Internal/FeatureTesting.cmake \
-	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Platform/Linux-Determine-CXX.cmake \
 	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Platform/Linux-GNU-CXX.cmake \
 	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Platform/Linux-GNU.cmake \
 	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Platform/Linux.cmake \
@@ -80,25 +21,25 @@ programm_autogen/timestamp: \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/CMakeFiles/3.26.4/CMakeSystem.cmake \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/programm_autogen/moc_predefs.h \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/config.hpp \
-	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/illuminantplacechooser.cpp \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/illuminantplacechooser.hpp \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/main.cpp \
-	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/mainwindow.cpp \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/mainwindow.h \
-	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/movechooser.cpp \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/movechooser.hpp \
-	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/objectchanger.cpp \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/objectchanger.hpp \
-	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/objecthangman.cpp \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/objecthangman.hpp \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/objects.cpp \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/objects.hpp \
-	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/placechooser.cpp \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/placechooser.h \
-	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/sizechooser.cpp \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/sizechooser.hpp \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/specialgraphicsview.cpp \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/specialgraphicsview.hpp \
+	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/illuminantplacechooser.cpp \
+	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/mainwindow.cpp \
+	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/movechooser.cpp \
+	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/objectchanger.cpp \
+	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/objecthangman.cpp \
+	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/placechooser.cpp \
+	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/sizechooser.cpp \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/usagefacade.cpp \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/usagefacade.hpp \
 	/usr/include/asm-generic/errno-base.h \
@@ -712,14 +653,14 @@ programm_autogen/timestamp: \
 	/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake \
 	/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake \
 	/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake \
-	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/illuminantplacechooser.ui \
-	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/mainwindow.ui \
-	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/movechooser.ui \
-	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/objectchanger.ui \
-	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/objecthangman.ui \
-	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/placecarсhooser.ui \
-	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/placehousechooser.ui \
-	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/placeroadсhooser.ui \
-	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/placetreechooser.ui \
-	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/sizechooser.ui \
+	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/illuminantplacechooser.ui \
+	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/mainwindow.ui \
+	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/movechooser.ui \
+	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/objectchanger.ui \
+	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/objecthangman.ui \
+	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/placecarсhooser.ui \
+	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/placehousechooser.ui \
+	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/placeroadсhooser.ui \
+	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/placetreechooser.ui \
+	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/sizechooser.ui \
 	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/cmake

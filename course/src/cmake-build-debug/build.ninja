@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: programm
+# Project: src
 # Configurations: Debug
 # =============================================================================
 
@@ -41,161 +41,134 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/
 # =============================================================================
-# Object build statements for EXECUTABLE target programm
+# Object build statements for EXECUTABLE target src
 
 
 #############################################
-# Order-only phony target for programm
+# Order-only phony target for src
 
-build cmake_object_order_depends_target_programm: phony || /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui_illuminantplacechooser.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui_mainwindow.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui_movechooser.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui_objectchanger.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui_objecthangman.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui_placecarсhooser.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui_placehousechooser.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui_placeroadсhooser.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui_placetreechooser.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui_sizechooser.h programm_autogen programm_autogen/mocs_compilation.cpp programm_autogen/timestamp programm_autogen_timestamp_deps
+build cmake_object_order_depends_target_src: phony || /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_illuminantplacechooser.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_mainwindow.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_movechooser.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_objectchanger.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_objecthangman.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_placecarсhooser.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_placehousechooser.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_placeroadсhooser.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_placetreechooser.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_sizechooser.h src_autogen src_autogen/mocs_compilation.cpp src_autogen/timestamp src_autogen_timestamp_deps
 
-build CMakeFiles/programm.dir/programm_autogen/mocs_compilation.cpp.o: CXX_COMPILER__programm_unscanned_Debug /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/programm_autogen/mocs_compilation.cpp || cmake_object_order_depends_target_programm
+build CMakeFiles/src.dir/src_autogen/mocs_compilation.cpp.o: CXX_COMPILER__src_unscanned_Debug /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/src_autogen/mocs_compilation.cpp || cmake_object_order_depends_target_src
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
-  DEP_FILE = CMakeFiles/programm.dir/programm_autogen/mocs_compilation.cpp.o.d
+  DEP_FILE = CMakeFiles/src.dir/src_autogen/mocs_compilation.cpp.o.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -fPIC
-  INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/programm_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
-  OBJECT_DIR = CMakeFiles/programm.dir
-  OBJECT_FILE_DIR = CMakeFiles/programm.dir/programm_autogen
-  TARGET_COMPILE_PDB = CMakeFiles/programm.dir/
-  TARGET_PDB = programm.pdb
+  INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/src_autogen/include -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/headers -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
+  OBJECT_DIR = CMakeFiles/src.dir
+  OBJECT_FILE_DIR = CMakeFiles/src.dir/src_autogen
 
-build CMakeFiles/programm.dir/additivemathelements.cpp.o: CXX_COMPILER__programm_unscanned_Debug /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/additivemathelements.cpp || cmake_object_order_depends_target_programm
+build CMakeFiles/src.dir/math/additivemathelements.cpp.o: CXX_COMPILER__src_unscanned_Debug /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/math/additivemathelements.cpp || cmake_object_order_depends_target_src
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
-  DEP_FILE = CMakeFiles/programm.dir/additivemathelements.cpp.o.d
+  DEP_FILE = CMakeFiles/src.dir/math/additivemathelements.cpp.o.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -fPIC
-  INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/programm_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
-  OBJECT_DIR = CMakeFiles/programm.dir
-  OBJECT_FILE_DIR = CMakeFiles/programm.dir
-  TARGET_COMPILE_PDB = CMakeFiles/programm.dir/
-  TARGET_PDB = programm.pdb
+  INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/src_autogen/include -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/headers -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
+  OBJECT_DIR = CMakeFiles/src.dir
+  OBJECT_FILE_DIR = CMakeFiles/src.dir/math
 
-build CMakeFiles/programm.dir/illuminantplacechooser.cpp.o: CXX_COMPILER__programm_unscanned_Debug /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/illuminantplacechooser.cpp || cmake_object_order_depends_target_programm
+build CMakeFiles/src.dir/ui/illuminantplacechooser.cpp.o: CXX_COMPILER__src_unscanned_Debug /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/illuminantplacechooser.cpp || cmake_object_order_depends_target_src
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
-  DEP_FILE = CMakeFiles/programm.dir/illuminantplacechooser.cpp.o.d
+  DEP_FILE = CMakeFiles/src.dir/ui/illuminantplacechooser.cpp.o.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -fPIC
-  INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/programm_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
-  OBJECT_DIR = CMakeFiles/programm.dir
-  OBJECT_FILE_DIR = CMakeFiles/programm.dir
-  TARGET_COMPILE_PDB = CMakeFiles/programm.dir/
-  TARGET_PDB = programm.pdb
+  INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/src_autogen/include -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/headers -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
+  OBJECT_DIR = CMakeFiles/src.dir
+  OBJECT_FILE_DIR = CMakeFiles/src.dir/ui
 
-build CMakeFiles/programm.dir/main.cpp.o: CXX_COMPILER__programm_unscanned_Debug /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/main.cpp || cmake_object_order_depends_target_programm
+build CMakeFiles/src.dir/main.cpp.o: CXX_COMPILER__src_unscanned_Debug /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/main.cpp || cmake_object_order_depends_target_src
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
-  DEP_FILE = CMakeFiles/programm.dir/main.cpp.o.d
+  DEP_FILE = CMakeFiles/src.dir/main.cpp.o.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -fPIC
-  INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/programm_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
-  OBJECT_DIR = CMakeFiles/programm.dir
-  OBJECT_FILE_DIR = CMakeFiles/programm.dir
-  TARGET_COMPILE_PDB = CMakeFiles/programm.dir/
-  TARGET_PDB = programm.pdb
+  INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/src_autogen/include -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/headers -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
+  OBJECT_DIR = CMakeFiles/src.dir
+  OBJECT_FILE_DIR = CMakeFiles/src.dir
 
-build CMakeFiles/programm.dir/mainwindow.cpp.o: CXX_COMPILER__programm_unscanned_Debug /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/mainwindow.cpp || cmake_object_order_depends_target_programm
+build CMakeFiles/src.dir/ui/mainwindow.cpp.o: CXX_COMPILER__src_unscanned_Debug /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/mainwindow.cpp || cmake_object_order_depends_target_src
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
-  DEP_FILE = CMakeFiles/programm.dir/mainwindow.cpp.o.d
+  DEP_FILE = CMakeFiles/src.dir/ui/mainwindow.cpp.o.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -fPIC
-  INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/programm_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
-  OBJECT_DIR = CMakeFiles/programm.dir
-  OBJECT_FILE_DIR = CMakeFiles/programm.dir
-  TARGET_COMPILE_PDB = CMakeFiles/programm.dir/
-  TARGET_PDB = programm.pdb
+  INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/src_autogen/include -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/headers -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
+  OBJECT_DIR = CMakeFiles/src.dir
+  OBJECT_FILE_DIR = CMakeFiles/src.dir/ui
 
-build CMakeFiles/programm.dir/movechooser.cpp.o: CXX_COMPILER__programm_unscanned_Debug /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/movechooser.cpp || cmake_object_order_depends_target_programm
+build CMakeFiles/src.dir/ui/movechooser.cpp.o: CXX_COMPILER__src_unscanned_Debug /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/movechooser.cpp || cmake_object_order_depends_target_src
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
-  DEP_FILE = CMakeFiles/programm.dir/movechooser.cpp.o.d
+  DEP_FILE = CMakeFiles/src.dir/ui/movechooser.cpp.o.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -fPIC
-  INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/programm_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
-  OBJECT_DIR = CMakeFiles/programm.dir
-  OBJECT_FILE_DIR = CMakeFiles/programm.dir
-  TARGET_COMPILE_PDB = CMakeFiles/programm.dir/
-  TARGET_PDB = programm.pdb
+  INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/src_autogen/include -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/headers -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
+  OBJECT_DIR = CMakeFiles/src.dir
+  OBJECT_FILE_DIR = CMakeFiles/src.dir/ui
 
-build CMakeFiles/programm.dir/objectchanger.cpp.o: CXX_COMPILER__programm_unscanned_Debug /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/objectchanger.cpp || cmake_object_order_depends_target_programm
+build CMakeFiles/src.dir/ui/objectchanger.cpp.o: CXX_COMPILER__src_unscanned_Debug /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/objectchanger.cpp || cmake_object_order_depends_target_src
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
-  DEP_FILE = CMakeFiles/programm.dir/objectchanger.cpp.o.d
+  DEP_FILE = CMakeFiles/src.dir/ui/objectchanger.cpp.o.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -fPIC
-  INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/programm_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
-  OBJECT_DIR = CMakeFiles/programm.dir
-  OBJECT_FILE_DIR = CMakeFiles/programm.dir
-  TARGET_COMPILE_PDB = CMakeFiles/programm.dir/
-  TARGET_PDB = programm.pdb
+  INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/src_autogen/include -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/headers -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
+  OBJECT_DIR = CMakeFiles/src.dir
+  OBJECT_FILE_DIR = CMakeFiles/src.dir/ui
 
-build CMakeFiles/programm.dir/objecthangman.cpp.o: CXX_COMPILER__programm_unscanned_Debug /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/objecthangman.cpp || cmake_object_order_depends_target_programm
+build CMakeFiles/src.dir/ui/objecthangman.cpp.o: CXX_COMPILER__src_unscanned_Debug /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/objecthangman.cpp || cmake_object_order_depends_target_src
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
-  DEP_FILE = CMakeFiles/programm.dir/objecthangman.cpp.o.d
+  DEP_FILE = CMakeFiles/src.dir/ui/objecthangman.cpp.o.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -fPIC
-  INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/programm_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
-  OBJECT_DIR = CMakeFiles/programm.dir
-  OBJECT_FILE_DIR = CMakeFiles/programm.dir
-  TARGET_COMPILE_PDB = CMakeFiles/programm.dir/
-  TARGET_PDB = programm.pdb
+  INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/src_autogen/include -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/headers -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
+  OBJECT_DIR = CMakeFiles/src.dir
+  OBJECT_FILE_DIR = CMakeFiles/src.dir/ui
 
-build CMakeFiles/programm.dir/objects.cpp.o: CXX_COMPILER__programm_unscanned_Debug /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/objects.cpp || cmake_object_order_depends_target_programm
+build CMakeFiles/src.dir/obj/objects.cpp.o: CXX_COMPILER__src_unscanned_Debug /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/obj/objects.cpp || cmake_object_order_depends_target_src
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
-  DEP_FILE = CMakeFiles/programm.dir/objects.cpp.o.d
+  DEP_FILE = CMakeFiles/src.dir/obj/objects.cpp.o.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -fPIC
-  INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/programm_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
-  OBJECT_DIR = CMakeFiles/programm.dir
-  OBJECT_FILE_DIR = CMakeFiles/programm.dir
-  TARGET_COMPILE_PDB = CMakeFiles/programm.dir/
-  TARGET_PDB = programm.pdb
+  INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/src_autogen/include -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/headers -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
+  OBJECT_DIR = CMakeFiles/src.dir
+  OBJECT_FILE_DIR = CMakeFiles/src.dir/obj
 
-build CMakeFiles/programm.dir/placechooser.cpp.o: CXX_COMPILER__programm_unscanned_Debug /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/placechooser.cpp || cmake_object_order_depends_target_programm
+build CMakeFiles/src.dir/ui/placechooser.cpp.o: CXX_COMPILER__src_unscanned_Debug /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/placechooser.cpp || cmake_object_order_depends_target_src
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
-  DEP_FILE = CMakeFiles/programm.dir/placechooser.cpp.o.d
+  DEP_FILE = CMakeFiles/src.dir/ui/placechooser.cpp.o.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -fPIC
-  INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/programm_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
-  OBJECT_DIR = CMakeFiles/programm.dir
-  OBJECT_FILE_DIR = CMakeFiles/programm.dir
-  TARGET_COMPILE_PDB = CMakeFiles/programm.dir/
-  TARGET_PDB = programm.pdb
+  INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/src_autogen/include -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/headers -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
+  OBJECT_DIR = CMakeFiles/src.dir
+  OBJECT_FILE_DIR = CMakeFiles/src.dir/ui
 
-build CMakeFiles/programm.dir/sizechooser.cpp.o: CXX_COMPILER__programm_unscanned_Debug /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/sizechooser.cpp || cmake_object_order_depends_target_programm
+build CMakeFiles/src.dir/ui/sizechooser.cpp.o: CXX_COMPILER__src_unscanned_Debug /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/sizechooser.cpp || cmake_object_order_depends_target_src
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
-  DEP_FILE = CMakeFiles/programm.dir/sizechooser.cpp.o.d
+  DEP_FILE = CMakeFiles/src.dir/ui/sizechooser.cpp.o.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -fPIC
-  INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/programm_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
-  OBJECT_DIR = CMakeFiles/programm.dir
-  OBJECT_FILE_DIR = CMakeFiles/programm.dir
-  TARGET_COMPILE_PDB = CMakeFiles/programm.dir/
-  TARGET_PDB = programm.pdb
+  INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/src_autogen/include -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/headers -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
+  OBJECT_DIR = CMakeFiles/src.dir
+  OBJECT_FILE_DIR = CMakeFiles/src.dir/ui
 
-build CMakeFiles/programm.dir/specialgraphicsview.cpp.o: CXX_COMPILER__programm_unscanned_Debug /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/specialgraphicsview.cpp || cmake_object_order_depends_target_programm
+build CMakeFiles/src.dir/specialgraphicsview.cpp.o: CXX_COMPILER__src_unscanned_Debug /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/specialgraphicsview.cpp || cmake_object_order_depends_target_src
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
-  DEP_FILE = CMakeFiles/programm.dir/specialgraphicsview.cpp.o.d
+  DEP_FILE = CMakeFiles/src.dir/specialgraphicsview.cpp.o.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -fPIC
-  INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/programm_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
-  OBJECT_DIR = CMakeFiles/programm.dir
-  OBJECT_FILE_DIR = CMakeFiles/programm.dir
-  TARGET_COMPILE_PDB = CMakeFiles/programm.dir/
-  TARGET_PDB = programm.pdb
+  INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/src_autogen/include -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/headers -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
+  OBJECT_DIR = CMakeFiles/src.dir
+  OBJECT_FILE_DIR = CMakeFiles/src.dir
 
-build CMakeFiles/programm.dir/usagefacade.cpp.o: CXX_COMPILER__programm_unscanned_Debug /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/usagefacade.cpp || cmake_object_order_depends_target_programm
+build CMakeFiles/src.dir/facade/usagefacade.cpp.o: CXX_COMPILER__src_unscanned_Debug /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/facade/usagefacade.cpp || cmake_object_order_depends_target_src
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
-  DEP_FILE = CMakeFiles/programm.dir/usagefacade.cpp.o.d
+  DEP_FILE = CMakeFiles/src.dir/facade/usagefacade.cpp.o.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -fPIC
-  INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/programm_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
-  OBJECT_DIR = CMakeFiles/programm.dir
-  OBJECT_FILE_DIR = CMakeFiles/programm.dir
-  TARGET_COMPILE_PDB = CMakeFiles/programm.dir/
-  TARGET_PDB = programm.pdb
+  INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/src_autogen/include -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/headers -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
+  OBJECT_DIR = CMakeFiles/src.dir
+  OBJECT_FILE_DIR = CMakeFiles/src.dir/facade
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target programm
+# Link build statements for EXECUTABLE target src
 
 
 #############################################
-# Link the executable programm
+# Link the executable src
 
-build programm: CXX_EXECUTABLE_LINKER__programm_Debug CMakeFiles/programm.dir/programm_autogen/mocs_compilation.cpp.o CMakeFiles/programm.dir/additivemathelements.cpp.o CMakeFiles/programm.dir/illuminantplacechooser.cpp.o CMakeFiles/programm.dir/main.cpp.o CMakeFiles/programm.dir/mainwindow.cpp.o CMakeFiles/programm.dir/movechooser.cpp.o CMakeFiles/programm.dir/objectchanger.cpp.o CMakeFiles/programm.dir/objecthangman.cpp.o CMakeFiles/programm.dir/objects.cpp.o CMakeFiles/programm.dir/placechooser.cpp.o CMakeFiles/programm.dir/sizechooser.cpp.o CMakeFiles/programm.dir/specialgraphicsview.cpp.o CMakeFiles/programm.dir/usagefacade.cpp.o | /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.8 /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.15.8 /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.15.8 || programm_autogen programm_autogen_timestamp_deps
+build src: CXX_EXECUTABLE_LINKER__src_Debug CMakeFiles/src.dir/src_autogen/mocs_compilation.cpp.o CMakeFiles/src.dir/math/additivemathelements.cpp.o CMakeFiles/src.dir/ui/illuminantplacechooser.cpp.o CMakeFiles/src.dir/main.cpp.o CMakeFiles/src.dir/ui/mainwindow.cpp.o CMakeFiles/src.dir/ui/movechooser.cpp.o CMakeFiles/src.dir/ui/objectchanger.cpp.o CMakeFiles/src.dir/ui/objecthangman.cpp.o CMakeFiles/src.dir/obj/objects.cpp.o CMakeFiles/src.dir/ui/placechooser.cpp.o CMakeFiles/src.dir/ui/sizechooser.cpp.o CMakeFiles/src.dir/specialgraphicsview.cpp.o CMakeFiles/src.dir/facade/usagefacade.cpp.o | /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.8 /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.15.8 /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.15.8 || src_autogen src_autogen_timestamp_deps
   FLAGS = -g
   LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.8  /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.15.8  /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.15.8
-  OBJECT_DIR = CMakeFiles/programm.dir
+  OBJECT_DIR = CMakeFiles/src.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = CMakeFiles/programm.dir/
-  TARGET_FILE = programm
-  TARGET_PDB = programm.pdb
+  TARGET_FILE = src
+  TARGET_PDB = src.dbg
 
 
 #############################################
@@ -264,127 +237,127 @@ build install/strip: phony CMakeFiles/install/strip.util
 
 
 #############################################
-# Utility command for programm_autogen_timestamp_deps
+# Utility command for src_autogen_timestamp_deps
 
-build programm_autogen_timestamp_deps: phony CMakeFiles/programm_autogen_timestamp_deps
-
-
-#############################################
-# Utility command for programm_autogen
-
-build programm_autogen: phony CMakeFiles/programm_autogen programm_autogen/timestamp programm_autogen/mocs_compilation.cpp programm_autogen_timestamp_deps
+build src_autogen_timestamp_deps: phony CMakeFiles/src_autogen_timestamp_deps
 
 
 #############################################
-# Custom command for /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui_illuminantplacechooser.h
+# Utility command for src_autogen
 
-build /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui_illuminantplacechooser.h: CUSTOM_COMMAND /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/illuminantplacechooser.ui || programm_autogen programm_autogen_timestamp_deps
-  COMMAND = cd /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug && /usr/lib/qt5/bin/uic -o /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui_illuminantplacechooser.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/illuminantplacechooser.ui
-  DESC = Generating /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui_illuminantplacechooser.h
+build src_autogen: phony CMakeFiles/src_autogen src_autogen/timestamp src_autogen/mocs_compilation.cpp src_autogen_timestamp_deps
+
+
+#############################################
+# Custom command for /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_illuminantplacechooser.h
+
+build /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_illuminantplacechooser.h: CUSTOM_COMMAND /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/illuminantplacechooser.ui || src_autogen src_autogen_timestamp_deps
+  COMMAND = cd /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug && /usr/lib/qt5/bin/uic -o /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_illuminantplacechooser.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/illuminantplacechooser.ui
+  DESC = Generating /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_illuminantplacechooser.h
   restat = 1
 
 
 #############################################
-# Custom command for /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui_mainwindow.h
+# Custom command for /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_mainwindow.h
 
-build /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui_mainwindow.h: CUSTOM_COMMAND /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/mainwindow.ui || programm_autogen programm_autogen_timestamp_deps
-  COMMAND = cd /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug && /usr/lib/qt5/bin/uic -o /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui_mainwindow.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/mainwindow.ui
-  DESC = Generating /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui_mainwindow.h
+build /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_mainwindow.h: CUSTOM_COMMAND /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/mainwindow.ui || src_autogen src_autogen_timestamp_deps
+  COMMAND = cd /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug && /usr/lib/qt5/bin/uic -o /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_mainwindow.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/mainwindow.ui
+  DESC = Generating /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_mainwindow.h
   restat = 1
 
 
 #############################################
-# Custom command for /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui_movechooser.h
+# Custom command for /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_movechooser.h
 
-build /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui_movechooser.h: CUSTOM_COMMAND /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/movechooser.ui || programm_autogen programm_autogen_timestamp_deps
-  COMMAND = cd /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug && /usr/lib/qt5/bin/uic -o /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui_movechooser.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/movechooser.ui
-  DESC = Generating /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui_movechooser.h
+build /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_movechooser.h: CUSTOM_COMMAND /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/movechooser.ui || src_autogen src_autogen_timestamp_deps
+  COMMAND = cd /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug && /usr/lib/qt5/bin/uic -o /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_movechooser.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/movechooser.ui
+  DESC = Generating /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_movechooser.h
   restat = 1
 
 
 #############################################
-# Custom command for /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui_objectchanger.h
+# Custom command for /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_objectchanger.h
 
-build /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui_objectchanger.h: CUSTOM_COMMAND /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/objectchanger.ui || programm_autogen programm_autogen_timestamp_deps
-  COMMAND = cd /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug && /usr/lib/qt5/bin/uic -o /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui_objectchanger.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/objectchanger.ui
-  DESC = Generating /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui_objectchanger.h
+build /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_objectchanger.h: CUSTOM_COMMAND /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/objectchanger.ui || src_autogen src_autogen_timestamp_deps
+  COMMAND = cd /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug && /usr/lib/qt5/bin/uic -o /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_objectchanger.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/objectchanger.ui
+  DESC = Generating /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_objectchanger.h
   restat = 1
 
 
 #############################################
-# Custom command for /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui_objecthangman.h
+# Custom command for /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_objecthangman.h
 
-build /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui_objecthangman.h: CUSTOM_COMMAND /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/objecthangman.ui || programm_autogen programm_autogen_timestamp_deps
-  COMMAND = cd /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug && /usr/lib/qt5/bin/uic -o /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui_objecthangman.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/objecthangman.ui
-  DESC = Generating /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui_objecthangman.h
+build /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_objecthangman.h: CUSTOM_COMMAND /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/objecthangman.ui || src_autogen src_autogen_timestamp_deps
+  COMMAND = cd /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug && /usr/lib/qt5/bin/uic -o /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_objecthangman.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/objecthangman.ui
+  DESC = Generating /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_objecthangman.h
   restat = 1
 
 
 #############################################
-# Custom command for /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui_placecarсhooser.h
+# Custom command for /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_placecarсhooser.h
 
-build /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui_placecarсhooser.h: CUSTOM_COMMAND /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/placecarсhooser.ui || programm_autogen programm_autogen_timestamp_deps
-  COMMAND = cd /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug && /usr/lib/qt5/bin/uic -o /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui_placecarсhooser.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/placecarсhooser.ui
-  DESC = Generating /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui_placecarсhooser.h
+build /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_placecarсhooser.h: CUSTOM_COMMAND /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/placecarсhooser.ui || src_autogen src_autogen_timestamp_deps
+  COMMAND = cd /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug && /usr/lib/qt5/bin/uic -o /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_placecarсhooser.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/placecarсhooser.ui
+  DESC = Generating /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_placecarсhooser.h
   restat = 1
 
 
 #############################################
-# Custom command for /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui_placehousechooser.h
+# Custom command for /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_placehousechooser.h
 
-build /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui_placehousechooser.h: CUSTOM_COMMAND /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/placehousechooser.ui || programm_autogen programm_autogen_timestamp_deps
-  COMMAND = cd /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug && /usr/lib/qt5/bin/uic -o /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui_placehousechooser.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/placehousechooser.ui
-  DESC = Generating /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui_placehousechooser.h
+build /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_placehousechooser.h: CUSTOM_COMMAND /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/placehousechooser.ui || src_autogen src_autogen_timestamp_deps
+  COMMAND = cd /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug && /usr/lib/qt5/bin/uic -o /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_placehousechooser.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/placehousechooser.ui
+  DESC = Generating /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_placehousechooser.h
   restat = 1
 
 
 #############################################
-# Custom command for /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui_placeroadсhooser.h
+# Custom command for /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_placeroadсhooser.h
 
-build /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui_placeroadсhooser.h: CUSTOM_COMMAND /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/placeroadсhooser.ui || programm_autogen programm_autogen_timestamp_deps
-  COMMAND = cd /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug && /usr/lib/qt5/bin/uic -o /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui_placeroadсhooser.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/placeroadсhooser.ui
-  DESC = Generating /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui_placeroadсhooser.h
+build /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_placeroadсhooser.h: CUSTOM_COMMAND /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/placeroadсhooser.ui || src_autogen src_autogen_timestamp_deps
+  COMMAND = cd /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug && /usr/lib/qt5/bin/uic -o /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_placeroadсhooser.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/placeroadсhooser.ui
+  DESC = Generating /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_placeroadсhooser.h
   restat = 1
 
 
 #############################################
-# Custom command for /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui_placetreechooser.h
+# Custom command for /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_placetreechooser.h
 
-build /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui_placetreechooser.h: CUSTOM_COMMAND /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/placetreechooser.ui || programm_autogen programm_autogen_timestamp_deps
-  COMMAND = cd /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug && /usr/lib/qt5/bin/uic -o /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui_placetreechooser.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/placetreechooser.ui
-  DESC = Generating /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui_placetreechooser.h
+build /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_placetreechooser.h: CUSTOM_COMMAND /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/placetreechooser.ui || src_autogen src_autogen_timestamp_deps
+  COMMAND = cd /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug && /usr/lib/qt5/bin/uic -o /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_placetreechooser.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/placetreechooser.ui
+  DESC = Generating /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_placetreechooser.h
   restat = 1
 
 
 #############################################
-# Custom command for /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui_sizechooser.h
+# Custom command for /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_sizechooser.h
 
-build /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui_sizechooser.h: CUSTOM_COMMAND /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/sizechooser.ui || programm_autogen programm_autogen_timestamp_deps
-  COMMAND = cd /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug && /usr/lib/qt5/bin/uic -o /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui_sizechooser.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/sizechooser.ui
-  DESC = Generating /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui_sizechooser.h
+build /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_sizechooser.h: CUSTOM_COMMAND /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/sizechooser.ui || src_autogen src_autogen_timestamp_deps
+  COMMAND = cd /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug && /usr/lib/qt5/bin/uic -o /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_sizechooser.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/sizechooser.ui
+  DESC = Generating /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_sizechooser.h
   restat = 1
 
 
 #############################################
-# Custom command for programm_autogen/timestamp
+# Custom command for src_autogen/timestamp
 
-build programm_autogen/timestamp programm_autogen/mocs_compilation.cpp | ${cmake_ninja_workdir}programm_autogen/timestamp ${cmake_ninja_workdir}programm_autogen/mocs_compilation.cpp: CUSTOM_COMMAND /usr/lib/qt5/bin/moc /usr/lib/qt5/bin/uic || programm_autogen_timestamp_deps
-  COMMAND = cd /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug && /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/cmake -E cmake_autogen /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/CMakeFiles/programm_autogen.dir/AutogenInfo.json Debug && /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/cmake -E touch /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/programm_autogen/timestamp && /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/cmake -E cmake_transform_depfile Ninja gccdepfile /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/programm_autogen/deps /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/CMakeFiles/d/01fc12a7830f3dcaba1b36bc1289437b08da18342f3caf49a2369557580a5009.d
-  DESC = Automatic MOC and UIC for target programm
-  depfile = /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/CMakeFiles/d/01fc12a7830f3dcaba1b36bc1289437b08da18342f3caf49a2369557580a5009.d
+build src_autogen/timestamp src_autogen/mocs_compilation.cpp | ${cmake_ninja_workdir}src_autogen/timestamp ${cmake_ninja_workdir}src_autogen/mocs_compilation.cpp: CUSTOM_COMMAND /usr/lib/qt5/bin/moc /usr/lib/qt5/bin/uic || src_autogen_timestamp_deps
+  COMMAND = cd /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug && /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/cmake -E cmake_autogen /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/CMakeFiles/src_autogen.dir/AutogenInfo.json Debug && /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/cmake -E touch /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/src_autogen/timestamp && /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/cmake -E cmake_transform_depfile Ninja gccdepfile /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/src_autogen/deps /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/CMakeFiles/d/67b6d77a1d8a9380cf345346f7442c151261fe56693d3106f5f9982ab895e59b.d
+  DESC = Automatic MOC and UIC for target src
+  depfile = /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/CMakeFiles/d/67b6d77a1d8a9380cf345346f7442c151261fe56693d3106f5f9982ab895e59b.d
   restat = 1
 
 
 #############################################
-# Phony custom command for CMakeFiles/programm_autogen_timestamp_deps
+# Phony custom command for CMakeFiles/src_autogen_timestamp_deps
 
-build CMakeFiles/programm_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/programm_autogen_timestamp_deps: phony /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.15.8 /usr/lib/qt5/bin/uic /usr/lib/qt5/bin/moc /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.8
+build CMakeFiles/src_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/src_autogen_timestamp_deps: phony /usr/lib/qt5/bin/uic /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.15.8 /usr/lib/qt5/bin/moc /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.8
 
 
 #############################################
-# Phony custom command for CMakeFiles/programm_autogen
+# Phony custom command for CMakeFiles/src_autogen
 
-build CMakeFiles/programm_autogen | ${cmake_ninja_workdir}CMakeFiles/programm_autogen: phony programm_autogen/timestamp || programm_autogen_timestamp_deps
+build CMakeFiles/src_autogen | ${cmake_ninja_workdir}CMakeFiles/src_autogen: phony src_autogen/timestamp || src_autogen_timestamp_deps
 
 # =============================================================================
 # Target aliases.
@@ -397,7 +370,7 @@ build CMakeFiles/programm_autogen | ${cmake_ninja_workdir}CMakeFiles/programm_au
 #############################################
 # Folder: /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug
 
-build all: phony programm
+build all: phony src
 
 # =============================================================================
 # Built-in targets
@@ -406,14 +379,14 @@ build all: phony programm
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeCXXCompiler.cmake.in /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeCXXCompilerABI.cpp /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeCXXInformation.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeCompilerIdDetection.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeDetermineCXXCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeDetermineCompileFeatures.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeDetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeDetermineCompilerABI.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeDetermineCompilerId.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeDetermineSystem.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeFindBinUtils.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeGenericSystem.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeParseArguments.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeParseImplicitIncludeInfo.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeParseImplicitLinkInfo.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeParseLibraryArchitecture.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeSystem.cmake.in /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeTestCXXCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeTestCompilerCommon.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/ADSP-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/ARMCC-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/ARMClang-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/AppleClang-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/Borland-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/Clang-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/Cray-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/GHS-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/GNU-CXX.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/GNU-FindBinUtils.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/GNU.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/IAR-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/Intel-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/MSVC-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/NVHPC-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/PGI-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/PathScale-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/SCO-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/TI-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/Tasking-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/Watcom-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/FindOpenMP.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/FindPackageHandleStandardArgs.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/FindPackageMessage.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Internal/FeatureTesting.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Platform/Linux-Determine-CXX.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Platform/Linux-GNU-CXX.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Platform/Linux-GNU.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Platform/Linux.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Platform/UnixPaths.cmake /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/CMakeLists.txt /usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5Config.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ModuleLocation.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfig.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtras.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreMacros.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfig.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QComposePlatformInputContextPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSEmulatorIntegrationPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSIntegrationPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSKmsEglDeviceIntegrationPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSKmsGbmIntegrationPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSX11IntegrationPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevKeyboardPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevMousePlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevTabletPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevTouchScreenPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QIbusPlatformInputContextPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QLibInputPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QLinuxFbIntegrationPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QMinimalEglIntegrationPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QVncIntegrationPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbEglIntegrationPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbGlxIntegrationPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbIntegrationPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake CMakeCache.txt CMakeFiles/3.26.4/CMakeCXXCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeCXXInformation.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeGenericSystem.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeParseArguments.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/GNU-CXX.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/GNU.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Platform/Linux-GNU-CXX.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Platform/Linux-GNU.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Platform/Linux.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Platform/UnixPaths.cmake /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/CMakeLists.txt /usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5Config.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ModuleLocation.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfig.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtras.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreMacros.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfig.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QComposePlatformInputContextPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSEmulatorIntegrationPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSIntegrationPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSKmsEglDeviceIntegrationPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSKmsGbmIntegrationPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSX11IntegrationPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevKeyboardPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevMousePlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevTabletPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevTouchScreenPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QIbusPlatformInputContextPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QLibInputPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QLinuxFbIntegrationPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QMinimalEglIntegrationPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QVncIntegrationPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbEglIntegrationPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbGlxIntegrationPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbIntegrationPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake CMakeCache.txt CMakeFiles/3.26.4/CMakeCXXCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeCXXCompiler.cmake.in /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeCXXCompilerABI.cpp /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeCXXInformation.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeCompilerIdDetection.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeDetermineCXXCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeDetermineCompileFeatures.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeDetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeDetermineCompilerABI.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeDetermineCompilerId.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeDetermineSystem.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeFindBinUtils.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeGenericSystem.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeParseArguments.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeParseImplicitIncludeInfo.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeParseImplicitLinkInfo.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeParseLibraryArchitecture.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeSystem.cmake.in /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeTestCXXCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeTestCompilerCommon.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/ADSP-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/ARMCC-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/ARMClang-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/AppleClang-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/Borland-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/Clang-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/Cray-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/GHS-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/GNU-CXX.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/GNU-FindBinUtils.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/GNU.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/IAR-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/Intel-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/MSVC-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/NVHPC-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/PGI-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/PathScale-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/SCO-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/TI-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/Tasking-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/Watcom-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/FindOpenMP.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/FindPackageHandleStandardArgs.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/FindPackageMessage.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Internal/FeatureTesting.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Platform/Linux-Determine-CXX.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Platform/Linux-GNU-CXX.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Platform/Linux-GNU.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Platform/Linux.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Platform/UnixPaths.cmake /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/CMakeLists.txt /usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5Config.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ModuleLocation.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfig.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtras.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreMacros.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfig.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QComposePlatformInputContextPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSEmulatorIntegrationPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSIntegrationPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSKmsEglDeviceIntegrationPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSKmsGbmIntegrationPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSX11IntegrationPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevKeyboardPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevMousePlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevTabletPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevTouchScreenPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QIbusPlatformInputContextPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QLibInputPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QLinuxFbIntegrationPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QMinimalEglIntegrationPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QVncIntegrationPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbEglIntegrationPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbGlxIntegrationPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbIntegrationPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake CMakeCache.txt CMakeFiles/3.26.4/CMakeCXXCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake: phony
+build /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeCXXInformation.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeGenericSystem.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeParseArguments.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/GNU-CXX.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/GNU.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Platform/Linux-GNU-CXX.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Platform/Linux-GNU.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Platform/Linux.cmake /home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.26/Modules/Platform/UnixPaths.cmake /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/CMakeLists.txt /usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5Config.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ModuleLocation.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfig.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtras.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreMacros.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfig.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QComposePlatformInputContextPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSEmulatorIntegrationPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSIntegrationPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSKmsEglDeviceIntegrationPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSKmsGbmIntegrationPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSX11IntegrationPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevKeyboardPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevMousePlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevTabletPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevTouchScreenPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QIbusPlatformInputContextPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QLibInputPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QLinuxFbIntegrationPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QMinimalEglIntegrationPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QVncIntegrationPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbEglIntegrationPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbGlxIntegrationPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbIntegrationPlugin.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake CMakeCache.txt CMakeFiles/3.26.4/CMakeCXXCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake: phony
 
 
 #############################################

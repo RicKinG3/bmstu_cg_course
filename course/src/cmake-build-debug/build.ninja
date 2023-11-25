@@ -129,14 +129,6 @@ build CMakeFiles/src.dir/ui/placechooser.cpp.o: CXX_COMPILER__src_unscanned_Debu
   OBJECT_DIR = CMakeFiles/src.dir
   OBJECT_FILE_DIR = CMakeFiles/src.dir/ui
 
-build CMakeFiles/src.dir/ui/sizechooser.cpp.o: CXX_COMPILER__src_unscanned_Debug /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/sizechooser.cpp || cmake_object_order_depends_target_src
-  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
-  DEP_FILE = CMakeFiles/src.dir/ui/sizechooser.cpp.o.d
-  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -fPIC
-  INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/src_autogen/include -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/headers -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
-  OBJECT_DIR = CMakeFiles/src.dir
-  OBJECT_FILE_DIR = CMakeFiles/src.dir/ui
-
 build CMakeFiles/src.dir/specialgraphicsview.cpp.o: CXX_COMPILER__src_unscanned_Debug /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/specialgraphicsview.cpp || cmake_object_order_depends_target_src
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles/src.dir/specialgraphicsview.cpp.o.d
@@ -161,7 +153,7 @@ build CMakeFiles/src.dir/facade/usagefacade.cpp.o: CXX_COMPILER__src_unscanned_D
 #############################################
 # Link the executable src
 
-build src: CXX_EXECUTABLE_LINKER__src_Debug CMakeFiles/src.dir/src_autogen/mocs_compilation.cpp.o CMakeFiles/src.dir/math/additivemathelements.cpp.o CMakeFiles/src.dir/ui/illuminantplacechooser.cpp.o CMakeFiles/src.dir/main.cpp.o CMakeFiles/src.dir/ui/mainwindow.cpp.o CMakeFiles/src.dir/ui/movechooser.cpp.o CMakeFiles/src.dir/ui/objectchanger.cpp.o CMakeFiles/src.dir/ui/objecthangman.cpp.o CMakeFiles/src.dir/obj/objects.cpp.o CMakeFiles/src.dir/ui/placechooser.cpp.o CMakeFiles/src.dir/ui/sizechooser.cpp.o CMakeFiles/src.dir/specialgraphicsview.cpp.o CMakeFiles/src.dir/facade/usagefacade.cpp.o | /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.8 /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.15.8 /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.15.8 || src_autogen src_autogen_timestamp_deps
+build src: CXX_EXECUTABLE_LINKER__src_Debug CMakeFiles/src.dir/src_autogen/mocs_compilation.cpp.o CMakeFiles/src.dir/math/additivemathelements.cpp.o CMakeFiles/src.dir/ui/illuminantplacechooser.cpp.o CMakeFiles/src.dir/main.cpp.o CMakeFiles/src.dir/ui/mainwindow.cpp.o CMakeFiles/src.dir/ui/movechooser.cpp.o CMakeFiles/src.dir/ui/objectchanger.cpp.o CMakeFiles/src.dir/ui/objecthangman.cpp.o CMakeFiles/src.dir/obj/objects.cpp.o CMakeFiles/src.dir/ui/placechooser.cpp.o CMakeFiles/src.dir/specialgraphicsview.cpp.o CMakeFiles/src.dir/facade/usagefacade.cpp.o | /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.8 /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.15.8 /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.15.8 || src_autogen src_autogen_timestamp_deps
   FLAGS = -g
   LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.8  /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.15.8  /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.15.8
   OBJECT_DIR = CMakeFiles/src.dir

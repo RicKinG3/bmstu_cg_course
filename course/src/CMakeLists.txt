@@ -29,7 +29,6 @@ set(PROJECT_SOURCES
         ui/objecthangman.cpp
         obj/objects.cpp
         ui/placechooser.cpp
-        ui/sizechooser.cpp
         specialgraphicsview.cpp
         facade/usagefacade.cpp
 )
@@ -45,7 +44,6 @@ set(PROJECT_HEADERS
         ui/header/objecthangman.hpp
         obj/objects.hpp
         ui/header/placechooser.h
-        ui/header/sizechooser.hpp
         headers/specialgraphicsview.hpp
         facade/usagefacade.hpp
 )

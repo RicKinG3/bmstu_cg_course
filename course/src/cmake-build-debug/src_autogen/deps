@@ -34,14 +34,12 @@ src_autogen/timestamp: \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/objectchanger.hpp \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/objecthangman.hpp \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/placechooser.h \
-	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/sizechooser.hpp \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/illuminantplacechooser.cpp \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/mainwindow.cpp \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/movechooser.cpp \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/objectchanger.cpp \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/objecthangman.cpp \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/placechooser.cpp \
-	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/sizechooser.cpp \
 	/usr/include/asm-generic/errno-base.h \
 	/usr/include/asm-generic/errno.h \
 	/usr/include/assert.h \
@@ -662,5 +660,4 @@ src_autogen/timestamp: \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/placehousechooser.ui \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/placeroadсhooser.ui \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/placetreechooser.ui \
-	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/sizechooser.ui \
 	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/cmake

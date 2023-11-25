@@ -12,27 +12,25 @@
 #include "objecthangman.hpp"
 #include "objectchanger.hpp"
 #include "placechooser.h"
-#include "sizechooser.hpp"
 #include "../headers/specialgraphicsview.hpp"
 
-MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
-{
+MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
 
     facade = new UsageFacade;
 
 //    ui->listWidget->setStyleSheet("QListWidget::item {background-color: white;}");
 
-    QListWidgetItem *hourse     = new QListWidgetItem("      Дом");
+    QListWidgetItem *hourse = new QListWidgetItem("      Дом");
     ui->listWidget->addItem(hourse);
 
-    QListWidgetItem *tree       = new QListWidgetItem("      Дерево");
+    QListWidgetItem *tree = new QListWidgetItem("      Дерево");
     ui->listWidget->addItem(tree);
 
-    QListWidgetItem *road       = new QListWidgetItem("      Дорога");
+    QListWidgetItem *road = new QListWidgetItem("      Дорога");
     ui->listWidget->addItem(road);
 
-    QListWidgetItem *car        = new QListWidgetItem("      Машина");
+    QListWidgetItem *car = new QListWidgetItem("      Машина");
     ui->listWidget->addItem(car);
 
     QListWidgetItem *flashlight = new QListWidgetItem("      Источник света");
@@ -60,38 +58,37 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
     QShortcut *shortcutScaleDown = new QShortcut(QKeySequence("x"), this);
     QObject::connect(
-        shortcutScaleDown, SIGNAL(activated()), this, SLOT(pictureScaleDown()));
+            shortcutScaleDown, SIGNAL(activated()), this, SLOT(pictureScaleDown()));
 
     QShortcut *shortcutRotateXRight = new QShortcut(QKeySequence("s"), this);
     QObject::connect(
-        shortcutRotateXRight, SIGNAL(activated()), this, SLOT(pictureRotateXRight()));
+            shortcutRotateXRight, SIGNAL(activated()), this, SLOT(pictureRotateXRight()));
 
     QShortcut *shortcutRotateXLeft = new QShortcut(QKeySequence("w"), this);
     QObject::connect(
-        shortcutRotateXLeft, SIGNAL(activated()), this, SLOT(pictureRotateXLeft()));
+            shortcutRotateXLeft, SIGNAL(activated()), this, SLOT(pictureRotateXLeft()));
 
     QShortcut *shortcutRotateYRight = new QShortcut(QKeySequence("a"), this);
     QObject::connect(
-        shortcutRotateYRight, SIGNAL(activated()), this, SLOT(pictureRotateYRight()));
+            shortcutRotateYRight, SIGNAL(activated()), this, SLOT(pictureRotateYRight()));
 
     QShortcut *shortcutRotateYLeft = new QShortcut(QKeySequence("d"), this);
     QObject::connect(
-        shortcutRotateYLeft, SIGNAL(activated()), this, SLOT(pictureRotateYLeft()));
+            shortcutRotateYLeft, SIGNAL(activated()), this, SLOT(pictureRotateYLeft()));
 
     QShortcut *shortcutRotateZLeft = new QShortcut(QKeySequence("q"), this);
     QObject::connect(
-        shortcutRotateZLeft, SIGNAL(activated()), this, SLOT(pictureRotateZLeft()));
+            shortcutRotateZLeft, SIGNAL(activated()), this, SLOT(pictureRotateZLeft()));
 
     QShortcut *shortcutRotateZRight = new QShortcut(QKeySequence("e"), this);
     QObject::connect(
-        shortcutRotateZRight, SIGNAL(activated()), this, SLOT(pictureRotateZRight()));
+            shortcutRotateZRight, SIGNAL(activated()), this, SLOT(pictureRotateZRight()));
 }
 
 MainWindow::~MainWindow() { delete ui; }
 
 
-void MainWindow::pictureDown()
-{
+void MainWindow::pictureDown() {
     if (!facade->isSceneSet())
         return;
 
@@ -102,8 +99,7 @@ void MainWindow::pictureDown()
     ui->graphicsView->setScene(setScene);
 }
 
-void MainWindow::pictureUp()
-{
+void MainWindow::pictureUp() {
     if (!facade->isSceneSet())
         return;
 
@@ -114,8 +110,7 @@ void MainWindow::pictureUp()
     ui->graphicsView->setScene(setScene);
 }
 
-void MainWindow::pictureLeft()
-{
+void MainWindow::pictureLeft() {
     if (!facade->isSceneSet())
         return;
 
@@ -126,8 +121,7 @@ void MainWindow::pictureLeft()
     ui->graphicsView->setScene(setScene);
 }
 
-void MainWindow::pictureRight()
-{
+void MainWindow::pictureRight() {
     if (!facade->isSceneSet())
         return;
 
@@ -138,8 +132,7 @@ void MainWindow::pictureRight()
     ui->graphicsView->setScene(setScene);
 }
 
-void MainWindow::pictureScaleUp()
-{
+void MainWindow::pictureScaleUp() {
     if (!facade->isSceneSet())
         return;
 
@@ -150,8 +143,7 @@ void MainWindow::pictureScaleUp()
     ui->graphicsView->setScene(setScene);
 }
 
-void MainWindow::pictureScaleDown()
-{
+void MainWindow::pictureScaleDown() {
     if (!facade->isSceneSet())
         return;
 
@@ -162,8 +154,7 @@ void MainWindow::pictureScaleDown()
     ui->graphicsView->setScene(setScene);
 }
 
-void MainWindow::pictureRotateXRight()
-{
+void MainWindow::pictureRotateXRight() {
     if (!facade->isSceneSet())
         return;
 
@@ -174,8 +165,7 @@ void MainWindow::pictureRotateXRight()
     ui->graphicsView->setScene(setScene);
 }
 
-void MainWindow::pictureRotateXLeft()
-{
+void MainWindow::pictureRotateXLeft() {
     if (!facade->isSceneSet())
         return;
 
@@ -186,8 +176,7 @@ void MainWindow::pictureRotateXLeft()
     ui->graphicsView->setScene(setScene);
 }
 
-void MainWindow::pictureRotateYRight()
-{
+void MainWindow::pictureRotateYRight() {
     if (!facade->isSceneSet())
         return;
 
@@ -198,8 +187,7 @@ void MainWindow::pictureRotateYRight()
     ui->graphicsView->setScene(setScene);
 }
 
-void MainWindow::pictureRotateYLeft()
-{
+void MainWindow::pictureRotateYLeft() {
     if (!facade->isSceneSet())
         return;
 
@@ -210,8 +198,7 @@ void MainWindow::pictureRotateYLeft()
     ui->graphicsView->setScene(setScene);
 }
 
-void MainWindow::pictureRotateZRight()
-{
+void MainWindow::pictureRotateZRight() {
     if (!facade->isSceneSet())
         return;
 
@@ -222,8 +209,7 @@ void MainWindow::pictureRotateZRight()
     ui->graphicsView->setScene(setScene);
 }
 
-void MainWindow::pictureRotateZLeft()
-{
+void MainWindow::pictureRotateZLeft() {
     if (!facade->isSceneSet())
         return;
 
@@ -234,8 +220,7 @@ void MainWindow::pictureRotateZLeft()
     ui->graphicsView->setScene(setScene);
 }
 
-void MainWindow::pictureToCenter()
-{
+void MainWindow::pictureToCenter() {
     if (!facade->isSceneSet())
         return;
 
@@ -246,27 +231,37 @@ void MainWindow::pictureToCenter()
     ui->graphicsView->setScene(setScene);
 }
 
-void MainWindow::on_pushButton_createScene_clicked()
-{
-    SizeChooser chooserWindow(nullptr);
-    chooserWindow.setModal(true);
-    chooserWindow.exec();
+#include <QMessageBox>
 
-    if (chooserWindow.getWidth() == -1 || chooserWindow.getheight() == -1)
-        return;
 
-    facade->setCellScene(chooserWindow.getWidth(), chooserWindow.getheight());
+void MainWindow::on_pushButton_createScene_clicked() {
+
+    int h = ui->length_scene->value();
+    int w = ui->width_scene->value();
+
+    facade->setCellScene(w, h);
     QGraphicsScene *setScene = facade->drawScene(ui->graphicsView->rect());
 
-    if (ui->graphicsView->scene())
-        delete ui->graphicsView->scene();
+    if (ui->graphicsView->scene()) {
+        QMessageBox::StandardButton reply;
+        reply = QMessageBox::warning(this, "Предупреждение",
+                                     "При создании новой сцены предыдущая будет удалена. Продолжить?",
+                                     QMessageBox::Yes | QMessageBox::No);
+        // Проверка ответа пользователя
+        if (reply == QMessageBox::Yes) {
+            delete ui->graphicsView->scene();
+        }
+        else{
+            return;
+        }
+
+    }
+
     ui->graphicsView->setScene(setScene);
 }
 
-void MainWindow::on_pushButton_addModel_clicked()
-{
-    if (!facade->isSceneSet())
-    {
+void MainWindow::on_pushButton_addModel_clicked() {
+    if (!facade->isSceneSet()) {
         QErrorMessage *err = new QErrorMessage();
         err->showMessage("Сцена ещё не была задана.");
         return;
@@ -276,12 +271,10 @@ void MainWindow::on_pushButton_addModel_clicked()
     if (curRow < 0)
         return;
 
-    if (curRow >= 0 && curRow < 4)
-    {
+    if (curRow >= 0 && curRow < 4) {
         int retCode = 0;
 
-        if (curRow == 0)
-        {
+        if (curRow == 0) {
             PlaceHouseChooser placeHouseChooserWindow(nullptr);
             placeHouseChooserWindow.setModal(true);
             placeHouseChooserWindow.exec();
@@ -295,9 +288,7 @@ void MainWindow::on_pushButton_addModel_clicked()
                         placeHouseChooserWindow.getHouseHeight());
             else
                 return;
-        }
-        else if (curRow == 1)
-        {
+        } else if (curRow == 1) {
             PlaceTreeChooser PlaceTreeChooserWindow(nullptr);
             PlaceTreeChooserWindow.setModal(true);
             PlaceTreeChooserWindow.exec();
@@ -308,9 +299,7 @@ void MainWindow::on_pushButton_addModel_clicked()
                         PlaceTreeChooserWindow.getYCell());
             else
                 return;
-        }
-        else if (curRow == 2)
-        {
+        } else if (curRow == 2) {
             PlaceRoadChooser PlaceRoadChooserWindow(nullptr);
             PlaceRoadChooserWindow.setModal(true);
             PlaceRoadChooserWindow.exec();
@@ -322,9 +311,7 @@ void MainWindow::on_pushButton_addModel_clicked()
                         PlaceRoadChooserWindow.getDirection());
             else
                 return;
-        }
-        else if (curRow == 3)
-        {
+        } else if (curRow == 3) {
             PlaceCarChooser PlaceCarChooserWindow(nullptr);
             PlaceCarChooserWindow.setModal(true);
             PlaceCarChooserWindow.exec();
@@ -339,41 +326,32 @@ void MainWindow::on_pushButton_addModel_clicked()
         }
 
 
-        if (retCode == 1)
-        {
+        if (retCode == 1) {
             QErrorMessage *err = new QErrorMessage();
             err->showMessage("Некоторые из выбранных ячеек заняты");
             return;
-        }
-        else if(retCode == 2)
-        {
+        } else if (retCode == 2) {
             QErrorMessage *err = new QErrorMessage();
             err->showMessage("Объект не влезает в сцену");
             return;
-        }
-        else if(retCode == 3)
-        {
+        } else if (retCode == 3) {
             QErrorMessage *err = new QErrorMessage();
             err->showMessage("Машины разрешено ставить только на доргах");
             return;
-        }
-        else if(retCode == 4)
-        {
+        } else if (retCode == 4) {
             QErrorMessage *err = new QErrorMessage();
             err->showMessage("Дороги не должны прилегать к дому");
             return;
         }
-    }
-    else
-    {
+    } else {
         IlluminantPlaceChooser placeIlluminantChooserWindow(nullptr);
         placeIlluminantChooserWindow.setModal(true);
         placeIlluminantChooserWindow.exec();
 
         if (placeIlluminantChooserWindow.status == IlluminantPlaceChooser::OK)
             facade->addIlluminant(
-                placeIlluminantChooserWindow.getXAngle(),
-                placeIlluminantChooserWindow.getYAngle());
+                    placeIlluminantChooserWindow.getXAngle(),
+                    placeIlluminantChooserWindow.getYAngle());
         else
             return;
     }
@@ -386,10 +364,8 @@ void MainWindow::on_pushButton_addModel_clicked()
 }
 
 
-void MainWindow::on_pushButton_deleteModel_clicked()
-{
-    if (!facade->isSceneSet())
-    {
+void MainWindow::on_pushButton_deleteModel_clicked() {
+    if (!facade->isSceneSet()) {
         QErrorMessage *err = new QErrorMessage();
         err->showMessage("Сцена ещё не была задана.");
         return;
@@ -407,10 +383,8 @@ void MainWindow::on_pushButton_deleteModel_clicked()
 }
 
 
-void MainWindow::on_pushButton_moveModel_clicked()
-{
-    if (!facade->isSceneSet())
-    {
+void MainWindow::on_pushButton_moveModel_clicked() {
+    if (!facade->isSceneSet()) {
         QErrorMessage *err = new QErrorMessage();
         err->showMessage("Сцена ещё не была задана.");
         return;
@@ -427,10 +401,8 @@ void MainWindow::on_pushButton_moveModel_clicked()
     ui->graphicsView->setScene(setScene);
 }
 
-void MainWindow::on_pushButton_sceneToInitianPosition_clicked()
-{
-    if (!facade->isSceneSet())
-    {
+void MainWindow::on_pushButton_sceneToInitianPosition_clicked() {
+    if (!facade->isSceneSet()) {
         QErrorMessage *err = new QErrorMessage();
         err->showMessage("Сцена ещё не была задана.");
         return;
@@ -444,11 +416,8 @@ void MainWindow::on_pushButton_sceneToInitianPosition_clicked()
 }
 
 
-
-void MainWindow::on_pushButton_up_clicked()
-{
-    if (!facade->isSceneSet())
-    {
+void MainWindow::on_pushButton_up_clicked() {
+    if (!facade->isSceneSet()) {
         QErrorMessage *err = new QErrorMessage();
         err->showMessage("Сцена ещё не была задана.");
         return;
@@ -457,10 +426,8 @@ void MainWindow::on_pushButton_up_clicked()
     pictureRotateXLeft();
 }
 
-void MainWindow::on_pushButton_down_clicked()
-{
-    if (!facade->isSceneSet())
-    {
+void MainWindow::on_pushButton_down_clicked() {
+    if (!facade->isSceneSet()) {
         QErrorMessage *err = new QErrorMessage();
         err->showMessage("Сцена ещё не была задана.");
         return;
@@ -469,10 +436,8 @@ void MainWindow::on_pushButton_down_clicked()
     pictureRotateXRight();
 }
 
-void MainWindow::on_pushButton_left_clicked()
-{
-    if (!facade->isSceneSet())
-    {
+void MainWindow::on_pushButton_left_clicked() {
+    if (!facade->isSceneSet()) {
         QErrorMessage *err = new QErrorMessage();
         err->showMessage("Сцена ещё не была задана.");
         return;
@@ -481,10 +446,8 @@ void MainWindow::on_pushButton_left_clicked()
     pictureRotateYRight();
 }
 
-void MainWindow::on_pushButton_right_clicked()
-{
-    if (!facade->isSceneSet())
-    {
+void MainWindow::on_pushButton_right_clicked() {
+    if (!facade->isSceneSet()) {
         QErrorMessage *err = new QErrorMessage();
         err->showMessage("Сцена ещё не была задана.");
         return;
@@ -493,10 +456,8 @@ void MainWindow::on_pushButton_right_clicked()
     pictureRotateYLeft();
 }
 
-void MainWindow::on_pushButton_leftCircle_clicked()
-{
-    if (!facade->isSceneSet())
-    {
+void MainWindow::on_pushButton_leftCircle_clicked() {
+    if (!facade->isSceneSet()) {
         QErrorMessage *err = new QErrorMessage();
         err->showMessage("Сцена ещё не была задана.");
         return;
@@ -505,10 +466,8 @@ void MainWindow::on_pushButton_leftCircle_clicked()
     pictureRotateZRight();
 }
 
-void MainWindow::on_pushButton_rightCircle_clicked()
-{
-    if (!facade->isSceneSet())
-    {
+void MainWindow::on_pushButton_rightCircle_clicked() {
+    if (!facade->isSceneSet()) {
         QErrorMessage *err = new QErrorMessage();
         err->showMessage("Сцена ещё не была задана.");
         return;
@@ -518,11 +477,8 @@ void MainWindow::on_pushButton_rightCircle_clicked()
 }
 
 
-
-void MainWindow::on_pushButton_up_scene_clicked()
-{
-    if (!facade->isSceneSet())
-    {
+void MainWindow::on_pushButton_up_scene_clicked() {
+    if (!facade->isSceneSet()) {
         QErrorMessage *err = new QErrorMessage();
         err->showMessage("Сцена ещё не была задана.");
         return;
@@ -531,10 +487,8 @@ void MainWindow::on_pushButton_up_scene_clicked()
     pictureUp();
 }
 
-void MainWindow::on_pushButton_down_scene_clicked()
-{
-    if (!facade->isSceneSet())
-    {
+void MainWindow::on_pushButton_down_scene_clicked() {
+    if (!facade->isSceneSet()) {
         QErrorMessage *err = new QErrorMessage();
         err->showMessage("Сцена ещё не была задана.");
         return;
@@ -543,10 +497,8 @@ void MainWindow::on_pushButton_down_scene_clicked()
     pictureDown();
 }
 
-void MainWindow::on_pushButton_left_scene_clicked()
-{
-    if (!facade->isSceneSet())
-    {
+void MainWindow::on_pushButton_left_scene_clicked() {
+    if (!facade->isSceneSet()) {
         QErrorMessage *err = new QErrorMessage();
         err->showMessage("Сцена ещё не была задана.");
         return;
@@ -555,10 +507,8 @@ void MainWindow::on_pushButton_left_scene_clicked()
     pictureLeft();
 }
 
-void MainWindow::on_pushButton_right_scene_clicked()
-{
-    if (!facade->isSceneSet())
-    {
+void MainWindow::on_pushButton_right_scene_clicked() {
+    if (!facade->isSceneSet()) {
         QErrorMessage *err = new QErrorMessage();
         err->showMessage("Сцена ещё не была задана.");
         return;
@@ -568,11 +518,8 @@ void MainWindow::on_pushButton_right_scene_clicked()
 }
 
 
-
-void MainWindow::on_pushButton_zoom_clicked()
-{
-    if (!facade->isSceneSet())
-    {
+void MainWindow::on_pushButton_zoom_clicked() {
+    if (!facade->isSceneSet()) {
         QErrorMessage *err = new QErrorMessage();
         err->showMessage("Сцена ещё не была задана.");
         return;
@@ -581,10 +528,8 @@ void MainWindow::on_pushButton_zoom_clicked()
     pictureScaleUp();
 }
 
-void MainWindow::on_pushButton_distance_clicked()
-{
-    if (!facade->isSceneSet())
-    {
+void MainWindow::on_pushButton_distance_clicked() {
+    if (!facade->isSceneSet()) {
         QErrorMessage *err = new QErrorMessage();
         err->showMessage("Сцена ещё не была задана.");
         return;

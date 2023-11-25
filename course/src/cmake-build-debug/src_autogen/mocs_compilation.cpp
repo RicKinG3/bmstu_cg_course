@@ -6,4 +6,3 @@
 #include "OMLRIOLLYN/moc_objectchanger.cpp"
 #include "OMLRIOLLYN/moc_objecthangman.cpp"
 #include "OMLRIOLLYN/moc_placechooser.cpp"
-#include "OMLRIOLLYN/moc_sizechooser.cpp"

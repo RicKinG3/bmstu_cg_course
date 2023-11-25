@@ -135,12 +135,6 @@
 			"MU",
 			"OMLRIOLLYN/moc_placechooser.cpp",
 			null
-		],
-		[
-			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/sizechooser.hpp",
-			"MU",
-			"OMLRIOLLYN/moc_sizechooser.cpp",
-			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -259,11 +253,6 @@
 		],
 		[
 			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/placechooser.cpp",
-			"MU",
-			null
-		],
-		[
-			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/sizechooser.cpp",
 			"MU",
 			null
 		]

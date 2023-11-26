@@ -7,6 +7,11 @@
 #include "/usr/include/eigen3/Eigen/Dense"
 
 #include "placechooser.h"
+enum Direction {
+    Horizontal,
+    Vertical
+};
+
 
 class Vertex
 {
@@ -91,11 +96,11 @@ public:
         glassCar
     };
 
-    PlaceRoadChooser::checkBox getDirectionRoad();
-    void setDirectionRoad(PlaceRoadChooser::checkBox directionRoad_);
+    Direction getDirectionRoad();
+    void setDirectionRoad(Direction directionRoad_);
 
-    PlaceCarChooser::checkBox getDirectionCar();
-    void setDirectionCar(PlaceCarChooser::checkBox directionCar_);
+    Direction getDirectionCar();
+    void setDirectionCar(Direction directionCar_);
 
     void setModelType(model_t modelType_);
     model_t getModelType();
@@ -110,8 +115,8 @@ private:
 
     int houseHeight = -1;
 
-    PlaceRoadChooser::checkBox directionRoad = PlaceRoadChooser::checkBox::XAXIS;
-    PlaceCarChooser::checkBox directionCar = PlaceCarChooser::checkBox::XAXIS;
+    Direction directionRoad = Horizontal;
+    Direction directionCar = Horizontal;
 
     size_t modelNum;
     model_t modelType;

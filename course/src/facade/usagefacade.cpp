@@ -1254,7 +1254,7 @@ int UsageFacade::addTree(int xCell, int yCell)
 
 
 
-int UsageFacade::addRoad(int xCell, int yCell, PlaceRoadChooser::checkBox direction)
+int UsageFacade::addRoad(int xCell, int yCell, Direction direction)
 {
     xCell -= 1;
     yCell -= 1;
@@ -1302,7 +1302,7 @@ int UsageFacade::addRoad(int xCell, int yCell, PlaceRoadChooser::checkBox direct
     std::vector<Facet> facets2;
 
     //полоса дороги
-    if (direction == PlaceRoadChooser::checkBox::XAXIS)
+    if (direction == Horizontal)
     {
         addQuad(vertices2, facets2,
                 xFactor + SCALE_FACTOR / 6,     yFactor + SCALE_FACTOR * 2 / 5, zFactor + 2,
@@ -1334,12 +1334,12 @@ int UsageFacade::addRoad(int xCell, int yCell, PlaceRoadChooser::checkBox direct
 
 
 
-int UsageFacade::addCar(int xCell, int yCell, PlaceCarChooser::checkBox direction)
+int UsageFacade::addCar(int xCell, int yCell, Direction direction)
 {
     int modelLength;
     int modelHeight;
 
-    if(direction == PlaceCarChooser::checkBox::XAXIS)
+    if(direction == Horizontal)
     {
         modelHeight = 1;
         modelLength  = 2;

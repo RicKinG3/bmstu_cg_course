@@ -49,14 +49,14 @@ void PolModel::setHouseHeight(int houseHeight_) { houseHeight = houseHeight_; }
 int PolModel::getHouseHeight() { return houseHeight; }
 
 
-PlaceRoadChooser::checkBox PolModel::getDirectionRoad() { return directionRoad; }
+Direction PolModel::getDirectionRoad() { return directionRoad; }
 
-void PolModel::setDirectionRoad(PlaceRoadChooser::checkBox directionRoad_) { directionRoad = directionRoad_; }
+void PolModel::setDirectionRoad(Direction directionRoad_) { directionRoad = directionRoad_; }
 
 
-PlaceCarChooser::checkBox PolModel::getDirectionCar() { return directionCar; }
+Direction PolModel::getDirectionCar() { return directionCar; }
 
-void PolModel::setDirectionCar(PlaceCarChooser::checkBox directionCar_) { directionCar = directionCar_; }
+void PolModel::setDirectionCar(Direction directionCar_) { directionCar = directionCar_; }
 
 
 void PolModel::setModelNum(size_t modelNum_) { modelNum = modelNum_; }

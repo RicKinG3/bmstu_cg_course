@@ -270,10 +270,6 @@ enum ObjIndex {
     bush
 };
 
-enum Direction {
-    Horizontal,
-    Vertical
-};
 
 enum RetCodeAddObjToScene {
     pass,
@@ -312,7 +308,7 @@ void MainWindow::on_pushButton_light_add_clicked() {
 
     drawThisShit();
 }
-
+//todo del cast (
 void MainWindow::on_pushButton_addModel_clicked() {
     if (!isSetScene())
         return;
@@ -345,7 +341,7 @@ void MainWindow::on_pushButton_addModel_clicked() {
             qDebug() << "choose premiumHome";
             break;
         case road:
-       //     rc = facade->addRoad(sq_num_ox, sq_num_oy, static_cast<PlaceRoadChooser::checkBox>(objDirection));
+            rc = static_cast<RetCodeAddObjToScene>(facade->addRoad(sq_num_ox, sq_num_oy, objDirection));
             qDebug() << "choose road";
             break;
         case tratuaru:

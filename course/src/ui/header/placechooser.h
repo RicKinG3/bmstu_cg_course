@@ -96,55 +96,6 @@ private:
 };
 
 
-class PlaceRoadChooser : public QDialog
-{
-    Q_OBJECT
-
-public:
-    explicit PlaceRoadChooser(QWidget *parent = nullptr);
-    ~PlaceRoadChooser();
-
-    enum checkBox
-    {
-        XAXIS,
-        YAXIS
-    };
-
-    enum stat
-    {
-        CANCEL,
-        OK
-    };
-
-    stat status;
-
-    void setXCell(int xCell_);
-    int  getXCell();
-
-    void setYCell(int yCell_);
-    int  getYCell();
-
-    int getModelLength();
-    int getModelHeight();
-
-    PlaceRoadChooser::checkBox getDirection();
-
-private slots:
-    void on_buttonBox_accepted();
-    void on_buttonBox_rejected();
-
-private:
-    Ui::PlaceRoadChooser *ui;
-
-    int xCell = -1;
-    int yCell = -1;
-
-    int modelLength = 1;
-    int modelHeight = 1;
-
-    checkBox direction;
-};
-
 class PlaceCarChooser : public QDialog
 {
     Q_OBJECT

@@ -44,8 +44,8 @@ public:
 
     int addHouse(int xCell, int yCell, int modelLength, int modelHeight, int countFloors);
     int addTree(int xCell, int yCell);
-    int addRoad(int xCell, int yCell, PlaceRoadChooser::checkBox direction);
-    int addCar(int xCell, int yCell, PlaceCarChooser::checkBox direction);
+    int addRoad(int xCell, int yCell, Direction direction);
+    int addCar(int xCell, int yCell, Direction direction);
 
     void addIlluminant(int xAngle, int yAngle);
 

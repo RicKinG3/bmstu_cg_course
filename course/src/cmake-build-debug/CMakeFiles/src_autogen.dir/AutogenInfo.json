@@ -152,6 +152,7 @@
 	[
 		"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header",
 		"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/headers",
+		"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/facade",
 		"/usr/include/x86_64-linux-gnu/qt5",
 		"/usr/include/x86_64-linux-gnu/qt5/QtGui",
 		"/usr/include/x86_64-linux-gnu/qt5/QtCore",

@@ -53,7 +53,7 @@ build CMakeFiles/src.dir/src_autogen/mocs_compilation.cpp.o: CXX_COMPILER__src_u
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles/src.dir/src_autogen/mocs_compilation.cpp.o.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -fPIC
-  INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/src_autogen/include -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/headers -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
+  INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/src_autogen/include -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/headers -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/facade -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
   OBJECT_DIR = CMakeFiles/src.dir
   OBJECT_FILE_DIR = CMakeFiles/src.dir/src_autogen
 
@@ -61,7 +61,7 @@ build CMakeFiles/src.dir/math/additivemathelements.cpp.o: CXX_COMPILER__src_unsc
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles/src.dir/math/additivemathelements.cpp.o.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -fPIC
-  INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/src_autogen/include -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/headers -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
+  INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/src_autogen/include -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/headers -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/facade -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
   OBJECT_DIR = CMakeFiles/src.dir
   OBJECT_FILE_DIR = CMakeFiles/src.dir/math
 
@@ -69,7 +69,7 @@ build CMakeFiles/src.dir/ui/illuminantplacechooser.cpp.o: CXX_COMPILER__src_unsc
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles/src.dir/ui/illuminantplacechooser.cpp.o.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -fPIC
-  INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/src_autogen/include -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/headers -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
+  INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/src_autogen/include -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/headers -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/facade -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
   OBJECT_DIR = CMakeFiles/src.dir
   OBJECT_FILE_DIR = CMakeFiles/src.dir/ui
 
@@ -77,7 +77,7 @@ build CMakeFiles/src.dir/main.cpp.o: CXX_COMPILER__src_unscanned_Debug /home/max
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles/src.dir/main.cpp.o.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -fPIC
-  INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/src_autogen/include -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/headers -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
+  INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/src_autogen/include -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/headers -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/facade -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
   OBJECT_DIR = CMakeFiles/src.dir
   OBJECT_FILE_DIR = CMakeFiles/src.dir
 
@@ -85,7 +85,7 @@ build CMakeFiles/src.dir/ui/mainwindow.cpp.o: CXX_COMPILER__src_unscanned_Debug 
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles/src.dir/ui/mainwindow.cpp.o.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -fPIC
-  INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/src_autogen/include -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/headers -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
+  INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/src_autogen/include -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/headers -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/facade -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
   OBJECT_DIR = CMakeFiles/src.dir
   OBJECT_FILE_DIR = CMakeFiles/src.dir/ui
 
@@ -93,7 +93,7 @@ build CMakeFiles/src.dir/ui/movechooser.cpp.o: CXX_COMPILER__src_unscanned_Debug
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles/src.dir/ui/movechooser.cpp.o.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -fPIC
-  INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/src_autogen/include -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/headers -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
+  INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/src_autogen/include -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/headers -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/facade -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
   OBJECT_DIR = CMakeFiles/src.dir
   OBJECT_FILE_DIR = CMakeFiles/src.dir/ui
 
@@ -101,7 +101,7 @@ build CMakeFiles/src.dir/ui/objectchanger.cpp.o: CXX_COMPILER__src_unscanned_Deb
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles/src.dir/ui/objectchanger.cpp.o.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -fPIC
-  INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/src_autogen/include -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/headers -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
+  INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/src_autogen/include -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/headers -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/facade -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
   OBJECT_DIR = CMakeFiles/src.dir
   OBJECT_FILE_DIR = CMakeFiles/src.dir/ui
 
@@ -109,7 +109,7 @@ build CMakeFiles/src.dir/ui/objecthangman.cpp.o: CXX_COMPILER__src_unscanned_Deb
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles/src.dir/ui/objecthangman.cpp.o.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -fPIC
-  INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/src_autogen/include -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/headers -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
+  INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/src_autogen/include -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/headers -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/facade -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
   OBJECT_DIR = CMakeFiles/src.dir
   OBJECT_FILE_DIR = CMakeFiles/src.dir/ui
 
@@ -117,7 +117,7 @@ build CMakeFiles/src.dir/obj/objects.cpp.o: CXX_COMPILER__src_unscanned_Debug /h
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles/src.dir/obj/objects.cpp.o.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -fPIC
-  INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/src_autogen/include -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/headers -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
+  INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/src_autogen/include -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/headers -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/facade -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
   OBJECT_DIR = CMakeFiles/src.dir
   OBJECT_FILE_DIR = CMakeFiles/src.dir/obj
 
@@ -125,7 +125,7 @@ build CMakeFiles/src.dir/ui/placechooser.cpp.o: CXX_COMPILER__src_unscanned_Debu
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles/src.dir/ui/placechooser.cpp.o.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -fPIC
-  INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/src_autogen/include -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/headers -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
+  INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/src_autogen/include -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/headers -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/facade -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
   OBJECT_DIR = CMakeFiles/src.dir
   OBJECT_FILE_DIR = CMakeFiles/src.dir/ui
 
@@ -133,7 +133,7 @@ build CMakeFiles/src.dir/specialgraphicsview.cpp.o: CXX_COMPILER__src_unscanned_
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles/src.dir/specialgraphicsview.cpp.o.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -fPIC
-  INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/src_autogen/include -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/headers -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
+  INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/src_autogen/include -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/headers -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/facade -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
   OBJECT_DIR = CMakeFiles/src.dir
   OBJECT_FILE_DIR = CMakeFiles/src.dir
 
@@ -141,7 +141,7 @@ build CMakeFiles/src.dir/facade/usagefacade.cpp.o: CXX_COMPILER__src_unscanned_D
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles/src.dir/facade/usagefacade.cpp.o.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -fPIC
-  INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/src_autogen/include -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/headers -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
+  INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/src_autogen/include -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/headers -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/facade -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
   OBJECT_DIR = CMakeFiles/src.dir
   OBJECT_FILE_DIR = CMakeFiles/src.dir/facade
 
@@ -343,7 +343,7 @@ build src_autogen/timestamp src_autogen/mocs_compilation.cpp | ${cmake_ninja_wor
 #############################################
 # Phony custom command for CMakeFiles/src_autogen_timestamp_deps
 
-build CMakeFiles/src_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/src_autogen_timestamp_deps: phony /usr/lib/qt5/bin/uic /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.15.8 /usr/lib/qt5/bin/moc /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.8
+build CMakeFiles/src_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/src_autogen_timestamp_deps: phony /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.15.8 /usr/lib/qt5/bin/moc /usr/lib/qt5/bin/uic /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.8
 
 
 #############################################

@@ -250,8 +250,7 @@ void MainWindow::on_pushButton_createScene_clicked() {
         // Проверка ответа пользователя
         if (reply == QMessageBox::Yes) {
             delete ui->graphicsView->scene();
-        }
-        else{
+        } else {
             return;
         }
 
@@ -260,107 +259,235 @@ void MainWindow::on_pushButton_createScene_clicked() {
     ui->graphicsView->setScene(setScene);
 }
 
-void MainWindow::on_pushButton_addModel_clicked() {
+enum ObjIndex {
+    baseHome,
+    premiumHome,
+    road,
+    tratuaru,
+    carGrey,
+    carRed,
+    tree,
+    bush
+};
+
+enum Direction {
+    Horizontal,
+    Vertical
+};
+
+enum RetCodeAddObjToScene {
+    pass,
+    sq_full,
+    obj_over_range,
+    car_only_on_road,
+    road_home,
+    err
+};
+
+bool MainWindow::isSetScene() {
     if (!facade->isSceneSet()) {
         QErrorMessage *err = new QErrorMessage();
         err->showMessage("Сцена ещё не была задана.");
-        return;
+        return false;
     }
+    return true;
+}
 
-    int curRow = this->ui->listWidget->currentRow();
-    if (curRow < 0)
-        return;
-
-    if (curRow >= 0 && curRow < 4) {
-        int retCode = 0;
-
-        if (curRow == 0) {
-            PlaceHouseChooser placeHouseChooserWindow(nullptr);
-            placeHouseChooserWindow.setModal(true);
-            placeHouseChooserWindow.exec();
-
-            if (placeHouseChooserWindow.status == PlaceHouseChooser::OK)
-                retCode = facade->addHouse(
-                        placeHouseChooserWindow.getXCell(),
-                        placeHouseChooserWindow.getYCell(),
-                        placeHouseChooserWindow.getModelLength(),
-                        placeHouseChooserWindow.getModelHeight(),
-                        placeHouseChooserWindow.getHouseHeight());
-            else
-                return;
-        } else if (curRow == 1) {
-            PlaceTreeChooser PlaceTreeChooserWindow(nullptr);
-            PlaceTreeChooserWindow.setModal(true);
-            PlaceTreeChooserWindow.exec();
-
-            if (PlaceTreeChooserWindow.status == PlaceTreeChooser::OK)
-                retCode = facade->addTree(
-                        PlaceTreeChooserWindow.getXCell(),
-                        PlaceTreeChooserWindow.getYCell());
-            else
-                return;
-        } else if (curRow == 2) {
-            PlaceRoadChooser PlaceRoadChooserWindow(nullptr);
-            PlaceRoadChooserWindow.setModal(true);
-            PlaceRoadChooserWindow.exec();
-
-            if (PlaceRoadChooserWindow.status == PlaceRoadChooser::OK)
-                retCode = facade->addRoad(
-                        PlaceRoadChooserWindow.getXCell(),
-                        PlaceRoadChooserWindow.getYCell(),
-                        PlaceRoadChooserWindow.getDirection());
-            else
-                return;
-        } else if (curRow == 3) {
-            PlaceCarChooser PlaceCarChooserWindow(nullptr);
-            PlaceCarChooserWindow.setModal(true);
-            PlaceCarChooserWindow.exec();
-
-            if (PlaceCarChooserWindow.status == PlaceCarChooser::OK)
-                retCode = facade->addCar(
-                        PlaceCarChooserWindow.getXCell(),
-                        PlaceCarChooserWindow.getYCell(),
-                        PlaceCarChooserWindow.getDirection());
-            else
-                return;
-        }
-
-
-        if (retCode == 1) {
-            QErrorMessage *err = new QErrorMessage();
-            err->showMessage("Некоторые из выбранных ячеек заняты");
-            return;
-        } else if (retCode == 2) {
-            QErrorMessage *err = new QErrorMessage();
-            err->showMessage("Объект не влезает в сцену");
-            return;
-        } else if (retCode == 3) {
-            QErrorMessage *err = new QErrorMessage();
-            err->showMessage("Машины разрешено ставить только на доргах");
-            return;
-        } else if (retCode == 4) {
-            QErrorMessage *err = new QErrorMessage();
-            err->showMessage("Дороги не должны прилегать к дому");
-            return;
-        }
-    } else {
-        IlluminantPlaceChooser placeIlluminantChooserWindow(nullptr);
-        placeIlluminantChooserWindow.setModal(true);
-        placeIlluminantChooserWindow.exec();
-
-        if (placeIlluminantChooserWindow.status == IlluminantPlaceChooser::OK)
-            facade->addIlluminant(
-                    placeIlluminantChooserWindow.getXAngle(),
-                    placeIlluminantChooserWindow.getYAngle());
-        else
-            return;
-    }
-
+void MainWindow::drawThisShit() {
     QGraphicsScene *setScene = facade->drawScene(ui->graphicsView->rect());
 
     if (ui->graphicsView->scene())
         delete ui->graphicsView->scene();
     ui->graphicsView->setScene(setScene);
+}
+
+void MainWindow::on_pushButton_light_add_clicked() {
+    if (!isSetScene())
+        return;
+    int deg_ox = ui->deg_ox->value();
+    int deg_oy = ui->deg_oy->value();
+    qDebug() << "deg_ox = " << deg_ox;
+    qDebug() << "deg_oy= " << deg_oy;
+    facade->addIlluminant(deg_ox, deg_oy);
+
+    drawThisShit();
+}
+
+void MainWindow::on_pushButton_addModel_clicked() {
+    if (!isSetScene())
+        return;
+    qDebug() << "index = " << ui->choose_obj->currentIndex();
+    ObjIndex cur_obj = static_cast<ObjIndex>(ui->choose_obj->currentIndex());
+
+    int sq_num_ox = ui->num_sq_ox->value();
+    int sq_num_oy = ui->num_sq_oy->value();
+    qDebug() << "sq_num_ox = " << sq_num_ox;
+    qDebug() << "sq_num_oy = " << sq_num_oy;
+
+    Direction objDirection;
+    if (ui->objDirection_ox->isChecked()) {
+        qDebug() << "objDirection_ox 1 is checked";
+        objDirection = Horizontal;
+    } else if (ui->objDirection_oy->isChecked()) {
+        objDirection = Vertical;
+        qDebug() << "objDirection_oy 2 is checked";
+    } else {
+        qDebug() << "No RadioButton is checked";
+    }
+
+    RetCodeAddObjToScene rc = pass;
+
+    switch (cur_obj) {
+        case baseHome:
+            qDebug() << "choose base home";
+            break;
+        case premiumHome:
+            qDebug() << "choose premiumHome";
+            break;
+        case road:
+       //     rc = facade->addRoad(sq_num_ox, sq_num_oy, static_cast<PlaceRoadChooser::checkBox>(objDirection));
+            qDebug() << "choose road";
+            break;
+        case tratuaru:
+            qDebug() << "choose tratuaru";
+            break;
+        case carGrey:
+            qDebug() << "choose carGrey";
+            break;
+        case carRed:
+            qDebug() << "choose carRed";
+            break;
+        case tree:
+            qDebug() << "choose tree";
+            rc = static_cast<RetCodeAddObjToScene>(facade->addTree(sq_num_ox, sq_num_oy));
+            break;
+        case bush:
+            qDebug() << "choose bush";
+            break;
+        default:
+            qDebug() << "error choose";
+            QErrorMessage *err = new QErrorMessage();
+            err->showMessage("Некорректный выбор объекта");
+            return;
+    }
+    //todo msg only one
+    QErrorMessage *err = new QErrorMessage();
+    switch (rc) {
+        case sq_full:
+            err->showMessage("Некоторые из выбранных ячеек заняты");
+            return;
+        case obj_over_range:
+            err->showMessage("Объект не влезает в сцену");
+            return;
+        case car_only_on_road:
+            err->showMessage("Машины разрешено ставить только на доргах");
+            return;
+        case road_home:
+            err->showMessage("Дороги не должны прилегать к дому");
+            return;
+        default:
+            break;
+    }
+
+
+    drawThisShit();
+
+
+//    todo dell listWidget
+//    int curRow = this->ui->listWidget->currentRow();
+//    if (curRow < 0)
+//        return;
+//
+//    if (curRow >= 0 && curRow < 4) {
+//        int retCode = 0;
+//
+//        if (curRow == 0) {
+//            PlaceHouseChooser placeHouseChooserWindow(nullptr);
+//            placeHouseChooserWindow.setModal(true);
+//            placeHouseChooserWindow.exec();
+//
+//            if (placeHouseChooserWindow.status == PlaceHouseChooser::OK)
+//                retCode = facade->addHouse(
+//                        placeHouseChooserWindow.getXCell(),
+//                        placeHouseChooserWindow.getYCell(),
+//                        placeHouseChooserWindow.getModelLength(),
+//                        placeHouseChooserWindow.getModelHeight(),
+//                        placeHouseChooserWindow.getHouseHeight());
+//            else
+//                return;
+//        } else if (curRow == 1) {
+//            PlaceTreeChooser PlaceTreeChooserWindow(nullptr);
+//            PlaceTreeChooserWindow.setModal(true);
+//            PlaceTreeChooserWindow.exec();
+//
+//            if (PlaceTreeChooserWindow.status == PlaceTreeChooser::OK)
+//                retCode = facade->addTree(
+//                        PlaceTreeChooserWindow.getXCell(),
+//                        PlaceTreeChooserWindow.getYCell());
+//            else
+//                return;
+//}
+//
+//else if (curRow == 2) {
+//PlaceRoadChooser PlaceRoadChooserWindow(nullptr);
+//PlaceRoadChooserWindow.setModal(true);
+//PlaceRoadChooserWindow.
+//
+//exec();
+//
+//if (PlaceRoadChooserWindow.status == PlaceRoadChooser::OK)
+//retCode = facade->addRoad(
+//        PlaceRoadChooserWindow.getXCell(),
+//        PlaceRoadChooserWindow.getYCell(),
+//        PlaceRoadChooserWindow.getDirection());
+//else
+//return;
+//        } else if (curRow == 3) {
+//            PlaceCarChooser PlaceCarChooserWindow(nullptr);
+//            PlaceCarChooserWindow.setModal(true);
+//            PlaceCarChooserWindow.exec();
+//
+//            if (PlaceCarChooserWindow.status == PlaceCarChooser::OK)
+//                retCode = facade->addCar(
+//                        PlaceCarChooserWindow.getXCell(),
+//                        PlaceCarChooserWindow.getYCell(),
+//                        PlaceCarChooserWindow.getDirection());
+//            else
+//                return;
+//        }
+//
+//
+//        if (retCode == 1) {
+//            QErrorMessage *err = new QErrorMessage();
+//            err->showMessage("Некоторые из выбранных ячеек заняты");
+//            return;
+//        } else if (retCode == 2) {
+//            QErrorMessage *err = new QErrorMessage();
+//            err->showMessage("Объект не влезает в сцену");
+//            return;
+//        } else if (retCode == 3) {
+//            QErrorMessage *err = new QErrorMessage();
+//            err->showMessage("Машины разрешено ставить только на доргах");
+//            return;
+//        } else if (retCode == 4) {
+//            QErrorMessage *err = new QErrorMessage();
+//            err->showMessage("Дороги не должны прилегать к дому");
+//            return;
+//        }
+//    } else {
+//        IlluminantPlaceChooser placeIlluminantChooserWindow(nullptr);
+//        placeIlluminantChooserWindow.setModal(true);
+//        placeIlluminantChooserWindow.exec();
+//
+//        if (placeIlluminantChooserWindow.status == IlluminantPlaceChooser::OK)
+//            facade->addIlluminant(
+//                    placeIlluminantChooserWindow.getXAngle(),
+//                    placeIlluminantChooserWindow.getYAngle());
+//        else
+//            return;
+//    }
+
+
 }
 
 

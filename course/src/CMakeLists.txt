@@ -76,6 +76,7 @@ add_executable(src
 target_include_directories(src PRIVATE
         ui/header
         headers
+        facade
 )
 
 # Линковка с библиотеками Qt

@@ -23,6 +23,8 @@ public:
     ~MainWindow();
 
 private slots:
+    void on_pushButton_light_add_clicked();
+
     void on_pushButton_createScene_clicked();
     void on_pushButton_sceneToInitianPosition_clicked();
 
@@ -63,6 +65,9 @@ private slots:
     void on_pushButton_distance_clicked();
 
 private:
+    bool isSetScene();
+    void drawThisShit();
+
     Ui::MainWindow *ui;
     UsageFacade *facade;
 };

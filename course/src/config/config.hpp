@@ -42,8 +42,8 @@
 #define ROAD_STRIPE_COLOR       255, 253, 251
 #define DARK_ROAD_STRIPE_COLOR  226, 224, 223
 
-#define CAR_COLOR               106, 72, 215
-#define DARK_CAR_COLOR          65, 44, 132
+#define CAR_COLOR               80,80,80
+#define DARK_CAR_COLOR          25,25,25
 
 #define CAR_WHEELS_COLOR        78, 84, 92
 #define DARK_CAR_WHEELS_COLOR   66, 71, 76

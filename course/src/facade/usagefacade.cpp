@@ -588,6 +588,7 @@ void Drawer::zBufferAlg(CellScene *scene, size_t bufHeight, size_t bufWidth)
 
     for (size_t i = 0; i < scene->getModelsNum(); i++)
     {
+
         model = scene->getModel(i);
         facets = model.getFacets();
         vertices = model.getVertices();
@@ -1334,7 +1335,7 @@ int UsageFacade::addRoad(int xCell, int yCell, Direction direction)
 
 
 
-int UsageFacade::addCar(int xCell, int yCell, Direction direction)
+int UsageFacade::addCar(int xCell, int yCell, Direction direction, ColorCar color_car)
 {
     int modelLength;
     int modelHeight;

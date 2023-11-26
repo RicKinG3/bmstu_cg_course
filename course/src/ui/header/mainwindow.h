@@ -67,6 +67,7 @@ private slots:
 private:
     bool isSetScene();
     void drawThisShit();
+    Direction getDeirection();
 
     Ui::MainWindow *ui;
     UsageFacade *facade;

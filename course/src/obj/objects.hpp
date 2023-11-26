@@ -9,9 +9,14 @@
 #include "placechooser.h"
 enum Direction {
     Horizontal,
-    Vertical
+    Vertical,
+    Nodirection
 };
 
+enum ColorCar{
+    grey,
+    red
+};
 
 class Vertex
 {
@@ -98,9 +103,13 @@ public:
 
     Direction getDirectionRoad();
     void setDirectionRoad(Direction directionRoad_);
-
     Direction getDirectionCar();
     void setDirectionCar(Direction directionCar_);
+
+
+    ColorCar getColorCar();
+    void setColorCar(ColorCar color);
+
 
     void setModelType(model_t modelType_);
     model_t getModelType();
@@ -120,7 +129,10 @@ private:
 
     size_t modelNum;
     model_t modelType;
+
+    ColorCar color_car = grey;
 };
+
 
 class Illuminant
 {

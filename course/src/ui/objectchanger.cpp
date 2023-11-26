@@ -166,7 +166,7 @@ int ObjectChanger::changeModel(PolModel &model, int newXCell, int newYCell)
     else if (modelType_ == PolModel::model_t::Car)
     {
         retCode = facade->addCar(newXCell, newYCell,
-                                  model.getDirectionCar());
+                                  model.getDirectionCar(), model.getColorCar());
     }
 
     return retCode;

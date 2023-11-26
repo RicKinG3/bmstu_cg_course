@@ -79,6 +79,13 @@ target_include_directories(src PRIVATE
         facade
 )
 
+# Добавьте флаг OpenMP для компилятора
+if (CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fopenmp")
+elseif (CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /openmp")
+endif()
+
 # Линковка с библиотеками Qt
 target_link_libraries(src PRIVATE Qt5::Gui Qt5::Widgets)
 

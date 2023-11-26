@@ -297,6 +297,20 @@ void MainWindow::drawThisShit() {
     ui->graphicsView->setScene(setScene);
 }
 
+Direction MainWindow::getDeirection() {
+    if (ui->objDirection_ox->isChecked()) {
+        qDebug() << "objDirection_ox 1 is checked";
+        return Horizontal;
+    } else if (ui->objDirection_oy->isChecked()) {
+        return Vertical;
+        qDebug() << "objDirection_oy 2 is checked";
+    } else {
+        qDebug() << "No RadioButton is checked";
+        return Nodirection;
+    }
+    return Nodirection;
+}
+
 void MainWindow::on_pushButton_light_add_clicked() {
     if (!isSetScene())
         return;
@@ -308,37 +322,44 @@ void MainWindow::on_pushButton_light_add_clicked() {
 
     drawThisShit();
 }
+
+#define BASE_LENX_HOUSE 3
+#define BASE_LENY_HOUSE 2
+#define BASE_LENZ_HOUSE 1
+
+#define PREMIUM_LENX_HOUSE 3
+#define PREMIUM_LENY_HOUSE 3
+#define PREMIUM_LENZ_HOUSE 3
+
+
 //todo del cast (
 void MainWindow::on_pushButton_addModel_clicked() {
     if (!isSetScene())
         return;
-    qDebug() << "index = " << ui->choose_obj->currentIndex();
+
     ObjIndex cur_obj = static_cast<ObjIndex>(ui->choose_obj->currentIndex());
+    qDebug() << "index = " << cur_obj;
 
     int sq_num_ox = ui->num_sq_ox->value();
     int sq_num_oy = ui->num_sq_oy->value();
     qDebug() << "sq_num_ox = " << sq_num_ox;
     qDebug() << "sq_num_oy = " << sq_num_oy;
 
-    Direction objDirection;
-    if (ui->objDirection_ox->isChecked()) {
-        qDebug() << "objDirection_ox 1 is checked";
-        objDirection = Horizontal;
-    } else if (ui->objDirection_oy->isChecked()) {
-        objDirection = Vertical;
-        qDebug() << "objDirection_oy 2 is checked";
-    } else {
-        qDebug() << "No RadioButton is checked";
-    }
+    Direction objDirection = getDeirection();
 
     RetCodeAddObjToScene rc = pass;
+    ColorCar color_car;
 
     switch (cur_obj) {
         case baseHome:
             qDebug() << "choose base home";
+            //todo recode
+            rc = static_cast<RetCodeAddObjToScene>(facade->addHouse(sq_num_ox, sq_num_oy, BASE_LENX_HOUSE, BASE_LENY_HOUSE, BASE_LENZ_HOUSE));
             break;
         case premiumHome:
+        //todo add garag
             qDebug() << "choose premiumHome";
+            rc = static_cast<RetCodeAddObjToScene>(facade->addHouse(sq_num_ox, sq_num_oy, PREMIUM_LENX_HOUSE, PREMIUM_LENY_HOUSE, PREMIUM_LENZ_HOUSE));
             break;
         case road:
             rc = static_cast<RetCodeAddObjToScene>(facade->addRoad(sq_num_ox, sq_num_oy, objDirection));
@@ -349,6 +370,8 @@ void MainWindow::on_pushButton_addModel_clicked() {
             break;
         case carGrey:
             qDebug() << "choose carGrey";
+            color_car =  grey;
+            rc = static_cast<RetCodeAddObjToScene>(facade->addCar(sq_num_ox, sq_num_oy, objDirection, color_car));
             break;
         case carRed:
             qDebug() << "choose carRed";

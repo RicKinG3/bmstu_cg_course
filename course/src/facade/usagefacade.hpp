@@ -8,6 +8,9 @@
 
 //#include <omp.h>
 
+
+
+
 class Drawer
 {
 public:
@@ -45,7 +48,7 @@ public:
     int addHouse(int xCell, int yCell, int modelLength, int modelHeight, int countFloors);
     int addTree(int xCell, int yCell);
     int addRoad(int xCell, int yCell, Direction direction);
-    int addCar(int xCell, int yCell, Direction direction);
+    int addCar(int xCell, int yCell, Direction direction, ColorCar color_car);
 
     void addIlluminant(int xAngle, int yAngle);
 

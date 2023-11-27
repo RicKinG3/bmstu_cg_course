@@ -1,17 +1,17 @@
 #ifndef CONFIG_HPP
 #define CONFIG_HPP
 
-#define SCALE_FACTOR            60
-#define PLATE_Z                 10000
+#define SCALE_FACTOR            80
+#define          PLATE_Z        10000
 #define PLATE_START             10, 10, PLATE_Z
 
-#define X_CENTER                450
-#define Y_CENTER                380
+#define X_CENTER                645
+#define Y_CENTER                450
 
 #define SCALE_VALUE             0.1
 
-#define ILLUM_VIS_X             1000
-#define ILLUM_VIS_Y             1000
+#define ILLUM_VIS_X             1925
+#define ILLUM_VIS_Y             5000
 
 #define MOVE_UNIT               50
 #define ROTATE_UNIT             3.14159265358979323846 / 8

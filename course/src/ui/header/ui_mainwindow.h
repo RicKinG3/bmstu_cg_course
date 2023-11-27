@@ -451,7 +451,7 @@ public:
         graphicsView->setMinimumSize(QSize(500, 500));
         graphicsView->viewport()->setProperty("cursor", QVariant(QCursor(Qt::CrossCursor)));
 
-        gridLayout->addWidget(graphicsView, 0, 1, 4, 1);
+        gridLayout->addWidget(graphicsView, 1, 1, 3, 1);
 
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
@@ -471,7 +471,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        mainMain->setCurrentIndex(1);
+        mainMain->setCurrentIndex(0);
         listWidget->setCurrentRow(-1);
 
 

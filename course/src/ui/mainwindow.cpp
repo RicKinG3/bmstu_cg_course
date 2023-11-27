@@ -318,7 +318,7 @@ void MainWindow::on_pushButton_light_add_clicked() {
     int deg_oy = ui->deg_oy->value();
     qDebug() << "deg_ox = " << deg_ox;
     qDebug() << "deg_oy= " << deg_oy;
-    facade->addIlluminant(deg_ox, deg_oy);
+    facade->addLight(deg_ox, deg_oy);
 
     drawThisShit();
 }
@@ -499,7 +499,7 @@ void MainWindow::on_pushButton_addModel_clicked() {
 //        placeIlluminantChooserWindow.exec();
 //
 //        if (placeIlluminantChooserWindow.status == IlluminantPlaceChooser::OK)
-//            facade->addIlluminant(
+//            facade->addLight(
 //                    placeIlluminantChooserWindow.getXAngle(),
 //                    placeIlluminantChooserWindow.getYAngle());
 //        else

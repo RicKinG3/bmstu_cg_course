@@ -10,23 +10,20 @@
 
 UsageFacade::UsageFacade() { drawer = new Drawer; }
 
-void UsageFacade::setCellScene(size_t width_, size_t height_)
-{
+void UsageFacade::setCellScene(size_t width_, size_t height_) {
     if (scene)
         delete scene;
 
     scene = new CellScene(width_, height_);
 }
 
-void UsageFacade::changeCellScene(size_t newWidth, size_t newheight)
-{
+void UsageFacade::changeCellScene(size_t newWidth, size_t newheight) {
     scene->changeSize(newWidth, newheight);
 }
 
 bool UsageFacade::isSceneSet() { return scene; }
 
-QGraphicsScene *UsageFacade::drawScene(QRectF rect)
-{
+QGraphicsScene *UsageFacade::drawScene(QRectF rect) {
     QGraphicsScene *retScene = nullptr;
     if (isSceneSet())
         retScene = drawer->drawScene(scene, rect);
@@ -34,64 +31,55 @@ QGraphicsScene *UsageFacade::drawScene(QRectF rect)
     return retScene;
 }
 
-QGraphicsScene *UsageFacade::moveUpScene(double value, QRectF rect)
-{
+QGraphicsScene *UsageFacade::moveUpScene(double value, QRectF rect) {
     scene->moveUp(value);
 
     return drawScene(rect);
 }
 
-QGraphicsScene *UsageFacade::moveDownScene(double value, QRectF rect)
-{
+QGraphicsScene *UsageFacade::moveDownScene(double value, QRectF rect) {
     scene->moveDown(value);
 
     return drawScene(rect);
 }
 
-QGraphicsScene *UsageFacade::moveRightScene(double value, QRectF rect)
-{
+QGraphicsScene *UsageFacade::moveRightScene(double value, QRectF rect) {
     scene->moveRight(value);
 
     return drawScene(rect);
 }
 
-QGraphicsScene *UsageFacade::moveLeftScene(double value, QRectF rect)
-{
+QGraphicsScene *UsageFacade::moveLeftScene(double value, QRectF rect) {
     scene->moveLeft(value);
 
     return drawScene(rect);
 }
 
-QGraphicsScene *UsageFacade::scaleScene(double value, QRectF rect)
-{
+QGraphicsScene *UsageFacade::scaleScene(double value, QRectF rect) {
     scene->scale(value);
 
     return drawScene(rect);
 }
 
-QGraphicsScene *UsageFacade::rotateXScene(double angle, QRectF rect)
-{
+QGraphicsScene *UsageFacade::rotateXScene(double angle, QRectF rect) {
     scene->rotateX(angle);
 
     return drawScene(rect);
 }
 
-QGraphicsScene *UsageFacade::rotateYScene(double angle, QRectF rect)
-{
+QGraphicsScene *UsageFacade::rotateYScene(double angle, QRectF rect) {
     scene->rotateY(angle);
 
     return drawScene(rect);
 }
 
-QGraphicsScene *UsageFacade::rotateZScene(double angle, QRectF rect)
-{
+QGraphicsScene *UsageFacade::rotateZScene(double angle, QRectF rect) {
     scene->rotateZ(angle);
 
     return drawScene(rect);
 }
 
-QGraphicsScene *UsageFacade::toCenter(QRectF rect)
-{
+QGraphicsScene *UsageFacade::toCenter(QRectF rect) {
     scene->toCenter();
 
     return drawScene(rect);
@@ -100,9 +88,8 @@ QGraphicsScene *UsageFacade::toCenter(QRectF rect)
 CellScene *UsageFacade::getScene() { return scene; }
 
 void UsageFacade::addQuad(std::vector<Vertex> &vertices, std::vector<Facet> &facets,
-    int x1, int y1, int z1, int x2, int y2, int z2,
-    int x3, int y3, int z3, int x4, int y4, int z4)
-{
+                          int x1, int y1, int z1, int x2, int y2, int z2,
+                          int x3, int y3, int z3, int x4, int y4, int z4) {
     Dot3D dot;
     std::vector<size_t> vec;
 
@@ -132,8 +119,7 @@ void UsageFacade::addQuad(std::vector<Vertex> &vertices, std::vector<Facet> &fac
 }
 
 void UsageFacade::addTriangle(std::vector<Vertex> &vertices, std::vector<Facet> &facets,
-    int x1, int y1, int z1, int x2, int y2, int z2, int x3, int y3, int z3)
-{
+                              int x1, int y1, int z1, int x2, int y2, int z2, int x3, int y3, int z3) {
     Dot3D dot;
     std::vector<size_t> vec;
 
@@ -156,32 +142,36 @@ void UsageFacade::addTriangle(std::vector<Vertex> &vertices, std::vector<Facet> 
     facets.push_back(vec);
 }
 
-void UsageFacade::addIlluminant(int xAngle, int yAngle)
-{
-    Eigen::Matrix4f transMat;
+void UsageFacade::addLight(int xAngle, int yAngle) {
+    // Создание матрицы трансформации для поворота вокруг оси X
+    Eigen::Matrix4f transMatX;
+    // из град в радианы
     double radianXAngle = (double) xAngle * M_PI / 180.0;
+    transMatX << 1, 0, 0, 0,
+            0, cos(radianXAngle), -sin(radianXAngle), 0,
+            0, sin(radianXAngle), cos(radianXAngle), 0,
+            0, 0, 0, 1;
+
+    // Создание матрицы трансформации для поворота вокруг оси Y
+    Eigen::Matrix4f transMatY;
     double radianYAngle = (double) yAngle * M_PI / 180.0;
+    transMatY << cos(radianYAngle), 0, sin(radianYAngle), 0,
+            0, 1, 0, 0,
+            -sin(radianYAngle), 0, cos(radianYAngle), 0,
+            0, 0, 0, 1;
 
-    transMat << 1,          0,          0,               0,
-               0, cos(radianXAngle), -sin(radianXAngle), 0,
-               0, sin(radianXAngle),  cos(radianXAngle), 0,
-               0,           0,          0,               1;
+    // Умножение матриц трансформации
+    Eigen::Matrix4f transMat = transMatX * transMatY;
 
-    Eigen::Matrix4f prodMat;
-    prodMat << cos(radianYAngle), 0, sin(radianYAngle), 0,
-                0,                1,    0,              0,
-              -sin(radianYAngle), 0, cos(radianYAngle), 0,
-                0,                0,    0,              1;
-
-    transMat *= prodMat;
-
+    // Создание объекта Illuminant с использованием полученной матрицы трансформации
     Illuminant illum(transMat);
     illum.setAngles(xAngle, yAngle);
+
+    // Добавление источника света в сцену
     scene->addIlluminant(illum);
 }
 
-void Drawer::specBorderPut(int x, int y, double z)
-{
+void Drawer::specBorderPut(int x, int y, double z) {
     if (x < 0 || x >= (int) depthBuffer.size() || \
         y < 0 || y >= (int) depthBuffer.at(0).size())
         return;
@@ -190,10 +180,8 @@ void Drawer::specBorderPut(int x, int y, double z)
 }
 
 void Drawer::DDABordersForPolygon(
-    int xStart, int yStart, double zStart, int xEnd, int yEnd, double zEnd)
-{
-    if (xStart == xEnd && yStart == yEnd)
-    {
+        int xStart, int yStart, double zStart, int xEnd, int yEnd, double zEnd) {
+    if (xStart == xEnd && yStart == yEnd) {
         specBorderPut(xStart, yStart, zStart);
         return;
     }
@@ -219,8 +207,7 @@ void Drawer::DDABordersForPolygon(
     double curY = yStart;
     double curZ = zStart;
 
-    for (int i = 0; i < length; i++)
-    {
+    for (int i = 0; i < length; i++) {
         specBorderPut(round(curX), round(curY), curZ);
         curX += deltaX;
         curY += deltaY;
@@ -229,93 +216,97 @@ void Drawer::DDABordersForPolygon(
 }
 
 void Drawer::interpolateRowIntoShadowMap(
-    std::vector<std::vector<double>> *map, int xA, int xB, double zA, double zB, int curY)
-{
-    for (int curX = xA; curX <= xB; curX++)
-    {
-        double curZ = zA + (zB - zA) * (curX - xA) / (xB - xA);
-        if (curX >= (int) map->size() || curX < 0 || curY >= (int) map->at(0).size() ||
-            curY < 0)
+        std::vector<std::vector<double>> *shadowMap, int xStart, int xEnd, double zStart, double zEnd, int curY) {
+    for (int x = xStart; x <= xEnd; x++) {
+        // Вычисляем значение Z для текущего X путем линейной интерполяции между zStart и zEnd
+        double z = zStart + (zEnd - zStart) * (x - xStart) / (xEnd - xStart);
+
+        // Проверяем, находится ли текущий пиксель в пределах карты теней
+        if (x < 0 || x >= static_cast<int>(shadowMap->size()) ||
+            curY < 0 || curY >= static_cast<int>(shadowMap->at(0).size()))
             continue;
 
-        if (curZ > map->at(curX).at(curY))
-            map->at(curX).at(curY) = curZ;
+        // Обновляем значение Z в карте теней, если оно больше текущего значения
+        if (z > shadowMap->at(x).at(curY))
+            shadowMap->at(x).at(curY) = z;
     }
 }
 
-void Drawer::shadowMapForModel(std::vector<Facet> &facets, std::vector<Vertex> &vertices,
-    Eigen::Matrix4f &transMat, Illuminant *illum, size_t bufWidth, size_t bufHeight)
-{
-    std::array<Dot3D, 3> dotsArr;
-    Eigen::Matrix4f toCenter;
-
+// Функция для подготовки матриц трансформации
+void Drawer::prepareTransformationMatrices(Eigen::Matrix4f &toCenter, Eigen::Matrix4f &backToStart) {
+    // Задаем матрицу для перемещения объекта в центр координат
     toCenter << 1, 0, 0, 0,
-                0, 1, 0, 0,
-                0, 0, 1, 0,
-                -X_CENTER, -Y_CENTER, -PLATE_Z - 5, 1;
-
-    Eigen::Matrix4f backToStart;
-
+            0, 1, 0, 0,
+            0, 0, 1, 0,
+            -X_CENTER, -Y_CENTER, -PLATE_Z - 5, 1;
+    // Задаем матрицу для возврата объекта в исходное положение
     backToStart << 1, 0, 0, 0,
-                   0, 1, 0, 0,
-                   0, 0, 1, 0,
-                   X_CENTER, Y_CENTER, PLATE_Z + 5, 1;
+            0, 1, 0, 0,
+            0, 0, 1, 0,
+            X_CENTER, Y_CENTER, PLATE_Z + 5, 1;
+}
 
-    std::vector<std::vector<double>> *shadowMap = &illum->getShadowMap();
-    Eigen::Matrix4f illumMat = illum->getTransMat();
 
-    Eigen::Matrix4f dotTransMat = toCenter * transMat * illumMat * backToStart;
-
-    for (size_t curFaceNum = 0; curFaceNum < facets.size(); curFaceNum++)
-    {
+// Функция для создания карты теней для 3D модели
+void Drawer::generateShadowMap(std::vector<Facet> &modelFacets, std::vector<Vertex> &modelVertices,
+                               Eigen::Matrix4f &modelTransformationMatrix, Illuminant *lightSource, size_t bufWidth,
+                               size_t bufHeight) {
+    // Подготовка матриц трансформации
+    Eigen::Matrix4f toCenter, backToStart;
+    prepareTransformationMatrices(toCenter, backToStart);
+    // Массив для хранения преобразованных вершин
+    std::array<Dot3D, 3> dotsArr;
+    // Получение карты теней и матрицы трансформации источника света
+    std::vector<std::vector<double>> *shadowMap = &lightSource->getShadowMap();
+    Eigen::Matrix4f illumMat = lightSource->getTransMat();
+    // Вычисление общей матрицы трансформации
+    Eigen::Matrix4f dotTransMat = toCenter * modelTransformationMatrix * illumMat * backToStart;
+    // Перебор всех граней модели
+    for (size_t curFaceNum = 0; curFaceNum < modelFacets.size(); ++curFaceNum) {
         Eigen::MatrixXf coordinatesVec(3, 4);
-
-        std::vector<size_t> curDots = facets.at(curFaceNum).getUsedVertices();
-        dotsArr[0] = vertices.at(curDots.at(0)).getPosition();
-        dotsArr[1] = vertices.at(curDots.at(1)).getPosition();
-        dotsArr[2] = vertices.at(curDots.at(2)).getPosition();
-
-        coordinatesVec <<
-            dotsArr[0].getXCoordinate(), dotsArr[0].getYCoordinate(), dotsArr[0].getZCoordinate(), 1,
-            dotsArr[1].getXCoordinate(), dotsArr[1].getYCoordinate(), dotsArr[1].getZCoordinate(), 1,
-            dotsArr[2].getXCoordinate(), dotsArr[2].getYCoordinate(), dotsArr[2].getZCoordinate(), 1;
-
+        // Получение индексов вершин текущей грани и их преобразование
+        std::vector<size_t> curDots = modelFacets.at(curFaceNum).getUsedVertices();
+        for (size_t i = 0; i < 3; ++i) {
+            Dot3D vertex = modelVertices.at(curDots.at(i)).getPosition();
+            dotsArr[i] = vertex;
+            coordinatesVec.row(i) << vertex.getXCoordinate(), vertex.getYCoordinate(), vertex.getZCoordinate(), 1;
+        }
+        // Применение матрицы трансформации к вершинам
         coordinatesVec *= dotTransMat;
-        dotsArr[0] =
-            Dot3D(coordinatesVec(0, 0), coordinatesVec(0, 1), coordinatesVec(0, 2));
-        dotsArr[1] =
-            Dot3D(coordinatesVec(1, 0), coordinatesVec(1, 1), coordinatesVec(1, 2));
-        dotsArr[2] =
-            Dot3D(coordinatesVec(2, 0), coordinatesVec(2, 1), coordinatesVec(2, 2));
-
+        for (size_t i = 0; i < 3; ++i) {
+            dotsArr[i] = Dot3D(coordinatesVec(i, 0), coordinatesVec(i, 1), coordinatesVec(i, 2));
+        }
+        // Сортировка вершин по Y-координате для последующего расчета теней
         if (dotsArr[0].getYCoordinate() > dotsArr[1].getYCoordinate())
             std::swap(dotsArr[0], dotsArr[1]);
         if (dotsArr[0].getYCoordinate() > dotsArr[2].getYCoordinate())
             std::swap(dotsArr[0], dotsArr[2]);
         if (dotsArr[1].getYCoordinate() > dotsArr[2].getYCoordinate())
             std::swap(dotsArr[1], dotsArr[2]);
-
+        // Преобразование координат вершин в пиксели
         int x1 = round(dotsArr[0].getXCoordinate());
         int x2 = round(dotsArr[1].getXCoordinate());
         int x3 = round(dotsArr[2].getXCoordinate());
-
+        // Получение Z-координат вершин
         double z1 = dotsArr[0].getZCoordinate();
         double z2 = dotsArr[1].getZCoordinate();
         double z3 = dotsArr[2].getZCoordinate();
-
+        // Преобразование Y-координат вершин в пиксели
         int y1 = round(dotsArr[0].getYCoordinate());
         int y2 = round(dotsArr[1].getYCoordinate());
         int y3 = round(dotsArr[2].getYCoordinate());
 
 #pragma omp parallel for
+        // Используется OpenMP для распараллеливания цикла for по разным потокам, ускоряя вычисления
         for (int curY = (y1 < 0) ? 0 : y1;
-             curY < ((y2 >= (int) bufHeight) ? (int) bufHeight - 1 : y2); curY++)
-        {
+             curY < ((y2 >= (int) bufHeight) ? (int) bufHeight - 1 : y2); curY++) {
             double aInc = 0;
+            // Вычисление коэффициента для линейной интерполяции между y1 и y2
             if (y1 != y2)
                 aInc = (double) (curY - y1) / (y2 - y1);
 
             double bInc = 0;
+            // Вычисление коэффициента для линейной интерполяции между y1 и y3
             if (y1 != y3)
                 bInc = (double) (curY - y1) / (y3 - y1);
 
@@ -323,13 +314,12 @@ void Drawer::shadowMapForModel(std::vector<Facet> &facets, std::vector<Vertex> &
             int xB = round(x1 + (x3 - x1) * bInc);
             double zA = z1 + (z2 - z1) * aInc;
             double zB = z1 + (z3 - z1) * bInc;
-
-            if (xA > xB)
-            {
+            // Если xA больше xB, меняем их местами вместе с соответствующими значениями z
+            if (xA > xB) {
                 std::swap(xA, xB);
                 std::swap(zA, zB);
             }
-
+            // Ограничение значений xA и xB в пределах ширины буфера
             if (xA < 0)
                 xA = 0;
             if (xB >= (int) bufWidth)
@@ -339,9 +329,9 @@ void Drawer::shadowMapForModel(std::vector<Facet> &facets, std::vector<Vertex> &
         }
 
 #pragma omp parallel for
+        // Аналогичный параллельный цикл для обработки другого диапазона значений Y
         for (int curY = (y2 < 0) ? 0 : y2;
-             curY <= ((y3 >= (int) bufHeight) ? (int) bufHeight - 1 : y3); curY++)
-        {
+             curY <= ((y3 >= (int) bufHeight) ? (int) bufHeight - 1 : y3); curY++) {
             double aInc = 0;
             if (y2 != y3)
                 aInc = (double) (curY - y2) / (y3 - y2);
@@ -355,8 +345,7 @@ void Drawer::shadowMapForModel(std::vector<Facet> &facets, std::vector<Vertex> &
             double zA = z2 + (z3 - z2) * aInc;
             double zB = z1 + (z3 - z1) * bInc;
 
-            if (xA > xB)
-            {
+            if (xA > xB) {
                 std::swap(xA, xB);
                 std::swap(zA, zB);
             }
@@ -372,55 +361,46 @@ void Drawer::shadowMapForModel(std::vector<Facet> &facets, std::vector<Vertex> &
 }
 
 void Drawer::zBufForModel(std::vector<Facet> &facets, std::vector<Vertex> &vertices,
-    Eigen::Matrix4f &transMat, size_t color, CellScene *scene, size_t bufWidth,
-    size_t bufHeight)
-{
+                          Eigen::Matrix4f &transMat, size_t color, CellScene *scene, size_t bufWidth,
+                          size_t bufHeight) {
     std::array<Dot3D, 3> dotsArr;
-    Eigen::Matrix4f toCenter;
 
-    toCenter << 1, 0, 0, 0,
-                0, 1, 0, 0,
-                0, 0, 1, 0,
-                -X_CENTER, -Y_CENTER, -PLATE_Z - 5, 1;
+    // Подготовка матриц трансформации
+    Eigen::Matrix4f toCenter, backToStart;
+    prepareTransformationMatrices(toCenter, backToStart);
 
-    Eigen::Matrix4f backToStart;
 
-    backToStart << 1, 0, 0, 0,
-                   0, 1, 0, 0,
-                   0, 0, 1, 0,
-                   X_CENTER, Y_CENTER, PLATE_Z + 5, 1;
-
-    Eigen::Matrix4f dotTransMat;
-    dotTransMat = toCenter * transMat * backToStart;
+    // Общая матрица трансформации для точек
+    Eigen::Matrix4f dotTransMat = toCenter * transMat * backToStart;
+    // Массив матриц трансформации для всех источников света
     std::vector<Eigen::Matrix4f> illumDotMatrices;
 
     for (size_t i = 0; i < scene->getIllumNum(); i++)
+        // Заполнение массива матрицами трансформации источников света
         illumDotMatrices.push_back(
-            toCenter * scene->getIlluminant(i).getTransMat() * backToStart);
-
-    for (size_t curFaceNum = 0; curFaceNum < facets.size(); curFaceNum++)
-    {
+                toCenter * scene->getIlluminant(i).getTransMat() * backToStart);
+    // Обработка всех граней модели
+    for (size_t curFaceNum = 0; curFaceNum < facets.size(); curFaceNum++) {
         Eigen::MatrixXf coordinatesVec(3, 4);
 
+        // Получение индексов вершин текущей грани
         std::vector<size_t> curDots = facets.at(curFaceNum).getUsedVertices();
-        dotsArr[0] = vertices.at(curDots.at(0)).getPosition();
-        dotsArr[1] = vertices.at(curDots.at(1)).getPosition();
-        dotsArr[2] = vertices.at(curDots.at(2)).getPosition();
-
-        coordinatesVec <<
-            dotsArr[0].getXCoordinate(), dotsArr[0].getYCoordinate(), dotsArr[0].getZCoordinate(), 1,
-            dotsArr[1].getXCoordinate(), dotsArr[1].getYCoordinate(), dotsArr[1].getZCoordinate(), 1,
-            dotsArr[2].getXCoordinate(), dotsArr[2].getYCoordinate(), dotsArr[2].getZCoordinate(), 1;
-
+        // Получение и трансформация координат вершин
+        for (int i = 0; i < 3; i++) {
+            dotsArr[i] = vertices.at(curDots.at(i)).getPosition();
+            coordinatesVec.row(i)
+                    << dotsArr[i].getXCoordinate(), dotsArr[i].getYCoordinate(), dotsArr[i].getZCoordinate(), 1;
+        }
+        // Применение матрицы трансформации
         coordinatesVec *= dotTransMat;
-
-        dotsArr[0] =
-            Dot3D(coordinatesVec(0, 0), coordinatesVec(0, 1), coordinatesVec(0, 2));
-        dotsArr[1] =
-            Dot3D(coordinatesVec(1, 0), coordinatesVec(1, 1), coordinatesVec(1, 2));
-        dotsArr[2] =
-            Dot3D(coordinatesVec(2, 0), coordinatesVec(2, 1), coordinatesVec(2, 2));
-
+        // Обновление массива точек после трансформации
+        for (int i = 0; i < 3; i++) {
+            dotsArr[i] = Dot3D(coordinatesVec(i, 0), coordinatesVec(i, 1), coordinatesVec(i, 2));
+        }
+//        // Сортировка точек по возрастанию Y-координаты для последующей обработки
+//        std::sort(dotsArr.begin(), dotsArr.end(), [](const Dot3D &a, const Dot3D &b) {
+//            return a.getYCoordinate() < b.getYCoordinate();
+//        });
         if (dotsArr[0].getYCoordinate() > dotsArr[1].getYCoordinate())
             std::swap(dotsArr[0], dotsArr[1]);
         if (dotsArr[0].getYCoordinate() > dotsArr[2].getYCoordinate())
@@ -428,6 +408,7 @@ void Drawer::zBufForModel(std::vector<Facet> &facets, std::vector<Vertex> &verti
         if (dotsArr[1].getYCoordinate() > dotsArr[2].getYCoordinate())
             std::swap(dotsArr[1], dotsArr[2]);
 
+        // Преобразование координат в пиксели и Z-координаты для рендеринга
         int x1 = round(dotsArr[0].getXCoordinate());
         int x2 = round(dotsArr[1].getXCoordinate());
         int x3 = round(dotsArr[2].getXCoordinate());
@@ -439,74 +420,88 @@ void Drawer::zBufForModel(std::vector<Facet> &facets, std::vector<Vertex> &verti
         int y1 = round(dotsArr[0].getYCoordinate());
         int y2 = round(dotsArr[1].getYCoordinate());
         int y3 = round(dotsArr[2].getYCoordinate());
-
+        // Параллельный цикл для обработки пикселей вдоль Y-координаты
 #pragma omp parallel for
         for (int curY = (y1 < 0) ? 0 : y1;
-             curY < ((y2 >= (int) bufHeight) ? (int) bufHeight - 1 : y2); curY++)
-        {
+             curY < ((y2 >= (int) bufHeight) ? (int) bufHeight - 1 : y2); curY++) {
+            // Цикл обрабатывает строки сканирования от y1 до y2, учитывая границы буфера.
+
+            // Переменная для хранения коэффициента интерполяции по первому ребру треугольника.
             double aInc = 0;
+
             if (y1 != y2)
+                // Вычисление коэффициента интерполяции для первого ребра (от y1 до y2).
                 aInc = (double) (curY - y1) / (y2 - y1);
 
+            // Переменная для хранения коэффициента интерполяции по второму ребру треугольника.
             double bInc = 0;
             if (y1 != y3)
                 bInc = (double) (curY - y1) / (y3 - y1);
 
+            // Интерполяция x-координат для текущего значения y по обоим рёбрам.
             int xA = round(x1 + (x2 - x1) * aInc);
             int xB = round(x1 + (x3 - x1) * bInc);
+            // Интерполяция z-координат (глубины) для текущего значения y по обоим рёбрам.
             double zA = z1 + (z2 - z1) * aInc;
             double zB = z1 + (z3 - z1) * bInc;
 
-            if (xA > xB)
-            {
+            if (xA > xB) {
                 std::swap(xA, xB);
                 std::swap(zA, zB);
             }
-
-            if (xA < 0)
+//             Ограничиваем координаты x горизонтальными границами буфера
+            if (xA < 0) {
                 xA = 0;
-            if (xB >= (int) bufWidth)
+            }
+            if (xB >= (int) bufWidth) {
                 xB = (int) bufWidth - 1;
 
-            for (int curX = xA; curX <= xB; curX++)
-            {
+            }
+            // Вложенный цикл 'for' обходит x-координаты текущей линии сканирования от xA до xB.
+            for (int curX = xA; curX <= xB; curX++) {
+                // Интерполяция z-координаты для текущего значения x между xA и xB.
                 double curZ = zA + (zB - zA) * (curX - xA) / (xB - xA);
-
-                if (curZ >= depthBuffer.at(curX).at(curY))
-                {
+                // Если вычисленная z-координата больше или равна значению в буфере глубины, продолжаем проверку тени.
+                if (curZ >= depthBuffer.at(curX).at(curY)) {
+                    // Флаг для индикации видимости текущего пикселя после проверки тени.
                     short visible = 0;
+                    // Создаём матрицу для хранения трансформированных координат.
                     Eigen::MatrixXf newCoordinates(1, 4);
-
-                    for (size_t i = 0; i < scene->getIllumNum() && !visible; i++)
-                    {
+                    // Перебираем каждый источник света, чтобы проверить, находится ли текущий пиксель в тени.
+                    for (size_t i = 0; i < scene->getIllumNum() && !visible; i++) {
+                        // Присваиваем текущим координатам пикселя значения в матрицу.
                         newCoordinates << curX, curY, curZ, 1;
-
+                        // Трансформируем координаты на основе матрицы трансформации источника света.
                         newCoordinates *= illumDotMatrices.at(i);
+                        // Получаем карту теней для текущего источника света.
                         std::vector<std::vector<double>> *shadowMap =
-                            &scene->getIlluminant(i).getShadowMap();
+                                &scene->getIlluminant(i).getShadowMap();
 
+                        // Округляем трансформированные координаты до целых значений.
                         int x = round(newCoordinates(0, 0));
                         int y = round(newCoordinates(0, 1));
-
+                        // Проверяем, насколько близко трансформированная глубина к глубине в карте теней, чтобы считать пиксель видимым.
                         if (x < (int) shadowMap->size() && x >= 0 &&
                             y < (int) shadowMap->at(0).size() && y >= 0 &&
                             std::fabs(shadowMap->at(x).at(y) - newCoordinates(0, 2)) < 2)
                             visible = 1;
                     }
+                    // Обновляем буфер глубины текущим значением z.
                     depthBuffer.at(curX).at(curY) = curZ;
-                    if (scene->getIllumNum())
-                    {
+                    if (scene->getIllumNum()) {
+                        // Если пиксель видим, обновляем буфер кадра соответствующим цветом и признаком видимости.
                         frameBuffer.at(curX).at(curY) = color + visible;
-                    }
-                    else
+                    } else
+                        // Если нет источников света, обновляем буфер кадра цветом плюс 1.
                         frameBuffer.at(curX).at(curY) = color + 1;
                 }
+
             }
         }
+        // Аналогичные операции выполняются для следующей части треугольника (от y2 до y3)
 #pragma omp parallel for
         for (int curY = (y2 < 0) ? 0 : y2;
-             curY <= ((y3 >= (int) bufHeight) ? (int) bufHeight - 1 : y3); curY++)
-        {
+             curY <= ((y3 >= (int) bufHeight) ? (int) bufHeight - 1 : y3); curY++) {
             double aInc = 0;
             if (y2 != y3)
                 aInc = (double) (curY - y2) / (y3 - y2);
@@ -520,32 +515,31 @@ void Drawer::zBufForModel(std::vector<Facet> &facets, std::vector<Vertex> &verti
             double zA = z2 + (z3 - z2) * aInc;
             double zB = z1 + (z3 - z1) * bInc;
 
-            if (xA > xB)
-            {
+            if (xA > xB) {
                 std::swap(xA, xB);
                 std::swap(zA, zB);
             }
 
-            if (xA < 0)
+            if (xA < 0) {
                 xA = 0;
-            if (xB >= (int) bufWidth)
+            }
+            if (xB >= (int) bufWidth) {
                 xB = (int) bufWidth - 1;
 
-            for (int curX = xA; curX <= xB; curX++)
-            {
+            }
+
+            for (int curX = xA; curX <= xB; curX++) {
                 double curZ = zA + (zB - zA) * (curX - xA) / (xB - xA);
 
-                if (curZ >= depthBuffer.at(curX).at(curY))
-                {
+                if (curZ >= depthBuffer.at(curX).at(curY)) {
                     short visible = 0;
                     Eigen::MatrixXf newCoordinates(1, 4);
-                    for (size_t i = 0; i < scene->getIllumNum() && !visible; i++)
-                    {
+                    for (size_t i = 0; i < scene->getIllumNum() && !visible; i++) {
                         newCoordinates << curX, curY, curZ, 1;
 
                         newCoordinates *= illumDotMatrices.at(i);
                         std::vector<std::vector<double>> *shadowMap =
-                            &scene->getIlluminant(i).getShadowMap();
+                                &scene->getIlluminant(i).getShadowMap();
                         int x = round(newCoordinates(0, 0));
                         int y = round(newCoordinates(0, 1));
 
@@ -555,76 +549,75 @@ void Drawer::zBufForModel(std::vector<Facet> &facets, std::vector<Vertex> &verti
                             visible = 1;
                     }
                     depthBuffer.at(curX).at(curY) = curZ;
-                    if (scene->getIllumNum())
-                    {
+                    if (scene->getIllumNum()) {
                         frameBuffer.at(curX).at(curY) = color + visible;
-                    }
-                    else
+                    } else
                         frameBuffer.at(curX).at(curY) = color + 1;
                 }
             }
+
         }
-        DDABordersForPolygon(x1, y1, z1, x2, y2, z2);
         DDABordersForPolygon(x1, y1, z1, x3, y3, z3);
+        DDABordersForPolygon(x1, y1, z1, x2, y2, z2);
         DDABordersForPolygon(x2, y2, z2, x3, y3, z3);
     }
 }
 
-void Drawer::zBufferAlg(CellScene *scene, size_t bufHeight, size_t bufWidth)
-{
-    depthBuffer.erase(depthBuffer.begin(), depthBuffer.end());
-    frameBuffer.erase(frameBuffer.begin(), frameBuffer.end());
-
-    for (size_t i = 0; i < bufWidth; i++)
-    {
+void Drawer::zBufferAlg(CellScene *scene, size_t bufHeight, size_t bufWidth) {
+    // Очищаем буферы глубины и кадров
+    depthBuffer.clear();
+    frameBuffer.clear();
+    // Инициализируем буферы новыми пустыми значениями
+    for (size_t i = 0; i < bufWidth; i++) {
         depthBuffer.push_back(std::vector<double>(bufHeight, 0));
         frameBuffer.push_back(std::vector<size_t>(bufHeight, 0));
     }
+
 
     PolModel model;
     std::vector<Facet> facets;
     std::vector<Vertex> vertices;
     PolModel::model_t typeModel;
-
-    for (size_t i = 0; i < scene->getModelsNum(); i++)
-    {
-
+    // Генерируем карту теней для каждой модели в сцене
+    for (size_t i = 0; i < scene->getModelsNum(); i++) {
         model = scene->getModel(i);
         facets = model.getFacets();
         vertices = model.getVertices();
+        // Для каждого источника света генерируем карту теней
         for (size_t j = 0; j < scene->getIllumNum(); j++)
-            shadowMapForModel(facets, vertices, scene->getTransMatrix(),
-                &scene->getIlluminant(j), bufWidth, bufHeight);
+            generateShadowMap(facets, vertices, scene->getTransMatrix(),
+                              &scene->getIlluminant(j), bufWidth, bufHeight);
     }
-
+    // Обрабатываем базовую модель платформы
     model = scene->getPlateModel();
     facets = model.getFacets();
     vertices = model.getVertices();
     for (size_t j = 0; j < scene->getIllumNum(); j++)
-        shadowMapForModel(facets, vertices, scene->getTransMatrix(),
-            &scene->getIlluminant(j), bufWidth, bufHeight);
+        generateShadowMap(facets, vertices, scene->getTransMatrix(),
+                          &scene->getIlluminant(j), bufWidth, bufHeight);
 
-    for (size_t i = 0; i < scene->getModelsNum(); i++)
-    {
+//     Выполняем z-буферизацию для всех моделей в сцене
+    for (size_t i = 0; i < scene->getModelsNum(); i++) {
         model = scene->getModel(i);
         facets = model.getFacets();
         vertices = model.getVertices();
         typeModel = model.getModelType();
+        // Рассчитываем видимость каждой модели с учетом ее типа
         zBufForModel(
-            facets, vertices, scene->getTransMatrix(), 4 + typeModel * 2, scene, bufWidth, bufHeight);
+                facets, vertices, scene->getTransMatrix(), 4 + typeModel * 2, scene, bufWidth, bufHeight);
     }
     model = scene->getPlateModel();
     facets = model.getFacets();
     vertices = model.getVertices();
     zBufForModel(
-        facets, vertices, scene->getTransMatrix(), 1, scene, bufWidth, bufHeight);
-
+            facets, vertices, scene->getTransMatrix(), 1, scene, bufWidth, bufHeight);
     for (size_t i = 0; i < scene->getIllumNum(); i++)
         scene->getIlluminant(i).clearShadowMap();
 }
 
-QGraphicsScene *Drawer::drawScene(CellScene *scene, QRectF rect)
-{
+QGraphicsScene *Drawer::drawScene(CellScene *scene, QRectF rect) {
+
+
     size_t width = scene->getWidth() * SCALE_FACTOR;
     size_t height = scene->getHeight() * SCALE_FACTOR;
     qDebug() << "Сцена" << scene->getWidth() << " x " << scene->getHeight();
@@ -633,158 +626,110 @@ QGraphicsScene *Drawer::drawScene(CellScene *scene, QRectF rect)
 
     using namespace std::chrono;
     nanoseconds start = duration_cast<nanoseconds>(system_clock::now().time_since_epoch());
-    zBufferAlg(scene, rect.size().height(), rect.size().width());
+    zBufferAlg(scene, rect.size().height() *3, rect.size().width() * 3);
     nanoseconds end = duration_cast<nanoseconds>(system_clock::now().time_since_epoch());
 
     qDebug() << "Время выполнения z-буфера" << size_t((end - start).count() / 1000000);
-
-
 
 
     QGraphicsScene *outScene = new QGraphicsScene;
     outScene->setSceneRect(rect);
 
     QImage *image =
-        new QImage(rect.size().width(), rect.size().height(), QImage::Format_RGB32);
+            new QImage(rect.size().width() , rect.size().height() , QImage::Format_RGB32);
     image->fill(Qt::white);
 
-    uint plateCol             = qRgb(GRASS_COLOR);
-    uint darkPlateCol         = qRgb(DARK_GRASS_COLOR);
-    uint blackCol             = qRgb(BLACK_COLOUR);
+    uint plateCol = qRgb(GRASS_COLOR);
+    uint darkPlateCol = qRgb(DARK_GRASS_COLOR);
+    uint blackCol = qRgb(BLACK_COLOUR);
 
-    uint houseCol             = qRgb(HOUS_COLOR);
-    uint darkHouseCol         = qRgb(DARK_HOUS_COLOR);
+    uint houseCol = qRgb(HOUS_COLOR);
+    uint darkHouseCol = qRgb(DARK_HOUS_COLOR);
 
-    uint roofHouseCol         = qRgb(ROOF_HOUS_COLOR);
-    uint darkRoofHouseCol     = qRgb(DARK_ROOF_HOUS_COLOR);
+    uint roofHouseCol = qRgb(ROOF_HOUS_COLOR);
+    uint darkRoofHouseCol = qRgb(DARK_ROOF_HOUS_COLOR);
 
-    uint windowsHouseCol      = qRgb(WINDOWS_HOUS_COLOR);
-    uint darkWindowsHouseCol  = qRgb(DARK_WINDOWS_HOUS_COLOR);
+    uint windowsHouseCol = qRgb(WINDOWS_HOUS_COLOR);
+    uint darkWindowsHouseCol = qRgb(DARK_WINDOWS_HOUS_COLOR);
 
-    uint treeFoliageCol       = qRgb(TREE_FOLIAGE_COLOR);
-    uint darkTreeFoliageCol   = qRgb(DARK_TREE_FOLIAGE_COLOR);
+    uint treeFoliageCol = qRgb(TREE_FOLIAGE_COLOR);
+    uint darkTreeFoliageCol = qRgb(DARK_TREE_FOLIAGE_COLOR);
 
-    uint treeTrunkCol         = qRgb(TREE_TRUNK_COLOR);
-    uint darkTreeTrunkCol     = qRgb(DARK_TREE_TRUNK_COLOR);
+    uint treeTrunkCol = qRgb(TREE_TRUNK_COLOR);
+    uint darkTreeTrunkCol = qRgb(DARK_TREE_TRUNK_COLOR);
 
-    uint roadAsphaltCol       = qRgb(ROAD_ASPHALT_COLOR);
-    uint darkRoadAsphaltCol   = qRgb(DARK_ROAD_ASPHALT_COLOR);
+    uint roadAsphaltCol = qRgb(ROAD_ASPHALT_COLOR);
+    uint darkRoadAsphaltCol = qRgb(DARK_ROAD_ASPHALT_COLOR);
 
-    uint roadStripeCol        = qRgb(ROAD_STRIPE_COLOR);
-    uint darkRoadStripeCol    = qRgb(DARK_ROAD_STRIPE_COLOR);
+    uint roadStripeCol = qRgb(ROAD_STRIPE_COLOR);
+    uint darkRoadStripeCol = qRgb(DARK_ROAD_STRIPE_COLOR);
 
-    uint carCol               = qRgb(CAR_COLOR);
-    uint darkCarCol           = qRgb(DARK_CAR_COLOR);
+    uint carCol = qRgb(CAR_COLOR);
+    uint darkCarCol = qRgb(DARK_CAR_COLOR);
 
-    uint wheelsCarCol         = qRgb(CAR_WHEELS_COLOR);
-    uint darkWheelsCarCol     = qRgb(DARK_CAR_WHEELS_COLOR);
+    uint wheelsCarCol = qRgb(CAR_WHEELS_COLOR);
+    uint darkWheelsCarCol = qRgb(DARK_CAR_WHEELS_COLOR);
 
-    uint glassCarCol          = qRgb(CAR_GLASS_COLOR);
-    uint darkGlassCarCol      = qRgb(DARK_CAR_GLASS_COLOR);
+    uint glassCarCol = qRgb(CAR_GLASS_COLOR);
+    uint darkGlassCarCol = qRgb(DARK_CAR_GLASS_COLOR);
 
     nanoseconds start2 = duration_cast<nanoseconds>(system_clock::now().time_since_epoch());
 
     for (size_t i = 0; i < rect.size().width() - 1; i++)
-        for (size_t j = 0; j < rect.size().height() - 1; j++)
-        {
-            if (frameBuffer.at(i).at(j) == 1)
-            {
+        for (size_t j = 0; j < rect.size().height() - 1; j++) {
+            if (frameBuffer.at(i).at(j) == 1) {
                 image->setPixel(i, j, darkPlateCol);
-            }
-            else if (frameBuffer.at(i).at(j) == 2)
-            {
+            } else if (frameBuffer.at(i).at(j) == 2) {
                 image->setPixel(i, j, plateCol);
-            }
-            else if (frameBuffer.at(i).at(j) == 3)
-            {
+            } else if (frameBuffer.at(i).at(j) == 3) {
                 image->setPixel(i, j, blackCol);
-            }
-            else if (frameBuffer.at(i).at(j) == 4)
-            {
+            } else if (frameBuffer.at(i).at(j) == 4) {
                 image->setPixel(i, j, darkHouseCol);
-            }
-            else if (frameBuffer.at(i).at(j) == 5)
-            {
+            } else if (frameBuffer.at(i).at(j) == 5) {
                 image->setPixel(i, j, houseCol);
-            }
-            else if (frameBuffer.at(i).at(j) == 6)
-            {
+            } else if (frameBuffer.at(i).at(j) == 6) {
                 image->setPixel(i, j, darkRoofHouseCol);
-            }
-            else if (frameBuffer.at(i).at(j) == 7)
-            {
+            } else if (frameBuffer.at(i).at(j) == 7) {
                 image->setPixel(i, j, roofHouseCol);
-            }
-            else if (frameBuffer.at(i).at(j) == 8)
-            {
+            } else if (frameBuffer.at(i).at(j) == 8) {
                 image->setPixel(i, j, darkWindowsHouseCol);
-            }
-            else if (frameBuffer.at(i).at(j) == 9)
-            {
+            } else if (frameBuffer.at(i).at(j) == 9) {
                 image->setPixel(i, j, windowsHouseCol);
-            }
-            else if (frameBuffer.at(i).at(j) == 10)
-            {
+            } else if (frameBuffer.at(i).at(j) == 10) {
                 image->setPixel(i, j, darkTreeFoliageCol);
-            }
-            else if (frameBuffer.at(i).at(j) == 11)
-            {
+            } else if (frameBuffer.at(i).at(j) == 11) {
                 image->setPixel(i, j, treeFoliageCol);
-            }
-            else if (frameBuffer.at(i).at(j) == 12)
-            {
+            } else if (frameBuffer.at(i).at(j) == 12) {
                 image->setPixel(i, j, darkTreeTrunkCol);
-            }
-            else if (frameBuffer.at(i).at(j) == 13)
-            {
+            } else if (frameBuffer.at(i).at(j) == 13) {
                 image->setPixel(i, j, treeTrunkCol);
-            }
-            else if (frameBuffer.at(i).at(j) == 14)
-            {
+            } else if (frameBuffer.at(i).at(j) == 14) {
                 image->setPixel(i, j, darkRoadAsphaltCol);
-            }
-            else if (frameBuffer.at(i).at(j) == 15)
-            {
+            } else if (frameBuffer.at(i).at(j) == 15) {
                 image->setPixel(i, j, roadAsphaltCol);
-            }
-            else if (frameBuffer.at(i).at(j) == 16)
-            {
+            } else if (frameBuffer.at(i).at(j) == 16) {
                 image->setPixel(i, j, darkRoadStripeCol);
-            }
-            else if (frameBuffer.at(i).at(j) == 17)
-            {
+            } else if (frameBuffer.at(i).at(j) == 17) {
                 image->setPixel(i, j, roadStripeCol);
-            }
-            else if (frameBuffer.at(i).at(j) == 18)
-            {
+            } else if (frameBuffer.at(i).at(j) == 18) {
                 image->setPixel(i, j, darkCarCol);
-            }
-            else if (frameBuffer.at(i).at(j) == 19)
-            {
+            } else if (frameBuffer.at(i).at(j) == 19) {
                 image->setPixel(i, j, carCol);
-            }
-            else if (frameBuffer.at(i).at(j) == 20)
-            {
+            } else if (frameBuffer.at(i).at(j) == 20) {
                 image->setPixel(i, j, darkWheelsCarCol);
-            }
-            else if (frameBuffer.at(i).at(j) == 21)
-            {
+            } else if (frameBuffer.at(i).at(j) == 21) {
                 image->setPixel(i, j, wheelsCarCol);
-            }
-            else if (frameBuffer.at(i).at(j) == 22)
-            {
+            } else if (frameBuffer.at(i).at(j) == 22) {
                 image->setPixel(i, j, darkGlassCarCol);
-            }
-            else if (frameBuffer.at(i).at(j) == 23)
-            {
+            } else if (frameBuffer.at(i).at(j) == 23) {
                 image->setPixel(i, j, glassCarCol);
             }
         }
 
     nanoseconds end2 = duration_cast<nanoseconds>(system_clock::now().time_since_epoch());
     qDebug() << "Время отрисовки" << size_t((end2 - start2).count() / 1000000);
-    qDebug() << "Общее время"     << size_t((end2 - start2).count() / 1000000) +
-                                     size_t((end - start).count()   / 1000000);
+    qDebug() << "Общее время" << size_t((end2 - start2).count() / 1000000) +
+                                 size_t((end - start).count() / 1000000);
 
 
     outScene->addPixmap(QPixmap::fromImage(*image));
@@ -796,56 +741,43 @@ QGraphicsScene *Drawer::drawScene(CellScene *scene, QRectF rect)
 }
 
 
-
-
-bool UsageFacade::searchRoadsNearby(int xCell, int yCell, int widthModel, int heightModel)
-{
-    for (int k = 0; k < 2; k++)
-    {
+bool UsageFacade::searchRoadsNearby(int xCell, int yCell, int widthModel, int heightModel) {
+    for (int k = 0; k < 2; k++) {
         int i = yCell - 1 + k * (heightModel + 1);
         if (i < 0 || size_t(i) > scene->getHeight() - 1)
             continue;
 
         int j0 = xCell - 1;
-        if (j0 >= 0)
-        {
-            if (scene->getUsedCells()[i][j0] == 2 || scene->getUsedCells()[i][j0] == 4)
-            {
+        if (j0 >= 0) {
+            if (scene->getUsedCells()[i][j0] == 2 || scene->getUsedCells()[i][j0] == 4) {
                 qDebug() << "i = " << i << "j = " << j0 << "дорога рядом с домом";
                 return true;
             }
         }
 
         j0 = xCell + widthModel;
-        if (size_t(j0) <= scene->getWidth() - 1)
-        {
-            if (scene->getUsedCells()[i][j0] == 2 || scene->getUsedCells()[i][j0] == 4)
-            {
+        if (size_t(j0) <= scene->getWidth() - 1) {
+            if (scene->getUsedCells()[i][j0] == 2 || scene->getUsedCells()[i][j0] == 4) {
                 qDebug() << "i = " << i << "j = " << j0 << "дорога рядом с домом";
                 return true;
             }
         }
 
-        for (int j = xCell; j < xCell + widthModel; j++)
-        {
-            if (scene->getUsedCells()[i][j] == 2 || scene->getUsedCells()[i][j] == 4)
-            {
+        for (int j = xCell; j < xCell + widthModel; j++) {
+            if (scene->getUsedCells()[i][j] == 2 || scene->getUsedCells()[i][j] == 4) {
                 qDebug() << "i = " << i << "j = " << j << "дорога рядом с домом";
                 return true;
             }
         }
     }
 
-    for (int k = 0; k < 2; k++)
-    {
+    for (int k = 0; k < 2; k++) {
         int j = xCell - 1 + k * (widthModel + 1);
         if (j < 0 || size_t(j) > scene->getWidth() - 1)
             continue;
 
-        for (int i = yCell; i < yCell + heightModel; i++)
-        {
-            if (scene->getUsedCells()[i][j] == 2 || scene->getUsedCells()[i][j] == 4)
-            {
+        for (int i = yCell; i < yCell + heightModel; i++) {
+            if (scene->getUsedCells()[i][j] == 2 || scene->getUsedCells()[i][j] == 4) {
                 qDebug() << "i = " << i << "j = " << j << "дорога рядом с домом";
                 return true;
             }
@@ -856,12 +788,7 @@ bool UsageFacade::searchRoadsNearby(int xCell, int yCell, int widthModel, int he
 }
 
 
-
-
-
-
-int UsageFacade::addHouse(int xCell, int yCell, int modelLength, int modelHeight, int countFloors)
-{
+int UsageFacade::addHouse(int xCell, int yCell, int modelLength, int modelHeight, int countFloors) {
     xCell -= 1;
     yCell -= 1;
 
@@ -869,12 +796,9 @@ int UsageFacade::addHouse(int xCell, int yCell, int modelLength, int modelHeight
         yCell + modelHeight - 1 >= (int) scene->getHeight())
         return 2;
 
-    for (int i = yCell; i < yCell + modelHeight; i++)
-    {
-        for (int j = xCell; j < xCell + modelLength; j++)
-        {
-            if (scene->getUsedCells()[i][j] != 0 && scene->getUsedCells()[i][j] != 3)
-            {
+    for (int i = yCell; i < yCell + modelHeight; i++) {
+        for (int j = xCell; j < xCell + modelLength; j++) {
+            if (scene->getUsedCells()[i][j] != 0 && scene->getUsedCells()[i][j] != 3) {
                 qDebug() << "i = " << i << "j = " << j << "ячейка занята (дом)";
                 return 1;
             }
@@ -892,31 +816,28 @@ int UsageFacade::addHouse(int xCell, int yCell, int modelLength, int modelHeight
     int zFactor = PLATE_Z;
 
     //стены дома
-    for (int i = 0; i < countFloors; i++)
-    {
-        for (int k = 0; k < 2; k++)
-        {
-            for (int j = 0; j < modelLength; j++)
-            {
+    for (int i = 0; i < countFloors; i++) {
+        for (int k = 0; k < 2; k++) {
+            for (int j = 0; j < modelLength; j++) {
                 addQuad(vertices, facets,
-                        xFactor,                yFactor, zFactor,
+                        xFactor, yFactor, zFactor,
                         xFactor + SCALE_FACTOR, yFactor, zFactor,
                         xFactor + SCALE_FACTOR, yFactor, zFactor + SCALE_FACTOR / 3,
-                        xFactor,                yFactor, zFactor + SCALE_FACTOR / 3);
+                        xFactor, yFactor, zFactor + SCALE_FACTOR / 3);
                 addQuad(vertices, facets,
-                        xFactor,                yFactor, zFactor + SCALE_FACTOR * 2 / 3,
+                        xFactor, yFactor, zFactor + SCALE_FACTOR * 2 / 3,
                         xFactor + SCALE_FACTOR, yFactor, zFactor + SCALE_FACTOR * 2 / 3,
                         xFactor + SCALE_FACTOR, yFactor, zFactor + SCALE_FACTOR,
-                        xFactor,                yFactor, zFactor + SCALE_FACTOR);
+                        xFactor, yFactor, zFactor + SCALE_FACTOR);
                 addQuad(vertices, facets,
-                        xFactor,                    yFactor, zFactor + SCALE_FACTOR / 3,
+                        xFactor, yFactor, zFactor + SCALE_FACTOR / 3,
                         xFactor + SCALE_FACTOR / 3, yFactor, zFactor + SCALE_FACTOR / 3,
                         xFactor + SCALE_FACTOR / 3, yFactor, zFactor + SCALE_FACTOR * 2 / 3,
-                        xFactor,                    yFactor, zFactor + SCALE_FACTOR * 2 / 3);
+                        xFactor, yFactor, zFactor + SCALE_FACTOR * 2 / 3);
                 addQuad(vertices, facets,
                         xFactor + SCALE_FACTOR * 2 / 3, yFactor, zFactor + SCALE_FACTOR / 3,
-                        xFactor + SCALE_FACTOR,         yFactor, zFactor + SCALE_FACTOR / 3,
-                        xFactor + SCALE_FACTOR,         yFactor, zFactor + SCALE_FACTOR * 2 / 3,
+                        xFactor + SCALE_FACTOR, yFactor, zFactor + SCALE_FACTOR / 3,
+                        xFactor + SCALE_FACTOR, yFactor, zFactor + SCALE_FACTOR * 2 / 3,
                         xFactor + SCALE_FACTOR * 2 / 3, yFactor, zFactor + SCALE_FACTOR * 2 / 3);
 
                 xFactor += SCALE_FACTOR;
@@ -929,29 +850,27 @@ int UsageFacade::addHouse(int xCell, int yCell, int modelLength, int modelHeight
         yFactor = yCell * SCALE_FACTOR + 10;
 
 
-        for (int k = 0; k < 2; k++)
-        {
-            for (int j = 0; j < modelHeight; j++)
-            {
+        for (int k = 0; k < 2; k++) {
+            for (int j = 0; j < modelHeight; j++) {
                 addQuad(vertices, facets,
-                        xFactor, yFactor,                zFactor,
+                        xFactor, yFactor, zFactor,
                         xFactor, yFactor + SCALE_FACTOR, zFactor,
                         xFactor, yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR / 3,
-                        xFactor, yFactor,                zFactor + SCALE_FACTOR / 3);
+                        xFactor, yFactor, zFactor + SCALE_FACTOR / 3);
                 addQuad(vertices, facets,
-                        xFactor, yFactor,                zFactor + SCALE_FACTOR * 2 / 3,
+                        xFactor, yFactor, zFactor + SCALE_FACTOR * 2 / 3,
                         xFactor, yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR * 2 / 3,
                         xFactor, yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR,
-                        xFactor, yFactor,                zFactor + SCALE_FACTOR);
+                        xFactor, yFactor, zFactor + SCALE_FACTOR);
                 addQuad(vertices, facets,
-                        xFactor, yFactor,                    zFactor + SCALE_FACTOR / 3,
+                        xFactor, yFactor, zFactor + SCALE_FACTOR / 3,
                         xFactor, yFactor + SCALE_FACTOR / 3, zFactor + SCALE_FACTOR / 3,
                         xFactor, yFactor + SCALE_FACTOR / 3, zFactor + SCALE_FACTOR * 2 / 3,
-                        xFactor, yFactor,                    zFactor + SCALE_FACTOR * 2 / 3);
+                        xFactor, yFactor, zFactor + SCALE_FACTOR * 2 / 3);
                 addQuad(vertices, facets,
                         xFactor, yFactor + SCALE_FACTOR * 2 / 3, zFactor + SCALE_FACTOR / 3,
-                        xFactor, yFactor + SCALE_FACTOR,         zFactor + SCALE_FACTOR / 3,
-                        xFactor, yFactor + SCALE_FACTOR,         zFactor + SCALE_FACTOR * 2 / 3,
+                        xFactor, yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR / 3,
+                        xFactor, yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR * 2 / 3,
                         xFactor, yFactor + SCALE_FACTOR * 2 / 3, zFactor + SCALE_FACTOR * 2 / 3);
 
                 yFactor += SCALE_FACTOR;
@@ -980,41 +899,49 @@ int UsageFacade::addHouse(int xCell, int yCell, int modelLength, int modelHeight
 
     //крыша дома
     addTriangle(vertices2, facets2,
-                xFactor + modelLength * SCALE_FACTOR,         yFactor + modelHeight * SCALE_FACTOR,     zFactor,
-                xFactor + modelLength * SCALE_FACTOR,         yFactor,                                  zFactor,
-                xFactor + modelLength * SCALE_FACTOR * 2 / 3, yFactor + modelHeight * SCALE_FACTOR / 2, zFactor + SCALE_FACTOR);
+                xFactor + modelLength * SCALE_FACTOR, yFactor + modelHeight * SCALE_FACTOR, zFactor,
+                xFactor + modelLength * SCALE_FACTOR, yFactor, zFactor,
+                xFactor + modelLength * SCALE_FACTOR * 2 / 3, yFactor + modelHeight * SCALE_FACTOR / 2,
+                zFactor + SCALE_FACTOR);
     addTriangle(vertices2, facets2,
-                xFactor,                                  yFactor + modelHeight * SCALE_FACTOR,     zFactor,
-                xFactor,                                  yFactor,                                  zFactor,
-                xFactor + modelLength * SCALE_FACTOR / 3, yFactor + modelHeight * SCALE_FACTOR / 2, zFactor + SCALE_FACTOR);
+                xFactor, yFactor + modelHeight * SCALE_FACTOR, zFactor,
+                xFactor, yFactor, zFactor,
+                xFactor + modelLength * SCALE_FACTOR / 3, yFactor + modelHeight * SCALE_FACTOR / 2,
+                zFactor + SCALE_FACTOR);
     addTriangle(vertices2, facets2,
-                xFactor + modelLength * SCALE_FACTOR * 2 / 3, yFactor,                                  zFactor,
-                xFactor + modelLength * SCALE_FACTOR,         yFactor,                                  zFactor,
-                xFactor + modelLength * SCALE_FACTOR * 2 / 3, yFactor + modelHeight * SCALE_FACTOR / 2, zFactor + SCALE_FACTOR);
+                xFactor + modelLength * SCALE_FACTOR * 2 / 3, yFactor, zFactor,
+                xFactor + modelLength * SCALE_FACTOR, yFactor, zFactor,
+                xFactor + modelLength * SCALE_FACTOR * 2 / 3, yFactor + modelHeight * SCALE_FACTOR / 2,
+                zFactor + SCALE_FACTOR);
     addTriangle(vertices2, facets2,
-                xFactor + modelLength * SCALE_FACTOR,         yFactor + modelHeight * SCALE_FACTOR,     zFactor,
-                xFactor + modelLength * SCALE_FACTOR * 2 / 3, yFactor + modelHeight * SCALE_FACTOR,     zFactor,
-                xFactor + modelLength * SCALE_FACTOR * 2 / 3, yFactor + modelHeight * SCALE_FACTOR / 2, zFactor + SCALE_FACTOR);
+                xFactor + modelLength * SCALE_FACTOR, yFactor + modelHeight * SCALE_FACTOR, zFactor,
+                xFactor + modelLength * SCALE_FACTOR * 2 / 3, yFactor + modelHeight * SCALE_FACTOR, zFactor,
+                xFactor + modelLength * SCALE_FACTOR * 2 / 3, yFactor + modelHeight * SCALE_FACTOR / 2,
+                zFactor + SCALE_FACTOR);
     addTriangle(vertices2, facets2,
-                xFactor + modelLength * SCALE_FACTOR / 3, yFactor,                                  zFactor,
-                xFactor,                                  yFactor,                                  zFactor,
-                xFactor + modelLength * SCALE_FACTOR / 3, yFactor + modelHeight * SCALE_FACTOR / 2, zFactor + SCALE_FACTOR);
+                xFactor + modelLength * SCALE_FACTOR / 3, yFactor, zFactor,
+                xFactor, yFactor, zFactor,
+                xFactor + modelLength * SCALE_FACTOR / 3, yFactor + modelHeight * SCALE_FACTOR / 2,
+                zFactor + SCALE_FACTOR);
     addTriangle(vertices2, facets2,
-                xFactor,                                  yFactor + modelHeight * SCALE_FACTOR,     zFactor,
-                xFactor + modelLength * SCALE_FACTOR / 3, yFactor + modelHeight * SCALE_FACTOR,     zFactor,
-                xFactor + modelLength * SCALE_FACTOR / 3, yFactor + modelHeight * SCALE_FACTOR / 2, zFactor + SCALE_FACTOR);
+                xFactor, yFactor + modelHeight * SCALE_FACTOR, zFactor,
+                xFactor + modelLength * SCALE_FACTOR / 3, yFactor + modelHeight * SCALE_FACTOR, zFactor,
+                xFactor + modelLength * SCALE_FACTOR / 3, yFactor + modelHeight * SCALE_FACTOR / 2,
+                zFactor + SCALE_FACTOR);
 
 
     addQuad(vertices2, facets2,
-                xFactor + modelLength * SCALE_FACTOR / 3,     yFactor,                                  zFactor,
-                xFactor + modelLength * SCALE_FACTOR * 2 / 3, yFactor,                                  zFactor,
-                xFactor + modelLength * SCALE_FACTOR * 2 / 3, yFactor + modelHeight * SCALE_FACTOR / 2, zFactor + SCALE_FACTOR,
-                xFactor + modelLength * SCALE_FACTOR / 3,     yFactor + modelHeight * SCALE_FACTOR / 2, zFactor + SCALE_FACTOR);
+            xFactor + modelLength * SCALE_FACTOR / 3, yFactor, zFactor,
+            xFactor + modelLength * SCALE_FACTOR * 2 / 3, yFactor, zFactor,
+            xFactor + modelLength * SCALE_FACTOR * 2 / 3, yFactor + modelHeight * SCALE_FACTOR / 2,
+            zFactor + SCALE_FACTOR,
+            xFactor + modelLength * SCALE_FACTOR / 3, yFactor + modelHeight * SCALE_FACTOR / 2, zFactor + SCALE_FACTOR);
     addQuad(vertices2, facets2,
-                xFactor + modelLength * SCALE_FACTOR / 3,     yFactor + modelHeight * SCALE_FACTOR / 2, zFactor + SCALE_FACTOR,
-                xFactor + modelLength * SCALE_FACTOR * 2 / 3, yFactor + modelHeight * SCALE_FACTOR / 2, zFactor + SCALE_FACTOR,
-                xFactor + modelLength * SCALE_FACTOR * 2 / 3, yFactor + modelHeight * SCALE_FACTOR,     zFactor,
-                xFactor + modelLength * SCALE_FACTOR / 3,     yFactor + modelHeight * SCALE_FACTOR,     zFactor);
+            xFactor + modelLength * SCALE_FACTOR / 3, yFactor + modelHeight * SCALE_FACTOR / 2, zFactor + SCALE_FACTOR,
+            xFactor + modelLength * SCALE_FACTOR * 2 / 3, yFactor + modelHeight * SCALE_FACTOR / 2,
+            zFactor + SCALE_FACTOR,
+            xFactor + modelLength * SCALE_FACTOR * 2 / 3, yFactor + modelHeight * SCALE_FACTOR, zFactor,
+            xFactor + modelLength * SCALE_FACTOR / 3, yFactor + modelHeight * SCALE_FACTOR, zFactor);
 
 
     PolModel roofHouseModel(vertices2, facets2, "Крыша дома");
@@ -1034,17 +961,14 @@ int UsageFacade::addHouse(int xCell, int yCell, int modelLength, int modelHeight
     zFactor = PLATE_Z;
 
     //окна дома
-    for (int i = 0; i < countFloors; i++)
-    {
-        for (int k = 0; k < 2; k++)
-        {
-            for (int j = 0; j < modelLength; j++)
-            {
+    for (int i = 0; i < countFloors; i++) {
+        for (int k = 0; k < 2; k++) {
+            for (int j = 0; j < modelLength; j++) {
                 addQuad(vertices3, facets3,
-                        xFactor + SCALE_FACTOR / 3,     yFactor, zFactor + SCALE_FACTOR * 2 / 3,
+                        xFactor + SCALE_FACTOR / 3, yFactor, zFactor + SCALE_FACTOR * 2 / 3,
                         xFactor + SCALE_FACTOR * 2 / 3, yFactor, zFactor + SCALE_FACTOR * 2 / 3,
                         xFactor + SCALE_FACTOR * 2 / 3, yFactor, zFactor + SCALE_FACTOR / 3,
-                        xFactor + SCALE_FACTOR / 3,     yFactor, zFactor + SCALE_FACTOR / 3);
+                        xFactor + SCALE_FACTOR / 3, yFactor, zFactor + SCALE_FACTOR / 3);
 
                 xFactor += SCALE_FACTOR;
             }
@@ -1056,15 +980,13 @@ int UsageFacade::addHouse(int xCell, int yCell, int modelLength, int modelHeight
         yFactor = yCell * SCALE_FACTOR + 10;
 
 
-        for (int k = 0; k < 2; k++)
-        {
-            for (int j = 0; j < modelHeight; j++)
-            {
+        for (int k = 0; k < 2; k++) {
+            for (int j = 0; j < modelHeight; j++) {
                 addQuad(vertices3, facets3,
-                        xFactor, yFactor + SCALE_FACTOR / 3,     zFactor + SCALE_FACTOR * 2 / 3,
+                        xFactor, yFactor + SCALE_FACTOR / 3, zFactor + SCALE_FACTOR * 2 / 3,
                         xFactor, yFactor + SCALE_FACTOR * 2 / 3, zFactor + SCALE_FACTOR * 2 / 3,
                         xFactor, yFactor + SCALE_FACTOR * 2 / 3, zFactor + SCALE_FACTOR / 3,
-                        xFactor, yFactor + SCALE_FACTOR / 3,     zFactor + SCALE_FACTOR / 3);
+                        xFactor, yFactor + SCALE_FACTOR / 3, zFactor + SCALE_FACTOR / 3);
 
                 yFactor += SCALE_FACTOR;
             }
@@ -1091,19 +1013,14 @@ int UsageFacade::addHouse(int xCell, int yCell, int modelLength, int modelHeight
 }
 
 
-
-
-
-int UsageFacade::addTree(int xCell, int yCell)
-{
+int UsageFacade::addTree(int xCell, int yCell) {
     xCell -= 1;
     yCell -= 1;
 
     if (xCell >= (int) scene->getWidth() || yCell >= (int) scene->getHeight())
         return 2;
 
-    if (scene->getUsedCells()[yCell][xCell] != 0 && scene->getUsedCells()[yCell][xCell] != 3)
-    {
+    if (scene->getUsedCells()[yCell][xCell] != 0 && scene->getUsedCells()[yCell][xCell] != 3) {
         qDebug() << "i = " << xCell << "j = " << xCell << "ячейка занята (дерево)";
         return 1;
     }
@@ -1117,93 +1034,93 @@ int UsageFacade::addTree(int xCell, int yCell)
 
     //нижняя часть листвы дерева
     addQuad(vertices2, facets2,
-            xFactor,                yFactor,                zFactor + SCALE_FACTOR,
-            xFactor + SCALE_FACTOR, yFactor,                zFactor + SCALE_FACTOR,
+            xFactor, yFactor, zFactor + SCALE_FACTOR,
+            xFactor + SCALE_FACTOR, yFactor, zFactor + SCALE_FACTOR,
             xFactor + SCALE_FACTOR, yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR,
-            xFactor,                yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR);
+            xFactor, yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR);
 
     addQuad(vertices2, facets2,
-            xFactor,                yFactor, zFactor + SCALE_FACTOR,
+            xFactor, yFactor, zFactor + SCALE_FACTOR,
             xFactor + SCALE_FACTOR, yFactor, zFactor + SCALE_FACTOR,
             xFactor + SCALE_FACTOR, yFactor, zFactor + SCALE_FACTOR * 3 / 2,
-            xFactor,                yFactor, zFactor + SCALE_FACTOR * 3 / 2);
+            xFactor, yFactor, zFactor + SCALE_FACTOR * 3 / 2);
     addQuad(vertices2, facets2,
-            xFactor, yFactor,                zFactor + SCALE_FACTOR,
+            xFactor, yFactor, zFactor + SCALE_FACTOR,
             xFactor, yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR,
             xFactor, yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR * 3 / 2,
-            xFactor, yFactor,                zFactor + SCALE_FACTOR * 3 / 2);
+            xFactor, yFactor, zFactor + SCALE_FACTOR * 3 / 2);
     addQuad(vertices2, facets2,
-            xFactor + SCALE_FACTOR, yFactor,                zFactor + SCALE_FACTOR,
+            xFactor + SCALE_FACTOR, yFactor, zFactor + SCALE_FACTOR,
             xFactor + SCALE_FACTOR, yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR,
             xFactor + SCALE_FACTOR, yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR * 3 / 2,
-            xFactor + SCALE_FACTOR, yFactor,                zFactor + SCALE_FACTOR * 3 / 2);
+            xFactor + SCALE_FACTOR, yFactor, zFactor + SCALE_FACTOR * 3 / 2);
     addQuad(vertices2, facets2,
-            xFactor,                yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR,
+            xFactor, yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR,
             xFactor + SCALE_FACTOR, yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR,
             xFactor + SCALE_FACTOR, yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR * 3 / 2,
-            xFactor,                yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR * 3 / 2);
+            xFactor, yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR * 3 / 2);
 
     addQuad(vertices2, facets2,
-            xFactor,                yFactor,                zFactor + SCALE_FACTOR * 3 / 2,
-            xFactor + SCALE_FACTOR, yFactor,                zFactor + SCALE_FACTOR * 3 / 2,
+            xFactor, yFactor, zFactor + SCALE_FACTOR * 3 / 2,
+            xFactor + SCALE_FACTOR, yFactor, zFactor + SCALE_FACTOR * 3 / 2,
             xFactor + SCALE_FACTOR, yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR * 3 / 2,
-            xFactor,                yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR * 3 / 2);
+            xFactor, yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR * 3 / 2);
 
     //верхняя часть листвы дерева (вдоль Ox)
     addQuad(vertices2, facets2,
-            xFactor,                yFactor + SCALE_FACTOR / 3, zFactor + SCALE_FACTOR * 3 / 2,
+            xFactor, yFactor + SCALE_FACTOR / 3, zFactor + SCALE_FACTOR * 3 / 2,
             xFactor + SCALE_FACTOR, yFactor + SCALE_FACTOR / 3, zFactor + SCALE_FACTOR * 3 / 2,
             xFactor + SCALE_FACTOR, yFactor + SCALE_FACTOR / 3, zFactor + SCALE_FACTOR * 2,
-            xFactor,                yFactor + SCALE_FACTOR / 3, zFactor + SCALE_FACTOR * 2);
+            xFactor, yFactor + SCALE_FACTOR / 3, zFactor + SCALE_FACTOR * 2);
     addQuad(vertices2, facets2,
-            xFactor, yFactor + SCALE_FACTOR / 3,     zFactor + SCALE_FACTOR * 3 / 2,
+            xFactor, yFactor + SCALE_FACTOR / 3, zFactor + SCALE_FACTOR * 3 / 2,
             xFactor, yFactor + SCALE_FACTOR * 2 / 3, zFactor + SCALE_FACTOR * 3 / 2,
             xFactor, yFactor + SCALE_FACTOR * 2 / 3, zFactor + SCALE_FACTOR * 2,
-            xFactor, yFactor + SCALE_FACTOR / 3,     zFactor + SCALE_FACTOR * 2);
+            xFactor, yFactor + SCALE_FACTOR / 3, zFactor + SCALE_FACTOR * 2);
     addQuad(vertices2, facets2,
-            xFactor + SCALE_FACTOR, yFactor + SCALE_FACTOR / 3,     zFactor + SCALE_FACTOR * 3 / 2,
+            xFactor + SCALE_FACTOR, yFactor + SCALE_FACTOR / 3, zFactor + SCALE_FACTOR * 3 / 2,
             xFactor + SCALE_FACTOR, yFactor + SCALE_FACTOR * 2 / 3, zFactor + SCALE_FACTOR * 3 / 2,
             xFactor + SCALE_FACTOR, yFactor + SCALE_FACTOR * 2 / 3, zFactor + SCALE_FACTOR * 2,
-            xFactor + SCALE_FACTOR, yFactor + SCALE_FACTOR / 3,     zFactor + SCALE_FACTOR * 2);
+            xFactor + SCALE_FACTOR, yFactor + SCALE_FACTOR / 3, zFactor + SCALE_FACTOR * 2);
     addQuad(vertices2, facets2,
-            xFactor,                yFactor + SCALE_FACTOR * 2 / 3, zFactor + SCALE_FACTOR * 3 / 2,
+            xFactor, yFactor + SCALE_FACTOR * 2 / 3, zFactor + SCALE_FACTOR * 3 / 2,
             xFactor + SCALE_FACTOR, yFactor + SCALE_FACTOR * 2 / 3, zFactor + SCALE_FACTOR * 3 / 2,
             xFactor + SCALE_FACTOR, yFactor + SCALE_FACTOR * 2 / 3, zFactor + SCALE_FACTOR * 2,
-            xFactor,                yFactor + SCALE_FACTOR * 2 / 3, zFactor + SCALE_FACTOR * 2);
+            xFactor, yFactor + SCALE_FACTOR * 2 / 3, zFactor + SCALE_FACTOR * 2);
 
     addQuad(vertices2, facets2,
-            xFactor,                yFactor + SCALE_FACTOR / 3,     zFactor + SCALE_FACTOR * 2,
-            xFactor + SCALE_FACTOR, yFactor + SCALE_FACTOR / 3,     zFactor + SCALE_FACTOR * 2,
+            xFactor, yFactor + SCALE_FACTOR / 3, zFactor + SCALE_FACTOR * 2,
+            xFactor + SCALE_FACTOR, yFactor + SCALE_FACTOR / 3, zFactor + SCALE_FACTOR * 2,
             xFactor + SCALE_FACTOR, yFactor + SCALE_FACTOR * 2 / 3, zFactor + SCALE_FACTOR * 2,
-            xFactor,                yFactor + SCALE_FACTOR * 2 / 3, zFactor + SCALE_FACTOR * 2);
+            xFactor, yFactor + SCALE_FACTOR * 2 / 3, zFactor + SCALE_FACTOR * 2);
 
     //верхняя часть листвы дерева (вдоль Oy)
     addQuad(vertices2, facets2,
-            xFactor + SCALE_FACTOR / 3,     yFactor, zFactor + SCALE_FACTOR * 3 / 2,
+            xFactor + SCALE_FACTOR / 3, yFactor, zFactor + SCALE_FACTOR * 3 / 2,
             xFactor + SCALE_FACTOR * 2 / 3, yFactor, zFactor + SCALE_FACTOR * 3 / 2,
             xFactor + SCALE_FACTOR * 2 / 3, yFactor, zFactor + SCALE_FACTOR * 2,
-            xFactor + SCALE_FACTOR / 3,     yFactor, zFactor + SCALE_FACTOR * 2);
+            xFactor + SCALE_FACTOR / 3, yFactor, zFactor + SCALE_FACTOR * 2);
     addQuad(vertices2, facets2,
-            xFactor + SCALE_FACTOR / 3, yFactor,                zFactor + SCALE_FACTOR * 3 / 2,
+            xFactor + SCALE_FACTOR / 3, yFactor, zFactor + SCALE_FACTOR * 3 / 2,
             xFactor + SCALE_FACTOR / 3, yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR * 3 / 2,
             xFactor + SCALE_FACTOR / 3, yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR * 2,
-            xFactor + SCALE_FACTOR / 3, yFactor,                zFactor + SCALE_FACTOR * 2);
+            xFactor + SCALE_FACTOR / 3, yFactor, zFactor + SCALE_FACTOR * 2);
     addQuad(vertices2, facets2,
-            xFactor + SCALE_FACTOR * 2 / 3, yFactor,                zFactor + SCALE_FACTOR * 3 / 2,
+            xFactor + SCALE_FACTOR * 2 / 3, yFactor, zFactor + SCALE_FACTOR * 3 / 2,
             xFactor + SCALE_FACTOR * 2 / 3, yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR * 3 / 2,
             xFactor + SCALE_FACTOR * 2 / 3, yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR * 2,
-            xFactor + SCALE_FACTOR * 2 / 3, yFactor,                zFactor + SCALE_FACTOR * 2);
+            xFactor + SCALE_FACTOR * 2 / 3, yFactor, zFactor + SCALE_FACTOR * 2);
     addQuad(vertices2, facets2,
-            xFactor + SCALE_FACTOR / 3,     yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR * 3 / 2,
+            xFactor + SCALE_FACTOR / 3, yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR * 3 / 2,
             xFactor + SCALE_FACTOR * 2 / 3, yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR * 3 / 2,
             xFactor + SCALE_FACTOR * 2 / 3, yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR * 2,
-            xFactor + SCALE_FACTOR / 3,     yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR * 2);
+            xFactor + SCALE_FACTOR / 3, yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR * 2);
 
     addQuad(vertices2, facets2,
-            xFactor + SCALE_FACTOR / 3,     yFactor,                zFactor + SCALE_FACTOR * 2,
-            xFactor + SCALE_FACTOR * 2 / 3, yFactor,                zFactor + SCALE_FACTOR * 2,
+            xFactor + SCALE_FACTOR / 3, yFactor, zFactor + SCALE_FACTOR * 2,
+            xFactor + SCALE_FACTOR * 2 / 3, yFactor, zFactor + SCALE_FACTOR * 2,
             xFactor + SCALE_FACTOR * 2 / 3, yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR * 2,
-            xFactor + SCALE_FACTOR / 3,     yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR * 2);
+            xFactor + SCALE_FACTOR / 3, yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR * 2);
 
     PolModel treeFoliageModel(vertices2, facets2, "Дерево");
     treeFoliageModel.setUsedCell(xCell, yCell);
@@ -1252,28 +1169,21 @@ int UsageFacade::addTree(int xCell, int yCell)
 }
 
 
-
-
-
-int UsageFacade::addRoad(int xCell, int yCell, Direction direction)
-{
+int UsageFacade::addRoad(int xCell, int yCell, Direction direction) {
     xCell -= 1;
     yCell -= 1;
 
     if (xCell >= (int) scene->getWidth() || yCell >= (int) scene->getHeight())
         return 2;
 
-    if (scene->getUsedCells()[yCell][xCell] == 3)
-    {
+    if (scene->getUsedCells()[yCell][xCell] == 3) {
         qDebug() << "i = " << xCell << "j = " << xCell << "ячейка рядом с домом (дорога)";
         return 4;
     }
-    if (scene->getUsedCells()[yCell][xCell] != 0)
-    {
+    if (scene->getUsedCells()[yCell][xCell] != 0) {
         qDebug() << "i = " << xCell << "j = " << xCell << "ячейка занята (дорога)";
         return 1;
     }
-
 
 
     std::vector<Vertex> vertices;
@@ -1285,10 +1195,10 @@ int UsageFacade::addRoad(int xCell, int yCell, Direction direction)
 
     //асфальт
     addQuad(vertices, facets,
-            xFactor,                yFactor,                zFactor + 1,
-            xFactor + SCALE_FACTOR, yFactor,                zFactor + 1,
+            xFactor, yFactor, zFactor + 1,
+            xFactor + SCALE_FACTOR, yFactor, zFactor + 1,
             xFactor + SCALE_FACTOR, yFactor + SCALE_FACTOR, zFactor + 1,
-            xFactor,                yFactor + SCALE_FACTOR, zFactor + 1);
+            xFactor, yFactor + SCALE_FACTOR, zFactor + 1);
 
     PolModel roadAsphaltModel(vertices, facets, "Дорога");
     roadAsphaltModel.setUsedCell(xCell, yCell);
@@ -1303,21 +1213,18 @@ int UsageFacade::addRoad(int xCell, int yCell, Direction direction)
     std::vector<Facet> facets2;
 
     //полоса дороги
-    if (direction == Horizontal)
-    {
+    if (direction == Horizontal) {
         addQuad(vertices2, facets2,
-                xFactor + SCALE_FACTOR / 6,     yFactor + SCALE_FACTOR * 2 / 5, zFactor + 2,
+                xFactor + SCALE_FACTOR / 6, yFactor + SCALE_FACTOR * 2 / 5, zFactor + 2,
                 xFactor + SCALE_FACTOR * 5 / 6, yFactor + SCALE_FACTOR * 2 / 5, zFactor + 2,
                 xFactor + SCALE_FACTOR * 5 / 6, yFactor + SCALE_FACTOR * 3 / 5, zFactor + 2,
-                xFactor + SCALE_FACTOR / 6,     yFactor + SCALE_FACTOR * 3 / 5, zFactor + 2);
-    }
-    else
-    {
+                xFactor + SCALE_FACTOR / 6, yFactor + SCALE_FACTOR * 3 / 5, zFactor + 2);
+    } else {
         addQuad(vertices2, facets2,
-                xFactor + SCALE_FACTOR * 2 / 5, yFactor + SCALE_FACTOR / 6,     zFactor + 2,
+                xFactor + SCALE_FACTOR * 2 / 5, yFactor + SCALE_FACTOR / 6, zFactor + 2,
                 xFactor + SCALE_FACTOR * 2 / 5, yFactor + SCALE_FACTOR * 5 / 6, zFactor + 2,
                 xFactor + SCALE_FACTOR * 3 / 5, yFactor + SCALE_FACTOR * 5 / 6, zFactor + 2,
-                xFactor + SCALE_FACTOR * 3 / 5, yFactor + SCALE_FACTOR / 6,     zFactor + 2);
+                xFactor + SCALE_FACTOR * 3 / 5, yFactor + SCALE_FACTOR / 6, zFactor + 2);
     }
 
     PolModel roadStripeModel(vertices2, facets2, "Полоса дороги");
@@ -1333,22 +1240,16 @@ int UsageFacade::addRoad(int xCell, int yCell, Direction direction)
 }
 
 
-
-
-int UsageFacade::addCar(int xCell, int yCell, Direction direction, ColorCar color_car)
-{
+int UsageFacade::addCar(int xCell, int yCell, Direction direction, ColorCar color_car) {
     int modelLength;
     int modelHeight;
 
-    if(direction == Horizontal)
-    {
+    if (direction == Horizontal) {
         modelHeight = 1;
-        modelLength  = 2;
-    }
-    else
-    {
+        modelLength = 2;
+    } else {
         modelHeight = 2;
-        modelLength  = 1;
+        modelLength = 1;
     }
 
     xCell -= 1;
@@ -1358,12 +1259,9 @@ int UsageFacade::addCar(int xCell, int yCell, Direction direction, ColorCar colo
         yCell + modelHeight - 1 >= (int) scene->getHeight())
         return 2;
 
-    for (int i = yCell; i < yCell + modelHeight; i++)
-    {
-        for (int j = xCell; j < xCell + modelLength; j++)
-        {
-            if (scene->getUsedCells()[i][j] != 2)
-            {
+    for (int i = yCell; i < yCell + modelHeight; i++) {
+        for (int j = xCell; j < xCell + modelLength; j++) {
+            if (scene->getUsedCells()[i][j] != 2) {
                 qDebug() << "i = " << i << "j = " << j << "нет дороги (машина)";
                 return 3;
             }
@@ -1380,38 +1278,38 @@ int UsageFacade::addCar(int xCell, int yCell, Direction direction, ColorCar colo
 
     //рама машины
     addQuad(vertices, facets,
-            xFactor + SCALE_FACTOR / 4,     yFactor + SCALE_FACTOR / 6,     zFactor,
-            xFactor + SCALE_FACTOR * 7 / 4, yFactor + SCALE_FACTOR / 6,     zFactor,
+            xFactor + SCALE_FACTOR / 4, yFactor + SCALE_FACTOR / 6, zFactor,
+            xFactor + SCALE_FACTOR * 7 / 4, yFactor + SCALE_FACTOR / 6, zFactor,
             xFactor + SCALE_FACTOR * 7 / 4, yFactor + SCALE_FACTOR * 5 / 6, zFactor,
-            xFactor + SCALE_FACTOR / 4,     yFactor + SCALE_FACTOR * 5 / 6, zFactor);
+            xFactor + SCALE_FACTOR / 4, yFactor + SCALE_FACTOR * 5 / 6, zFactor);
     addQuad(vertices, facets,
-            xFactor + SCALE_FACTOR / 4, yFactor + SCALE_FACTOR / 6,     zFactor,
-            xFactor + SCALE_FACTOR / 4, yFactor + SCALE_FACTOR / 6,     zFactor + SCALE_FACTOR / 3,
+            xFactor + SCALE_FACTOR / 4, yFactor + SCALE_FACTOR / 6, zFactor,
+            xFactor + SCALE_FACTOR / 4, yFactor + SCALE_FACTOR / 6, zFactor + SCALE_FACTOR / 3,
             xFactor + SCALE_FACTOR / 4, yFactor + SCALE_FACTOR * 5 / 6, zFactor + SCALE_FACTOR / 3,
             xFactor + SCALE_FACTOR / 4, yFactor + SCALE_FACTOR * 5 / 6, zFactor);
     addQuad(vertices, facets,
-            xFactor + SCALE_FACTOR * 7 / 4, yFactor + SCALE_FACTOR / 6,     zFactor,
-            xFactor + SCALE_FACTOR * 7 / 4, yFactor + SCALE_FACTOR / 6,     zFactor + SCALE_FACTOR / 3,
+            xFactor + SCALE_FACTOR * 7 / 4, yFactor + SCALE_FACTOR / 6, zFactor,
+            xFactor + SCALE_FACTOR * 7 / 4, yFactor + SCALE_FACTOR / 6, zFactor + SCALE_FACTOR / 3,
             xFactor + SCALE_FACTOR * 7 / 4, yFactor + SCALE_FACTOR * 5 / 6, zFactor + SCALE_FACTOR / 3,
             xFactor + SCALE_FACTOR * 7 / 4, yFactor + SCALE_FACTOR * 5 / 6, zFactor);
     addQuad(vertices, facets,
-            xFactor + SCALE_FACTOR / 4,     yFactor + SCALE_FACTOR / 6, zFactor,
+            xFactor + SCALE_FACTOR / 4, yFactor + SCALE_FACTOR / 6, zFactor,
             xFactor + SCALE_FACTOR * 7 / 4, yFactor + SCALE_FACTOR / 6, zFactor,
             xFactor + SCALE_FACTOR * 7 / 4, yFactor + SCALE_FACTOR / 6, zFactor + SCALE_FACTOR / 3,
-            xFactor + SCALE_FACTOR / 4,     yFactor + SCALE_FACTOR / 6, zFactor + SCALE_FACTOR / 3);
+            xFactor + SCALE_FACTOR / 4, yFactor + SCALE_FACTOR / 6, zFactor + SCALE_FACTOR / 3);
     addQuad(vertices, facets,
-            xFactor + SCALE_FACTOR / 4,     yFactor + SCALE_FACTOR * 5 / 6, zFactor,
+            xFactor + SCALE_FACTOR / 4, yFactor + SCALE_FACTOR * 5 / 6, zFactor,
             xFactor + SCALE_FACTOR * 7 / 4, yFactor + SCALE_FACTOR * 5 / 6, zFactor,
             xFactor + SCALE_FACTOR * 7 / 4, yFactor + SCALE_FACTOR * 5 / 6, zFactor + SCALE_FACTOR / 3,
-            xFactor + SCALE_FACTOR / 4,     yFactor + SCALE_FACTOR * 5 / 6, zFactor + SCALE_FACTOR / 3);
+            xFactor + SCALE_FACTOR / 4, yFactor + SCALE_FACTOR * 5 / 6, zFactor + SCALE_FACTOR / 3);
 
     zFactor += SCALE_FACTOR / 3;
 
     addQuad(vertices, facets,
-            xFactor + SCALE_FACTOR / 4,     yFactor + SCALE_FACTOR / 6,     zFactor,
-            xFactor + SCALE_FACTOR * 7 / 4, yFactor + SCALE_FACTOR / 6,     zFactor,
+            xFactor + SCALE_FACTOR / 4, yFactor + SCALE_FACTOR / 6, zFactor,
+            xFactor + SCALE_FACTOR * 7 / 4, yFactor + SCALE_FACTOR / 6, zFactor,
             xFactor + SCALE_FACTOR * 7 / 4, yFactor + SCALE_FACTOR * 5 / 6, zFactor,
-            xFactor + SCALE_FACTOR / 4,     yFactor + SCALE_FACTOR * 5 / 6, zFactor);
+            xFactor + SCALE_FACTOR / 4, yFactor + SCALE_FACTOR * 5 / 6, zFactor);
 
     //кузов машины
     addQuad(vertices, facets,
@@ -1427,43 +1325,43 @@ int UsageFacade::addCar(int xCell, int yCell, Direction direction, ColorCar colo
 
     //лобовое стекло
     addQuad(vertices, facets,
-            xFactor + SCALE_FACTOR * 5 / 6, yFactor + SCALE_FACTOR / 6,     zFactor + SCALE_FACTOR / 5,
+            xFactor + SCALE_FACTOR * 5 / 6, yFactor + SCALE_FACTOR / 6, zFactor + SCALE_FACTOR / 5,
             xFactor + SCALE_FACTOR * 5 / 6, yFactor + SCALE_FACTOR * 5 / 6, zFactor + SCALE_FACTOR / 5,
             xFactor + SCALE_FACTOR * 3 / 6, yFactor + SCALE_FACTOR * 5 / 6, zFactor,
-            xFactor + SCALE_FACTOR * 3 / 6, yFactor + SCALE_FACTOR / 6,     zFactor);
+            xFactor + SCALE_FACTOR * 3 / 6, yFactor + SCALE_FACTOR / 6, zFactor);
     //заднее стекло
     addQuad(vertices, facets,
-            xFactor + SCALE_FACTOR * 7 / 6, yFactor + SCALE_FACTOR / 6,     zFactor + SCALE_FACTOR / 5,
+            xFactor + SCALE_FACTOR * 7 / 6, yFactor + SCALE_FACTOR / 6, zFactor + SCALE_FACTOR / 5,
             xFactor + SCALE_FACTOR * 7 / 6, yFactor + SCALE_FACTOR * 5 / 6, zFactor + SCALE_FACTOR / 5,
             xFactor + SCALE_FACTOR * 9 / 6, yFactor + SCALE_FACTOR * 5 / 6, zFactor,
-            xFactor + SCALE_FACTOR * 9 / 6, yFactor + SCALE_FACTOR / 6,     zFactor);
+            xFactor + SCALE_FACTOR * 9 / 6, yFactor + SCALE_FACTOR / 6, zFactor);
 
     // стёкла водителя
     addTriangle(vertices, facets,
-            xFactor + SCALE_FACTOR * 5 / 6, yFactor + SCALE_FACTOR / 6, zFactor + SCALE_FACTOR / 5,
-            xFactor + SCALE_FACTOR * 5 / 6, yFactor + SCALE_FACTOR / 6, zFactor,
-            xFactor + SCALE_FACTOR * 3 / 6, yFactor + SCALE_FACTOR / 6, zFactor);
+                xFactor + SCALE_FACTOR * 5 / 6, yFactor + SCALE_FACTOR / 6, zFactor + SCALE_FACTOR / 5,
+                xFactor + SCALE_FACTOR * 5 / 6, yFactor + SCALE_FACTOR / 6, zFactor,
+                xFactor + SCALE_FACTOR * 3 / 6, yFactor + SCALE_FACTOR / 6, zFactor);
     addTriangle(vertices, facets,
-            xFactor + SCALE_FACTOR * 5 / 6, yFactor + SCALE_FACTOR * 5 / 6, zFactor + SCALE_FACTOR / 5,
-            xFactor + SCALE_FACTOR * 5 / 6, yFactor + SCALE_FACTOR * 5 / 6, zFactor,
-            xFactor + SCALE_FACTOR * 3 / 6, yFactor + SCALE_FACTOR * 5 / 6, zFactor);
+                xFactor + SCALE_FACTOR * 5 / 6, yFactor + SCALE_FACTOR * 5 / 6, zFactor + SCALE_FACTOR / 5,
+                xFactor + SCALE_FACTOR * 5 / 6, yFactor + SCALE_FACTOR * 5 / 6, zFactor,
+                xFactor + SCALE_FACTOR * 3 / 6, yFactor + SCALE_FACTOR * 5 / 6, zFactor);
 
     // стёкла пассажира
     addTriangle(vertices, facets,
-            xFactor + SCALE_FACTOR * 7 / 6, yFactor + SCALE_FACTOR / 6, zFactor + SCALE_FACTOR / 5,
-            xFactor + SCALE_FACTOR * 7 / 6, yFactor + SCALE_FACTOR / 6, zFactor,
-            xFactor + SCALE_FACTOR * 9 / 6, yFactor + SCALE_FACTOR / 6, zFactor);
+                xFactor + SCALE_FACTOR * 7 / 6, yFactor + SCALE_FACTOR / 6, zFactor + SCALE_FACTOR / 5,
+                xFactor + SCALE_FACTOR * 7 / 6, yFactor + SCALE_FACTOR / 6, zFactor,
+                xFactor + SCALE_FACTOR * 9 / 6, yFactor + SCALE_FACTOR / 6, zFactor);
     addTriangle(vertices, facets,
-            xFactor + SCALE_FACTOR * 7 / 6, yFactor + SCALE_FACTOR * 5 / 6, zFactor + SCALE_FACTOR / 5,
-            xFactor + SCALE_FACTOR * 7 / 6, yFactor + SCALE_FACTOR * 5 / 6, zFactor,
-            xFactor + SCALE_FACTOR * 9 / 6, yFactor + SCALE_FACTOR * 5 / 6, zFactor);
+                xFactor + SCALE_FACTOR * 7 / 6, yFactor + SCALE_FACTOR * 5 / 6, zFactor + SCALE_FACTOR / 5,
+                xFactor + SCALE_FACTOR * 7 / 6, yFactor + SCALE_FACTOR * 5 / 6, zFactor,
+                xFactor + SCALE_FACTOR * 9 / 6, yFactor + SCALE_FACTOR * 5 / 6, zFactor);
 
     //крыша машины
     zFactor += SCALE_FACTOR / 5;
 
     addQuad(vertices, facets,
-            xFactor + SCALE_FACTOR * 5 / 6, yFactor + SCALE_FACTOR / 6,     zFactor,
-            xFactor + SCALE_FACTOR * 7 / 6, yFactor + SCALE_FACTOR / 6,     zFactor,
+            xFactor + SCALE_FACTOR * 5 / 6, yFactor + SCALE_FACTOR / 6, zFactor,
+            xFactor + SCALE_FACTOR * 7 / 6, yFactor + SCALE_FACTOR / 6, zFactor,
             xFactor + SCALE_FACTOR * 7 / 6, yFactor + SCALE_FACTOR * 5 / 6, zFactor,
             xFactor + SCALE_FACTOR * 5 / 6, yFactor + SCALE_FACTOR * 5 / 6, zFactor);
 
@@ -1476,7 +1374,7 @@ int UsageFacade::addCar(int xCell, int yCell, Direction direction, ColorCar colo
     carModel.setModelNum(scene->getRealModelsNum());
     carModel.setModelType(PolModel::Car);
 
-    if(modelLength == 1)
+    if (modelLength == 1)
         carModel.rotateZ(-90);
 
     scene->addModel(carModel);
@@ -1489,37 +1387,35 @@ int UsageFacade::addCar(int xCell, int yCell, Direction direction, ColorCar colo
     zFactor = PLATE_Z;
 
     //колёса машины
-    for (int i = 0; i < 2; i++)
-    {
+    for (int i = 0; i < 2; i++) {
         yFactor -= 2;
 
-        for (int j = 0; j < 2; j++)
-        {
+        for (int j = 0; j < 2; j++) {
             addQuad(vertices2, facets2,
-                    xFactor + SCALE_FACTOR / 2,     yFactor + SCALE_FACTOR / 6,     zFactor,
-                    xFactor + SCALE_FACTOR * 3 / 4, yFactor + SCALE_FACTOR / 6,     zFactor,
+                    xFactor + SCALE_FACTOR / 2, yFactor + SCALE_FACTOR / 6, zFactor,
+                    xFactor + SCALE_FACTOR * 3 / 4, yFactor + SCALE_FACTOR / 6, zFactor,
                     xFactor + SCALE_FACTOR * 3 / 4, yFactor + SCALE_FACTOR * 2 / 6, zFactor,
-                    xFactor + SCALE_FACTOR / 2,     yFactor + SCALE_FACTOR * 2 / 6, zFactor);
+                    xFactor + SCALE_FACTOR / 2, yFactor + SCALE_FACTOR * 2 / 6, zFactor);
             addQuad(vertices2, facets2,
-                    xFactor + SCALE_FACTOR / 2, yFactor + SCALE_FACTOR / 6,     zFactor,
-                    xFactor + SCALE_FACTOR / 2, yFactor + SCALE_FACTOR / 6,     zFactor + SCALE_FACTOR / 4,
+                    xFactor + SCALE_FACTOR / 2, yFactor + SCALE_FACTOR / 6, zFactor,
+                    xFactor + SCALE_FACTOR / 2, yFactor + SCALE_FACTOR / 6, zFactor + SCALE_FACTOR / 4,
                     xFactor + SCALE_FACTOR / 2, yFactor + SCALE_FACTOR * 2 / 6, zFactor + SCALE_FACTOR / 4,
                     xFactor + SCALE_FACTOR / 2, yFactor + SCALE_FACTOR * 2 / 6, zFactor);
             addQuad(vertices2, facets2,
-                    xFactor + SCALE_FACTOR * 3 / 4, yFactor + SCALE_FACTOR / 6,     zFactor,
-                    xFactor + SCALE_FACTOR * 3 / 4, yFactor + SCALE_FACTOR / 6,     zFactor + SCALE_FACTOR / 4,
+                    xFactor + SCALE_FACTOR * 3 / 4, yFactor + SCALE_FACTOR / 6, zFactor,
+                    xFactor + SCALE_FACTOR * 3 / 4, yFactor + SCALE_FACTOR / 6, zFactor + SCALE_FACTOR / 4,
                     xFactor + SCALE_FACTOR * 3 / 4, yFactor + SCALE_FACTOR * 2 / 6, zFactor + SCALE_FACTOR / 4,
                     xFactor + SCALE_FACTOR * 3 / 4, yFactor + SCALE_FACTOR * 2 / 6, zFactor);
             addQuad(vertices2, facets2,
-                    xFactor + SCALE_FACTOR / 2,     yFactor + SCALE_FACTOR / 6, zFactor,
+                    xFactor + SCALE_FACTOR / 2, yFactor + SCALE_FACTOR / 6, zFactor,
                     xFactor + SCALE_FACTOR * 3 / 4, yFactor + SCALE_FACTOR / 6, zFactor,
                     xFactor + SCALE_FACTOR * 3 / 4, yFactor + SCALE_FACTOR / 6, zFactor + SCALE_FACTOR / 4,
-                    xFactor + SCALE_FACTOR / 2,     yFactor + SCALE_FACTOR / 6, zFactor + SCALE_FACTOR / 4);
+                    xFactor + SCALE_FACTOR / 2, yFactor + SCALE_FACTOR / 6, zFactor + SCALE_FACTOR / 4);
             addQuad(vertices2, facets2,
-                    xFactor + SCALE_FACTOR / 2,     yFactor + SCALE_FACTOR * 2 / 6, zFactor,
+                    xFactor + SCALE_FACTOR / 2, yFactor + SCALE_FACTOR * 2 / 6, zFactor,
                     xFactor + SCALE_FACTOR * 3 / 4, yFactor + SCALE_FACTOR * 2 / 6, zFactor,
                     xFactor + SCALE_FACTOR * 3 / 4, yFactor + SCALE_FACTOR * 2 / 6, zFactor + SCALE_FACTOR / 4,
-                    xFactor + SCALE_FACTOR / 2,     yFactor + SCALE_FACTOR * 2 / 6, zFactor + SCALE_FACTOR / 4);
+                    xFactor + SCALE_FACTOR / 2, yFactor + SCALE_FACTOR * 2 / 6, zFactor + SCALE_FACTOR / 4);
 
             xFactor += SCALE_FACTOR * 3 / 4;
         }
@@ -1538,7 +1434,7 @@ int UsageFacade::addCar(int xCell, int yCell, Direction direction, ColorCar colo
     wheelsCarModel.setModelType(PolModel::wheelsCar);
     wheelsCarModel.setModelNum(scene->getRealModelsNum());
 
-    if(modelLength == 1)
+    if (modelLength == 1)
         wheelsCarModel.rotateZ(-90);
 
     scene->addModel(wheelsCarModel);
@@ -1552,41 +1448,41 @@ int UsageFacade::addCar(int xCell, int yCell, Direction direction, ColorCar colo
 
     //лобовое стекло
     addQuad(vertices3, facets3,
-            xFactor + SCALE_FACTOR * 5 / 6 - 3, yFactor + SCALE_FACTOR / 6 + 5,     zFactor + SCALE_FACTOR / 5 - 7 / 5,
+            xFactor + SCALE_FACTOR * 5 / 6 - 3, yFactor + SCALE_FACTOR / 6 + 5, zFactor + SCALE_FACTOR / 5 - 7 / 5,
             xFactor + SCALE_FACTOR * 5 / 6 - 3, yFactor + SCALE_FACTOR * 5 / 6 - 5, zFactor + SCALE_FACTOR / 5 - 7 / 5,
             xFactor + SCALE_FACTOR * 3 / 6 + 3, yFactor + SCALE_FACTOR * 5 / 6 - 5, zFactor + 17 / 5,
-            xFactor + SCALE_FACTOR * 3 / 6 + 3, yFactor + SCALE_FACTOR / 6 + 5,     zFactor + 17 / 5);
+            xFactor + SCALE_FACTOR * 3 / 6 + 3, yFactor + SCALE_FACTOR / 6 + 5, zFactor + 17 / 5);
     //заднее стекло
     addQuad(vertices3, facets3,
-            xFactor + SCALE_FACTOR * 7 / 6 + 3, yFactor + SCALE_FACTOR / 6 + 5,     zFactor + SCALE_FACTOR / 5 - 7 / 5,
+            xFactor + SCALE_FACTOR * 7 / 6 + 3, yFactor + SCALE_FACTOR / 6 + 5, zFactor + SCALE_FACTOR / 5 - 7 / 5,
             xFactor + SCALE_FACTOR * 7 / 6 + 3, yFactor + SCALE_FACTOR * 5 / 6 - 5, zFactor + SCALE_FACTOR / 5 - 7 / 5,
             xFactor + SCALE_FACTOR * 9 / 6 - 3, yFactor + SCALE_FACTOR * 5 / 6 - 5, zFactor + 17 / 5,
-            xFactor + SCALE_FACTOR * 9 / 6 - 3, yFactor + SCALE_FACTOR / 6 + 5,     zFactor + 17 / 5);
+            xFactor + SCALE_FACTOR * 9 / 6 - 3, yFactor + SCALE_FACTOR / 6 + 5, zFactor + 17 / 5);
 
     zFactor -= SCALE_FACTOR / 15;
     xFactor += SCALE_FACTOR / 15;
 
     // стёкла водителя
     addTriangle(vertices3, facets3,
-            xFactor + SCALE_FACTOR * 5 / 6, yFactor + SCALE_FACTOR / 6 - 1, zFactor + SCALE_FACTOR / 5,
-            xFactor + SCALE_FACTOR * 5 / 6, yFactor + SCALE_FACTOR / 6 - 1, zFactor,
-            xFactor + SCALE_FACTOR * 3 / 6, yFactor + SCALE_FACTOR / 6 - 1, zFactor);
+                xFactor + SCALE_FACTOR * 5 / 6, yFactor + SCALE_FACTOR / 6 - 1, zFactor + SCALE_FACTOR / 5,
+                xFactor + SCALE_FACTOR * 5 / 6, yFactor + SCALE_FACTOR / 6 - 1, zFactor,
+                xFactor + SCALE_FACTOR * 3 / 6, yFactor + SCALE_FACTOR / 6 - 1, zFactor);
     addTriangle(vertices3, facets3,
-            xFactor + SCALE_FACTOR * 5 / 6, yFactor + SCALE_FACTOR * 5 / 6 + 1, zFactor + SCALE_FACTOR / 5,
-            xFactor + SCALE_FACTOR * 5 / 6, yFactor + SCALE_FACTOR * 5 / 6 + 1, zFactor,
-            xFactor + SCALE_FACTOR * 3 / 6, yFactor + SCALE_FACTOR * 5 / 6 + 1, zFactor);
+                xFactor + SCALE_FACTOR * 5 / 6, yFactor + SCALE_FACTOR * 5 / 6 + 1, zFactor + SCALE_FACTOR / 5,
+                xFactor + SCALE_FACTOR * 5 / 6, yFactor + SCALE_FACTOR * 5 / 6 + 1, zFactor,
+                xFactor + SCALE_FACTOR * 3 / 6, yFactor + SCALE_FACTOR * 5 / 6 + 1, zFactor);
 
     xFactor -= SCALE_FACTOR * 2 / 15;
 
     // стёкла пассажира
     addTriangle(vertices3, facets3,
-            xFactor + SCALE_FACTOR * 7 / 6, yFactor + SCALE_FACTOR / 6 - 1, zFactor + SCALE_FACTOR / 5,
-            xFactor + SCALE_FACTOR * 7 / 6, yFactor + SCALE_FACTOR / 6 - 1, zFactor,
-            xFactor + SCALE_FACTOR * 9 / 6, yFactor + SCALE_FACTOR / 6 - 1, zFactor);
+                xFactor + SCALE_FACTOR * 7 / 6, yFactor + SCALE_FACTOR / 6 - 1, zFactor + SCALE_FACTOR / 5,
+                xFactor + SCALE_FACTOR * 7 / 6, yFactor + SCALE_FACTOR / 6 - 1, zFactor,
+                xFactor + SCALE_FACTOR * 9 / 6, yFactor + SCALE_FACTOR / 6 - 1, zFactor);
     addTriangle(vertices3, facets3,
-            xFactor + SCALE_FACTOR * 7 / 6, yFactor + SCALE_FACTOR * 5 / 6 + 1, zFactor + SCALE_FACTOR / 5,
-            xFactor + SCALE_FACTOR * 7 / 6, yFactor + SCALE_FACTOR * 5 / 6 + 1, zFactor,
-            xFactor + SCALE_FACTOR * 9 / 6, yFactor + SCALE_FACTOR * 5 / 6 + 1, zFactor);
+                xFactor + SCALE_FACTOR * 7 / 6, yFactor + SCALE_FACTOR * 5 / 6 + 1, zFactor + SCALE_FACTOR / 5,
+                xFactor + SCALE_FACTOR * 7 / 6, yFactor + SCALE_FACTOR * 5 / 6 + 1, zFactor,
+                xFactor + SCALE_FACTOR * 9 / 6, yFactor + SCALE_FACTOR * 5 / 6 + 1, zFactor);
 
     PolModel glassCarModel(vertices3, facets3, "Стёкла машины");
     glassCarModel.setUsedCell(xCell, yCell);
@@ -1596,7 +1492,7 @@ int UsageFacade::addCar(int xCell, int yCell, Direction direction, ColorCar colo
     glassCarModel.setModelType(PolModel::glassCar);
     glassCarModel.setModelNum(scene->getRealModelsNum());
 
-    if(modelLength == 1)
+    if (modelLength == 1)
         glassCarModel.rotateZ(-90);
 
     scene->addModel(glassCarModel);

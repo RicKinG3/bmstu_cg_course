@@ -1,5 +1,6 @@
 #ifndef USAGEFACADE_HPP
 #define USAGEFACADE_HPP
+
 #include "/usr/include/eigen3/Eigen/Dense"
 #include "../obj/objects.hpp"
 #include <QGraphicsScene>
@@ -11,63 +12,89 @@
 
 
 
-class Drawer
-{
+class Drawer {
 public:
     void zBufferAlg(CellScene *scene, size_t bufheight, size_t bufWidth);
+
     void zBufForModel(std::vector<Facet> &facets, std::vector<Vertex> &vertices,
-        Eigen::Matrix4f &transMat, size_t color, CellScene *scene, size_t bufWidth, size_t bufHeight);
-    void shadowMapForModel(std::vector<Facet> &facets, std::vector<Vertex> &vertices,
-        Eigen::Matrix4f &transMat, Illuminant *illum, size_t bufWidth, size_t bufHeight);
+                      Eigen::Matrix4f &transMat, size_t color, CellScene *scene, size_t bufWidth, size_t bufHeight);
 
+    void generateShadowMap(std::vector<Facet> &modelFacets, std::vector<Vertex> &modelVertices,
+                           Eigen::Matrix4f &modelTransformationMatrix, Illuminant *lightSource, size_t bufWidth,
+                           size_t bufHeight);
 
+    void prepareTransformationMatrices(Eigen::Matrix4f &toCenter, Eigen::Matrix4f &backToStart);
+
+    std::array<Dot3D, 3> transformFacetVertices(Facet &facet,
+                                                const std::vector<Vertex> &modelVertices,
+                                                const Eigen::Matrix4f &modelTransformationMatrix,
+                                                const Eigen::Matrix4f &lightSourceMatrix,
+                                                const Eigen::Matrix4f &toCenter,
+                                                const Eigen::Matrix4f &backToStart);
+
+    void rasterizeFacet(const std::array<Dot3D, 3> &vertices,
+                                std::vector<std::vector<double>> *shadowMap,
+                                size_t bufferWidth, size_t bufferHeight);
     QGraphicsScene *drawScene(CellScene *scene, QRectF rect);
 
 private:
     void interpolateColIntoShadowMap();
-    void interpolateRowIntoShadowMap(std::vector<std::vector<double>> *map, int xA, int xB, double zA, double zB, int curY);
+
+    void interpolateRowIntoShadowMap(std::vector<std::vector<double>> *shadowMap, int xStart, int xEnd, double zStart,
+                                     double zEnd, int curY);
+
     void specBorderPut(int x, int y, double z);
+
     void DDABordersForPolygon(
-        int xStart, int yStart, double zStart, int xEnd, int yEnd, double zEnd);
+            int xStart, int yStart, double zStart, int xEnd, int yEnd, double zEnd);
 
     std::vector<std::vector<double>> depthBuffer;
     std::vector<std::vector<size_t>> frameBuffer;
 };
 
-class UsageFacade
-{
+class UsageFacade {
 public:
     UsageFacade();
 
     void setCellScene(size_t width_, size_t height_);
+
     void changeCellScene(size_t newWidth, size_t newheight);
+
     bool isSceneSet();
 
     QGraphicsScene *drawScene(QRectF rect);
 
     int addHouse(int xCell, int yCell, int modelLength, int modelHeight, int countFloors);
+
     int addTree(int xCell, int yCell);
+
     int addRoad(int xCell, int yCell, Direction direction);
+
     int addCar(int xCell, int yCell, Direction direction, ColorCar color_car);
 
-    void addIlluminant(int xAngle, int yAngle);
+    void addLight(int xAngle, int yAngle);
 
     QGraphicsScene *moveUpScene(double value, QRectF rect);
+
     QGraphicsScene *moveDownScene(double value, QRectF rect);
+
     QGraphicsScene *moveLeftScene(double value, QRectF rect);
+
     QGraphicsScene *moveRightScene(double value, QRectF rect);
 
     QGraphicsScene *scaleScene(double value, QRectF rect);
 
     QGraphicsScene *rotateXScene(double angle, QRectF rect);
+
     QGraphicsScene *rotateYScene(double angle, QRectF rect);
+
     QGraphicsScene *rotateZScene(double angle, QRectF rect);
 
     QGraphicsScene *toCenter(QRectF rect);
 
     CellScene *getScene();
 
-private:     
+private:
     CellScene *scene = nullptr;
     Drawer *drawer;
 
@@ -76,6 +103,7 @@ private:
                  int x2, int y2, int z2,
                  int x3, int y3, int z3,
                  int x4, int y4, int z4);
+
     void addTriangle(std::vector<Vertex> &vertices, std::vector<Facet> &facets,
                      int x1, int y1, int z1,
                      int x2, int y2, int z2,

@@ -116,10 +116,10 @@ void PolModel::moveTo(int newXCell, int newYCell) {
 
 std::vector<std::vector<double>> &Illuminant::getShadowMap() { return shadowMap; }
 
-Illuminant::Illuminant(Eigen::Matrix4f &transMatrix_) {
-    transMatrix = transMatrix_;
-    for (size_t i = 0; i < ILLUM_VIS_X; i++) { shadowMap.push_back(std::vector<double>(ILLUM_VIS_Y, 0)); }
-}
+    Illuminant::Illuminant(Eigen::Matrix4f &transMatrix_) {
+        transMatrix = transMatrix_;
+        for (size_t i = 0; i < ILLUM_VIS_X; i++) { shadowMap.push_back(std::vector<double>(ILLUM_VIS_Y, 0)); }
+    }
 
 void Illuminant::setShadowMap(std::vector<std::vector<double>> &setShadowMap) {
     shadowMap = setShadowMap;

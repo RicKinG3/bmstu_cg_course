@@ -489,11 +489,12 @@ void Drawer::zBufForModel(std::vector<Facet> &facets, std::vector<Vertex> &verti
                     // Обновляем буфер глубины текущим значением z.
                     depthBuffer.at(curX).at(curY) = curZ;
                     if (scene->getIllumNum()) {
-                        // Если пиксель видим, обновляем буфер кадра соответствующим цветом и признаком видимости.
-                        frameBuffer.at(curX).at(curY) = color + visible;
-                    } else
+                        if (curX - 500 >= 0 && curY - 500 >= 0)
+                            // Если пиксель видим, обновляем буфер кадра соответствующим цветом и признаком видимости.
+                            frameBuffer.at(curX - 500).at(curY - 500) = color + visible;
+                    } else if (curX - 500 >= 0 && curY - 500 >= 0)
                         // Если нет источников света, обновляем буфер кадра цветом плюс 1.
-                        frameBuffer.at(curX).at(curY) = color + 1;
+                        frameBuffer.at(curX - 500).at(curY - 500) = color + 1;
                 }
 
             }
@@ -550,20 +551,22 @@ void Drawer::zBufForModel(std::vector<Facet> &facets, std::vector<Vertex> &verti
                     }
                     depthBuffer.at(curX).at(curY) = curZ;
                     if (scene->getIllumNum()) {
-                        frameBuffer.at(curX).at(curY) = color + visible;
-                    } else
-                        frameBuffer.at(curX).at(curY) = color + 1;
+                        if (curX - 500 >= 0 && curY - 500 >= 0)
+                            frameBuffer.at(curX - 500).at(curY - 500) = color + visible;
+                    } else if (curX - 500 >= 0 && curY - 500 >= 0)
+                        frameBuffer.at(curX - 500).at(curY - 500) = color + 1;
                 }
             }
 
         }
-        DDABordersForPolygon(x1, y1, z1, x3, y3, z3);
-        DDABordersForPolygon(x1, y1, z1, x2, y2, z2);
-        DDABordersForPolygon(x2, y2, z2, x3, y3, z3);
+
     }
 }
 
 void Drawer::zBufferAlg(CellScene *scene, size_t bufHeight, size_t bufWidth) {
+
+
+
     // Очищаем буферы глубины и кадров
     depthBuffer.clear();
     frameBuffer.clear();
@@ -583,18 +586,66 @@ void Drawer::zBufferAlg(CellScene *scene, size_t bufHeight, size_t bufWidth) {
         model = scene->getModel(i);
         facets = model.getFacets();
         vertices = model.getVertices();
+
+        for (size_t j = 0; j < vertices.size(); j++) {
+            Dot3D position = vertices[j].getPosition();
+            if (i == 0)
+                qDebug() << "Изменение координат вершины " << j << ":"
+                         << "X: " << position.getXCoordinate() << " -> " << position.getXCoordinate() + 500
+                         << "Y: " << position.getYCoordinate() << " -> " << position.getYCoordinate() + 500;
+            position.setXCoordinate(position.getXCoordinate() + 500);
+            position.setYCoordinate(position.getYCoordinate() + 500);
+
+            vertices[j].setPosition(position);
+        }
+
         // Для каждого источника света генерируем карту теней
         for (size_t j = 0; j < scene->getIllumNum(); j++)
             generateShadowMap(facets, vertices, scene->getTransMatrix(),
                               &scene->getIlluminant(j), bufWidth, bufHeight);
+
+        for (size_t j = 0; j < vertices.size(); j++) {
+            Dot3D position = vertices[j].getPosition();
+            qDebug() << "Изменение координат вершины " << j << ":"
+                     << "X: " << position.getXCoordinate() << " -> " << position.getXCoordinate() + 500
+                     << "Y: " << position.getYCoordinate() << " -> " << position.getYCoordinate() + 500;
+            position.setXCoordinate(position.getXCoordinate() - 500);
+            position.setYCoordinate(position.getYCoordinate() - 500);
+
+            vertices[j].setPosition(position);
+        }
+
     }
     // Обрабатываем базовую модель платформы
     model = scene->getPlateModel();
     facets = model.getFacets();
     vertices = model.getVertices();
+
+    for (size_t j = 0; j < vertices.size(); j++) {
+        Dot3D position = vertices[j].getPosition();
+        qDebug() << "Изменение координат вершины " << j << ":"
+                 << "X: " << position.getXCoordinate() << " -> " << position.getXCoordinate() + 500
+                 << "Y: " << position.getYCoordinate() << " -> " << position.getYCoordinate() + 500;
+        position.setXCoordinate(position.getXCoordinate() + 500);
+        position.setYCoordinate(position.getYCoordinate() + 500);
+
+        vertices[j].setPosition(position);
+    }
+
     for (size_t j = 0; j < scene->getIllumNum(); j++)
         generateShadowMap(facets, vertices, scene->getTransMatrix(),
                           &scene->getIlluminant(j), bufWidth, bufHeight);
+
+    for (size_t j = 0; j < vertices.size(); j++) {
+        Dot3D position = vertices[j].getPosition();
+        qDebug() << "Изменение координат вершины " << j << ":"
+                 << "X: " << position.getXCoordinate() << " -> " << position.getXCoordinate() + 500
+                 << "Y: " << position.getYCoordinate() << " -> " << position.getYCoordinate() + 500;
+        position.setXCoordinate(position.getXCoordinate() - 500);
+        position.setYCoordinate(position.getYCoordinate() - 500);
+
+        vertices[j].setPosition(position);
+    }
 
 //     Выполняем z-буферизацию для всех моделей в сцене
     for (size_t i = 0; i < scene->getModelsNum(); i++) {
@@ -602,17 +653,65 @@ void Drawer::zBufferAlg(CellScene *scene, size_t bufHeight, size_t bufWidth) {
         facets = model.getFacets();
         vertices = model.getVertices();
         typeModel = model.getModelType();
+        for (size_t j = 0; j < vertices.size(); j++) {
+            Dot3D position = vertices[j].getPosition();
+            qDebug() << "Изменение координат вершины " << j << ":"
+                     << "X: " << position.getXCoordinate() << " -> " << position.getXCoordinate() + 500
+                     << "Y: " << position.getYCoordinate() << " -> " << position.getYCoordinate() + 500;
+            position.setXCoordinate(position.getXCoordinate() + 500);
+            position.setYCoordinate(position.getYCoordinate() + 500);
+
+            vertices[j].setPosition(position);
+        }
+
         // Рассчитываем видимость каждой модели с учетом ее типа
         zBufForModel(
                 facets, vertices, scene->getTransMatrix(), 4 + typeModel * 2, scene, bufWidth, bufHeight);
+        for (size_t j = 0; j < vertices.size(); j++) {
+            Dot3D position = vertices[j].getPosition();
+            qDebug() << "Изменение координат вершины " << j << ":"
+                     << "X: " << position.getXCoordinate() << " -> " << position.getXCoordinate() + 500
+                     << "Y: " << position.getYCoordinate() << " -> " << position.getYCoordinate() + 500;
+            position.setXCoordinate(position.getXCoordinate() - 500);
+            position.setYCoordinate(position.getYCoordinate() - 500);
+
+            vertices[j].setPosition(position);
+        }
     }
+
     model = scene->getPlateModel();
     facets = model.getFacets();
     vertices = model.getVertices();
+
+    for (size_t j = 0; j < vertices.size(); j++) {
+        Dot3D position = vertices[j].getPosition();
+        qDebug() << "Изменение координат вершины " << j << ":"
+                 << "X: " << position.getXCoordinate() << " -> " << position.getXCoordinate() + 500
+                 << "Y: " << position.getYCoordinate() << " -> " << position.getYCoordinate() + 500;
+        position.setXCoordinate(position.getXCoordinate() + 500);
+        position.setYCoordinate(position.getYCoordinate() + 500);
+
+        vertices[j].setPosition(position);
+    }
+
     zBufForModel(
             facets, vertices, scene->getTransMatrix(), 1, scene, bufWidth, bufHeight);
+    for (size_t j = 0; j < vertices.size(); j++) {
+        Dot3D position = vertices[j].getPosition();
+        qDebug() << "Изменение координат вершины " << j << ":"
+                 << "X: " << position.getXCoordinate() << " -> " << position.getXCoordinate() + 500
+                 << "Y: " << position.getYCoordinate() << " -> " << position.getYCoordinate() + 500;
+        position.setXCoordinate(position.getXCoordinate() - 500);
+        position.setYCoordinate(position.getYCoordinate() - 500);
+
+        vertices[j].setPosition(position);
+    }
     for (size_t i = 0; i < scene->getIllumNum(); i++)
+
+
         scene->getIlluminant(i).clearShadowMap();
+
+
 }
 
 QGraphicsScene *Drawer::drawScene(CellScene *scene, QRectF rect) {
@@ -626,7 +725,7 @@ QGraphicsScene *Drawer::drawScene(CellScene *scene, QRectF rect) {
 
     using namespace std::chrono;
     nanoseconds start = duration_cast<nanoseconds>(system_clock::now().time_since_epoch());
-    zBufferAlg(scene, rect.size().height() *3, rect.size().width() * 3);
+    zBufferAlg(scene, rect.size().height()+2000, rect.size().width()+2000);
     nanoseconds end = duration_cast<nanoseconds>(system_clock::now().time_since_epoch());
 
     qDebug() << "Время выполнения z-буфера" << size_t((end - start).count() / 1000000);
@@ -636,8 +735,8 @@ QGraphicsScene *Drawer::drawScene(CellScene *scene, QRectF rect) {
     outScene->setSceneRect(rect);
 
     QImage *image =
-            new QImage(rect.size().width() , rect.size().height() , QImage::Format_RGB32);
-    image->fill(Qt::white);
+            new QImage(rect.size().width(), rect.size().height(), QImage::Format_RGB32);
+    image->fill(Qt::gray);
 
     uint plateCol = qRgb(GRASS_COLOR);
     uint darkPlateCol = qRgb(DARK_GRASS_COLOR);

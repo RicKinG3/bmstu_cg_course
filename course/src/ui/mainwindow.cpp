@@ -236,12 +236,6 @@ void MainWindow::pictureToCenter() {
 
 void MainWindow::on_pushButton_createScene_clicked() {
 
-    int h = ui->length_scene->value();
-    int w = ui->width_scene->value();
-
-    facade->setCellScene(w, h);
-    QGraphicsScene *setScene = facade->drawScene(ui->graphicsView->rect());
-
     if (ui->graphicsView->scene()) {
         QMessageBox::StandardButton reply;
         reply = QMessageBox::warning(this, "Предупреждение",
@@ -255,6 +249,13 @@ void MainWindow::on_pushButton_createScene_clicked() {
         }
 
     }
+    int h = ui->length_scene->value();
+    int w = ui->width_scene->value();
+
+
+    facade->setCellScene(w, h);
+    QGraphicsScene *setScene = facade->drawScene(ui->graphicsView->rect());
+
 
     ui->graphicsView->setScene(setScene);
 }

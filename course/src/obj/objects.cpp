@@ -60,7 +60,7 @@ void PolModel::setDirectionCar(Direction directionCar_) { directionCar = directi
 
 ColorCar PolModel::getColorCar() { return color_car; }
 
-void PolModel::setColorCar(ColorCar color) { color_car= color; }
+void PolModel::setColorCar(ColorCar color) { color_car = color; }
 
 
 void PolModel::setModelNum(size_t modelNum_) { modelNum = modelNum_; }
@@ -116,10 +116,10 @@ void PolModel::moveTo(int newXCell, int newYCell) {
 
 std::vector<std::vector<double>> &Illuminant::getShadowMap() { return shadowMap; }
 
-    Illuminant::Illuminant(Eigen::Matrix4f &transMatrix_) {
-        transMatrix = transMatrix_;
-        for (size_t i = 0; i < ILLUM_VIS_X; i++) { shadowMap.push_back(std::vector<double>(ILLUM_VIS_Y, 0)); }
-    }
+Illuminant::Illuminant(Eigen::Matrix4f &transMatrix_) {
+    transMatrix = transMatrix_;
+    for (size_t i = 0; i < ILLUM_VIS_X; i++) { shadowMap.push_back(std::vector<double>(ILLUM_VIS_Y, 0)); }
+}
 
 void Illuminant::setShadowMap(std::vector<std::vector<double>> &setShadowMap) {
     shadowMap = setShadowMap;
@@ -162,6 +162,17 @@ void CellScene::addQuad(std::vector<Vertex> &vertices, std::vector<Facet> &facet
                         int y1, int z1, int x2, int y2, int z2, int x3, int y3, int z3, int x4, int y4, int z4) {
     Dot3D dot;
     std::vector<size_t> vec;
+    //todo
+    x1 += 500;
+    x2 += 500;
+    x3 += 500;
+    x4 += 500;
+
+    y1 += 500;
+    y2 += 500;
+    y3 += 500;
+    y4 += 500;
+
 
     size_t size = facets.size();
 
@@ -405,6 +416,7 @@ void CellScene::rotateY(double angle) {
 }
 
 void CellScene::rotateZ(double angle) {
+
     Eigen::Matrix4f rotateMatrix;
     rotateMatrix << cos(angle), -sin(angle), 0, 0,
             sin(angle), cos(angle), 0, 0,
@@ -423,9 +435,9 @@ void CellScene::toCenter() {
             0, 1, 0, 0,
             0, 0, 1, 0,
             0, 0, 0, 1;
-
-    newMat(3, 0) = X_CENTER - start.getXCoordinate() - getWidth() * SCALE_FACTOR / 2;
-    newMat(3, 1) = Y_CENTER - start.getYCoordinate() - getHeight() * SCALE_FACTOR / 2;
+    //todo
+    newMat(3, 0) = X_CENTER - start.getXCoordinate() - getWidth() * SCALE_FACTOR / 2 -500;
+    newMat(3, 1) = Y_CENTER - start.getYCoordinate() - getHeight() * SCALE_FACTOR / 2 -500;
     newMat(3, 2) = 0;
 
     transMatrix = newMat;

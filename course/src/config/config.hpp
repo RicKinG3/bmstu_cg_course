@@ -4,15 +4,15 @@
 #define SCALE_FACTOR            80
 #define          PLATE_Z        10000
 #define PLATE_START             10, 10, PLATE_Z
-
-#define X_CENTER                645
-#define Y_CENTER                450
+//todo
+#define X_CENTER                1145
+#define Y_CENTER                950
 
 #define SCALE_VALUE             0.1
 
 #define ILLUM_VIS_X             1925
-#define ILLUM_VIS_Y             5000
-
+// мб 2000
+#define ILLUM_VIS_Y             2500
 #define MOVE_UNIT               50
 #define ROTATE_UNIT             3.14159265358979323846 / 8
 

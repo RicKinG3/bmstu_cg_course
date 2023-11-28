@@ -7,7 +7,6 @@
 #include <vector>
 #include "/usr/include/eigen3/Eigen/Dense"
 
-#include "placechooser.h"
 enum Direction {
     Horizontal,
     Vertical,
@@ -99,7 +98,8 @@ public:
         roadStripe,
         Car,
         wheelsCar,
-        glassCar
+        glassCar,
+        Pickup
     };
 
     Direction getDirectionRoad();

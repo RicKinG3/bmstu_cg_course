@@ -47,7 +47,7 @@ cmake_ninja_workdir = /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course
 #############################################
 # Order-only phony target for src
 
-build cmake_object_order_depends_target_src: phony || /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_illuminantplacechooser.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_mainwindow.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_movechooser.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_objectchanger.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_objecthangman.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_placecarсhooser.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_placehousechooser.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_placeroadсhooser.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_placetreechooser.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_sizechooser.h src_autogen src_autogen/mocs_compilation.cpp src_autogen/timestamp src_autogen_timestamp_deps
+build cmake_object_order_depends_target_src: phony || /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_mainwindow.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_movechooser.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_objectchanger.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_objecthangman.h src_autogen src_autogen/mocs_compilation.cpp src_autogen/timestamp src_autogen_timestamp_deps
 
 build CMakeFiles/src.dir/src_autogen/mocs_compilation.cpp.o: CXX_COMPILER__src_unscanned_Debug /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/src_autogen/mocs_compilation.cpp || cmake_object_order_depends_target_src
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
@@ -64,14 +64,6 @@ build CMakeFiles/src.dir/math/additivemathelements.cpp.o: CXX_COMPILER__src_unsc
   INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/src_autogen/include -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/headers -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/facade -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
   OBJECT_DIR = CMakeFiles/src.dir
   OBJECT_FILE_DIR = CMakeFiles/src.dir/math
-
-build CMakeFiles/src.dir/ui/illuminantplacechooser.cpp.o: CXX_COMPILER__src_unscanned_Debug /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/illuminantplacechooser.cpp || cmake_object_order_depends_target_src
-  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
-  DEP_FILE = CMakeFiles/src.dir/ui/illuminantplacechooser.cpp.o.d
-  FLAGS = -fopenmp -g -std=gnu++17 -fdiagnostics-color=always -fPIC
-  INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/src_autogen/include -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/headers -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/facade -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
-  OBJECT_DIR = CMakeFiles/src.dir
-  OBJECT_FILE_DIR = CMakeFiles/src.dir/ui
 
 build CMakeFiles/src.dir/main.cpp.o: CXX_COMPILER__src_unscanned_Debug /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/main.cpp || cmake_object_order_depends_target_src
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
@@ -121,14 +113,6 @@ build CMakeFiles/src.dir/obj/objects.cpp.o: CXX_COMPILER__src_unscanned_Debug /h
   OBJECT_DIR = CMakeFiles/src.dir
   OBJECT_FILE_DIR = CMakeFiles/src.dir/obj
 
-build CMakeFiles/src.dir/ui/placechooser.cpp.o: CXX_COMPILER__src_unscanned_Debug /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/placechooser.cpp || cmake_object_order_depends_target_src
-  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
-  DEP_FILE = CMakeFiles/src.dir/ui/placechooser.cpp.o.d
-  FLAGS = -fopenmp -g -std=gnu++17 -fdiagnostics-color=always -fPIC
-  INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/src_autogen/include -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/headers -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/facade -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
-  OBJECT_DIR = CMakeFiles/src.dir
-  OBJECT_FILE_DIR = CMakeFiles/src.dir/ui
-
 build CMakeFiles/src.dir/specialgraphicsview.cpp.o: CXX_COMPILER__src_unscanned_Debug /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/specialgraphicsview.cpp || cmake_object_order_depends_target_src
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles/src.dir/specialgraphicsview.cpp.o.d
@@ -153,7 +137,7 @@ build CMakeFiles/src.dir/facade/usagefacade.cpp.o: CXX_COMPILER__src_unscanned_D
 #############################################
 # Link the executable src
 
-build src: CXX_EXECUTABLE_LINKER__src_Debug CMakeFiles/src.dir/src_autogen/mocs_compilation.cpp.o CMakeFiles/src.dir/math/additivemathelements.cpp.o CMakeFiles/src.dir/ui/illuminantplacechooser.cpp.o CMakeFiles/src.dir/main.cpp.o CMakeFiles/src.dir/ui/mainwindow.cpp.o CMakeFiles/src.dir/ui/movechooser.cpp.o CMakeFiles/src.dir/ui/objectchanger.cpp.o CMakeFiles/src.dir/ui/objecthangman.cpp.o CMakeFiles/src.dir/obj/objects.cpp.o CMakeFiles/src.dir/ui/placechooser.cpp.o CMakeFiles/src.dir/specialgraphicsview.cpp.o CMakeFiles/src.dir/facade/usagefacade.cpp.o | /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.8 /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.15.8 /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.15.8 || src_autogen src_autogen_timestamp_deps
+build src: CXX_EXECUTABLE_LINKER__src_Debug CMakeFiles/src.dir/src_autogen/mocs_compilation.cpp.o CMakeFiles/src.dir/math/additivemathelements.cpp.o CMakeFiles/src.dir/main.cpp.o CMakeFiles/src.dir/ui/mainwindow.cpp.o CMakeFiles/src.dir/ui/movechooser.cpp.o CMakeFiles/src.dir/ui/objectchanger.cpp.o CMakeFiles/src.dir/ui/objecthangman.cpp.o CMakeFiles/src.dir/obj/objects.cpp.o CMakeFiles/src.dir/specialgraphicsview.cpp.o CMakeFiles/src.dir/facade/usagefacade.cpp.o | /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.8 /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.15.8 /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.15.8 || src_autogen src_autogen_timestamp_deps
   FLAGS = -fopenmp -g
   LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.8  /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.15.8  /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.15.8
   OBJECT_DIR = CMakeFiles/src.dir
@@ -241,15 +225,6 @@ build src_autogen: phony CMakeFiles/src_autogen src_autogen/timestamp src_autoge
 
 
 #############################################
-# Custom command for /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_illuminantplacechooser.h
-
-build /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_illuminantplacechooser.h: CUSTOM_COMMAND /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/illuminantplacechooser.ui || src_autogen src_autogen_timestamp_deps
-  COMMAND = cd /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug && /usr/lib/qt5/bin/uic -o /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_illuminantplacechooser.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/illuminantplacechooser.ui
-  DESC = Generating /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_illuminantplacechooser.h
-  restat = 1
-
-
-#############################################
 # Custom command for /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_mainwindow.h
 
 build /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_mainwindow.h: CUSTOM_COMMAND /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/mainwindow.ui || src_autogen src_autogen_timestamp_deps
@@ -286,51 +261,6 @@ build /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/u
 
 
 #############################################
-# Custom command for /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_placecarсhooser.h
-
-build /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_placecarсhooser.h: CUSTOM_COMMAND /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/placecarсhooser.ui || src_autogen src_autogen_timestamp_deps
-  COMMAND = cd /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug && /usr/lib/qt5/bin/uic -o /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_placecarсhooser.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/placecarсhooser.ui
-  DESC = Generating /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_placecarсhooser.h
-  restat = 1
-
-
-#############################################
-# Custom command for /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_placehousechooser.h
-
-build /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_placehousechooser.h: CUSTOM_COMMAND /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/placehousechooser.ui || src_autogen src_autogen_timestamp_deps
-  COMMAND = cd /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug && /usr/lib/qt5/bin/uic -o /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_placehousechooser.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/placehousechooser.ui
-  DESC = Generating /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_placehousechooser.h
-  restat = 1
-
-
-#############################################
-# Custom command for /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_placeroadсhooser.h
-
-build /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_placeroadсhooser.h: CUSTOM_COMMAND /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/placeroadсhooser.ui || src_autogen src_autogen_timestamp_deps
-  COMMAND = cd /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug && /usr/lib/qt5/bin/uic -o /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_placeroadсhooser.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/placeroadсhooser.ui
-  DESC = Generating /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_placeroadсhooser.h
-  restat = 1
-
-
-#############################################
-# Custom command for /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_placetreechooser.h
-
-build /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_placetreechooser.h: CUSTOM_COMMAND /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/placetreechooser.ui || src_autogen src_autogen_timestamp_deps
-  COMMAND = cd /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug && /usr/lib/qt5/bin/uic -o /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_placetreechooser.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/placetreechooser.ui
-  DESC = Generating /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_placetreechooser.h
-  restat = 1
-
-
-#############################################
-# Custom command for /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_sizechooser.h
-
-build /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_sizechooser.h: CUSTOM_COMMAND /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/sizechooser.ui || src_autogen src_autogen_timestamp_deps
-  COMMAND = cd /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug && /usr/lib/qt5/bin/uic -o /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_sizechooser.h /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/sizechooser.ui
-  DESC = Generating /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_sizechooser.h
-  restat = 1
-
-
-#############################################
 # Custom command for src_autogen/timestamp
 
 build src_autogen/timestamp src_autogen/mocs_compilation.cpp | ${cmake_ninja_workdir}src_autogen/timestamp ${cmake_ninja_workdir}src_autogen/mocs_compilation.cpp: CUSTOM_COMMAND /usr/lib/qt5/bin/moc /usr/lib/qt5/bin/uic || src_autogen_timestamp_deps
@@ -343,7 +273,7 @@ build src_autogen/timestamp src_autogen/mocs_compilation.cpp | ${cmake_ninja_wor
 #############################################
 # Phony custom command for CMakeFiles/src_autogen_timestamp_deps
 
-build CMakeFiles/src_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/src_autogen_timestamp_deps: phony /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.15.8 /usr/lib/qt5/bin/moc /usr/lib/qt5/bin/uic /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.8
+build CMakeFiles/src_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/src_autogen_timestamp_deps: phony /usr/lib/qt5/bin/uic /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.15.8 /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.8 /usr/lib/qt5/bin/moc
 
 
 #############################################

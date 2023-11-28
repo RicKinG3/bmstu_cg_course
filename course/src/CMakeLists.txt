@@ -21,14 +21,12 @@ find_package(Qt5 COMPONENTS Gui Widgets REQUIRED)
 # Список исходных файлов проекта
 set(PROJECT_SOURCES
         math/additivemathelements.cpp
-        ui/illuminantplacechooser.cpp
         main.cpp
         ui/mainwindow.cpp
         ui/movechooser.cpp
         ui/objectchanger.cpp
         ui/objecthangman.cpp
         obj/objects.cpp
-        ui/placechooser.cpp
         specialgraphicsview.cpp
         facade/usagefacade.cpp
 )
@@ -37,29 +35,21 @@ set(PROJECT_SOURCES
 set(PROJECT_HEADERS
         math/additivemathelements.hpp
         config/config.hpp
-        ui/header/illuminantplacechooser.hpp
         ui/header/mainwindow.h
         ui/header/movechooser.hpp
         ui/header/objectchanger.hpp
         ui/header/objecthangman.hpp
         obj/objects.hpp
-        ui/header/placechooser.h
         headers/specialgraphicsview.hpp
         facade/usagefacade.hpp
 )
 
 # Список файлов формы проекта
 set(PROJECT_FORMS
-        ui/illuminantplacechooser.ui
         ui/mainwindow.ui
         ui/movechooser.ui
         ui/objectchanger.ui
         ui/objecthangman.ui
-        ui/placecarсhooser.ui
-        ui/placehousechooser.ui
-        ui/placeroadсhooser.ui
-        ui/placetreechooser.ui
-        ui/sizechooser.ui
 )
 
 # Генерация заголовочных файлов ui_*.h

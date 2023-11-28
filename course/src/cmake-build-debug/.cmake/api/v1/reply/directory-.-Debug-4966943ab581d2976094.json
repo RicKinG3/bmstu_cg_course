@@ -17,13 +17,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 102,
+				"line" : 92,
 				"parent" : 0
 			},
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 105,
+				"line" : 95,
 				"parent" : 0
 			}
 		]
@@ -36,16 +36,10 @@
 			"destination" : "/usr/local/forms",
 			"paths" : 
 			[
-				"ui/illuminantplacechooser.ui",
 				"ui/mainwindow.ui",
 				"ui/movechooser.ui",
 				"ui/objectchanger.ui",
-				"ui/objecthangman.ui",
-				"ui/placecar\u0441hooser.ui",
-				"ui/placehousechooser.ui",
-				"ui/placeroad\u0441hooser.ui",
-				"ui/placetreechooser.ui",
-				"ui/sizechooser.ui"
+				"ui/objecthangman.ui"
 			],
 			"type" : "file"
 		},

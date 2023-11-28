@@ -5,7 +5,6 @@
 #include "../obj/objects.hpp"
 #include <QGraphicsScene>
 
-#include "placechooser.h"
 
 //#include <omp.h>
 
@@ -47,8 +46,8 @@ private:
 
     void DDABordersForPolygon(
             int xStart, int yStart, double zStart, int xEnd, int yEnd, double zEnd);
-
-    std::vector<std::vector<double>> depthBuffer;
+    void drawSquareBorders(int x1, int y1, double z1, int x2, int y2, double z2, int x3, int y3, double z3);
+        std::vector<std::vector<double>> depthBuffer;
     std::vector<std::vector<size_t>> frameBuffer;
 };
 
@@ -65,6 +64,9 @@ public:
     QGraphicsScene *drawScene(QRectF rect);
 
     int addHouse(int xCell, int yCell, int modelLength, int modelHeight, int countFloors);
+
+    int addPickup(int xCell, int yCell, Direction direction, ColorCar color_car);
+
 
     int addTree(int xCell, int yCell);
 
@@ -110,6 +112,6 @@ private:
                      int x3, int y3, int z3);
 
     bool searchRoadsNearby(int xCell, int yCell, int widthModel, int heightModel);
-};
+    };
 
 #endif // USAGEFACADE_HPP

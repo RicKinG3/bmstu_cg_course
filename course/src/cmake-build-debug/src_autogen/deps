@@ -28,18 +28,14 @@ src_autogen/timestamp: \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/obj/objects.cpp \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/obj/objects.hpp \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/specialgraphicsview.cpp \
-	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/illuminantplacechooser.hpp \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/mainwindow.h \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/movechooser.hpp \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/objectchanger.hpp \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/objecthangman.hpp \
-	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/placechooser.h \
-	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/illuminantplacechooser.cpp \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/mainwindow.cpp \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/movechooser.cpp \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/objectchanger.cpp \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/objecthangman.cpp \
-	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/placechooser.cpp \
 	/usr/include/asm-generic/errno-base.h \
 	/usr/include/asm-generic/errno.h \
 	/usr/include/assert.h \
@@ -651,13 +647,8 @@ src_autogen/timestamp: \
 	/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake \
 	/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake \
 	/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake \
-	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/illuminantplacechooser.ui \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/mainwindow.ui \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/movechooser.ui \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/objectchanger.ui \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/objecthangman.ui \
-	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/placecarсhooser.ui \
-	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/placehousechooser.ui \
-	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/placeroadсhooser.ui \
-	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/placetreechooser.ui \
 	/home/max/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/cmake

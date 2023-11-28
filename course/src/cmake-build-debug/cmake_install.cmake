@@ -44,7 +44,7 @@ endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/usr/local/forms/illuminantplacechooser.ui;/usr/local/forms/mainwindow.ui;/usr/local/forms/movechooser.ui;/usr/local/forms/objectchanger.ui;/usr/local/forms/objecthangman.ui;/usr/local/forms/placecarсhooser.ui;/usr/local/forms/placehousechooser.ui;/usr/local/forms/placeroadсhooser.ui;/usr/local/forms/placetreechooser.ui;/usr/local/forms/sizechooser.ui")
+   "/usr/local/forms/mainwindow.ui;/usr/local/forms/movechooser.ui;/usr/local/forms/objectchanger.ui;/usr/local/forms/objecthangman.ui")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
@@ -52,16 +52,10 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   file(INSTALL DESTINATION "/usr/local/forms" TYPE FILE FILES
-    "/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/illuminantplacechooser.ui"
     "/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/mainwindow.ui"
     "/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/movechooser.ui"
     "/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/objectchanger.ui"
     "/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/objecthangman.ui"
-    "/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/placecarсhooser.ui"
-    "/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/placehousechooser.ui"
-    "/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/placeroadсhooser.ui"
-    "/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/placetreechooser.ui"
-    "/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/sizechooser.ui"
     )
 endif()
 

@@ -99,7 +99,8 @@ public:
         roadStripe,
         Car,
         wheelsCar,
-        glassCar
+        glassCar,
+        Pickup
     };
 
     Direction getDirectionRoad();

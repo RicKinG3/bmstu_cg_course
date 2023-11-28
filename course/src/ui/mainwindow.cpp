@@ -20,21 +20,22 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     facade = new UsageFacade;
 
 //    ui->listWidget->setStyleSheet("QListWidget::item {background-color: white;}");
-
-    QListWidgetItem *hourse = new QListWidgetItem("      Дом");
-    ui->listWidget->addItem(hourse);
-
-    QListWidgetItem *tree = new QListWidgetItem("      Дерево");
-    ui->listWidget->addItem(tree);
-
-    QListWidgetItem *road = new QListWidgetItem("      Дорога");
-    ui->listWidget->addItem(road);
-
-    QListWidgetItem *car = new QListWidgetItem("      Машина");
-    ui->listWidget->addItem(car);
-
-    QListWidgetItem *flashlight = new QListWidgetItem("      Источник света");
-    ui->listWidget->addItem(flashlight);
+//
+//    QListWidgetItem *hourse = new QListWidgetItem("      Дом");
+//    ui->listWidget->addItem(hourse);
+//
+//    QListWidgetItem *tree = new QListWidgetItem("      Дерево");
+//    ui->listWidget->addItem(tree);
+//
+//    QListWidgetItem *road = new QListWidgetItem("      Дорога");
+//    ui->listWidget->addItem(road);
+//
+//    QListWidgetItem *car = new QListWidgetItem("      Машина");
+//    ui->listWidget->addItem(car);
+//
+//    QListWidgetItem *flashlight = new QListWidgetItem("      Источник света");
+//    ui->listWidget->addItem(flashlight);
+//    ui->listWidget->addItem(flashlight);
 
 
     ui->graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -95,7 +96,7 @@ void MainWindow::pictureDown() {
     if (ui->graphicsView->scene())
         delete ui->graphicsView->scene();
 
-    QGraphicsScene *setScene = facade->moveDownScene(MOVE_UNIT, ui->graphicsView->rect());
+    QGraphicsScene *setScene = facade->moveDownScene(MOVE_FACTOR, ui->graphicsView->rect());
     ui->graphicsView->setScene(setScene);
 }
 
@@ -106,7 +107,7 @@ void MainWindow::pictureUp() {
     if (ui->graphicsView->scene())
         delete ui->graphicsView->scene();
 
-    QGraphicsScene *setScene = facade->moveUpScene(MOVE_UNIT, ui->graphicsView->rect());
+    QGraphicsScene *setScene = facade->moveUpScene(MOVE_FACTOR, ui->graphicsView->rect());
     ui->graphicsView->setScene(setScene);
 }
 
@@ -117,7 +118,7 @@ void MainWindow::pictureLeft() {
     if (ui->graphicsView->scene())
         delete ui->graphicsView->scene();
 
-    QGraphicsScene *setScene = facade->moveLeftScene(MOVE_UNIT, ui->graphicsView->rect());
+    QGraphicsScene *setScene = facade->moveLeftScene(MOVE_FACTOR, ui->graphicsView->rect());
     ui->graphicsView->setScene(setScene);
 }
 
@@ -128,7 +129,7 @@ void MainWindow::pictureRight() {
     if (ui->graphicsView->scene())
         delete ui->graphicsView->scene();
 
-    QGraphicsScene *setScene = facade->moveRightScene(MOVE_UNIT, ui->graphicsView->rect());
+    QGraphicsScene *setScene = facade->moveRightScene(MOVE_FACTOR, ui->graphicsView->rect());
     ui->graphicsView->setScene(setScene);
 }
 
@@ -139,7 +140,7 @@ void MainWindow::pictureScaleUp() {
     if (ui->graphicsView->scene())
         delete ui->graphicsView->scene();
 
-    QGraphicsScene *setScene = facade->scaleScene(SCALE_VALUE + 1, ui->graphicsView->rect());
+    QGraphicsScene *setScene = facade->scaleScene(SCALE_COEF + 1, ui->graphicsView->rect());
     ui->graphicsView->setScene(setScene);
 }
 
@@ -150,7 +151,7 @@ void MainWindow::pictureScaleDown() {
     if (ui->graphicsView->scene())
         delete ui->graphicsView->scene();
 
-    QGraphicsScene *setScene = facade->scaleScene(1 - SCALE_VALUE, ui->graphicsView->rect());
+    QGraphicsScene *setScene = facade->scaleScene(1 - SCALE_COEF, ui->graphicsView->rect());
     ui->graphicsView->setScene(setScene);
 }
 
@@ -161,7 +162,7 @@ void MainWindow::pictureRotateXRight() {
     if (ui->graphicsView->scene())
         delete ui->graphicsView->scene();
 
-    QGraphicsScene *setScene = facade->rotateXScene(ROTATE_UNIT, ui->graphicsView->rect());
+    QGraphicsScene *setScene = facade->rotateXScene(ROTATE_COEF, ui->graphicsView->rect());
     ui->graphicsView->setScene(setScene);
 }
 
@@ -172,7 +173,7 @@ void MainWindow::pictureRotateXLeft() {
     if (ui->graphicsView->scene())
         delete ui->graphicsView->scene();
 
-    QGraphicsScene *setScene = facade->rotateXScene(-ROTATE_UNIT, ui->graphicsView->rect());
+    QGraphicsScene *setScene = facade->rotateXScene(-ROTATE_COEF, ui->graphicsView->rect());
     ui->graphicsView->setScene(setScene);
 }
 
@@ -183,7 +184,7 @@ void MainWindow::pictureRotateYRight() {
     if (ui->graphicsView->scene())
         delete ui->graphicsView->scene();
 
-    QGraphicsScene *setScene = facade->rotateYScene(ROTATE_UNIT, ui->graphicsView->rect());
+    QGraphicsScene *setScene = facade->rotateYScene(ROTATE_COEF, ui->graphicsView->rect());
     ui->graphicsView->setScene(setScene);
 }
 
@@ -194,7 +195,7 @@ void MainWindow::pictureRotateYLeft() {
     if (ui->graphicsView->scene())
         delete ui->graphicsView->scene();
 
-    QGraphicsScene *setScene = facade->rotateYScene(-ROTATE_UNIT, ui->graphicsView->rect());
+    QGraphicsScene *setScene = facade->rotateYScene(-ROTATE_COEF, ui->graphicsView->rect());
     ui->graphicsView->setScene(setScene);
 }
 
@@ -205,7 +206,7 @@ void MainWindow::pictureRotateZRight() {
     if (ui->graphicsView->scene())
         delete ui->graphicsView->scene();
 
-    QGraphicsScene *setScene = facade->rotateZScene(ROTATE_UNIT, ui->graphicsView->rect());
+    QGraphicsScene *setScene = facade->rotateZScene(ROTATE_COEF, ui->graphicsView->rect());
     ui->graphicsView->setScene(setScene);
 }
 
@@ -216,7 +217,7 @@ void MainWindow::pictureRotateZLeft() {
     if (ui->graphicsView->scene())
         delete ui->graphicsView->scene();
 
-    QGraphicsScene *setScene = facade->rotateZScene(-ROTATE_UNIT, ui->graphicsView->rect());
+    QGraphicsScene *setScene = facade->rotateZScene(-ROTATE_COEF, ui->graphicsView->rect());
     ui->graphicsView->setScene(setScene);
 }
 
@@ -330,7 +331,7 @@ void MainWindow::on_pushButton_light_add_clicked() {
 
 #define PREMIUM_LENX_HOUSE 3
 #define PREMIUM_LENY_HOUSE 3
-#define PREMIUM_LENZ_HOUSE 3
+#define PREMIUM_LENZ_HOUSE 2
 
 
 //todo del cast (
@@ -376,6 +377,7 @@ void MainWindow::on_pushButton_addModel_clicked() {
             break;
         case carRed:
             qDebug() << "choose carRed";
+            rc = static_cast<RetCodeAddObjToScene>(facade->addPickup(sq_num_ox, sq_num_oy, objDirection, color_car));
             break;
         case tree:
             qDebug() << "choose tree";
@@ -408,7 +410,6 @@ void MainWindow::on_pushButton_addModel_clicked() {
         default:
             break;
     }
-
 
     drawThisShit();
 

@@ -1,6 +1,7 @@
 #ifndef OBJS_HPP
 #define OBJS_HPP
 
+#define MOVECOEF 500
 #include "../math/additivemathelements.hpp"
 #include <iostream>
 #include <vector>

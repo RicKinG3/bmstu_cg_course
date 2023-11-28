@@ -87,19 +87,26 @@ QGraphicsScene *UsageFacade::toCenter(QRectF rect) {
 
 CellScene *UsageFacade::getScene() { return scene; }
 
+
+void movePointQua(int &x1, int &x2, int &x3, int &x4, int &y1, int &y2, int &y3, int &y4) {
+    x1 += MOVECOEF;
+    x2 += MOVECOEF;
+    x3 += MOVECOEF;
+    x4 += MOVECOEF;
+
+    y1 += MOVECOEF;
+    y2 += MOVECOEF;
+    y3 += MOVECOEF;
+    y4 += MOVECOEF;
+}
+
+
 void UsageFacade::addQuad(std::vector<Vertex> &vertices, std::vector<Facet> &facets,
                           int x1, int y1, int z1, int x2, int y2, int z2,
                           int x3, int y3, int z3, int x4, int y4, int z4) {
+    // перенос точек для того чтоб потом работал з алгоритм
+    movePointQua(x1, x2, x3, x4, y1, y2, y3, y4);
 
-    x1 += 500;
-    x2 += 500;
-    x3 += 500;
-    x4 += 500;
-
-    y1 += 500;
-    y2 += 500;
-    y3 += 500;
-    y4 += 500;
 
 
     Dot3D dot;
@@ -130,20 +137,23 @@ void UsageFacade::addQuad(std::vector<Vertex> &vertices, std::vector<Facet> &fac
     facets.push_back(vec);
 }
 
+
+void movePointTriangle(int &x1, int &x2, int &x3, int &y1, int &y2, int &y3) {
+    x1 += MOVECOEF;
+    x2 += MOVECOEF;
+    x3 += MOVECOEF;
+    y1 += MOVECOEF;
+    y2 += MOVECOEF;
+    y3 += MOVECOEF;
+}
+
+
 void UsageFacade::addTriangle(std::vector<Vertex> &vertices, std::vector<Facet> &facets,
                               int x1, int y1, int z1, int x2, int y2, int z2, int x3, int y3, int z3) {
     Dot3D dot;
     std::vector<size_t> vec;
 
-//todo
-    x1 += 500;
-    x2 += 500;
-    x3 += 500;
-
-    y1 += 500;
-    y2 += 500;
-    y3 += 500;
-
+    movePointTriangle(x1, x2, x3, y1, y2, y3);
 
     size_t size = facets.size();
 
@@ -515,10 +525,10 @@ void Drawer::zBufForModel(std::vector<Facet> &facets, std::vector<Vertex> &verti
                         if (curY - 500 >= 0 && curX - 500 >= 0)
 
                             // Если пиксель видим, обновляем буфер кадра соответствующим цветом и признаком видимости.
-                            frameBuffer.at(curX -500).at(curY -500) = color + visible;
+                            frameBuffer.at(curX - 500).at(curY - 500) = color + visible;
                     } else if (curY - 500 >= 0 && curX - 500 >= 0)
                         // Если нет источников света, обновляем буфер кадра цветом плюс 1.
-                        frameBuffer.at(curX-500).at(curY -500) = color + 1;
+                        frameBuffer.at(curX - 500).at(curY - 500) = color + 1;
                 }
 
             }
@@ -576,9 +586,9 @@ void Drawer::zBufForModel(std::vector<Facet> &facets, std::vector<Vertex> &verti
                     depthBuffer.at(curX).at(curY) = curZ;
                     if (scene->getIllumNum()) {
                         if (curY - 500 >= 0 && curX - 500 >= 0)
-                            frameBuffer.at(curX-500).at(curY -500) = color + visible;
+                            frameBuffer.at(curX - 500).at(curY - 500) = color + visible;
                     } else if (curY - 500 >= 0 && curX - 500 >= 0)
-                        frameBuffer.at(curX -500).at(curY-500) = color + 1;
+                        frameBuffer.at(curX - 500).at(curY - 500) = color + 1;
                 }
             }
 

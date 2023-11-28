@@ -158,20 +158,24 @@ CellScene::CellScene(size_t width_, size_t height_) {
     toCenter();
 }
 
+void movePointQuad(int &x1, int &x2, int &x3, int &x4, int &y1, int &y2, int &y3, int &y4) {
+    x1 += MOVECOEF;
+    x2 += MOVECOEF;
+    x3 += MOVECOEF;
+    x4 += MOVECOEF;
+
+    y1 += MOVECOEF;
+    y2 += MOVECOEF;
+    y3 += MOVECOEF;
+    y4 += MOVECOEF;
+}
+
 void CellScene::addQuad(std::vector<Vertex> &vertices, std::vector<Facet> &facets, int x1,
                         int y1, int z1, int x2, int y2, int z2, int x3, int y3, int z3, int x4, int y4, int z4) {
     Dot3D dot;
     std::vector<size_t> vec;
-    //todo
-    x1 += 500;
-    x2 += 500;
-    x3 += 500;
-    x4 += 500;
-
-    y1 += 500;
-    y2 += 500;
-    y3 += 500;
-    y4 += 500;
+    // перенос точек для того чтоб потом работал з алгоритм
+    movePointQuad(x1, x2, x3, x4, y1, y2, y3, y4);
 
 
     size_t size = facets.size();
@@ -436,8 +440,8 @@ void CellScene::toCenter() {
             0, 0, 1, 0,
             0, 0, 0, 1;
     //todo
-    newMat(3, 0) = X_CENTER - start.getXCoordinate() - getWidth() * SCALE_FACTOR / 2 -500;
-    newMat(3, 1) = Y_CENTER - start.getYCoordinate() - getHeight() * SCALE_FACTOR / 2 -500;
+    newMat(3, 0) = X_CENTER - start.getXCoordinate() - getWidth() * SCALE_FACTOR / 2 - 500;
+    newMat(3, 1) = Y_CENTER - start.getYCoordinate() - getHeight() * SCALE_FACTOR / 2 - 500;
     newMat(3, 2) = 0;
 
     transMatrix = newMat;

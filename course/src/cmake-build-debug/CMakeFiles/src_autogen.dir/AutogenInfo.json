@@ -105,24 +105,6 @@
 			"MU",
 			"OMLRIOLLYN/moc_mainwindow.cpp",
 			null
-		],
-		[
-			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/movechooser.hpp",
-			"MU",
-			"OMLRIOLLYN/moc_movechooser.cpp",
-			null
-		],
-		[
-			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/objectchanger.hpp",
-			"MU",
-			"OMLRIOLLYN/moc_objectchanger.cpp",
-			null
-		],
-		[
-			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/objecthangman.hpp",
-			"MU",
-			"OMLRIOLLYN/moc_objecthangman.cpp",
-			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -141,6 +123,7 @@
 		"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header",
 		"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/headers",
 		"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/facade",
+		"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/config",
 		"/usr/include/x86_64-linux-gnu/qt5",
 		"/usr/include/x86_64-linux-gnu/qt5/QtGui",
 		"/usr/include/x86_64-linux-gnu/qt5/QtCore",
@@ -169,10 +152,7 @@
 	"MOC_RELAXED_MODE" : false,
 	"MOC_SKIP" : 
 	[
-		"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_mainwindow.h",
-		"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_movechooser.h",
-		"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_objectchanger.h",
-		"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_objecthangman.h"
+		"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_mainwindow.h"
 	],
 	"MULTI_CONFIG" : false,
 	"PARALLEL" : 6,
@@ -213,21 +193,6 @@
 			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/mainwindow.cpp",
 			"MU",
 			null
-		],
-		[
-			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/movechooser.cpp",
-			"MU",
-			null
-		],
-		[
-			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/objectchanger.cpp",
-			"MU",
-			null
-		],
-		[
-			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/objecthangman.cpp",
-			"MU",
-			null
 		]
 	],
 	"UIC_OPTIONS" : [],
@@ -235,13 +200,7 @@
 	"UIC_SKIP" : 
 	[
 		"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_mainwindow.h",
-		"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_movechooser.h",
-		"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_objectchanger.h",
-		"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/ui_objecthangman.h",
-		"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/mainwindow.ui",
-		"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/movechooser.ui",
-		"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/objectchanger.ui",
-		"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/objecthangman.ui"
+		"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/mainwindow.ui"
 	],
 	"UIC_UI_FILES" : [],
 	"VERBOSITY" : 0

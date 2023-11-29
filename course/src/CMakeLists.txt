@@ -23,9 +23,6 @@ set(PROJECT_SOURCES
         math/additivemathelements.cpp
         main.cpp
         ui/mainwindow.cpp
-        ui/movechooser.cpp
-        ui/objectchanger.cpp
-        ui/objecthangman.cpp
         obj/objects.cpp
         specialgraphicsview.cpp
         facade/usagefacade.cpp
@@ -36,9 +33,6 @@ set(PROJECT_HEADERS
         math/additivemathelements.hpp
         config/config.hpp
         ui/header/mainwindow.h
-        ui/header/movechooser.hpp
-        ui/header/objectchanger.hpp
-        ui/header/objecthangman.hpp
         obj/objects.hpp
         headers/specialgraphicsview.hpp
         facade/usagefacade.hpp
@@ -47,9 +41,6 @@ set(PROJECT_HEADERS
 # Список файлов формы проекта
 set(PROJECT_FORMS
         ui/mainwindow.ui
-        ui/movechooser.ui
-        ui/objectchanger.ui
-        ui/objecthangman.ui
 )
 
 # Генерация заголовочных файлов ui_*.h
@@ -67,6 +58,7 @@ target_include_directories(src PRIVATE
         ui/header
         headers
         facade
+        config
 )
 
 # Добавьте флаг OpenMP для компилятора

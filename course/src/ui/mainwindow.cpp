@@ -1,40 +1,18 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-#include "QDebug"
-#include <QErrorMessage>
+#include <QDebug>
 #include <QShortcut>
 #include <QTimer>
+#include <QMessageBox>
+#include <QErrorMessage>
 
-#include "../config/config.hpp"
-
-#include "objecthangman.hpp"
-#include "objectchanger.hpp"
-#include "../headers/specialgraphicsview.hpp"
+#include "config.hpp"
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
 
     facade = new UsageFacade;
-
-//    ui->listWidget->setStyleSheet("QListWidget::item {background-color: white;}");
-//
-//    QListWidgetItem *hourse = new QListWidgetItem("      Дом");
-//    ui->listWidget->addItem(hourse);
-//
-//    QListWidgetItem *tree = new QListWidgetItem("      Дерево");
-//    ui->listWidget->addItem(tree);
-//
-//    QListWidgetItem *road = new QListWidgetItem("      Дорога");
-//    ui->listWidget->addItem(road);
-//
-//    QListWidgetItem *car = new QListWidgetItem("      Машина");
-//    ui->listWidget->addItem(car);
-//
-//    QListWidgetItem *flashlight = new QListWidgetItem("      Источник света");
-//    ui->listWidget->addItem(flashlight);
-//    ui->listWidget->addItem(flashlight);
-
 
     ui->graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     ui->graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -86,155 +64,117 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
 MainWindow::~MainWindow() { delete ui; }
 
+void MainWindow::showErrorMessage(const QString &message) {
+    QErrorMessage *err = new QErrorMessage(this);
+    err->showMessage(message);
+}
+
+bool MainWindow::isSetPlatformErrMSG() {
+    if (!facade->isSceneSet()) {
+        showErrorMessage("Сцена ещё не была задана.");
+        return false;
+    }
+    return true;
+}
+
+void MainWindow::delScene() {
+    if (ui->graphicsView->scene())
+        delete ui->graphicsView->scene();
+}
 
 void MainWindow::pictureDown() {
     if (!facade->isSceneSet())
         return;
-
-    if (ui->graphicsView->scene())
-        delete ui->graphicsView->scene();
-
-    QGraphicsScene *setScene = facade->moveDownScene(MOVE_FACTOR, ui->graphicsView->rect());
-    ui->graphicsView->setScene(setScene);
+    delScene();
+    ui->graphicsView->setScene(facade->moveDownScene(MOVE_FACTOR, ui->graphicsView->rect()));
 }
 
 void MainWindow::pictureUp() {
     if (!facade->isSceneSet())
         return;
-
-    if (ui->graphicsView->scene())
-        delete ui->graphicsView->scene();
-
-    QGraphicsScene *setScene = facade->moveUpScene(MOVE_FACTOR, ui->graphicsView->rect());
-    ui->graphicsView->setScene(setScene);
+    delScene();
+    ui->graphicsView->setScene(facade->moveUpScene(MOVE_FACTOR, ui->graphicsView->rect()));
 }
 
 void MainWindow::pictureLeft() {
     if (!facade->isSceneSet())
         return;
-
-    if (ui->graphicsView->scene())
-        delete ui->graphicsView->scene();
-
-    QGraphicsScene *setScene = facade->moveLeftScene(MOVE_FACTOR, ui->graphicsView->rect());
-    ui->graphicsView->setScene(setScene);
+    delScene();
+    ui->graphicsView->setScene(facade->moveLeftScene(MOVE_FACTOR, ui->graphicsView->rect()));
 }
 
 void MainWindow::pictureRight() {
     if (!facade->isSceneSet())
         return;
-
-    if (ui->graphicsView->scene())
-        delete ui->graphicsView->scene();
-
-    QGraphicsScene *setScene = facade->moveRightScene(MOVE_FACTOR, ui->graphicsView->rect());
-    ui->graphicsView->setScene(setScene);
+    delScene();
+    ui->graphicsView->setScene(facade->moveRightScene(MOVE_FACTOR, ui->graphicsView->rect()));
 }
 
 void MainWindow::pictureScaleUp() {
     if (!facade->isSceneSet())
         return;
-
-    if (ui->graphicsView->scene())
-        delete ui->graphicsView->scene();
-
-    QGraphicsScene *setScene = facade->scaleScene(SCALE_COEF + 1, ui->graphicsView->rect());
-    ui->graphicsView->setScene(setScene);
+    delScene();
+    ui->graphicsView->setScene(facade->scaleScene(SCALE_COEF + 1, ui->graphicsView->rect()));
 }
 
 void MainWindow::pictureScaleDown() {
     if (!facade->isSceneSet())
         return;
-
-    if (ui->graphicsView->scene())
-        delete ui->graphicsView->scene();
-
-    QGraphicsScene *setScene = facade->scaleScene(1 - SCALE_COEF, ui->graphicsView->rect());
-    ui->graphicsView->setScene(setScene);
+    delScene();
+    ui->graphicsView->setScene(facade->scaleScene(1 - SCALE_COEF, ui->graphicsView->rect()));
 }
 
 void MainWindow::pictureRotateXRight() {
     if (!facade->isSceneSet())
         return;
-
-    if (ui->graphicsView->scene())
-        delete ui->graphicsView->scene();
-
-    QGraphicsScene *setScene = facade->rotateXScene(ROTATE_COEF, ui->graphicsView->rect());
-    ui->graphicsView->setScene(setScene);
+    delScene();
+    ui->graphicsView->setScene(facade->rotateXScene(ROTATE_COEF, ui->graphicsView->rect()));
 }
 
 void MainWindow::pictureRotateXLeft() {
     if (!facade->isSceneSet())
         return;
-
-    if (ui->graphicsView->scene())
-        delete ui->graphicsView->scene();
-
-    QGraphicsScene *setScene = facade->rotateXScene(-ROTATE_COEF, ui->graphicsView->rect());
-    ui->graphicsView->setScene(setScene);
+    delScene();
+    ui->graphicsView->setScene(facade->rotateXScene(-ROTATE_COEF, ui->graphicsView->rect()));
 }
 
 void MainWindow::pictureRotateYRight() {
     if (!facade->isSceneSet())
         return;
-
-    if (ui->graphicsView->scene())
-        delete ui->graphicsView->scene();
-
-    QGraphicsScene *setScene = facade->rotateYScene(ROTATE_COEF, ui->graphicsView->rect());
-    ui->graphicsView->setScene(setScene);
+    delScene();
+    ui->graphicsView->setScene(facade->rotateYScene(ROTATE_COEF, ui->graphicsView->rect()));
 }
 
 void MainWindow::pictureRotateYLeft() {
     if (!facade->isSceneSet())
         return;
-
-    if (ui->graphicsView->scene())
-        delete ui->graphicsView->scene();
-
-    QGraphicsScene *setScene = facade->rotateYScene(-ROTATE_COEF, ui->graphicsView->rect());
-    ui->graphicsView->setScene(setScene);
+    delScene();
+    ui->graphicsView->setScene(facade->rotateYScene(-ROTATE_COEF, ui->graphicsView->rect()));
 }
 
 void MainWindow::pictureRotateZRight() {
     if (!facade->isSceneSet())
         return;
-
-    if (ui->graphicsView->scene())
-        delete ui->graphicsView->scene();
-
-    QGraphicsScene *setScene = facade->rotateZScene(ROTATE_COEF, ui->graphicsView->rect());
-    ui->graphicsView->setScene(setScene);
+    delScene();
+    ui->graphicsView->setScene(facade->rotateZScene(ROTATE_COEF, ui->graphicsView->rect()));
 }
 
 void MainWindow::pictureRotateZLeft() {
     if (!facade->isSceneSet())
         return;
-
-    if (ui->graphicsView->scene())
-        delete ui->graphicsView->scene();
-
-    QGraphicsScene *setScene = facade->rotateZScene(-ROTATE_COEF, ui->graphicsView->rect());
-    ui->graphicsView->setScene(setScene);
+    delScene();
+    ui->graphicsView->setScene(facade->rotateZScene(-ROTATE_COEF, ui->graphicsView->rect()));
 }
 
 void MainWindow::pictureToCenter() {
     if (!facade->isSceneSet())
         return;
-
-    if (ui->graphicsView->scene())
-        delete ui->graphicsView->scene();
-
-    QGraphicsScene *setScene = facade->toCenter(ui->graphicsView->rect());
-    ui->graphicsView->setScene(setScene);
+    delScene();
+    ui->graphicsView->setScene(facade->toCenter(ui->graphicsView->rect()));
 }
-
-#include <QMessageBox>
 
 
 void MainWindow::on_pushButton_createScene_clicked() {
-
     if (ui->graphicsView->scene()) {
         QMessageBox::StandardButton reply;
         reply = QMessageBox::warning(this, "Предупреждение",
@@ -250,13 +190,9 @@ void MainWindow::on_pushButton_createScene_clicked() {
     }
     int h = ui->length_scene->value();
     int w = ui->width_scene->value();
-
-
+    
     facade->setCellScene(w, h);
-    QGraphicsScene *setScene = facade->drawScene(ui->graphicsView->rect());
-
-
-    ui->graphicsView->setScene(setScene);
+    ui->graphicsView->setScene(facade->drawScene(ui->graphicsView->rect()));
 }
 
 enum ObjIndex {
@@ -280,14 +216,6 @@ enum RetCodeAddObjToScene {
     err
 };
 
-bool MainWindow::isSetScene() {
-    if (!facade->isSceneSet()) {
-        QErrorMessage *err = new QErrorMessage();
-        err->showMessage("Сцена ещё не была задана.");
-        return false;
-    }
-    return true;
-}
 
 void MainWindow::drawThisShit() {
     QGraphicsScene *setScene = facade->drawScene(ui->graphicsView->rect());
@@ -312,7 +240,7 @@ Direction MainWindow::getDeirection() {
 }
 
 void MainWindow::on_pushButton_light_add_clicked() {
-    if (!isSetScene())
+    if (!isSetPlatformErrMSG())
         return;
     int deg_ox = ui->deg_ox->value();
     int deg_oy = ui->deg_oy->value();
@@ -334,7 +262,7 @@ void MainWindow::on_pushButton_light_add_clicked() {
 
 //todo del cast (
 void MainWindow::on_pushButton_addModel_clicked() {
-    if (!isSetScene())
+    if (!isSetPlatformErrMSG())
         return;
 
     ObjIndex cur_obj = static_cast<ObjIndex>(ui->choose_obj->currentIndex());
@@ -354,12 +282,14 @@ void MainWindow::on_pushButton_addModel_clicked() {
         case baseHome:
             qDebug() << "choose base home";
             //todo recode
-            rc = static_cast<RetCodeAddObjToScene>(facade->addHouse(sq_num_ox, sq_num_oy, BASE_LENX_HOUSE, BASE_LENY_HOUSE, BASE_LENZ_HOUSE));
+            rc = static_cast<RetCodeAddObjToScene>(facade->addHouse(sq_num_ox, sq_num_oy, BASE_LENX_HOUSE,
+                                                                    BASE_LENY_HOUSE, BASE_LENZ_HOUSE));
             break;
         case premiumHome:
-        //todo add garag
+            //todo add garag
             qDebug() << "choose premiumHome";
-            rc = static_cast<RetCodeAddObjToScene>(facade->addHouse(sq_num_ox, sq_num_oy, PREMIUM_LENX_HOUSE, PREMIUM_LENY_HOUSE, PREMIUM_LENZ_HOUSE));
+            rc = static_cast<RetCodeAddObjToScene>(facade->addHouse(sq_num_ox, sq_num_oy, PREMIUM_LENX_HOUSE,
+                                                                    PREMIUM_LENY_HOUSE, PREMIUM_LENZ_HOUSE));
             break;
         case road:
             rc = static_cast<RetCodeAddObjToScene>(facade->addRoad(sq_num_ox, sq_num_oy, objDirection));
@@ -370,7 +300,7 @@ void MainWindow::on_pushButton_addModel_clicked() {
             break;
         case carGrey:
             qDebug() << "choose carGrey";
-            color_car =  grey;
+            color_car = grey;
             rc = static_cast<RetCodeAddObjToScene>(facade->addCar(sq_num_ox, sq_num_oy, objDirection, color_car));
             break;
         case carRed:
@@ -409,107 +339,37 @@ void MainWindow::on_pushButton_addModel_clicked() {
             break;
     }
 
+    CellScene *scene = facade->getScene();
+    PolModel model;
+    PolModel::model_t modelType_;
+    int count = 0;
+    ui->objListActiv->clear();
+
+    for (size_t i = 0; i < scene->getModelsNum(); i++) {
+        model = scene->getModel(i);
+        modelType_ = model.getModelType();
+
+        if (modelType_ == PolModel::model_t::House || \
+            modelType_ == PolModel::model_t::treeFoliage || \
+            modelType_ == PolModel::model_t::roadAsphalt || \
+            modelType_ == PolModel::model_t::Car) {
+            count++;
+            ui->objListActiv->addItem(
+                    QString::number(count) + ". " +
+                    scene->getModel(i).getName() + " - (" +
+                    QString::number(scene->getModel(i).getUsedXCell() + 1) + "; " +
+                    QString::number(scene->getModel(i).getUsedYCell() + 1) + ")");
+        }
+    }
+
+
     drawThisShit();
-
-
-//    todo dell listWidget
-//    int curRow = this->ui->listWidget->currentRow();
-//    if (curRow < 0)
-//        return;
-//
-//    if (curRow >= 0 && curRow < 4) {
-//        int retCode = 0;
-//
-//        if (curRow == 0) {
-//            PlaceHouseChooser placeHouseChooserWindow(nullptr);
-//            placeHouseChooserWindow.setModal(true);
-//            placeHouseChooserWindow.exec();
-//
-//            if (placeHouseChooserWindow.status == PlaceHouseChooser::OK)
-//                retCode = facade->addHouse(
-//                        placeHouseChooserWindow.getXCell(),
-//                        placeHouseChooserWindow.getYCell(),
-//                        placeHouseChooserWindow.getModelLength(),
-//                        placeHouseChooserWindow.getModelHeight(),
-//                        placeHouseChooserWindow.getHouseHeight());
-//            else
-//                return;
-//        } else if (curRow == 1) {
-//            PlaceTreeChooser PlaceTreeChooserWindow(nullptr);
-//            PlaceTreeChooserWindow.setModal(true);
-//            PlaceTreeChooserWindow.exec();
-//
-//            if (PlaceTreeChooserWindow.status == PlaceTreeChooser::OK)
-//                retCode = facade->addTree(
-//                        PlaceTreeChooserWindow.getXCell(),
-//                        PlaceTreeChooserWindow.getYCell());
-//            else
-//                return;
-//}
-//
-//else if (curRow == 2) {
-//PlaceRoadChooser PlaceRoadChooserWindow(nullptr);
-//PlaceRoadChooserWindow.setModal(true);
-//PlaceRoadChooserWindow.
-//
-//exec();
-//
-//if (PlaceRoadChooserWindow.status == PlaceRoadChooser::OK)
-//retCode = facade->addRoad(
-//        PlaceRoadChooserWindow.getXCell(),
-//        PlaceRoadChooserWindow.getYCell(),
-//        PlaceRoadChooserWindow.getDirection());
-//else
-//return;
-//        } else if (curRow == 3) {
-//            PlaceCarChooser PlaceCarChooserWindow(nullptr);
-//            PlaceCarChooserWindow.setModal(true);
-//            PlaceCarChooserWindow.exec();
-//
-//            if (PlaceCarChooserWindow.status == PlaceCarChooser::OK)
-//                retCode = facade->addCar(
-//                        PlaceCarChooserWindow.getXCell(),
-//                        PlaceCarChooserWindow.getYCell(),
-//                        PlaceCarChooserWindow.getDirection());
-//            else
-//                return;
-//        }
-//
-//
-//        if (retCode == 1) {
-//            QErrorMessage *err = new QErrorMessage();
-//            err->showMessage("Некоторые из выбранных ячеек заняты");
-//            return;
-//        } else if (retCode == 2) {
-//            QErrorMessage *err = new QErrorMessage();
-//            err->showMessage("Объект не влезает в сцену");
-//            return;
-//        } else if (retCode == 3) {
-//            QErrorMessage *err = new QErrorMessage();
-//            err->showMessage("Машины разрешено ставить только на доргах");
-//            return;
-//        } else if (retCode == 4) {
-//            QErrorMessage *err = new QErrorMessage();
-//            err->showMessage("Дороги не должны прилегать к дому");
-//            return;
-//        }
-//    } else {
-//        IlluminantPlaceChooser placeIlluminantChooserWindow(nullptr);
-//        placeIlluminantChooserWindow.setModal(true);
-//        placeIlluminantChooserWindow.exec();
-//
-//        if (placeIlluminantChooserWindow.status == IlluminantPlaceChooser::OK)
-//            facade->addLight(
-//                    placeIlluminantChooserWindow.getXAngle(),
-//                    placeIlluminantChooserWindow.getYAngle());
-//        else
-//            return;
-//    }
 
 
 }
 
-
+//todo
+//
 void MainWindow::on_pushButton_deleteModel_clicked() {
     if (!facade->isSceneSet()) {
         QErrorMessage *err = new QErrorMessage();
@@ -517,9 +377,9 @@ void MainWindow::on_pushButton_deleteModel_clicked() {
         return;
     }
 
-    ObjectHangman objectHangmanWindow(facade->getScene(), nullptr);
-    objectHangmanWindow.setModal(true);
-    objectHangmanWindow.exec();
+//    ObjectHangman objectHangmanWindow(facade->getScene(), nullptr);
+//    objectHangmanWindow.setModal(true);
+//    objectHangmanWindow.exec();
 
     QGraphicsScene *setScene = facade->drawScene(ui->graphicsView->rect());
 
@@ -529,22 +389,131 @@ void MainWindow::on_pushButton_deleteModel_clicked() {
 }
 
 
-void MainWindow::on_pushButton_moveModel_clicked() {
-    if (!facade->isSceneSet()) {
-        QErrorMessage *err = new QErrorMessage();
-        err->showMessage("Сцена ещё не была задана.");
-        return;
+int MainWindow::changeModel(PolModel &model, int newXCell, int newYCell) {
+    int retCode = 0;
+
+    PolModel::model_t modelType_ = model.getModelType();
+
+    if (modelType_ == PolModel::model_t::House) {
+        retCode = facade->addHouse(newXCell, newYCell,
+                                   model.getWidthModel(),
+                                   model.getHeightModel(),
+                                   model.getHouseHeight());
+    } else if (modelType_ == PolModel::model_t::treeFoliage) {
+        retCode = facade->addTree(newXCell, newYCell);
+    } else if (modelType_ == PolModel::model_t::roadAsphalt) {
+        retCode = facade->addRoad(newXCell, newYCell,
+                                  model.getDirectionRoad());
+    } else if (modelType_ == PolModel::model_t::Car) {
+        retCode = facade->addCar(newXCell, newYCell,
+                                 model.getDirectionCar(), model.getColorCar());
     }
 
-    ObjectChanger objectChangerWindow(facade, nullptr);
-    objectChangerWindow.setModal(true);
-    objectChangerWindow.exec();
+    return retCode;
+}
 
-    QGraphicsScene *setScene = facade->drawScene(ui->graphicsView->rect());
+void MainWindow::recalculationModelsNum() {
+    CellScene *scene = facade->getScene();
+    size_t realModelsNum = scene->getRealModelsNum();
+    PolModel model;
+    PolModel::model_t modelType_;
+    int cur = 0, border = 0;
 
-    if (ui->graphicsView->scene())
-        delete ui->graphicsView->scene();
-    ui->graphicsView->setScene(setScene);
+    for (size_t i = 0; i < realModelsNum; i++) {
+        model = scene->getModel(cur);
+        modelType_ = model.getModelType();
+
+        if (modelType_ == PolModel::model_t::House || \
+            modelType_ == PolModel::model_t::Car) {
+            border = 3;
+        } else {
+            border = 2;
+        }
+
+        for (int j = 0; j < border; j++) {
+            scene->getModel(cur).setModelNum(i);
+            cur++;
+        }
+    }
+}
+
+
+void MainWindow::on_pushButton_moveModel_clicked() {
+    if (!isSetPlatformErrMSG())
+        return;
+
+    size_t curRow = size_t(this->ui->objListActiv->currentRow());
+
+    CellScene *scene = facade->getScene();
+    size_t modelsNum = scene->getModelsNum();
+    PolModel model;
+    PolModel::model_t modelType_;
+    bool flag = false;
+
+    int sq_num_ox = ui->num_sq_ox->value();
+    int sq_num_oy = ui->num_sq_oy->value();
+
+
+    for (size_t i = 0; i < modelsNum; i++) {
+        model = scene->getModel(i);
+
+        if (model.getModelNum() == curRow) {
+            modelType_ = model.getModelType();
+
+            if ((modelType_ == PolModel::model_t::roadAsphalt || \
+                      modelType_ == PolModel::model_t::roadStripe) && \
+                      scene->getUsedCells()[model.getUsedYCell()][model.getUsedXCell()] == 4) {
+                close();
+                QErrorMessage *err = new QErrorMessage();
+                err->showMessage("Нельзя переместить дорогу, так как на ней расположена машина");
+                return;
+            } else {
+                scene->clearUsedCells(i);
+                int retCode = changeModel(scene->getModel(i),
+                                          sq_num_ox,
+                                          sq_num_oy);
+
+                if (retCode == 1) {
+                    close();
+                    scene->markUsedCells(i);
+                    QErrorMessage *err = new QErrorMessage();
+                    err->showMessage("Некоторые из выбранных ячеек заняты");
+                    return;
+                } else if (retCode == 2) {
+                    close();
+                    scene->markUsedCells(i);
+                    QErrorMessage *err = new QErrorMessage();
+                    err->showMessage("Объект не влезает в сцену");
+                    return;
+                } else if (retCode == 3) {
+                    close();
+                    scene->markUsedCells(i);
+                    QErrorMessage *err = new QErrorMessage();
+                    err->showMessage("Машины разрешено ставить только на доргах");
+                    return;
+                } else if (retCode == 4) {
+                    close();
+                    scene->markUsedCells(i);
+                    QErrorMessage *err = new QErrorMessage();
+                    err->showMessage("Дороги не должны прилегать к дому");
+                    return;
+                } else {
+                    scene->deleteModel(i);
+                    scene->markUsedCells(scene->getModelsNum() - 1);
+                    scene->printUsedCells();
+                }
+
+                flag = true;
+                modelsNum--;
+                i--;
+            }
+        } else if (flag) {
+            break;
+        }
+    }
+    recalculationModelsNum();
+
+    drawThisShit();
 }
 
 void MainWindow::on_pushButton_sceneToInitianPosition_clicked() {

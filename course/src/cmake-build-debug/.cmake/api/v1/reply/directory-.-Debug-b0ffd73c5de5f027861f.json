@@ -17,13 +17,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 92,
+				"line" : 84,
 				"parent" : 0
 			},
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 95,
+				"line" : 87,
 				"parent" : 0
 			}
 		]
@@ -36,10 +36,7 @@
 			"destination" : "/usr/local/forms",
 			"paths" : 
 			[
-				"ui/mainwindow.ui",
-				"ui/movechooser.ui",
-				"ui/objectchanger.ui",
-				"ui/objecthangman.ui"
+				"ui/mainwindow.ui"
 			],
 			"type" : "file"
 		},

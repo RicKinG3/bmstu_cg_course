@@ -115,7 +115,7 @@ private slots:
     void on_pushButton_distance_clicked();
 
 private:
-    int changeModel(PolModel &model, int newXCell, int newYCell);
+    int changeModel(Model &model, int newXCell, int newYCell);
 
     void recalculationModelsNum();
 

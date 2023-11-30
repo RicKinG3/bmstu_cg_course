@@ -161,9 +161,9 @@ void MainWindow::showErrorAddModel(RetCodeAddObjToScene rc) {
 }
 
 void MainWindow::printListObj() {
-    CellScene *scene = facade->getScene();
-    PolModel model;
-    PolModel::model_t modelType_;
+    Platform *scene = facade->getScene();
+    Model model;
+    Model::model_t modelType_;
     int count = 0;
     ui->objListActiv->clear();
 
@@ -171,16 +171,16 @@ void MainWindow::printListObj() {
         model = scene->getModel(i);
         modelType_ = model.getModelType();
 
-        if (modelType_ == PolModel::model_t::House || \
-            modelType_ == PolModel::model_t::treeFoliage || \
-            modelType_ == PolModel::model_t::roadAsphalt || \
-            modelType_ == PolModel::model_t::Car) {
+        if (modelType_ == Model::model_t::House || \
+            modelType_ == Model::model_t::TreeFoliage || \
+            modelType_ == Model::model_t::RoadAsphalt || \
+            modelType_ == Model::model_t::Car) {
             count++;
             ui->objListActiv->addItem(
                     QString::number(count) + ". " +
                     scene->getModel(i).getName() + " - (" +
-                    QString::number(scene->getModel(i).getUsedXCell() + 1) + "; " +
-                    QString::number(scene->getModel(i).getUsedYCell() + 1) + ")");
+                    QString::number(scene->getModel(i).getUsedXSq() + 1) + "; " +
+                    QString::number(scene->getModel(i).getUsedYSq() + 1) + ")");
         }
     }
 }
@@ -255,7 +255,7 @@ void MainWindow::on_pushButton_deleteModel_clicked() {
         err->showMessage("Сцена ещё не была задана.");
         return;
     }
-    CellScene *scene = facade->getScene();
+    Platform *scene = facade->getScene();
     size_t curRow = size_t(this->ui->objListActiv->currentRow());
 
     if (curRow < 0)
@@ -264,8 +264,8 @@ void MainWindow::on_pushButton_deleteModel_clicked() {
     size_t modelsNum = scene->getModelsNum();
     size_t realModelsNum = scene->getRealModelsNum();
     bool flag = false;
-    PolModel model;
-    PolModel::model_t modelType_;
+    Model model;
+    Model::model_t modelType_;
 
     if (curRow < realModelsNum) {
         for (size_t i = 0; i < modelsNum; i++) {
@@ -274,9 +274,9 @@ void MainWindow::on_pushButton_deleteModel_clicked() {
             if (model.getModelNum() == curRow) {
                 modelType_ = model.getModelType();
 
-                if ((modelType_ == PolModel::model_t::roadAsphalt || \
-                      modelType_ == PolModel::model_t::roadStripe) && \
-                      scene->getUsedCells()[model.getUsedYCell()][model.getUsedXCell()] == 4) {
+                if ((modelType_ == Model::model_t::RoadAsphalt || \
+                      modelType_ == Model::model_t::RoadStripe) && \
+                      scene->getUsedSquares()[model.getUsedYSq()][model.getUsedXSq()] == 4) {
                     close();
                     QErrorMessage *err = new QErrorMessage();
                     err->showMessage("Нельзя удалить дорогу, так как на ней расположена машина");
@@ -296,7 +296,7 @@ void MainWindow::on_pushButton_deleteModel_clicked() {
         recalculationModelsNum();
         printListObj();
     } else {
-        scene->deleteIlluminant(curRow - realModelsNum);
+        scene->delLight(curRow - realModelsNum);
     }
 
     QGraphicsScene *setScene = facade->drawScene(ui->graphicsView->rect());
@@ -307,24 +307,24 @@ void MainWindow::on_pushButton_deleteModel_clicked() {
 }
 
 
-int MainWindow::changeModel(PolModel &model, int newXCell, int newYCell) {
+int MainWindow::changeModel(Model &model, int newXCell, int newYCell) {
     int resultCode = 0;
 
     switch (model.getModelType()) {
-        case PolModel::House:
+        case Model::House:
             resultCode = facade->addHouse(newXCell, newYCell,
                                           model.getWidthModel(),
                                           model.getHeightModel(),
                                           model.getHouseHeight());
             break;
-        case PolModel::treeFoliage:
+        case Model::TreeFoliage:
             resultCode = facade->addTree(newXCell, newYCell);
             break;
-        case PolModel::roadAsphalt:
+        case Model::RoadAsphalt:
             resultCode = facade->addRoad(newXCell, newYCell,
                                          model.getDirectionRoad());
             break;
-        case PolModel::Car:
+        case Model::Car:
             resultCode = facade->addCar(newXCell, newYCell,
                                         model.getDirectionCar(), model.getColorCar());
             break;
@@ -337,14 +337,14 @@ int MainWindow::changeModel(PolModel &model, int newXCell, int newYCell) {
 
 //todo
 void MainWindow::recalculationModelsNum() {
-    CellScene *scene = facade->getScene();
+    Platform *scene = facade->getScene();
     size_t realModelsNum = scene->getRealModelsNum();
-    PolModel model;
+    Model model;
     int cur = 0;
 
     for (size_t i = 0; i < realModelsNum; i++) {
         model = scene->getModel(cur);
-        int border = (model.getModelType() == PolModel::House || model.getModelType() == PolModel::Car) ? 3 : 2;
+        int border = (model.getModelType() == Model::House || model.getModelType() == Model::Car) ? 3 : 2;
 
         for (int j = 0; j < border; j++) {
             scene->getModel(cur++).setModelNum(i);
@@ -362,10 +362,10 @@ void MainWindow::on_pushButton_moveModel_clicked() {
         return;
     }
 
-    CellScene *scene = facade->getScene();
+    Platform *scene = facade->getScene();
     size_t modelsNum = scene->getModelsNum();
-    PolModel model;
-    PolModel::model_t modelType_;
+    Model model;
+    Model::model_t modelType_;
     bool flag = false;
 
     int sq_num_ox = ui->num_sq_ox->value();
@@ -378,14 +378,14 @@ void MainWindow::on_pushButton_moveModel_clicked() {
         if (model.getModelNum() == curRow) {
             modelType_ = model.getModelType();
 
-            if ((modelType_ == PolModel::model_t::roadAsphalt || \
-                      modelType_ == PolModel::model_t::roadStripe) && \
-                      scene->getUsedCells()[model.getUsedYCell()][model.getUsedXCell()] == 4) {
+            if ((modelType_ == Model::model_t::RoadAsphalt || \
+                      modelType_ == Model::model_t::RoadStripe) && \
+                      scene->getUsedSquares()[model.getUsedYSq()][model.getUsedXSq()] == 4) {
                 //    close();
                 showErrorMessage("Нельзя переместить дорогу, так как на ней расположена машина");
                 return;
             } else {
-                scene->clearUsedCells(i);
+                scene->clearUsedSquares(i);
                 rc = static_cast<RetCodeAddObjToScene>( changeModel(scene->getModel(i),
                                                                     sq_num_ox,
                                                                     sq_num_oy));
@@ -395,8 +395,8 @@ void MainWindow::on_pushButton_moveModel_clicked() {
                 }
 
                 scene->deleteModel(i);
-                scene->markUsedCells(scene->getModelsNum() - 1);
-                scene->printUsedCells();
+                scene->markUsedSquares(scene->getModelsNum() - 1);
+                scene->printUsedSquares();
 
 
                 flag = true;

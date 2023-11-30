@@ -31,6 +31,11 @@ set(PROJECT_SOURCES
         obj/primitives/Vertex.h
         obj/primitives/Point.cpp
         obj/primitives/Point.h
+        obj/model/Model.cpp
+        obj/model/Model.h
+        obj/light/Light.cpp
+        obj/light/Light.h
+
 )
 
 # Список заголовочных файлов проекта
@@ -46,6 +51,11 @@ set(PROJECT_HEADERS
         obj/primitives/Vertex.h
         obj/primitives/Point.cpp
         obj/primitives/Point.h
+        obj/model/Model.cpp
+        obj/model/Model.h
+        obj/light/Light.cpp
+        obj/light/Light.h
+
 )
 
 # Список файлов формы проекта
@@ -71,6 +81,8 @@ target_include_directories(src PRIVATE
         config
         obj
         obj/primitives
+        obj/model
+        obj/light
 )
 
 # Добавьте флаг OpenMP для компилятора

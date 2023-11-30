@@ -1,146 +1,18 @@
 #include "objects.hpp"
 #include <QDebug>
 
-#include "../config/config.hpp"
-#include "/usr/include/eigen3/Eigen/Dense"
 
 
+Platform::Platform() {}
 
-
-
-
-
-const std::vector<Vertex> PolModel::getVertices() { return vertices; }
-
-void PolModel::setVertices(std::vector<Vertex> &vertices_) { vertices = vertices_; }
-
-
-
-QString PolModel::getName() { return modelName; }
-
-void PolModel::setName(QString modelName_) { modelName = modelName_; }
-
-
-void PolModel::setWidthModel(int widthModel_) { widthModel = widthModel_; }
-
-int PolModel::getWidthModel() { return widthModel; }
-
-void PolModel::setHeightModel(int heightModel_) { heightModel = heightModel_; }
-
-int PolModel::getHeightModel() { return heightModel; }
-
-
-void PolModel::setHouseHeight(int houseHeight_) { houseHeight = houseHeight_; }
-
-int PolModel::getHouseHeight() { return houseHeight; }
-
-
-Direction PolModel::getDirectionRoad() { return directionRoad; }
-
-void PolModel::setDirectionRoad(Direction directionRoad_) { directionRoad = directionRoad_; }
-
-
-Direction PolModel::getDirectionCar() { return directionCar; }
-
-void PolModel::setDirectionCar(Direction directionCar_) { directionCar = directionCar_; }
-
-ColorCar PolModel::getColorCar() { return color_car; }
-
-void PolModel::setColorCar(ColorCar color) { color_car = color; }
-
-
-void PolModel::setModelNum(size_t modelNum_) { modelNum = modelNum_; }
-
-size_t PolModel::getModelNum() { return modelNum; }
-
-
-void PolModel::setUsedCell(int xCell_, int yCell_) {
-    xCell = xCell_;
-    yCell = yCell_;
-}
-
-int PolModel::getUsedXCell() { return xCell; }
-
-int PolModel::getUsedYCell() { return yCell; }
-
-
-void PolModel::setModelType(model_t modelType_) { modelType = modelType_; }
-
-PolModel::model_t PolModel::getModelType() { return modelType; }
-
-
-void PolModel::rotateZ(int angle) {
-    double radianAngle = (double) angle * M_PI / 180.0;
-
-    Point start(PLATFORM_START);
-    double xCenter = start.getXCoord() + xCell * SCALE_FACTOR + SCALE_FACTOR / 2;
-    double yCenter = start.getYCoord() + yCell * SCALE_FACTOR + SCALE_FACTOR / 2;
-
-    for (size_t i = 0; i < vertices.size(); i++) {
-        Point curDot = vertices.at(i).getPosition();
-        curDot.rotateZ(radianAngle, xCenter, yCenter, 0);
-        vertices.at(i).setPosition(curDot);
-    }
-}
-
-void PolModel::moveTo(int newXCell, int newYCell) {
-    Point start(PLATFORM_START);
-
-    int xInc = SCALE_FACTOR * newXCell - SCALE_FACTOR * xCell;
-    int yInc = SCALE_FACTOR * newYCell - SCALE_FACTOR * yCell;
-
-    for (size_t i = 0; i < vertices.size(); i++) {
-        Point curDot = vertices.at(i).getPosition();
-        curDot.move(xInc, yInc, 0);
-        vertices.at(i).setPosition(curDot);
-    }
-
-    xCell = newXCell;
-    yCell = newYCell;
-}
-
-
-std::vector<std::vector<double>> &Illuminant::getShadowMap() { return shadowMap; }
-
-Illuminant::Illuminant(Eigen::Matrix4f &transMatrix_) {
-    transMatrix = transMatrix_;
-    for (size_t i = 0; i < LIGHT_SHADOW_X; i++) { shadowMap.push_back(std::vector<double>(LIGHT_SHADOW_Y, 0)); }
-}
-
-void Illuminant::setShadowMap(std::vector<std::vector<double>> &setShadowMap) {
-    shadowMap = setShadowMap;
-}
-
-void Illuminant::clearShadowMap() {
-    for (size_t i = 0; i < shadowMap.size(); i++) {
-        for (size_t j = 0; j < shadowMap.at(0).size(); j++)
-            shadowMap.at(i).at(j) = 0;
-    }
-}
-
-void Illuminant::setAngles(int xAngle_, int yAngle_) {
-    xAngle = xAngle_;
-    yAngle = yAngle_;
-}
-
-int Illuminant::getXAngle() { return xAngle; }
-
-int Illuminant::getYAngle() { return yAngle; }
-
-Eigen::Matrix4f &Illuminant::getTransMat() { return transMatrix; }
-
-void Illuminant::setTransMat(Eigen::Matrix4f &mat) { transMatrix = mat; }
-
-CellScene::CellScene() {}
-
-CellScene::CellScene(size_t width_, size_t height_) {
+Platform::Platform(size_t width_, size_t height_) {
     width = width_;
     height = height_;
 
-    modelsNum = 0;
-    illumNum = 0;
+    models_um = 0;
+    light_num = 0;
 
-    initUsedCells();
+    initUsedSquares();
     toCenter();
 }
 
@@ -156,8 +28,8 @@ void movePointQuad(int &x1, int &x2, int &x3, int &x4, int &y1, int &y2, int &y3
     y4 += MOVECOEF;
 }
 
-void CellScene::addQuad(std::vector<Vertex> &vertices, std::vector<Polygon> &facets, int x1,
-                        int y1, int z1, int x2, int y2, int z2, int x3, int y3, int z3, int x4, int y4, int z4) {
+void Platform::addQuad(std::vector<Vertex> &vertices, std::vector<Polygon> &facets, int x1,
+                       int y1, int z1, int x2, int y2, int z2, int x3, int y3, int z3, int x4, int y4, int z4) {
     Point dot;
     std::vector<size_t> vec;
     // перенос точек для того чтоб потом работал з алгоритм
@@ -189,19 +61,19 @@ void CellScene::addQuad(std::vector<Vertex> &vertices, std::vector<Polygon> &fac
     facets.push_back(vec);
 }
 
-size_t CellScene::getWidth() { return width; }
+size_t Platform::getWidth() { return width; }
 
-size_t CellScene::getHeight() { return height; }
+size_t Platform::getHeight() { return height; }
 
-CellScene::operator bool() const { return this->plateModel; }
+Platform::operator bool() const { return this->platform_model; }
 
 
-void CellScene::markUsedCells(size_t num) {
-    int xCell = models[num].getUsedXCell();
-    int yCell = models[num].getUsedYCell();
+void Platform::markUsedSquares(size_t num) {
+    int xCell = models[num].getUsedXSq();
+    int yCell = models[num].getUsedYSq();
     int widthModel = models[num].getWidthModel();
     int heightModel = models[num].getHeightModel();
-    PolModel::model_t modelType_ = models[num].getModelType();
+    Model::model_t modelType_ = models[num].getModelType();
 
     int key;
     // 1 - стоит модель
@@ -209,26 +81,26 @@ void CellScene::markUsedCells(size_t num) {
     // 3 - ячейка прилегает к дому
     // 4 - стоит машина на дороге
 
-    if (modelType_ == PolModel::model_t::roadStripe)
+    if (modelType_ == Model::model_t::RoadStripe)
         key = 2;
-    else if (modelType_ == PolModel::model_t::glassCar)
+    else if (modelType_ == Model::model_t::GlassCar)
         key = 4;
     else
         key = 1;
 
-    if (modelType_ == PolModel::model_t::windowsHouse)
-        markCellsNearHouse(xCell, yCell, widthModel, heightModel);
+    if (modelType_ == Model::model_t::WindowsHouse)
+        markSquareNearHouse(xCell, yCell, widthModel, heightModel);
 
 
     for (int i = yCell; i < yCell + heightModel; i++) {
         for (int j = xCell; j < xCell + widthModel; j++) {
-            getUsedCells()[i][j] = key;
+            getUsedSquares()[i][j] = key;
             qDebug() << "i = " << i << "j = " << j << "занята моделью";
         }
     }
 }
 
-void CellScene::markCellsNearHouse(int xCell, int yCell, int widthModel, int heightModel) {
+void Platform::markSquareNearHouse(int xCell, int yCell, int widthModel, int heightModel) {
     for (int k = 0; k < 2; k++) {
         int i = yCell - 1 + k * (heightModel + 1);
         if (i < 0 || size_t(i) > getHeight() - 1)
@@ -236,21 +108,21 @@ void CellScene::markCellsNearHouse(int xCell, int yCell, int widthModel, int hei
 
         int j0 = xCell - 1;
         if (j0 >= 0) {
-            if (getUsedCells()[i][j0] == 0)
-                getUsedCells()[i][j0] = 3;
+            if (getUsedSquares()[i][j0] == 0)
+                getUsedSquares()[i][j0] = 3;
             qDebug() << "i = " << i << "j = " << j0 << "отмечена как прилегающая к дому";
         }
 
         j0 = xCell + widthModel;
         if (size_t(j0) <= getWidth() - 1) {
-            if (getUsedCells()[i][j0] == 0)
-                getUsedCells()[i][j0] = 3;
+            if (getUsedSquares()[i][j0] == 0)
+                getUsedSquares()[i][j0] = 3;
             qDebug() << "i = " << i << "j = " << j0 << "отмечена как прилегающая к дому";
         }
 
         for (int j = xCell; j < xCell + widthModel; j++) {
-            if (getUsedCells()[i][j] == 0)
-                getUsedCells()[i][j] = 3;
+            if (getUsedSquares()[i][j] == 0)
+                getUsedSquares()[i][j] = 3;
             qDebug() << "i = " << i << "j = " << j << "отмечена как прилегающая к дому";
         }
     }
@@ -261,40 +133,40 @@ void CellScene::markCellsNearHouse(int xCell, int yCell, int widthModel, int hei
             continue;
 
         for (int i = yCell; i < yCell + heightModel; i++) {
-            if (getUsedCells()[i][j] == 0)
-                getUsedCells()[i][j] = 3;
+            if (getUsedSquares()[i][j] == 0)
+                getUsedSquares()[i][j] = 3;
             qDebug() << "i = " << i << "j = " << j << "отмечена как прилегающая к дому";
         }
     }
 }
 
-void CellScene::clearUsedCells(size_t num) {
-    int xCell = models[num].getUsedXCell();
-    int yCell = models[num].getUsedYCell();
+void Platform::clearUsedSquares(size_t num) {
+    int xCell = models[num].getUsedXSq();
+    int yCell = models[num].getUsedYSq();
     int widthModel = models[num].getWidthModel();
     int heightModel = models[num].getHeightModel();
-    PolModel::model_t modelType_ = models[num].getModelType();
+    Model::model_t modelType_ = models[num].getModelType();
 
     int key;
-    if (modelType_ == PolModel::model_t::glassCar)
+    if (modelType_ == Model::model_t::GlassCar)
         key = 2;
     else
         key = 0;
 
-    if (modelType_ == PolModel::model_t::windowsHouse)
-        clearCellsNearHouse(xCell, yCell, widthModel, heightModel);
+    if (modelType_ == Model::model_t::WindowsHouse)
+        clearSquareNearHouse(xCell, yCell, widthModel, heightModel);
 
 
     for (int i = yCell; i < yCell + heightModel; i++) {
         for (int j = xCell; j < xCell + widthModel; j++) {
-            getUsedCells()[i][j] = key;
+            getUsedSquares()[i][j] = key;
             qDebug() << "i = " << i << "j = " << j << "освобождена после удаления модели";
         }
     }
 }
 
 
-void CellScene::clearCellsNearHouse(int xCell, int yCell, int widthModel, int heightModel) {
+void Platform::clearSquareNearHouse(int xCell, int yCell, int widthModel, int heightModel) {
     for (int k = 0; k < 2; k++) {
         int i = yCell - 1 + k * (heightModel + 1);
         if (i < 0 || size_t(i) > getHeight() - 1)
@@ -302,21 +174,21 @@ void CellScene::clearCellsNearHouse(int xCell, int yCell, int widthModel, int he
 
         int j0 = xCell - 1;
         if (j0 >= 0) {
-            if (getUsedCells()[i][j0] == 3)
-                getUsedCells()[i][j0] = 0;
+            if (getUsedSquares()[i][j0] == 3)
+                getUsedSquares()[i][j0] = 0;
             qDebug() << "i = " << i << "j = " << j0 << "отмечена как не прилегающая к дому";
         }
 
         j0 = xCell + widthModel;
         if (size_t(j0) <= getWidth() - 1) {
-            if (getUsedCells()[i][j0] == 3)
-                getUsedCells()[i][j0] = 0;
+            if (getUsedSquares()[i][j0] == 3)
+                getUsedSquares()[i][j0] = 0;
             qDebug() << "i = " << i << "j = " << j0 << "отмечена как не прилегающая к дому";
         }
 
         for (int j = xCell; j < xCell + widthModel; j++) {
-            if (getUsedCells()[i][j] == 3)
-                getUsedCells()[i][j] = 0;
+            if (getUsedSquares()[i][j] == 3)
+                getUsedSquares()[i][j] = 0;
             qDebug() << "i = " << i << "j = " << j << "отмечена как не прилегающая к дому";
         }
     }
@@ -327,85 +199,85 @@ void CellScene::clearCellsNearHouse(int xCell, int yCell, int widthModel, int he
             continue;
 
         for (int i = yCell; i < yCell + heightModel; i++) {
-            if (getUsedCells()[i][j] == 3)
-                getUsedCells()[i][j] = 0;
+            if (getUsedSquares()[i][j] == 3)
+                getUsedSquares()[i][j] = 0;
             qDebug() << "i = " << i << "j = " << j << "отмечена как не прилегающая к дому";
         }
     }
 }
 
 
-void CellScene::moveUp(double value) {
+void Platform::moveUp(double value) {
     Eigen::Matrix4f moveMat;
     moveMat << 1, 0, 0, 0,
             0, 1, 0, 0,
             0, 0, 1, 0,
             0, -value, 0, 1;
 
-    transMatrix *= moveMat;
+    trans_mtr *= moveMat;
 }
 
-void CellScene::moveDown(double value) {
+void Platform::moveDown(double value) {
     Eigen::Matrix4f moveMat;
     moveMat << 1, 0, 0, 0,
             0, 1, 0, 0,
             0, 0, 1, 0,
             0, value, 0, 1;
 
-    transMatrix *= moveMat;
+    trans_mtr *= moveMat;
 }
 
-void CellScene::moveLeft(double value) {
+void Platform::moveLeft(double value) {
     Eigen::Matrix4f moveMat;
     moveMat << 1, 0, 0, 0,
             0, 1, 0, 0,
             0, 0, 1, 0,
             -value, 0, 0, 1;
 
-    transMatrix *= moveMat;
+    trans_mtr *= moveMat;
 }
 
-void CellScene::moveRight(double value) {
+void Platform::moveRight(double value) {
     Eigen::Matrix4f moveMat;
     moveMat << 1, 0, 0, 0,
             0, 1, 0, 0,
             0, 0, 1, 0,
             value, 0, 0, 1;
 
-    transMatrix *= moveMat;
+    trans_mtr *= moveMat;
 }
 
-void CellScene::scale(double value) {
+void Platform::scale(double value) {
     Eigen::Matrix4f scaleMatrix;
     scaleMatrix << value, 0, 0, 0,
             0, value, 0, 0,
             0, 0, value, 0,
             0, 0, 0, 1;
 
-    transMatrix *= scaleMatrix;
+    trans_mtr *= scaleMatrix;
 }
 
-void CellScene::rotateX(double angle) {
+void Platform::rotateX(double angle) {
     Eigen::Matrix4f rotateMatrix;
     rotateMatrix << 1, 0, 0, 0,
             0, cos(angle), -sin(angle), 0,
             0, sin(angle), cos(angle), 0,
             0, 0, 0, 1;
 
-    transMatrix *= rotateMatrix;
+    trans_mtr *= rotateMatrix;
 }
 
-void CellScene::rotateY(double angle) {
+void Platform::rotateY(double angle) {
     Eigen::Matrix4f rotateMatrix;
     rotateMatrix << cos(angle), 0, sin(angle), 0,
             0, 1, 0, 0,
             -sin(angle), 0, cos(angle), 0,
             0, 0, 0, 1;
 
-    transMatrix *= rotateMatrix;
+    trans_mtr *= rotateMatrix;
 }
 
-void CellScene::rotateZ(double angle) {
+void Platform::rotateZ(double angle) {
 
     Eigen::Matrix4f rotateMatrix;
     rotateMatrix << cos(angle), -sin(angle), 0, 0,
@@ -413,10 +285,10 @@ void CellScene::rotateZ(double angle) {
             0, 0, 1, 0,
             0, 0, 0, 1;
 
-    transMatrix *= rotateMatrix;
+    trans_mtr *= rotateMatrix;
 }
 
-void CellScene::toCenter() {
+void Platform::toCenter() {
     Point start(PLATFORM_START);
 
     Eigen::Matrix4f newMat;
@@ -429,173 +301,173 @@ void CellScene::toCenter() {
     newMat(3, 1) = CENTER_POINT_Y - start.getYCoord() - getHeight() * SCALE_FACTOR / 2 - MOVECOEF;
     newMat(3, 2) = 0;
 
-    transMatrix = newMat;
+    trans_mtr = newMat;
 }
 
 
-size_t CellScene::getRealModelsNum() { return realModelsNum; }
+size_t Platform::getRealModelsNum() { return real_model_num; }
 
-size_t CellScene::getModelsNum() { return modelsNum; }
+size_t Platform::getModelsNum() { return models_um; }
 
-PolModel &CellScene::getModel(size_t num) { return models.at(num); }
-
-
-const std::vector<Polygon> PolModel::getFacets() { return facets; }
-
-void PolModel::setFacets(std::vector<Polygon> facets_) { facets = facets_; }
-
-void CellScene::setModel(size_t num, PolModel &newModel) { models.at(num) = newModel; }
+Model &Platform::getModel(size_t num) { return models.at(num); }
 
 
-void CellScene::addModel(PolModel &model) {
-    modelsNum++;
+const std::vector<Polygon> Model::getPolygons() { return polygons; }
+
+void Model::setPolygons(std::vector<Polygon> polygons_) { polygons = polygons_; }
+
+void Platform::setModel(size_t num, Model &new_model) { models.at(num) = new_model; }
+
+
+void Platform::addModel(Model &model) {
+    models_um++;
     models.push_back(model);
 
-    PolModel::model_t modelType_ = models[modelsNum - 1].getModelType();
+    Model::model_t modelType_ = models[models_um - 1].getModelType();
 
-    if (modelType_ == PolModel::model_t::windowsHouse || \
-        modelType_ == PolModel::model_t::treeTrunk || \
-        modelType_ == PolModel::model_t::roadStripe || \
-        modelType_ == PolModel::model_t::glassCar) {
-        markUsedCells(modelsNum - 1);
-        realModelsNum++;
-        printUsedCells();
+    if (modelType_ == Model::model_t::WindowsHouse || \
+        modelType_ == Model::model_t::TreeTrunk || \
+        modelType_ == Model::model_t::RoadStripe || \
+        modelType_ == Model::model_t::GlassCar) {
+        markUsedSquares(models_um - 1);
+        real_model_num++;
+        printUsedSquares();
     }
 }
 
-size_t CellScene::getIllumNum() { return illumNum; }
+size_t Platform::getLightNum() { return light_num; }
 
-Illuminant &CellScene::getIlluminant(size_t num) { return illuminants.at(num); }
+Light &Platform::getLight(size_t num) { return lights.at(num); }
 
-void CellScene::setIlluminant(Illuminant &illum, size_t i) { illuminants.at(i) = illum; }
+void Platform::setLight(Light &light, size_t i) { lights.at(i) = light; }
 
-void CellScene::addIlluminant(Illuminant &illum) {
-    illumNum++;
-    illuminants.push_back(illum);
+void Platform::addLight(Light &light) {
+    light_num++;
+    lights.push_back(light);
 }
 
-void CellScene::deleteIlluminant(size_t num) {
-    if (num < illuminants.size()) {
-        illumNum--;
-        illuminants.erase(illuminants.begin() + num);
+void Platform::delLight(size_t num) {
+    if (num < lights.size()) {
+        light_num--;
+        lights.erase(lights.begin() + num);
     }
 }
 
-void CellScene::deleteModel(size_t num) {
+void Platform::deleteModel(size_t num) {
     if (num < models.size()) {
-        PolModel::model_t modelType_ = models[num].getModelType();
+        Model::model_t modelType_ = models[num].getModelType();
 
-        if (modelType_ == PolModel::model_t::windowsHouse || \
-            modelType_ == PolModel::model_t::treeTrunk || \
-            modelType_ == PolModel::model_t::roadStripe || \
-            modelType_ == PolModel::model_t::glassCar) {
-            clearUsedCells(num);
-            realModelsNum--;
+        if (modelType_ == Model::model_t::WindowsHouse || \
+            modelType_ == Model::model_t::TreeTrunk || \
+            modelType_ == Model::model_t::RoadStripe || \
+            modelType_ == Model::model_t::GlassCar) {
+            clearUsedSquares(num);
+            real_model_num--;
         }
 
-        modelsNum--;
+        models_um--;
         models.erase(models.begin() + num);
-        printUsedCells();
+        printUsedSquares();
     }
 }
 
 
-void CellScene::printUsedCells() {
+void Platform::printUsedSquares() {
     for (size_t i = 0; i < height; i++) {
-        qDebug() << getUsedCells()[i];
+        qDebug() << getUsedSquares()[i];
     }
 }
 
 
-PolModel &CellScene::getPlateModel() { return *plateModel; }
+Model &Platform::getPlateModel() { return *platform_model; }
 
-void CellScene::buildPlateModel(Point startOfPlate_, Point endOfPlate_) {
-//    if (plateModel)
+void Platform::buildPlateModel(Point start_platform, Point end_platform) {
+//    if (platform_model)
 //        return;
 
     std::vector<Vertex> vertices;
     std::vector<Polygon> facets;
 
-    for (size_t y = startOfPlate_.getYCoord(); y < endOfPlate_.getYCoord();
+    for (size_t y = start_platform.getYCoord(); y < end_platform.getYCoord();
          y += SCALE_FACTOR)
-        for (size_t x = startOfPlate_.getXCoord(); x < endOfPlate_.getXCoord();
+        for (size_t x = start_platform.getXCoord(); x < end_platform.getXCoord();
              x += SCALE_FACTOR)
             addQuad(vertices, facets, x, y, PLATFORM_START_Z, x + SCALE_FACTOR, y, PLATFORM_START_Z,
                     x + SCALE_FACTOR, y + SCALE_FACTOR, PLATFORM_START_Z, x, y + SCALE_FACTOR, PLATFORM_START_Z);
 
-    addQuad(vertices, facets, startOfPlate_.getXCoord(),
-            startOfPlate_.getYCoord(), PLATFORM_START_Z - 10, startOfPlate_.getXCoord(),
-            endOfPlate_.getYCoord() + 10, PLATFORM_START_Z - 10, endOfPlate_.getXCoord() + 10,
-            endOfPlate_.getYCoord() + 10, PLATFORM_START_Z - 10, endOfPlate_.getXCoord() + 10,
-            startOfPlate_.getYCoord(), PLATFORM_START_Z - 10);
+    addQuad(vertices, facets, start_platform.getXCoord(),
+            start_platform.getYCoord(), PLATFORM_START_Z - 10, start_platform.getXCoord(),
+            end_platform.getYCoord() + 10, PLATFORM_START_Z - 10, end_platform.getXCoord() + 10,
+            end_platform.getYCoord() + 10, PLATFORM_START_Z - 10, end_platform.getXCoord() + 10,
+            start_platform.getYCoord(), PLATFORM_START_Z - 10);
 
-    addQuad(vertices, facets, startOfPlate_.getXCoord(),
-            startOfPlate_.getYCoord(), PLATFORM_START_Z - 10, startOfPlate_.getXCoord(),
-            endOfPlate_.getYCoord() + 10, PLATFORM_START_Z - 10, startOfPlate_.getXCoord(),
-            endOfPlate_.getYCoord() + 10, PLATFORM_START_Z, startOfPlate_.getXCoord(),
-            startOfPlate_.getYCoord(), PLATFORM_START_Z);
+    addQuad(vertices, facets, start_platform.getXCoord(),
+            start_platform.getYCoord(), PLATFORM_START_Z - 10, start_platform.getXCoord(),
+            end_platform.getYCoord() + 10, PLATFORM_START_Z - 10, start_platform.getXCoord(),
+            end_platform.getYCoord() + 10, PLATFORM_START_Z, start_platform.getXCoord(),
+            start_platform.getYCoord(), PLATFORM_START_Z);
 
-    addQuad(vertices, facets, startOfPlate_.getXCoord(),
-            endOfPlate_.getYCoord() + 10, PLATFORM_START_Z - 10, endOfPlate_.getXCoord() + 10,
-            endOfPlate_.getYCoord() + 10, PLATFORM_START_Z - 10, endOfPlate_.getXCoord() + 10,
-            endOfPlate_.getYCoord() + 10, PLATFORM_START_Z, startOfPlate_.getXCoord(),
-            endOfPlate_.getYCoord() + 10, PLATFORM_START_Z);
+    addQuad(vertices, facets, start_platform.getXCoord(),
+            end_platform.getYCoord() + 10, PLATFORM_START_Z - 10, end_platform.getXCoord() + 10,
+            end_platform.getYCoord() + 10, PLATFORM_START_Z - 10, end_platform.getXCoord() + 10,
+            end_platform.getYCoord() + 10, PLATFORM_START_Z, start_platform.getXCoord(),
+            end_platform.getYCoord() + 10, PLATFORM_START_Z);
 
-    addQuad(vertices, facets, endOfPlate_.getXCoord() + 10,
-            endOfPlate_.getYCoord() + 10, PLATFORM_START_Z - 10, endOfPlate_.getXCoord() + 10,
-            startOfPlate_.getYCoord(), PLATFORM_START_Z - 10, endOfPlate_.getXCoord() + 10,
-            startOfPlate_.getYCoord(), PLATFORM_START_Z, endOfPlate_.getXCoord() + 10,
-            endOfPlate_.getYCoord() + 10, PLATFORM_START_Z);
+    addQuad(vertices, facets, end_platform.getXCoord() + 10,
+            end_platform.getYCoord() + 10, PLATFORM_START_Z - 10, end_platform.getXCoord() + 10,
+            start_platform.getYCoord(), PLATFORM_START_Z - 10, end_platform.getXCoord() + 10,
+            start_platform.getYCoord(), PLATFORM_START_Z, end_platform.getXCoord() + 10,
+            end_platform.getYCoord() + 10, PLATFORM_START_Z);
 
-    addQuad(vertices, facets, endOfPlate_.getXCoord() + 10,
-            startOfPlate_.getYCoord(), PLATFORM_START_Z - 10, startOfPlate_.getXCoord(),
-            startOfPlate_.getYCoord(), PLATFORM_START_Z - 10, startOfPlate_.getXCoord(),
-            startOfPlate_.getYCoord(), PLATFORM_START_Z, endOfPlate_.getXCoord() + 10,
-            startOfPlate_.getYCoord(), PLATFORM_START_Z);
-    if (plateModel)
-        delete plateModel;
-    plateModel = new PolModel(vertices, facets);
+    addQuad(vertices, facets, end_platform.getXCoord() + 10,
+            start_platform.getYCoord(), PLATFORM_START_Z - 10, start_platform.getXCoord(),
+            start_platform.getYCoord(), PLATFORM_START_Z - 10, start_platform.getXCoord(),
+            start_platform.getYCoord(), PLATFORM_START_Z, end_platform.getXCoord() + 10,
+            start_platform.getYCoord(), PLATFORM_START_Z);
+    if (platform_model)
+        delete platform_model;
+    platform_model = new Model(vertices, facets);
 }
 
-void CellScene::changeSize(size_t newWidth, size_t newHeight) {
-    if (newWidth) {
-        if (newWidth < width) {
-            for (size_t i = 0; i < modelsNum; i++) {
-                if (getModel(i).getUsedXCell() >= (int) newWidth) {
+void Platform::changeSize(size_t new_width, size_t new_height) {
+    if (new_width) {
+        if (new_width < width) {
+            for (size_t i = 0; i < models_um; i++) {
+                if (getModel(i).getUsedXSq() >= (int) new_width) {
                     deleteModel(i);
                     i--;
                 }
             }
         }
 
-        width = newWidth;
+        width = new_width;
     }
 
 
-    if (newHeight) {
-        if (newHeight < height) {
-            for (size_t i = 0; i < modelsNum; i++) {
-                if (getModel(i).getUsedYCell() >= (int) newHeight) {
+    if (new_height) {
+        if (new_height < height) {
+            for (size_t i = 0; i < models_um; i++) {
+                if (getModel(i).getUsedYSq() >= (int) new_height) {
                     deleteModel(i);
                     i--;
                 }
             }
         }
 
-        height = newHeight;
+        height = new_height;
     }
 }
 
-Eigen::Matrix4f &CellScene::getTransMatrix() { return transMatrix; }
+Eigen::Matrix4f &Platform::getTransMtr() { return trans_mtr; }
 
 
-void CellScene::initUsedCells() {
-    usedCells.resize(getHeight());
+void Platform::initUsedSquares() {
+    used_squares.resize(getHeight());
 
     for (size_t i = 0; i < getHeight(); i++) {
-        usedCells[i].resize(getWidth(), 0);
+        used_squares[i].resize(getWidth(), 0);
     }
 }
 
 
-std::vector<std::vector<size_t>> &CellScene::getUsedCells() { return usedCells; }
+std::vector<std::vector<size_t>> &Platform::getUsedSquares() { return used_squares; }

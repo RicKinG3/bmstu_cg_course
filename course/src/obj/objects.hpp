@@ -2,190 +2,94 @@
 #define OBJS_HPP
 
 #define MOVECOEF 500
+
 #include <iostream>
 #include <vector>
 #include "/usr/include/eigen3/Eigen/Dense"
 
-#include "Polygon.h"
+#include "config.hpp"
+#include "Point.h"
 #include "Vertex.h"
+#include "Model.h"
+#include "Light.h"
 
 
-enum Direction {
-    Horizontal,
-    Vertical,
-    Nodirection
-};
-
-enum ColorCar{
-    grey,
-    red
-};
-
-
-class PolModel
-{
+class Platform {
 public:
-    PolModel() {}
-    PolModel(std::vector<Vertex> vertices_, std::vector<Polygon> facets_)
-        : vertices(vertices_), facets(facets_) { }
+    Platform();
 
-    PolModel(std::vector<Vertex> vertices_, std::vector<Polygon> facets_, QString name_)
-        : vertices(vertices_), facets(facets_), modelName(name_) { }
-
-    ~PolModel() {}
-
-    const std::vector<Vertex> getVertices();
-    void setVertices(std::vector<Vertex> &vertices_);
-    const std::vector<Polygon> getFacets();
-    void setFacets(std::vector<Polygon> facets_);
-
-    void moveTo(int newXCell, int newYCell);
-    void rotateZ(int angle);
-
-    void setUsedCell(int xCell_, int yCell_);
-    int getUsedXCell();
-    int getUsedYCell();
-
-    void setWidthModel(int widthModel_);
-    int  getWidthModel();
-    void setHeightModel(int heightModel_);
-    int  getHeightModel();
-    void setHouseHeight(int houseHeight_);
-    int  getHouseHeight();
-
-    void setModelNum(size_t modelNum_);
-    size_t getModelNum();
-
-    QString getName();
-    void setName(QString modelName_);
-
-    enum model_t
-    {
-        House,
-        roofHouse,
-        windowsHouse,
-        treeFoliage,
-        treeTrunk,
-        roadAsphalt,
-        roadStripe,
-        Car,
-        wheelsCar,
-        glassCar,
-        Pickup
-    };
-
-    Direction getDirectionRoad();
-    void setDirectionRoad(Direction directionRoad_);
-    Direction getDirectionCar();
-    void setDirectionCar(Direction directionCar_);
-
-
-    ColorCar getColorCar();
-    void setColorCar(ColorCar color);
-
-
-    void setModelType(model_t modelType_);
-    model_t getModelType();
-
-private:
-    std::vector<Vertex> vertices;
-    std::vector<Polygon> facets;
-    QString modelName;
-
-    int xCell, yCell;
-    int widthModel, heightModel;
-
-    int houseHeight = -1;
-
-    Direction directionRoad = Horizontal;
-    Direction directionCar = Horizontal;
-
-    size_t modelNum;
-    model_t modelType;
-
-    ColorCar color_car = grey;
-};
-
-
-class Illuminant
-{
-public:
-    Illuminant(Eigen::Matrix4f &transMat);
-    Illuminant(){};
-
-    void setShadowMap(std::vector<std::vector<double>> &setShadowMap);
-    std::vector<std::vector<double>> &getShadowMap();
-    void clearShadowMap();
-
-    void setAngles(int xAngle_, int yAngle_);
-    int getXAngle();
-    int getYAngle();
-
-    void setTransMat(Eigen::Matrix4f &mat);
-    Eigen::Matrix4f &getTransMat();
-
-private:
-    std::vector<std::vector<double>> shadowMap;
-    Eigen::Matrix4f transMatrix;
-    int xAngle, yAngle;
-};
-
-
-class CellScene
-{
-public:
-    CellScene();
-    CellScene(size_t width_, size_t height_);
+    Platform(size_t width_, size_t height_);
 
     operator bool() const;
 
     size_t getWidth();
+
     size_t getHeight();
 
-    void buildPlateModel(Point startOfPlate_, Point endOfPlate_);
-    PolModel &getPlateModel();
+    void buildPlateModel(Point start_platform, Point end_platform);
 
-    void changeSize(size_t newWidth, size_t newHeight);
+    Model &getPlateModel();
+
+    void changeSize(size_t new_width, size_t new_height);
 
     void moveUp(double value);
+
     void moveDown(double value);
+
     void moveLeft(double value);
+
     void moveRight(double value);
 
     void scale(double value);
 
     void rotateX(double angle);
+
     void rotateY(double angle);
+
     void rotateZ(double angle);
 
     void toCenter();
 
     size_t getRealModelsNum();
+
     size_t getModelsNum();
-    PolModel &getModel(size_t num);
-    void setModel(size_t num, PolModel &newModel);
-    void addModel(PolModel &model);
+
+    Model &getModel(size_t num);
+
+    void setModel(size_t num, Model &new_model);
+
+    void addModel(Model &model);
+
     void deleteModel(size_t num);
 
-    size_t getIllumNum();
-    Illuminant &getIlluminant(size_t num);
-    void setIlluminant(Illuminant &illum, size_t i);
-    void addIlluminant(Illuminant &illum);
-    void deleteIlluminant(size_t num);
+    size_t getLightNum();
 
-    Eigen::Matrix4f &getTransMatrix();
-    void multToTrans(Eigen::Matrix4f &newTrans);
+    Light &getLight(size_t num);
 
-    std::vector<std::vector<size_t>> &getUsedCells();
-    void initUsedCells();
+    void setLight(Light &light, size_t i);
 
-    void markUsedCells(size_t num);
-    void clearUsedCells(size_t num);
-    void printUsedCells();
+    void addLight(Light &light);
+
+    void delLight(size_t num);
+
+    Eigen::Matrix4f &getTransMtr();
+
+    void multToTrans(Eigen::Matrix4f &new_trans_mtr);
+
+    std::vector<std::vector<size_t>> &getUsedSquares();
+
+    void initUsedSquares();
+
+    void markUsedSquares(size_t num);
+
+    void clearUsedSquares(size_t num);
+
+    void printUsedSquares();
 
 private:
-    void markCellsNearHouse(int xCell, int yCell, int widthModel, int heightModel);
-    void clearCellsNearHouse(int xCell, int yCell, int widthModel, int heightModel);
+    void markSquareNearHouse(int xCell, int yCell, int widthModel, int heightModel);
+
+    void clearSquareNearHouse(int xCell, int yCell, int widthModel, int heightModel);
 
     void addQuad(std::vector<Vertex> &vertices, std::vector<Polygon> &facets,
                  int x1, int y1, int z1,
@@ -195,20 +99,20 @@ private:
 
     size_t width, height;
 
-    PolModel *plateModel = nullptr;
+    Model *platform_model = nullptr;
 
-    Eigen::Matrix4f transMatrix;
+    Eigen::Matrix4f trans_mtr;
 
-    size_t realModelsNum = 0;
-    size_t modelsNum = 0;
-    std::vector<PolModel> models;
+    size_t real_model_num = 0;
+    size_t models_um = 0;
+    std::vector<Model> models;
 
-    size_t illumNum = 0;
-    std::vector<Illuminant> illuminants;
+    size_t light_num = 0;
+    std::vector<Light> lights;
 
-    Point centerDot;
+    Point point_center;
 
-    std::vector<std::vector<size_t>> usedCells;
+    std::vector<std::vector<size_t>> used_squares;
 };
 
 #endif // OBJS_HPP

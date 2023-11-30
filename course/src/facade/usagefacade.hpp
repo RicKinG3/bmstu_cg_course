@@ -13,13 +13,13 @@
 
 class Drawer {
 public:
-    void zBufferAlg(CellScene *scene, size_t bufheight, size_t bufWidth);
+    void zBufferAlg(Platform *scene, size_t bufheight, size_t bufWidth);
 
     void zBufForModel(std::vector<Polygon> &facets, std::vector<Vertex> &vertices,
-                      Eigen::Matrix4f &transMat, size_t color, CellScene *scene, size_t bufWidth, size_t bufHeight);
+                      Eigen::Matrix4f &transMat, size_t color, Platform *scene, size_t bufWidth, size_t bufHeight);
 
     void generateShadowMap(std::vector<Polygon> &modelFacets, std::vector<Vertex> &modelVertices,
-                           Eigen::Matrix4f &modelTransformationMatrix, Illuminant *lightSource, size_t bufWidth,
+                           Eigen::Matrix4f &modelTransformationMatrix, Light *lightSource, size_t bufWidth,
                            size_t bufHeight);
 
     void prepareTransformationMatrices(Eigen::Matrix4f &toCenter, Eigen::Matrix4f &backToStart);
@@ -34,7 +34,7 @@ public:
     void rasterizeFacet(const std::array<Point, 3> &vertices,
                                 std::vector<std::vector<double>> *shadowMap,
                                 size_t bufferWidth, size_t bufferHeight);
-    QGraphicsScene *drawScene(CellScene *scene, QRectF rect);
+    QGraphicsScene *drawScene(Platform *scene, QRectF rect);
 
 private:
     void interpolateColIntoShadowMap();
@@ -94,10 +94,10 @@ public:
 
     QGraphicsScene *toCenter(QRectF rect);
 
-    CellScene *getScene();
+    Platform *getScene();
 
 private:
-    CellScene *scene = nullptr;
+    Platform *scene = nullptr;
     Drawer *drawer;
 
     void addQuad(std::vector<Vertex> &vertices, std::vector<Polygon> &facets,

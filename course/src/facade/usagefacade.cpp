@@ -14,7 +14,7 @@ void UsageFacade::setCellScene(size_t width_, size_t height_) {
     if (scene)
         delete scene;
 
-    scene = new CellScene(width_, height_);
+    scene = new Platform(width_, height_);
 }
 
 void UsageFacade::changeCellScene(size_t newWidth, size_t newheight) {
@@ -85,7 +85,7 @@ QGraphicsScene *UsageFacade::toCenter(QRectF rect) {
     return drawScene(rect);
 }
 
-CellScene *UsageFacade::getScene() { return scene; }
+Platform *UsageFacade::getScene() { return scene; }
 
 
 void movePointQua(int &x1, int &x2, int &x3, int &x4, int &y1, int &y2, int &y3, int &y4) {
@@ -194,12 +194,12 @@ void UsageFacade::addLight(int xAngle, int yAngle) {
     // Умножение матриц трансформации
     Eigen::Matrix4f transMat = transMatX * transMatY;
 
-    // Создание объекта Illuminant с использованием полученной матрицы трансформации
-    Illuminant illum(transMat);
+    // Создание объекта light с использованием полученной матрицы трансформации
+    Light illum(transMat);
     illum.setAngles(xAngle, yAngle);
 
     // Добавление источника света в сцену
-    scene->addIlluminant(illum);
+    scene->addLight(illum);
 }
 
 void Drawer::specBorderPut(int x, int y, double z) {
@@ -281,7 +281,7 @@ void Drawer::prepareTransformationMatrices(Eigen::Matrix4f &toCenter, Eigen::Mat
 
 // Функция для создания карты теней для 3D модели
 void Drawer::generateShadowMap(std::vector<Polygon> &modelFacets, std::vector<Vertex> &modelVertices,
-                               Eigen::Matrix4f &modelTransformationMatrix, Illuminant *lightSource, size_t bufWidth,
+                               Eigen::Matrix4f &modelTransformationMatrix, Light *lightSource, size_t bufWidth,
                                size_t bufHeight) {
     // Подготовка матриц трансформации
     Eigen::Matrix4f toCenter, backToStart;
@@ -290,7 +290,7 @@ void Drawer::generateShadowMap(std::vector<Polygon> &modelFacets, std::vector<Ve
     std::array<Point, 3> dotsArr;
     // Получение карты теней и матрицы трансформации источника света
     std::vector<std::vector<double>> *shadowMap = &lightSource->getShadowMap();
-    Eigen::Matrix4f illumMat = lightSource->getTransMat();
+    Eigen::Matrix4f illumMat = lightSource->getTransMtr();
     // Вычисление общей матрицы трансформации
     Eigen::Matrix4f dotTransMat = toCenter * modelTransformationMatrix * illumMat * backToStart;
     // Перебор всех граней модели
@@ -394,7 +394,7 @@ void Drawer::generateShadowMap(std::vector<Polygon> &modelFacets, std::vector<Ve
 
 
 void Drawer::zBufForModel(std::vector<Polygon> &facets, std::vector<Vertex> &vertices,
-                          Eigen::Matrix4f &transMat, size_t color, CellScene *scene, size_t bufWidth,
+                          Eigen::Matrix4f &transMat, size_t color, Platform *scene, size_t bufWidth,
                           size_t bufHeight) {
     std::array<Point, 3> dotsArr;
 
@@ -408,10 +408,10 @@ void Drawer::zBufForModel(std::vector<Polygon> &facets, std::vector<Vertex> &ver
     // Массив матриц трансформации для всех источников света
     std::vector<Eigen::Matrix4f> illumDotMatrices;
 
-    for (size_t i = 0; i < scene->getIllumNum(); i++)
+    for (size_t i = 0; i < scene->getLightNum(); i++)
         // Заполнение массива матрицами трансформации источников света
         illumDotMatrices.push_back(
-                toCenter * scene->getIlluminant(i).getTransMat() * backToStart);
+                toCenter * scene->getLight(i).getTransMtr() * backToStart);
     // Обработка всех граней модели
     for (size_t curFaceNum = 0; curFaceNum < facets.size(); curFaceNum++) {
         Eigen::MatrixXf coordinatesVec(3, 4);
@@ -501,14 +501,14 @@ void Drawer::zBufForModel(std::vector<Polygon> &facets, std::vector<Vertex> &ver
                     // Создаём матрицу для хранения трансформированных координат.
                     Eigen::MatrixXf newCoordinates(1, 4);
                     // Перебираем каждый источник света, чтобы проверить, находится ли текущий пиксель в тени.
-                    for (size_t i = 0; i < scene->getIllumNum() && !visible; i++) {
+                    for (size_t i = 0; i < scene->getLightNum() && !visible; i++) {
                         // Присваиваем текущим координатам пикселя значения в матрицу.
                         newCoordinates << curX, curY, curZ, 1;
                         // Трансформируем координаты на основе матрицы трансформации источника света.
                         newCoordinates *= illumDotMatrices.at(i);
                         // Получаем карту теней для текущего источника света.
                         std::vector<std::vector<double>> *shadowMap =
-                                &scene->getIlluminant(i).getShadowMap();
+                                &scene->getLight(i).getShadowMap();
 
                         // Округляем трансформированные координаты до целых значений.
                         int x = round(newCoordinates(0, 0));
@@ -521,7 +521,7 @@ void Drawer::zBufForModel(std::vector<Polygon> &facets, std::vector<Vertex> &ver
                     }
                     // Обновляем буфер глубины текущим значением z.
                     depthBuffer.at(curX).at(curY) = curZ;
-                    if (scene->getIllumNum()) {
+                    if (scene->getLightNum()) {
                         if (curY - MOVECOEF >= 0 && curX - MOVECOEF >= 0)
                             // Если пиксель видим, обновляем буфер кадра соответствующим цветом и признаком видимости.
                             frameBuffer.at(curX - MOVECOEF).at(curY - MOVECOEF) = color + visible;
@@ -568,12 +568,12 @@ void Drawer::zBufForModel(std::vector<Polygon> &facets, std::vector<Vertex> &ver
                 if (curZ >= depthBuffer.at(curX).at(curY)) {
                     short visible = 0;
                     Eigen::MatrixXf newCoordinates(1, 4);
-                    for (size_t i = 0; i < scene->getIllumNum() && !visible; i++) {
+                    for (size_t i = 0; i < scene->getLightNum() && !visible; i++) {
                         newCoordinates << curX, curY, curZ, 1;
 
                         newCoordinates *= illumDotMatrices.at(i);
                         std::vector<std::vector<double>> *shadowMap =
-                                &scene->getIlluminant(i).getShadowMap();
+                                &scene->getLight(i).getShadowMap();
                         int x = round(newCoordinates(0, 0));
                         int y = round(newCoordinates(0, 1));
 
@@ -583,7 +583,7 @@ void Drawer::zBufForModel(std::vector<Polygon> &facets, std::vector<Vertex> &ver
                             visible = 1;
                     }
                     depthBuffer.at(curX).at(curY) = curZ;
-                    if (scene->getIllumNum()) {
+                    if (scene->getLightNum()) {
                         if (curY - MOVECOEF >= 0 && curX - MOVECOEF >= 0)
                             frameBuffer.at(curX - MOVECOEF).at(curY - MOVECOEF) = color + visible;
                     } else if (curY - MOVECOEF >= 0 && curX - MOVECOEF >= 0)
@@ -599,7 +599,7 @@ void Drawer::zBufForModel(std::vector<Polygon> &facets, std::vector<Vertex> &ver
     }
 }
 
-void Drawer::zBufferAlg(CellScene *scene, size_t bufHeight, size_t bufWidth) {
+void Drawer::zBufferAlg(Platform *scene, size_t bufHeight, size_t bufWidth) {
 
 
 
@@ -613,67 +613,67 @@ void Drawer::zBufferAlg(CellScene *scene, size_t bufHeight, size_t bufWidth) {
     }
 
 
-    PolModel model;
+    Model model;
     std::vector<Polygon> facets;
     std::vector<Vertex> vertices;
-    PolModel::model_t typeModel;
+    Model::model_t typeModel;
     // Генерируем карту теней для каждой модели в сцене
     for (size_t i = 0; i < scene->getModelsNum(); i++) {
         model = scene->getModel(i);
-        facets = model.getFacets();
+        facets = model.getPolygons();
         vertices = model.getVertices();
 
 
 
         // Для каждого источника света генерируем карту теней
-        for (size_t j = 0; j < scene->getIllumNum(); j++)
-            generateShadowMap(facets, vertices, scene->getTransMatrix(),
-                              &scene->getIlluminant(j), bufWidth, bufHeight);
+        for (size_t j = 0; j < scene->getLightNum(); j++)
+            generateShadowMap(facets, vertices, scene->getTransMtr(),
+                              &scene->getLight(j), bufWidth, bufHeight);
 
 
     }
     // Обрабатываем базовую модель платформы
     model = scene->getPlateModel();
-    facets = model.getFacets();
+    facets = model.getPolygons();
     vertices = model.getVertices();
 
 
-    for (size_t j = 0; j < scene->getIllumNum(); j++)
-        generateShadowMap(facets, vertices, scene->getTransMatrix(),
-                          &scene->getIlluminant(j), bufWidth, bufHeight);
+    for (size_t j = 0; j < scene->getLightNum(); j++)
+        generateShadowMap(facets, vertices, scene->getTransMtr(),
+                          &scene->getLight(j), bufWidth, bufHeight);
 
 
 //     Выполняем z-буферизацию для всех моделей в сцене
     for (size_t i = 0; i < scene->getModelsNum(); i++) {
         model = scene->getModel(i);
-        facets = model.getFacets();
+        facets = model.getPolygons();
         vertices = model.getVertices();
         typeModel = model.getModelType();
 
 
         // Рассчитываем видимость каждой модели с учетом ее типа
         zBufForModel(
-                facets, vertices, scene->getTransMatrix(), 4 + typeModel * 2, scene, bufWidth, bufHeight);
+                facets, vertices, scene->getTransMtr(), 4 + typeModel * 2, scene, bufWidth, bufHeight);
 
     }
 
     model = scene->getPlateModel();
-    facets = model.getFacets();
+    facets = model.getPolygons();
     vertices = model.getVertices();
 
 
     zBufForModel(
-            facets, vertices, scene->getTransMatrix(), 1, scene, bufWidth, bufHeight);
+            facets, vertices, scene->getTransMtr(), 1, scene, bufWidth, bufHeight);
 
-    for (size_t i = 0; i < scene->getIllumNum(); i++)
+    for (size_t i = 0; i < scene->getLightNum(); i++)
 
 
-        scene->getIlluminant(i).clearShadowMap();
+        scene->getLight(i).clearShadowMap();
 
 
 }
 
-QGraphicsScene *Drawer::drawScene(CellScene *scene, QRectF rect) {
+QGraphicsScene *Drawer::drawScene(Platform *scene, QRectF rect) {
 
 
     size_t width = scene->getWidth() * SCALE_FACTOR;
@@ -799,8 +799,8 @@ QGraphicsScene *Drawer::drawScene(CellScene *scene, QRectF rect) {
 
     outScene->addPixmap(QPixmap::fromImage(*image));
     delete image;
-    for (size_t i = 0; i < scene->getIllumNum(); i++)
-        scene->getIlluminant(i).clearShadowMap();
+    for (size_t i = 0; i < scene->getLightNum(); i++)
+        scene->getLight(i).clearShadowMap();
 
     return outScene;
 }
@@ -814,7 +814,7 @@ bool UsageFacade::searchRoadsNearby(int xCell, int yCell, int widthModel, int he
 
         int j0 = xCell - 1;
         if (j0 >= 0) {
-            if (scene->getUsedCells()[i][j0] == 2 || scene->getUsedCells()[i][j0] == 4) {
+            if (scene->getUsedSquares()[i][j0] == 2 || scene->getUsedSquares()[i][j0] == 4) {
                 qDebug() << "i = " << i << "j = " << j0 << "дорога рядом с домом";
                 return true;
             }
@@ -822,14 +822,14 @@ bool UsageFacade::searchRoadsNearby(int xCell, int yCell, int widthModel, int he
 
         j0 = xCell + widthModel;
         if (size_t(j0) <= scene->getWidth() - 1) {
-            if (scene->getUsedCells()[i][j0] == 2 || scene->getUsedCells()[i][j0] == 4) {
+            if (scene->getUsedSquares()[i][j0] == 2 || scene->getUsedSquares()[i][j0] == 4) {
                 qDebug() << "i = " << i << "j = " << j0 << "дорога рядом с домом";
                 return true;
             }
         }
 
         for (int j = xCell; j < xCell + widthModel; j++) {
-            if (scene->getUsedCells()[i][j] == 2 || scene->getUsedCells()[i][j] == 4) {
+            if (scene->getUsedSquares()[i][j] == 2 || scene->getUsedSquares()[i][j] == 4) {
                 qDebug() << "i = " << i << "j = " << j << "дорога рядом с домом";
                 return true;
             }
@@ -842,7 +842,7 @@ bool UsageFacade::searchRoadsNearby(int xCell, int yCell, int widthModel, int he
             continue;
 
         for (int i = yCell; i < yCell + heightModel; i++) {
-            if (scene->getUsedCells()[i][j] == 2 || scene->getUsedCells()[i][j] == 4) {
+            if (scene->getUsedSquares()[i][j] == 2 || scene->getUsedSquares()[i][j] == 4) {
                 qDebug() << "i = " << i << "j = " << j << "дорога рядом с домом";
                 return true;
             }
@@ -871,7 +871,7 @@ int UsageFacade::addPickup(int xCell, int yCell, Direction direction, ColorCar c
 
     for (int i = yCell; i < yCell + modelHeight; i++) {
         for (int j = xCell; j < xCell + modelLength; j++) {
-            if (scene->getUsedCells()[i][j] != 2) {
+            if (scene->getUsedSquares()[i][j] != 2) {
                 qDebug() << "i = " << i << "j = " << j << "нет дороги (пикап)";
                 return 3;
             }
@@ -957,12 +957,12 @@ int UsageFacade::addPickup(int xCell, int yCell, Direction direction, ColorCar c
 
 
 
-    PolModel pickupModel(vertices, facets, "Пикап");
-    pickupModel.setUsedCell(xCell, yCell);
+    Model pickupModel(vertices, facets, "Пикап");
+    pickupModel.setUsedSquare(xCell, yCell);
     pickupModel.setHeightModel(modelHeight);
     pickupModel.setWidthModel(modelLength);
     pickupModel.setDirectionCar(direction);
-    pickupModel.setModelType(PolModel::Pickup);
+    pickupModel.setModelType(Model::Pickup);
     pickupModel.setModelNum(scene->getRealModelsNum());
 
     if (modelLength == 1)
@@ -987,7 +987,7 @@ int UsageFacade::addHouse(int xCell, int yCell, int modelLength, int modelHeight
 
     for (int i = yCell; i < yCell + modelHeight; i++) {
         for (int j = xCell; j < xCell + modelLength; j++) {
-            if (scene->getUsedCells()[i][j] != 0 && scene->getUsedCells()[i][j] != 3) {
+            if (scene->getUsedSquares()[i][j] != 0 && scene->getUsedSquares()[i][j] != 3) {
                 qDebug() << "i = " << i << "j = " << j << "ячейка занята (дом)";
                 return 1;
             }
@@ -1074,12 +1074,12 @@ int UsageFacade::addHouse(int xCell, int yCell, int modelLength, int modelHeight
         zFactor += SCALE_FACTOR;
     }
 
-    PolModel houseModel(vertices, facets, "Дом");
-    houseModel.setUsedCell(xCell, yCell);
+    Model houseModel(vertices, facets, "Дом");
+    houseModel.setUsedSquare(xCell, yCell);
     houseModel.setHeightModel(modelHeight);
     houseModel.setWidthModel(modelLength);
     houseModel.setHouseHeight(countFloors);
-    houseModel.setModelType(PolModel::House);
+    houseModel.setModelType(Model::House);
     houseModel.setModelNum(scene->getRealModelsNum());
     scene->addModel(houseModel);
 
@@ -1133,12 +1133,12 @@ int UsageFacade::addHouse(int xCell, int yCell, int modelLength, int modelHeight
             xFactor + modelLength * SCALE_FACTOR / 3, yFactor + modelHeight * SCALE_FACTOR, zFactor);
 
 
-    PolModel roofHouseModel(vertices2, facets2, "Крыша дома");
-    roofHouseModel.setUsedCell(xCell, yCell);
+    Model roofHouseModel(vertices2, facets2, "Крыша дома");
+    roofHouseModel.setUsedSquare(xCell, yCell);
     roofHouseModel.setHeightModel(modelHeight);
     roofHouseModel.setWidthModel(modelLength);
     roofHouseModel.setHouseHeight(countFloors);
-    roofHouseModel.setModelType(PolModel::roofHouse);
+    roofHouseModel.setModelType(Model::RoofHouse);
     roofHouseModel.setModelNum(scene->getRealModelsNum());
     scene->addModel(roofHouseModel);
 
@@ -1189,12 +1189,12 @@ int UsageFacade::addHouse(int xCell, int yCell, int modelLength, int modelHeight
         zFactor += SCALE_FACTOR;
     }
 
-    PolModel windowsHouseModel(vertices3, facets3, "Окна дома");
-    windowsHouseModel.setUsedCell(xCell, yCell);
+    Model windowsHouseModel(vertices3, facets3, "Окна дома");
+    windowsHouseModel.setUsedSquare(xCell, yCell);
     windowsHouseModel.setHeightModel(modelHeight);
     windowsHouseModel.setWidthModel(modelLength);
     windowsHouseModel.setHouseHeight(countFloors);
-    windowsHouseModel.setModelType(PolModel::windowsHouse);
+    windowsHouseModel.setModelType(Model::WindowsHouse);
     windowsHouseModel.setModelNum(scene->getRealModelsNum());
     scene->addModel(windowsHouseModel);
 
@@ -1209,7 +1209,7 @@ int UsageFacade::addTree(int xCell, int yCell) {
     if (xCell >= (int) scene->getWidth() || yCell >= (int) scene->getHeight())
         return 2;
 
-    if (scene->getUsedCells()[yCell][xCell] != 0 && scene->getUsedCells()[yCell][xCell] != 3) {
+    if (scene->getUsedSquares()[yCell][xCell] != 0 && scene->getUsedSquares()[yCell][xCell] != 3) {
         qDebug() << "i = " << xCell << "j = " << xCell << "ячейка занята (дерево)";
         return 1;
     }
@@ -1311,11 +1311,11 @@ int UsageFacade::addTree(int xCell, int yCell) {
             xFactor + SCALE_FACTOR * 2 / 3, yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR * 2,
             xFactor + SCALE_FACTOR / 3, yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR * 2);
 
-    PolModel treeFoliageModel(vertices2, facets2, "Дерево");
-    treeFoliageModel.setUsedCell(xCell, yCell);
+    Model treeFoliageModel(vertices2, facets2, "Дерево");
+    treeFoliageModel.setUsedSquare(xCell, yCell);
     treeFoliageModel.setHeightModel(1);
     treeFoliageModel.setWidthModel(1);
-    treeFoliageModel.setModelType(PolModel::treeFoliage);
+    treeFoliageModel.setModelType(Model::TreeFoliage);
     treeFoliageModel.setModelNum(scene->getRealModelsNum());
     scene->addModel(treeFoliageModel);
 
@@ -1346,11 +1346,11 @@ int UsageFacade::addTree(int xCell, int yCell) {
             xFactor + SCALE_FACTOR * 3 / 5, yFactor + SCALE_FACTOR * 3 / 5, zFactor + SCALE_FACTOR,
             xFactor + SCALE_FACTOR * 2 / 5, yFactor + SCALE_FACTOR * 3 / 5, zFactor + SCALE_FACTOR);
 
-    PolModel treeTrunkModel(vertices, facets, "Ствол дерева");
-    treeTrunkModel.setUsedCell(xCell, yCell);
+    Model treeTrunkModel(vertices, facets, "Ствол дерева");
+    treeTrunkModel.setUsedSquare(xCell, yCell);
     treeTrunkModel.setHeightModel(1);
     treeTrunkModel.setWidthModel(1);
-    treeTrunkModel.setModelType(PolModel::treeTrunk);
+    treeTrunkModel.setModelType(Model::TreeTrunk);
     treeTrunkModel.setModelNum(scene->getRealModelsNum());
     scene->addModel(treeTrunkModel);
 
@@ -1365,11 +1365,11 @@ int UsageFacade::addRoad(int xCell, int yCell, Direction direction) {
     if (xCell >= (int) scene->getWidth() || yCell >= (int) scene->getHeight())
         return 2;
 
-    if (scene->getUsedCells()[yCell][xCell] == 3) {
+    if (scene->getUsedSquares()[yCell][xCell] == 3) {
         qDebug() << "i = " << xCell << "j = " << xCell << "ячейка рядом с домом (дорога)";
         return 4;
     }
-    if (scene->getUsedCells()[yCell][xCell] != 0) {
+    if (scene->getUsedSquares()[yCell][xCell] != 0) {
         qDebug() << "i = " << xCell << "j = " << xCell << "ячейка занята (дорога)";
         return 1;
     }
@@ -1389,12 +1389,12 @@ int UsageFacade::addRoad(int xCell, int yCell, Direction direction) {
             xFactor + SCALE_FACTOR, yFactor + SCALE_FACTOR, zFactor + 1,
             xFactor, yFactor + SCALE_FACTOR, zFactor + 1);
 
-    PolModel roadAsphaltModel(vertices, facets, "Дорога");
-    roadAsphaltModel.setUsedCell(xCell, yCell);
+    Model roadAsphaltModel(vertices, facets, "Дорога");
+    roadAsphaltModel.setUsedSquare(xCell, yCell);
     roadAsphaltModel.setHeightModel(1);
     roadAsphaltModel.setWidthModel(1);
     roadAsphaltModel.setDirectionRoad(direction);
-    roadAsphaltModel.setModelType(PolModel::roadAsphalt);
+    roadAsphaltModel.setModelType(Model::RoadAsphalt);
     roadAsphaltModel.setModelNum(scene->getRealModelsNum());
     scene->addModel(roadAsphaltModel);
 
@@ -1424,12 +1424,12 @@ int UsageFacade::addRoad(int xCell, int yCell, Direction direction) {
         }
     }
 
-    PolModel roadStripeModel(vertices2, facets2, "Полоса дороги");
-    roadStripeModel.setUsedCell(xCell, yCell);
+    Model roadStripeModel(vertices2, facets2, "Полоса дороги");
+    roadStripeModel.setUsedSquare(xCell, yCell);
     roadStripeModel.setHeightModel(1);
     roadStripeModel.setWidthModel(1);
     roadStripeModel.setDirectionRoad(direction);
-    roadStripeModel.setModelType(PolModel::roadStripe);
+    roadStripeModel.setModelType(Model::RoadStripe);
     roadStripeModel.setModelNum(scene->getRealModelsNum());
     scene->addModel(roadStripeModel);
 
@@ -1458,7 +1458,7 @@ int UsageFacade::addCar(int xCell, int yCell, Direction direction, ColorCar colo
 
     for (int i = yCell; i < yCell + modelHeight; i++) {
         for (int j = xCell; j < xCell + modelLength; j++) {
-            if (scene->getUsedCells()[i][j] != 2) {
+            if (scene->getUsedSquares()[i][j] != 2) {
                 qDebug() << "i = " << i << "j = " << j << "нет дороги (машина)";
                 return 3;
             }
@@ -1563,13 +1563,13 @@ int UsageFacade::addCar(int xCell, int yCell, Direction direction, ColorCar colo
             xFactor + SCALE_FACTOR * 5 / 6, yFactor + SCALE_FACTOR * 5 / 6, zFactor);
 
 
-    PolModel carModel(vertices, facets, "Машина");
-    carModel.setUsedCell(xCell, yCell);
+    Model carModel(vertices, facets, "Машина");
+    carModel.setUsedSquare(xCell, yCell);
     carModel.setHeightModel(modelHeight);
     carModel.setWidthModel(modelLength);
     carModel.setDirectionCar(direction);
     carModel.setModelNum(scene->getRealModelsNum());
-    carModel.setModelType(PolModel::Car);
+    carModel.setModelType(Model::Car);
 
     if (modelLength == 1)
         carModel.rotateZ(-90);
@@ -1623,12 +1623,12 @@ int UsageFacade::addCar(int xCell, int yCell, Direction direction, ColorCar colo
         yFactor += SCALE_FACTOR / 2 + 4;
     }
 
-    PolModel wheelsCarModel(vertices2, facets2, "Колёса машина");
-    wheelsCarModel.setUsedCell(xCell, yCell);
+    Model wheelsCarModel(vertices2, facets2, "Колёса машина");
+    wheelsCarModel.setUsedSquare(xCell, yCell);
     wheelsCarModel.setHeightModel(modelHeight);
     wheelsCarModel.setWidthModel(modelLength);
     wheelsCarModel.setDirectionCar(direction);
-    wheelsCarModel.setModelType(PolModel::wheelsCar);
+    wheelsCarModel.setModelType(Model::WheelsCar);
     wheelsCarModel.setModelNum(scene->getRealModelsNum());
 
     if (modelLength == 1)
@@ -1681,12 +1681,12 @@ int UsageFacade::addCar(int xCell, int yCell, Direction direction, ColorCar colo
                 xFactor + SCALE_FACTOR * 7 / 6, yFactor + SCALE_FACTOR * 5 / 6 + 1, zFactor,
                 xFactor + SCALE_FACTOR * 9 / 6, yFactor + SCALE_FACTOR * 5 / 6 + 1, zFactor);
 
-    PolModel glassCarModel(vertices3, facets3, "Стёкла машины");
-    glassCarModel.setUsedCell(xCell, yCell);
+    Model glassCarModel(vertices3, facets3, "Стёкла машины");
+    glassCarModel.setUsedSquare(xCell, yCell);
     glassCarModel.setHeightModel(modelHeight);
     glassCarModel.setWidthModel(modelLength);
     glassCarModel.setDirectionCar(direction);
-    glassCarModel.setModelType(PolModel::glassCar);
+    glassCarModel.setModelType(Model::GlassCar);
     glassCarModel.setModelNum(scene->getRealModelsNum());
 
     if (modelLength == 1)

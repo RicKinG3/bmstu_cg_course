@@ -20,7 +20,6 @@ find_package(Qt5 COMPONENTS Gui Widgets REQUIRED)
 
 # Список исходных файлов проекта
 set(PROJECT_SOURCES
-        math/additivemathelements.cpp
         main.cpp
         ui/mainwindow.cpp
         obj/objects.cpp
@@ -28,11 +27,14 @@ set(PROJECT_SOURCES
         facade/usagefacade.cpp
         obj/primitives/Polygon.cpp
         obj/primitives/Polygon.h
+        obj/primitives/Vertex.cpp
+        obj/primitives/Vertex.h
+        obj/primitives/Point.cpp
+        obj/primitives/Point.h
 )
 
 # Список заголовочных файлов проекта
 set(PROJECT_HEADERS
-        math/additivemathelements.hpp
         config/config.hpp
         ui/header/mainwindow.h
         obj/objects.hpp
@@ -40,6 +42,10 @@ set(PROJECT_HEADERS
         facade/usagefacade.hpp
         obj/primitives/Polygon.cpp
         obj/primitives/Polygon.h
+        obj/primitives/Vertex.cpp
+        obj/primitives/Vertex.h
+        obj/primitives/Point.cpp
+        obj/primitives/Point.h
 )
 
 # Список файлов формы проекта
@@ -64,7 +70,6 @@ target_include_directories(src PRIVATE
         facade
         config
         obj
-        math
         obj/primitives
 )
 

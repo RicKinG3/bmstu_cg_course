@@ -6,8 +6,9 @@
 #include <vector>
 #include "/usr/include/eigen3/Eigen/Dense"
 
-#include "additivemathelements.hpp"
 #include "Polygon.h"
+#include "Vertex.h"
+
 
 enum Direction {
     Horizontal,
@@ -20,24 +21,6 @@ enum ColorCar{
     red
 };
 
-class Vertex
-{
-public:
-    Vertex() {}
-    Vertex(Dot3D &position_, std::vector<size_t> &usedFacets_)
-        : position(position_), usedFacets(usedFacets_) { }
-
-    Vertex(Dot3D &position_) : position(position_) { }
-
-    const Dot3D &getPosition() const;
-    void setPosition(Dot3D &position_);
-    const std::vector<size_t> getUsedFacets();
-    void setUsedFacets(std::vector<size_t> usedFacets_);
-
-private:
-    Dot3D position;
-    std::vector<size_t> usedFacets;
-};
 
 class PolModel
 {
@@ -159,7 +142,7 @@ public:
     size_t getWidth();
     size_t getHeight();
 
-    void buildPlateModel(Dot3D startOfPlate_, Dot3D endOfPlate_);
+    void buildPlateModel(Point startOfPlate_, Point endOfPlate_);
     PolModel &getPlateModel();
 
     void changeSize(size_t newWidth, size_t newHeight);
@@ -223,7 +206,7 @@ private:
     size_t illumNum = 0;
     std::vector<Illuminant> illuminants;
 
-    Dot3D centerDot;
+    Point centerDot;
 
     std::vector<std::vector<size_t>> usedCells;
 };

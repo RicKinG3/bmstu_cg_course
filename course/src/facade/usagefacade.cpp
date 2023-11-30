@@ -108,24 +108,24 @@ void UsageFacade::addQuad(std::vector<Vertex> &vertices, std::vector<Polygon> &f
     movePointQua(x1, x2, x3, x4, y1, y2, y3, y4);
 
 
-    Dot3D dot;
+    Point dot;
     std::vector<size_t> vec;
 
     size_t size = facets.size();
 
-    dot = Dot3D(x1, y1, z1);
+    dot = Point(x1, y1, z1);
     vec = {size, size + 1};
     vertices.push_back(Vertex(dot, vec));
 
-    dot = Dot3D(x2, y2, z2);
+    dot = Point(x2, y2, z2);
     vec = {size};
     vertices.push_back(Vertex(dot, vec));
 
-    dot = Dot3D(x3, y3, z3);
+    dot = Point(x3, y3, z3);
     vec = {size, size + 1};
     vertices.push_back(Vertex(dot, vec));
 
-    dot = Dot3D(x4, y4, z4);
+    dot = Point(x4, y4, z4);
     vec = {size + 1};
     vertices.push_back(Vertex(dot, vec));
 
@@ -149,22 +149,22 @@ void movePointTriangle(int &x1, int &x2, int &x3, int &y1, int &y2, int &y3) {
 
 void UsageFacade::addTriangle(std::vector<Vertex> &vertices, std::vector<Polygon> &facets,
                               int x1, int y1, int z1, int x2, int y2, int z2, int x3, int y3, int z3) {
-    Dot3D dot;
+    Point dot;
     std::vector<size_t> vec;
 
     movePointTriangle(x1, x2, x3, y1, y2, y3);
 
     size_t size = facets.size();
 
-    dot = Dot3D(x1, y1, z1);
+    dot = Point(x1, y1, z1);
     vec = {size};
     vertices.push_back(Vertex(dot, vec));
 
-    dot = Dot3D(x2, y2, z2);
+    dot = Point(x2, y2, z2);
     vec = {size};
     vertices.push_back(Vertex(dot, vec));
 
-    dot = Dot3D(x3, y3, z3);
+    dot = Point(x3, y3, z3);
     vec = {size};
     vertices.push_back(Vertex(dot, vec));
 
@@ -287,7 +287,7 @@ void Drawer::generateShadowMap(std::vector<Polygon> &modelFacets, std::vector<Ve
     Eigen::Matrix4f toCenter, backToStart;
     prepareTransformationMatrices(toCenter, backToStart);
     // Массив для хранения преобразованных вершин
-    std::array<Dot3D, 3> dotsArr;
+    std::array<Point, 3> dotsArr;
     // Получение карты теней и матрицы трансформации источника света
     std::vector<std::vector<double>> *shadowMap = &lightSource->getShadowMap();
     Eigen::Matrix4f illumMat = lightSource->getTransMat();
@@ -299,34 +299,34 @@ void Drawer::generateShadowMap(std::vector<Polygon> &modelFacets, std::vector<Ve
         // Получение индексов вершин текущей грани и их преобразование
         std::vector<size_t> curDots = modelFacets.at(curFaceNum).getUsedVertices();
         for (size_t i = 0; i < 3; ++i) {
-            Dot3D vertex = modelVertices.at(curDots.at(i)).getPosition();
+            Point vertex = modelVertices.at(curDots.at(i)).getPosition();
             dotsArr[i] = vertex;
-            coordinatesVec.row(i) << vertex.getXCoordinate(), vertex.getYCoordinate(), vertex.getZCoordinate(), 1;
+            coordinatesVec.row(i) << vertex.getXCoord(), vertex.getYCoord(), vertex.getZCoord(), 1;
         }
         // Применение матрицы трансформации к вершинам
         coordinatesVec *= dotTransMat;
         for (size_t i = 0; i < 3; ++i) {
-            dotsArr[i] = Dot3D(coordinatesVec(i, 0), coordinatesVec(i, 1), coordinatesVec(i, 2));
+            dotsArr[i] = Point(coordinatesVec(i, 0), coordinatesVec(i, 1), coordinatesVec(i, 2));
         }
         // Сортировка вершин по Y-координате для последующего расчета теней
-        if (dotsArr[0].getYCoordinate() > dotsArr[1].getYCoordinate())
+        if (dotsArr[0].getYCoord() > dotsArr[1].getYCoord())
             std::swap(dotsArr[0], dotsArr[1]);
-        if (dotsArr[0].getYCoordinate() > dotsArr[2].getYCoordinate())
+        if (dotsArr[0].getYCoord() > dotsArr[2].getYCoord())
             std::swap(dotsArr[0], dotsArr[2]);
-        if (dotsArr[1].getYCoordinate() > dotsArr[2].getYCoordinate())
+        if (dotsArr[1].getYCoord() > dotsArr[2].getYCoord())
             std::swap(dotsArr[1], dotsArr[2]);
         // Преобразование координат вершин в пиксели
-        int x1 = round(dotsArr[0].getXCoordinate());
-        int x2 = round(dotsArr[1].getXCoordinate());
-        int x3 = round(dotsArr[2].getXCoordinate());
+        int x1 = round(dotsArr[0].getXCoord());
+        int x2 = round(dotsArr[1].getXCoord());
+        int x3 = round(dotsArr[2].getXCoord());
         // Получение Z-координат вершин
-        double z1 = dotsArr[0].getZCoordinate();
-        double z2 = dotsArr[1].getZCoordinate();
-        double z3 = dotsArr[2].getZCoordinate();
+        double z1 = dotsArr[0].getZCoord();
+        double z2 = dotsArr[1].getZCoord();
+        double z3 = dotsArr[2].getZCoord();
         // Преобразование Y-координат вершин в пиксели
-        int y1 = round(dotsArr[0].getYCoordinate());
-        int y2 = round(dotsArr[1].getYCoordinate());
-        int y3 = round(dotsArr[2].getYCoordinate());
+        int y1 = round(dotsArr[0].getYCoord());
+        int y2 = round(dotsArr[1].getYCoord());
+        int y3 = round(dotsArr[2].getYCoord());
 
 #pragma omp parallel for
         // Используется OpenMP для распараллеливания цикла for по разным потокам, ускоряя вычисления
@@ -396,7 +396,7 @@ void Drawer::generateShadowMap(std::vector<Polygon> &modelFacets, std::vector<Ve
 void Drawer::zBufForModel(std::vector<Polygon> &facets, std::vector<Vertex> &vertices,
                           Eigen::Matrix4f &transMat, size_t color, CellScene *scene, size_t bufWidth,
                           size_t bufHeight) {
-    std::array<Dot3D, 3> dotsArr;
+    std::array<Point, 3> dotsArr;
 
     // Подготовка матриц трансформации
     Eigen::Matrix4f toCenter, backToStart;
@@ -422,37 +422,37 @@ void Drawer::zBufForModel(std::vector<Polygon> &facets, std::vector<Vertex> &ver
         for (int i = 0; i < 3; i++) {
             dotsArr[i] = vertices.at(curDots.at(i)).getPosition();
             coordinatesVec.row(i)
-                    << dotsArr[i].getXCoordinate(), dotsArr[i].getYCoordinate(), dotsArr[i].getZCoordinate(), 1;
+                    << dotsArr[i].getXCoord(), dotsArr[i].getYCoord(), dotsArr[i].getZCoord(), 1;
         }
         // Применение матрицы трансформации
         coordinatesVec *= dotTransMat;
         // Обновление массива точек после трансформации
         for (int i = 0; i < 3; i++) {
-            dotsArr[i] = Dot3D(coordinatesVec(i, 0), coordinatesVec(i, 1), coordinatesVec(i, 2));
+            dotsArr[i] = Point(coordinatesVec(i, 0), coordinatesVec(i, 1), coordinatesVec(i, 2));
         }
 //        // Сортировка точек по возрастанию Y-координаты для последующей обработки
-//        std::sort(dotsArr.begin(), dotsArr.end(), [](const Dot3D &a, const Dot3D &b) {
-//            return a.getYCoordinate() < b.getYCoordinate();
+//        std::sort(dotsArr.begin(), dotsArr.end(), [](const Point &a, const Point &b) {
+//            return a.getYCoordinate() < b.getYCoord();
 //        });
-        if (dotsArr[0].getYCoordinate() > dotsArr[1].getYCoordinate())
+        if (dotsArr[0].getYCoord() > dotsArr[1].getYCoord())
             std::swap(dotsArr[0], dotsArr[1]);
-        if (dotsArr[0].getYCoordinate() > dotsArr[2].getYCoordinate())
+        if (dotsArr[0].getYCoord() > dotsArr[2].getYCoord())
             std::swap(dotsArr[0], dotsArr[2]);
-        if (dotsArr[1].getYCoordinate() > dotsArr[2].getYCoordinate())
+        if (dotsArr[1].getYCoord() > dotsArr[2].getYCoord())
             std::swap(dotsArr[1], dotsArr[2]);
 
         // Преобразование координат в пиксели и Z-координаты для рендеринга
-        int x1 = round(dotsArr[0].getXCoordinate());
-        int x2 = round(dotsArr[1].getXCoordinate());
-        int x3 = round(dotsArr[2].getXCoordinate());
+        int x1 = round(dotsArr[0].getXCoord());
+        int x2 = round(dotsArr[1].getXCoord());
+        int x3 = round(dotsArr[2].getXCoord());
 
-        double z1 = dotsArr[0].getZCoordinate();
-        double z2 = dotsArr[1].getZCoordinate();
-        double z3 = dotsArr[2].getZCoordinate();
+        double z1 = dotsArr[0].getZCoord();
+        double z2 = dotsArr[1].getZCoord();
+        double z3 = dotsArr[2].getZCoord();
 
-        int y1 = round(dotsArr[0].getYCoordinate());
-        int y2 = round(dotsArr[1].getYCoordinate());
-        int y3 = round(dotsArr[2].getYCoordinate());
+        int y1 = round(dotsArr[0].getYCoord());
+        int y2 = round(dotsArr[1].getYCoord());
+        int y3 = round(dotsArr[2].getYCoord());
         // Параллельный цикл для обработки пикселей вдоль Y-координаты
 #pragma omp parallel for
         for (int curY = (y1 < 0) ? 0 : y1;
@@ -680,7 +680,7 @@ QGraphicsScene *Drawer::drawScene(CellScene *scene, QRectF rect) {
     size_t height = scene->getHeight() * SCALE_FACTOR;
     qDebug() << "Сцена" << scene->getWidth() << " x " << scene->getHeight();
 
-    scene->buildPlateModel(Dot3D(PLATFORM_START), Dot3D(width, height, PLATFORM_START_Z));
+    scene->buildPlateModel(Point(PLATFORM_START), Point(width, height, PLATFORM_START_Z));
 
     using namespace std::chrono;
     nanoseconds start = duration_cast<nanoseconds>(system_clock::now().time_since_epoch());

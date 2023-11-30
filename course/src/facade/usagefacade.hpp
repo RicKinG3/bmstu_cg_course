@@ -24,14 +24,14 @@ public:
 
     void prepareTransformationMatrices(Eigen::Matrix4f &toCenter, Eigen::Matrix4f &backToStart);
 
-    std::array<Dot3D, 3> transformFacetVertices(Polygon &facet,
+    std::array<Point, 3> transformFacetVertices(Polygon &facet,
                                                 const std::vector<Vertex> &modelVertices,
                                                 const Eigen::Matrix4f &modelTransformationMatrix,
                                                 const Eigen::Matrix4f &lightSourceMatrix,
                                                 const Eigen::Matrix4f &toCenter,
                                                 const Eigen::Matrix4f &backToStart);
 
-    void rasterizeFacet(const std::array<Dot3D, 3> &vertices,
+    void rasterizeFacet(const std::array<Point, 3> &vertices,
                                 std::vector<std::vector<double>> *shadowMap,
                                 size_t bufferWidth, size_t bufferHeight);
     QGraphicsScene *drawScene(CellScene *scene, QRectF rect);

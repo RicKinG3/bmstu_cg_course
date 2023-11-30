@@ -5,14 +5,6 @@
 #include "/usr/include/eigen3/Eigen/Dense"
 
 
-const Dot3D &Vertex::getPosition() const { return position; }
-
-void Vertex::setPosition(Dot3D &position_) { position = position_; }
-
-
-const std::vector<size_t> Vertex::getUsedFacets() { return usedFacets; }
-
-void Vertex::setUsedFacets(std::vector<size_t> usedFacets_) { usedFacets = usedFacets_; }
 
 
 
@@ -80,25 +72,25 @@ PolModel::model_t PolModel::getModelType() { return modelType; }
 void PolModel::rotateZ(int angle) {
     double radianAngle = (double) angle * M_PI / 180.0;
 
-    Dot3D start(PLATFORM_START);
-    double xCenter = start.getXCoordinate() + xCell * SCALE_FACTOR + SCALE_FACTOR / 2;
-    double yCenter = start.getYCoordinate() + yCell * SCALE_FACTOR + SCALE_FACTOR / 2;
+    Point start(PLATFORM_START);
+    double xCenter = start.getXCoord() + xCell * SCALE_FACTOR + SCALE_FACTOR / 2;
+    double yCenter = start.getYCoord() + yCell * SCALE_FACTOR + SCALE_FACTOR / 2;
 
     for (size_t i = 0; i < vertices.size(); i++) {
-        Dot3D curDot = vertices.at(i).getPosition();
+        Point curDot = vertices.at(i).getPosition();
         curDot.rotateZ(radianAngle, xCenter, yCenter, 0);
         vertices.at(i).setPosition(curDot);
     }
 }
 
 void PolModel::moveTo(int newXCell, int newYCell) {
-    Dot3D start(PLATFORM_START);
+    Point start(PLATFORM_START);
 
     int xInc = SCALE_FACTOR * newXCell - SCALE_FACTOR * xCell;
     int yInc = SCALE_FACTOR * newYCell - SCALE_FACTOR * yCell;
 
     for (size_t i = 0; i < vertices.size(); i++) {
-        Dot3D curDot = vertices.at(i).getPosition();
+        Point curDot = vertices.at(i).getPosition();
         curDot.move(xInc, yInc, 0);
         vertices.at(i).setPosition(curDot);
     }
@@ -166,7 +158,7 @@ void movePointQuad(int &x1, int &x2, int &x3, int &x4, int &y1, int &y2, int &y3
 
 void CellScene::addQuad(std::vector<Vertex> &vertices, std::vector<Polygon> &facets, int x1,
                         int y1, int z1, int x2, int y2, int z2, int x3, int y3, int z3, int x4, int y4, int z4) {
-    Dot3D dot;
+    Point dot;
     std::vector<size_t> vec;
     // перенос точек для того чтоб потом работал з алгоритм
     movePointQuad(x1, x2, x3, x4, y1, y2, y3, y4);
@@ -174,19 +166,19 @@ void CellScene::addQuad(std::vector<Vertex> &vertices, std::vector<Polygon> &fac
 
     size_t size = facets.size();
 
-    dot = Dot3D(x1, y1, z1);
+    dot = Point(x1, y1, z1);
     vec = {size, size + 1};
     vertices.push_back(Vertex(dot, vec));
 
-    dot = Dot3D(x2, y2, z2);
+    dot = Point(x2, y2, z2);
     vec = {size};
     vertices.push_back(Vertex(dot, vec));
 
-    dot = Dot3D(x3, y3, z3);
+    dot = Point(x3, y3, z3);
     vec = {size, size + 1};
     vertices.push_back(Vertex(dot, vec));
 
-    dot = Dot3D(x4, y4, z4);
+    dot = Point(x4, y4, z4);
     vec = {size + 1};
     vertices.push_back(Vertex(dot, vec));
 
@@ -425,7 +417,7 @@ void CellScene::rotateZ(double angle) {
 }
 
 void CellScene::toCenter() {
-    Dot3D start(PLATFORM_START);
+    Point start(PLATFORM_START);
 
     Eigen::Matrix4f newMat;
 
@@ -433,8 +425,8 @@ void CellScene::toCenter() {
             0, 1, 0, 0,
             0, 0, 1, 0,
             0, 0, 0, 1;
-    newMat(3, 0) = CENTER_POINT_X - start.getXCoordinate() - getWidth() * SCALE_FACTOR / 2 - MOVECOEF;
-    newMat(3, 1) = CENTER_POINT_Y - start.getYCoordinate() - getHeight() * SCALE_FACTOR / 2 - MOVECOEF;
+    newMat(3, 0) = CENTER_POINT_X - start.getXCoord() - getWidth() * SCALE_FACTOR / 2 - MOVECOEF;
+    newMat(3, 1) = CENTER_POINT_Y - start.getYCoord() - getHeight() * SCALE_FACTOR / 2 - MOVECOEF;
     newMat(3, 2) = 0;
 
     transMatrix = newMat;
@@ -517,49 +509,49 @@ void CellScene::printUsedCells() {
 
 PolModel &CellScene::getPlateModel() { return *plateModel; }
 
-void CellScene::buildPlateModel(Dot3D startOfPlate_, Dot3D endOfPlate_) {
+void CellScene::buildPlateModel(Point startOfPlate_, Point endOfPlate_) {
 //    if (plateModel)
 //        return;
 
     std::vector<Vertex> vertices;
     std::vector<Polygon> facets;
 
-    for (size_t y = startOfPlate_.getYCoordinate(); y < endOfPlate_.getYCoordinate();
+    for (size_t y = startOfPlate_.getYCoord(); y < endOfPlate_.getYCoord();
          y += SCALE_FACTOR)
-        for (size_t x = startOfPlate_.getXCoordinate(); x < endOfPlate_.getXCoordinate();
+        for (size_t x = startOfPlate_.getXCoord(); x < endOfPlate_.getXCoord();
              x += SCALE_FACTOR)
             addQuad(vertices, facets, x, y, PLATFORM_START_Z, x + SCALE_FACTOR, y, PLATFORM_START_Z,
                     x + SCALE_FACTOR, y + SCALE_FACTOR, PLATFORM_START_Z, x, y + SCALE_FACTOR, PLATFORM_START_Z);
 
-    addQuad(vertices, facets, startOfPlate_.getXCoordinate(),
-            startOfPlate_.getYCoordinate(), PLATFORM_START_Z - 10, startOfPlate_.getXCoordinate(),
-            endOfPlate_.getYCoordinate() + 10, PLATFORM_START_Z - 10, endOfPlate_.getXCoordinate() + 10,
-            endOfPlate_.getYCoordinate() + 10, PLATFORM_START_Z - 10, endOfPlate_.getXCoordinate() + 10,
-            startOfPlate_.getYCoordinate(), PLATFORM_START_Z - 10);
+    addQuad(vertices, facets, startOfPlate_.getXCoord(),
+            startOfPlate_.getYCoord(), PLATFORM_START_Z - 10, startOfPlate_.getXCoord(),
+            endOfPlate_.getYCoord() + 10, PLATFORM_START_Z - 10, endOfPlate_.getXCoord() + 10,
+            endOfPlate_.getYCoord() + 10, PLATFORM_START_Z - 10, endOfPlate_.getXCoord() + 10,
+            startOfPlate_.getYCoord(), PLATFORM_START_Z - 10);
 
-    addQuad(vertices, facets, startOfPlate_.getXCoordinate(),
-            startOfPlate_.getYCoordinate(), PLATFORM_START_Z - 10, startOfPlate_.getXCoordinate(),
-            endOfPlate_.getYCoordinate() + 10, PLATFORM_START_Z - 10, startOfPlate_.getXCoordinate(),
-            endOfPlate_.getYCoordinate() + 10, PLATFORM_START_Z, startOfPlate_.getXCoordinate(),
-            startOfPlate_.getYCoordinate(), PLATFORM_START_Z);
+    addQuad(vertices, facets, startOfPlate_.getXCoord(),
+            startOfPlate_.getYCoord(), PLATFORM_START_Z - 10, startOfPlate_.getXCoord(),
+            endOfPlate_.getYCoord() + 10, PLATFORM_START_Z - 10, startOfPlate_.getXCoord(),
+            endOfPlate_.getYCoord() + 10, PLATFORM_START_Z, startOfPlate_.getXCoord(),
+            startOfPlate_.getYCoord(), PLATFORM_START_Z);
 
-    addQuad(vertices, facets, startOfPlate_.getXCoordinate(),
-            endOfPlate_.getYCoordinate() + 10, PLATFORM_START_Z - 10, endOfPlate_.getXCoordinate() + 10,
-            endOfPlate_.getYCoordinate() + 10, PLATFORM_START_Z - 10, endOfPlate_.getXCoordinate() + 10,
-            endOfPlate_.getYCoordinate() + 10, PLATFORM_START_Z, startOfPlate_.getXCoordinate(),
-            endOfPlate_.getYCoordinate() + 10, PLATFORM_START_Z);
+    addQuad(vertices, facets, startOfPlate_.getXCoord(),
+            endOfPlate_.getYCoord() + 10, PLATFORM_START_Z - 10, endOfPlate_.getXCoord() + 10,
+            endOfPlate_.getYCoord() + 10, PLATFORM_START_Z - 10, endOfPlate_.getXCoord() + 10,
+            endOfPlate_.getYCoord() + 10, PLATFORM_START_Z, startOfPlate_.getXCoord(),
+            endOfPlate_.getYCoord() + 10, PLATFORM_START_Z);
 
-    addQuad(vertices, facets, endOfPlate_.getXCoordinate() + 10,
-            endOfPlate_.getYCoordinate() + 10, PLATFORM_START_Z - 10, endOfPlate_.getXCoordinate() + 10,
-            startOfPlate_.getYCoordinate(), PLATFORM_START_Z - 10, endOfPlate_.getXCoordinate() + 10,
-            startOfPlate_.getYCoordinate(), PLATFORM_START_Z, endOfPlate_.getXCoordinate() + 10,
-            endOfPlate_.getYCoordinate() + 10, PLATFORM_START_Z);
+    addQuad(vertices, facets, endOfPlate_.getXCoord() + 10,
+            endOfPlate_.getYCoord() + 10, PLATFORM_START_Z - 10, endOfPlate_.getXCoord() + 10,
+            startOfPlate_.getYCoord(), PLATFORM_START_Z - 10, endOfPlate_.getXCoord() + 10,
+            startOfPlate_.getYCoord(), PLATFORM_START_Z, endOfPlate_.getXCoord() + 10,
+            endOfPlate_.getYCoord() + 10, PLATFORM_START_Z);
 
-    addQuad(vertices, facets, endOfPlate_.getXCoordinate() + 10,
-            startOfPlate_.getYCoordinate(), PLATFORM_START_Z - 10, startOfPlate_.getXCoordinate(),
-            startOfPlate_.getYCoordinate(), PLATFORM_START_Z - 10, startOfPlate_.getXCoordinate(),
-            startOfPlate_.getYCoordinate(), PLATFORM_START_Z, endOfPlate_.getXCoordinate() + 10,
-            startOfPlate_.getYCoordinate(), PLATFORM_START_Z);
+    addQuad(vertices, facets, endOfPlate_.getXCoord() + 10,
+            startOfPlate_.getYCoord(), PLATFORM_START_Z - 10, startOfPlate_.getXCoord(),
+            startOfPlate_.getYCoord(), PLATFORM_START_Z - 10, startOfPlate_.getXCoord(),
+            startOfPlate_.getYCoord(), PLATFORM_START_Z, endOfPlate_.getXCoord() + 10,
+            startOfPlate_.getYCoord(), PLATFORM_START_Z);
     if (plateModel)
         delete plateModel;
     plateModel = new PolModel(vertices, facets);

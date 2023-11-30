@@ -89,21 +89,27 @@
 			null
 		],
 		[
-			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/math/additivemathelements.hpp",
-			"MU",
-			"GTFQ2GH6TS/moc_additivemathelements.cpp",
-			null
-		],
-		[
 			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/obj/objects.hpp",
 			"MU",
 			"WD4GURZKSU/moc_objects.cpp",
 			null
 		],
 		[
+			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/obj/primitives/Point.h",
+			"MU",
+			"AT3G74AVJQ/moc_Point.cpp",
+			null
+		],
+		[
 			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/obj/primitives/Polygon.h",
 			"MU",
 			"AT3G74AVJQ/moc_Polygon.cpp",
+			null
+		],
+		[
+			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/obj/primitives/Vertex.h",
+			"MU",
+			"AT3G74AVJQ/moc_Vertex.cpp",
 			null
 		],
 		[
@@ -131,7 +137,6 @@
 		"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/facade",
 		"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/config",
 		"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/obj",
-		"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/math",
 		"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/obj/primitives",
 		"/usr/include/x86_64-linux-gnu/qt5",
 		"/usr/include/x86_64-linux-gnu/qt5/QtGui",
@@ -189,17 +194,22 @@
 			null
 		],
 		[
-			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/math/additivemathelements.cpp",
-			"MU",
-			null
-		],
-		[
 			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/obj/objects.cpp",
 			"MU",
 			null
 		],
 		[
+			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/obj/primitives/Point.cpp",
+			"MU",
+			null
+		],
+		[
 			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/obj/primitives/Polygon.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/obj/primitives/Vertex.cpp",
 			"MU",
 			null
 		],

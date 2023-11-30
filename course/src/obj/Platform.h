@@ -7,7 +7,7 @@
 #include <vector>
 #include "/usr/include/eigen3/Eigen/Dense"
 
-#include "config.hpp"
+#include "config.h"
 #include "Point.h"
 #include "Vertex.h"
 #include "Model.h"

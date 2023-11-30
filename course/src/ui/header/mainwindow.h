@@ -5,7 +5,7 @@
 #include <QMainWindow>
 #include <QMouseEvent>
 
-#include "usagefacade.hpp"
+#include "UsageFacade.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {

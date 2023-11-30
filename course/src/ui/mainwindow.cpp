@@ -7,7 +7,7 @@
 #include <QMessageBox>
 #include <QErrorMessage>
 
-#include "config.hpp"
+#include "config.h"
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);

@@ -28,7 +28,7 @@
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
-#include "specialgraphicsview.hpp"
+#include "SpecialGraphicsView.h"
 
 QT_BEGIN_NAMESPACE
 

@@ -6,7 +6,7 @@
 
 #include "Polygon.h"
 #include "Vertex.h"
-#include "config.hpp"
+#include "config.h"
 
 enum Direction {
     Horizontal,

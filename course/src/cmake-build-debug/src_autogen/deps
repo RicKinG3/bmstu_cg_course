@@ -19,13 +19,15 @@ src_autogen/timestamp: \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/CMakeFiles/3.26.4/CMakeSystem.cmake \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/src_autogen/moc_predefs.h \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/config/config.hpp \
-	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/facade/usagefacade.cpp \
-	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/facade/usagefacade.hpp \
+	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/drawer/Drawer.cpp \
+	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/drawer/Drawer.h \
+	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/facade/UsageFacade.cpp \
+	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/facade/UsageFacade.hpp \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/graphics/specialgraphicsview.cpp \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/graphics/specialgraphicsview.hpp \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/main.cpp \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/obj/Platform.cpp \
-	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/obj/Platform.hpp \
+	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/obj/Platform.h \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/obj/light/Light.cpp \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/obj/light/Light.h \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/obj/model/Model.cpp \
@@ -178,6 +180,7 @@ src_autogen/timestamp: \
 	/usr/include/c++/12/limits \
 	/usr/include/c++/12/list \
 	/usr/include/c++/12/map \
+	/usr/include/c++/12/math.h \
 	/usr/include/c++/12/memory \
 	/usr/include/c++/12/new \
 	/usr/include/c++/12/numbers \
@@ -553,6 +556,7 @@ src_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qvector.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent \
+	/usr/include/x86_64-linux-gnu/qt5/QtGui/QPen \
 	/usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtGui/qcolor.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtGui/qcursor.h \

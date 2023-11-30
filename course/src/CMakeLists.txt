@@ -23,8 +23,8 @@ set(PROJECT_SOURCES
         main.cpp
         ui/mainwindow.cpp
         obj/Platform.cpp
-        graphics/specialgraphicsview.cpp
-        facade/usagefacade.cpp
+        graphics/SpecialGraphicsView.cpp
+        facade/UsageFacade.cpp
         obj/primitives/Polygon.cpp
         obj/primitives/Polygon.h
         obj/primitives/Vertex.cpp
@@ -35,16 +35,18 @@ set(PROJECT_SOURCES
         obj/model/Model.h
         obj/light/Light.cpp
         obj/light/Light.h
+        drawer/Drawer.cpp
+        drawer/Drawer.h
 
 )
 
 # Список заголовочных файлов проекта
 set(PROJECT_HEADERS
-        config/config.hpp
+        config/config.h
         ui/header/mainwindow.h
         obj/Platform.h
-        graphics/specialgraphicsview.hpp
-        facade/usagefacade.hpp
+        graphics/SpecialGraphicsView.h
+        facade/UsageFacade.h
         obj/primitives/Polygon.cpp
         obj/primitives/Polygon.h
         obj/primitives/Vertex.cpp
@@ -55,6 +57,8 @@ set(PROJECT_HEADERS
         obj/model/Model.h
         obj/light/Light.cpp
         obj/light/Light.h
+        drawer/Drawer.cpp
+        drawer/Drawer.h
 
 )
 
@@ -83,6 +87,7 @@ target_include_directories(src PRIVATE
         obj/primitives
         obj/model
         obj/light
+        drawer
 )
 
 # Добавьте флаг OpenMP для компилятора

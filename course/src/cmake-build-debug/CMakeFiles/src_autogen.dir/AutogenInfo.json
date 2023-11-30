@@ -77,9 +77,15 @@
 			null
 		],
 		[
-			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/facade/usagefacade.hpp",
+			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/drawer/Drawer.h",
 			"MU",
-			"J3EJN7RB7I/moc_usagefacade.cpp",
+			"XDTVBOIM3H/moc_Drawer.cpp",
+			null
+		],
+		[
+			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/facade/UsageFacade.hpp",
+			"MU",
+			"J3EJN7RB7I/moc_UsageFacade.cpp",
 			null
 		],
 		[
@@ -89,7 +95,7 @@
 			null
 		],
 		[
-			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/obj/Platform.hpp",
+			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/obj/Platform.h",
 			"MU",
 			"WD4GURZKSU/moc_Platform.cpp",
 			null
@@ -152,6 +158,7 @@
 		"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/obj/primitives",
 		"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/obj/model",
 		"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/obj/light",
+		"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/drawer",
 		"/usr/include/x86_64-linux-gnu/qt5",
 		"/usr/include/x86_64-linux-gnu/qt5/QtGui",
 		"/usr/include/x86_64-linux-gnu/qt5/QtCore",
@@ -193,7 +200,12 @@
 	"SOURCES" : 
 	[
 		[
-			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/facade/usagefacade.cpp",
+			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/drawer/Drawer.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/facade/UsageFacade.cpp",
 			"MU",
 			null
 		],

@@ -3,7 +3,7 @@
 #define SRC_LIGHT_H
 #include <vector>
 #include "/usr/include/eigen3/Eigen/Dense"
-#include "config.hpp"
+#include "config.h"
 
 class Light
 {

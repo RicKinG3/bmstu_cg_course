@@ -22,7 +22,7 @@ find_package(Qt5 COMPONENTS Gui Widgets REQUIRED)
 set(PROJECT_SOURCES
         main.cpp
         ui/mainwindow.cpp
-        obj/objects.cpp
+        obj/Platform.cpp
         graphics/specialgraphicsview.cpp
         facade/usagefacade.cpp
         obj/primitives/Polygon.cpp
@@ -42,7 +42,7 @@ set(PROJECT_SOURCES
 set(PROJECT_HEADERS
         config/config.hpp
         ui/header/mainwindow.h
-        obj/objects.hpp
+        obj/Platform.h
         graphics/specialgraphicsview.hpp
         facade/usagefacade.hpp
         obj/primitives/Polygon.cpp

@@ -1,5 +1,5 @@
-#ifndef OBJS_HPP
-#define OBJS_HPP
+#ifndef SRC_PLATFORM_H
+#define SRC_PLATFORM_H
 
 #define MOVECOEF 500
 
@@ -115,4 +115,4 @@ private:
     std::vector<std::vector<size_t>> used_squares;
 };
 
-#endif // OBJS_HPP
+#endif // SRC_PLATFORM_H

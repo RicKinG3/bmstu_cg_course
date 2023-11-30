@@ -1,7 +1,7 @@
-#include "objects.hpp"
+#include "Platform.h"
 #include <QDebug>
 
-
+//todo reform
 
 Platform::Platform() {}
 

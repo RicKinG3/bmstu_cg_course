@@ -89,6 +89,12 @@
 			null
 		],
 		[
+			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/obj/Platform.hpp",
+			"MU",
+			"WD4GURZKSU/moc_Platform.cpp",
+			null
+		],
+		[
 			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/obj/light/Light.h",
 			"MU",
 			"YTFNQUXWHL/moc_Light.cpp",
@@ -98,12 +104,6 @@
 			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/obj/model/Model.h",
 			"MU",
 			"YZH7I6C76F/moc_Model.cpp",
-			null
-		],
-		[
-			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/obj/objects.hpp",
-			"MU",
-			"WD4GURZKSU/moc_objects.cpp",
 			null
 		],
 		[
@@ -208,17 +208,17 @@
 			null
 		],
 		[
+			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/obj/Platform.cpp",
+			"MU",
+			null
+		],
+		[
 			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/obj/light/Light.cpp",
 			"MU",
 			null
 		],
 		[
 			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/obj/model/Model.cpp",
-			"MU",
-			null
-		],
-		[
-			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/obj/objects.cpp",
 			"MU",
 			null
 		],

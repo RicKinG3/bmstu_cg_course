@@ -342,7 +342,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "obj/objects.cpp",
+			"path" : "obj/Platform.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -424,7 +424,7 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "obj/objects.hpp",
+			"path" : "obj/Platform.hpp",
 			"sourceGroupIndex" : 1
 		},
 		{

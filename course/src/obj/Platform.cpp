@@ -325,9 +325,9 @@ void Platform::addModel(Model &model) {
 
     Model::model_t modelType_ = models[models_um - 1].getModelType();
 
-    if (modelType_ == Model::model_t::WindowsHouse || \
-        modelType_ == Model::model_t::TreeTrunk || \
-        modelType_ == Model::model_t::RoadStripe || \
+    if (modelType_ == Model::model_t::WindowsHouse ||
+        modelType_ == Model::model_t::TreeTrunk ||
+        modelType_ == Model::model_t::RoadStripe ||
         modelType_ == Model::model_t::GlassCar) {
         markUsedSquares(models_um - 1);
         real_model_num++;

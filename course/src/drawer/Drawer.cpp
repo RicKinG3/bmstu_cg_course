@@ -448,7 +448,7 @@ void Drawer::zBufferAlg(Platform *scene, size_t bufHeight, size_t bufWidth) {
         facets = model.getPolygons();
         vertices = model.getVertices();
         typeModel = model.getModelType();
-
+        qDebug() << typeModel;
 
         // Рассчитываем видимость каждой модели с учетом ее типа
         zBufForModel(
@@ -587,6 +587,8 @@ QGraphicsScene *Drawer::drawScene(Platform *scene, QRectF rect) {
                 image->setPixel(i, j, glassCarCol);
             } else if (frameBuffer.at(i).at(j) == 24) {
                 image->setPixel(i, j, whiteCol);
+            } else if (frameBuffer.at(i).at(j) == 25) {
+                image->setPixel(i, j, blackCol);
             }
         }
 

@@ -34,6 +34,7 @@ public:
 
     int addPickup(int xCell, int yCell, Direction direction, ColorCar color_car);
 
+    int addBush(int xCell, int yCell);
 
     int addTree(int xCell, int yCell);
 
@@ -79,6 +80,6 @@ private:
                      int x3, int y3, int z3);
 
     bool searchRoadsNearby(int xCell, int yCell, int widthModel, int heightModel);
-    };
+};
 
 #endif // SRC_USAGEFACADE_H

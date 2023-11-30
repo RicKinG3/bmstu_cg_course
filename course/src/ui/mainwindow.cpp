@@ -174,7 +174,8 @@ void MainWindow::printListObj() {
         if (modelType_ == Model::model_t::House || \
             modelType_ == Model::model_t::TreeFoliage || \
             modelType_ == Model::model_t::RoadAsphalt || \
-            modelType_ == Model::model_t::Car) {
+            modelType_ == Model::model_t::Car||
+            modelType_ == Model::model_t::Bush) {
             count++;
             ui->objListActiv->addItem(
                     QString::number(count) + ". " +
@@ -238,6 +239,7 @@ void MainWindow::on_pushButton_addModel_clicked() {
             break;
         case bush:
             qDebug() << "choose bush";
+            rc = static_cast<RetCodeAddObjToScene>(facade->addBush(sq_num_ox, sq_num_oy));
             break;
         default:
             qDebug() << "error choose";

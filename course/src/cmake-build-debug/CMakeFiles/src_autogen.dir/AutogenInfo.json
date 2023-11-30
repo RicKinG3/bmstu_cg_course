@@ -71,7 +71,7 @@
 	"HEADERS" : 
 	[
 		[
-			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/config/config.hpp",
+			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/config/config.h",
 			"MU",
 			"IJHAR2IVER/moc_config.cpp",
 			null
@@ -83,15 +83,15 @@
 			null
 		],
 		[
-			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/facade/UsageFacade.hpp",
+			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/facade/UsageFacade.h",
 			"MU",
 			"J3EJN7RB7I/moc_UsageFacade.cpp",
 			null
 		],
 		[
-			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/graphics/specialgraphicsview.hpp",
+			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/graphics/SpecialGraphicsView.h",
 			"MU",
-			"4NLTMHEJ4E/moc_specialgraphicsview.cpp",
+			"4NLTMHEJ4E/moc_SpecialGraphicsView.cpp",
 			null
 		],
 		[
@@ -210,7 +210,7 @@
 			null
 		],
 		[
-			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/graphics/specialgraphicsview.cpp",
+			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/graphics/SpecialGraphicsView.cpp",
 			"MU",
 			null
 		],

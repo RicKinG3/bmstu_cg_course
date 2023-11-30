@@ -1,6 +1,7 @@
 #ifndef SRC_DRAWER_H
 #define SRC_DRAWER_H
 
+#include <QDebug>
 #include <QGraphicsScene>
 #include <vector>
 

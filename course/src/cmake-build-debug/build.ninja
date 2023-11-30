@@ -81,9 +81,9 @@ build CMakeFiles/src.dir/obj/Platform.cpp.o: CXX_COMPILER__src_unscanned_Debug /
   OBJECT_DIR = CMakeFiles/src.dir
   OBJECT_FILE_DIR = CMakeFiles/src.dir/obj
 
-build CMakeFiles/src.dir/graphics/specialgraphicsview.cpp.o: CXX_COMPILER__src_unscanned_Debug /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/graphics/specialgraphicsview.cpp || cmake_object_order_depends_target_src
+build CMakeFiles/src.dir/graphics/SpecialGraphicsView.cpp.o: CXX_COMPILER__src_unscanned_Debug /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/graphics/SpecialGraphicsView.cpp || cmake_object_order_depends_target_src
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
-  DEP_FILE = CMakeFiles/src.dir/graphics/specialgraphicsview.cpp.o.d
+  DEP_FILE = CMakeFiles/src.dir/graphics/SpecialGraphicsView.cpp.o.d
   FLAGS = -fopenmp -g -std=gnu++17 -fdiagnostics-color=always -fPIC
   INCLUDES = -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/src_autogen/include -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/graphics -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/facade -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/config -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/obj -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/obj/primitives -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/obj/model -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/obj/light -I/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/drawer -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets
   OBJECT_DIR = CMakeFiles/src.dir
@@ -153,7 +153,7 @@ build CMakeFiles/src.dir/drawer/Drawer.cpp.o: CXX_COMPILER__src_unscanned_Debug 
 #############################################
 # Link the executable src
 
-build src: CXX_EXECUTABLE_LINKER__src_Debug CMakeFiles/src.dir/src_autogen/mocs_compilation.cpp.o CMakeFiles/src.dir/main.cpp.o CMakeFiles/src.dir/ui/mainwindow.cpp.o CMakeFiles/src.dir/obj/Platform.cpp.o CMakeFiles/src.dir/graphics/specialgraphicsview.cpp.o CMakeFiles/src.dir/facade/UsageFacade.cpp.o CMakeFiles/src.dir/obj/primitives/Polygon.cpp.o CMakeFiles/src.dir/obj/primitives/Vertex.cpp.o CMakeFiles/src.dir/obj/primitives/Point.cpp.o CMakeFiles/src.dir/obj/model/Model.cpp.o CMakeFiles/src.dir/obj/light/Light.cpp.o CMakeFiles/src.dir/drawer/Drawer.cpp.o | /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.8 /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.15.8 /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.15.8 || src_autogen src_autogen_timestamp_deps
+build src: CXX_EXECUTABLE_LINKER__src_Debug CMakeFiles/src.dir/src_autogen/mocs_compilation.cpp.o CMakeFiles/src.dir/main.cpp.o CMakeFiles/src.dir/ui/mainwindow.cpp.o CMakeFiles/src.dir/obj/Platform.cpp.o CMakeFiles/src.dir/graphics/SpecialGraphicsView.cpp.o CMakeFiles/src.dir/facade/UsageFacade.cpp.o CMakeFiles/src.dir/obj/primitives/Polygon.cpp.o CMakeFiles/src.dir/obj/primitives/Vertex.cpp.o CMakeFiles/src.dir/obj/primitives/Point.cpp.o CMakeFiles/src.dir/obj/model/Model.cpp.o CMakeFiles/src.dir/obj/light/Light.cpp.o CMakeFiles/src.dir/drawer/Drawer.cpp.o | /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.8 /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.15.8 /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.15.8 || src_autogen src_autogen_timestamp_deps
   FLAGS = -fopenmp -g
   LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.8  /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.15.8  /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.15.8
   OBJECT_DIR = CMakeFiles/src.dir
@@ -262,7 +262,7 @@ build src_autogen/timestamp src_autogen/mocs_compilation.cpp | ${cmake_ninja_wor
 #############################################
 # Phony custom command for CMakeFiles/src_autogen_timestamp_deps
 
-build CMakeFiles/src_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/src_autogen_timestamp_deps: phony /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.15.8 /usr/lib/qt5/bin/uic /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.8 /usr/lib/qt5/bin/moc
+build CMakeFiles/src_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/src_autogen_timestamp_deps: phony /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.15.8 /usr/lib/qt5/bin/uic /usr/lib/qt5/bin/moc /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.8
 
 
 #############################################

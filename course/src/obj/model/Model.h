@@ -81,7 +81,8 @@ public:
         Car,
         WheelsCar,
         GlassCar,
-        Pickup
+        Pickup,
+        Bush
     };
 
     Direction getDirectionRoad();

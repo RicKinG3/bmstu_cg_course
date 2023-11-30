@@ -18,13 +18,13 @@ src_autogen/timestamp: \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/CMakeFiles/3.26.4/CMakeCXXCompiler.cmake \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/CMakeFiles/3.26.4/CMakeSystem.cmake \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/src_autogen/moc_predefs.h \
-	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/config/config.hpp \
+	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/config/config.h \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/drawer/Drawer.cpp \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/drawer/Drawer.h \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/facade/UsageFacade.cpp \
-	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/facade/UsageFacade.hpp \
-	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/graphics/specialgraphicsview.cpp \
-	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/graphics/specialgraphicsview.hpp \
+	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/facade/UsageFacade.h \
+	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/graphics/SpecialGraphicsView.cpp \
+	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/graphics/SpecialGraphicsView.h \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/main.cpp \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/obj/Platform.cpp \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/obj/Platform.h \

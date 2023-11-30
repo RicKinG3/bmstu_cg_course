@@ -13,6 +13,35 @@ namespace Ui {
 }
 QT_END_NAMESPACE
 
+enum ObjIndex {
+    baseHome,
+    premiumHome,
+    road,
+    tratuaru,
+    carGrey,
+    carRed,
+    tree,
+    bush
+};
+
+
+enum RetCodeAddObjToScene {
+    pass,
+    sq_full,
+    obj_over_range,
+    car_only_on_road,
+    road_home,
+    err
+};
+
+#define BASE_LENX_HOUSE 3
+#define BASE_LENY_HOUSE 2
+#define BASE_LENZ_HOUSE 1
+
+#define PREMIUM_LENX_HOUSE 3
+#define PREMIUM_LENY_HOUSE 3
+#define PREMIUM_LENZ_HOUSE 2
+
 class MainWindow : public QMainWindow {
 Q_OBJECT
 
@@ -85,6 +114,7 @@ private slots:
 
     void on_pushButton_distance_clicked();
 
+private:
     int changeModel(PolModel &model, int newXCell, int newYCell);
 
     void recalculationModelsNum();
@@ -99,8 +129,8 @@ private slots:
 
     Direction getDeirection();
 
-private:
-
+    void showErrorAddModel(RetCodeAddObjToScene rc);
+    void printListObj();
 
     Ui::MainWindow *ui;
     UsageFacade *facade;

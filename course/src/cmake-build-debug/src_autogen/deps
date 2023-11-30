@@ -21,13 +21,15 @@ src_autogen/timestamp: \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/config/config.hpp \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/facade/usagefacade.cpp \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/facade/usagefacade.hpp \
-	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/headers/specialgraphicsview.hpp \
+	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/graphics/specialgraphicsview.cpp \
+	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/graphics/specialgraphicsview.hpp \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/main.cpp \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/math/additivemathelements.cpp \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/math/additivemathelements.hpp \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/obj/objects.cpp \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/obj/objects.hpp \
-	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/specialgraphicsview.cpp \
+	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/obj/primitives/Polygon.cpp \
+	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/obj/primitives/Polygon.h \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header/mainwindow.h \
 	/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/mainwindow.cpp \
 	/usr/include/asm-generic/errno-base.h \

@@ -101,7 +101,7 @@ void movePointQua(int &x1, int &x2, int &x3, int &x4, int &y1, int &y2, int &y3,
 }
 
 
-void UsageFacade::addQuad(std::vector<Vertex> &vertices, std::vector<Facet> &facets,
+void UsageFacade::addQuad(std::vector<Vertex> &vertices, std::vector<Polygon> &facets,
                           int x1, int y1, int z1, int x2, int y2, int z2,
                           int x3, int y3, int z3, int x4, int y4, int z4) {
     // перенос точек для того чтоб потом работал з алгоритм
@@ -147,7 +147,7 @@ void movePointTriangle(int &x1, int &x2, int &x3, int &y1, int &y2, int &y3) {
 }
 
 
-void UsageFacade::addTriangle(std::vector<Vertex> &vertices, std::vector<Facet> &facets,
+void UsageFacade::addTriangle(std::vector<Vertex> &vertices, std::vector<Polygon> &facets,
                               int x1, int y1, int z1, int x2, int y2, int z2, int x3, int y3, int z3) {
     Dot3D dot;
     std::vector<size_t> vec;
@@ -280,7 +280,7 @@ void Drawer::prepareTransformationMatrices(Eigen::Matrix4f &toCenter, Eigen::Mat
 
 
 // Функция для создания карты теней для 3D модели
-void Drawer::generateShadowMap(std::vector<Facet> &modelFacets, std::vector<Vertex> &modelVertices,
+void Drawer::generateShadowMap(std::vector<Polygon> &modelFacets, std::vector<Vertex> &modelVertices,
                                Eigen::Matrix4f &modelTransformationMatrix, Illuminant *lightSource, size_t bufWidth,
                                size_t bufHeight) {
     // Подготовка матриц трансформации
@@ -393,7 +393,7 @@ void Drawer::generateShadowMap(std::vector<Facet> &modelFacets, std::vector<Vert
 }
 
 
-void Drawer::zBufForModel(std::vector<Facet> &facets, std::vector<Vertex> &vertices,
+void Drawer::zBufForModel(std::vector<Polygon> &facets, std::vector<Vertex> &vertices,
                           Eigen::Matrix4f &transMat, size_t color, CellScene *scene, size_t bufWidth,
                           size_t bufHeight) {
     std::array<Dot3D, 3> dotsArr;
@@ -614,7 +614,7 @@ void Drawer::zBufferAlg(CellScene *scene, size_t bufHeight, size_t bufWidth) {
 
 
     PolModel model;
-    std::vector<Facet> facets;
+    std::vector<Polygon> facets;
     std::vector<Vertex> vertices;
     PolModel::model_t typeModel;
     // Генерируем карту теней для каждой модели в сцене
@@ -879,7 +879,7 @@ int UsageFacade::addPickup(int xCell, int yCell, Direction direction, ColorCar c
     }
 
     std::vector<Vertex> vertices;
-    std::vector<Facet> facets;
+    std::vector<Polygon> facets;
 
     int xFactor = xCell * SCALE_FACTOR + 10;
     int yFactor = yCell * SCALE_FACTOR + 10 - MOVECOEF * 2;
@@ -998,7 +998,7 @@ int UsageFacade::addHouse(int xCell, int yCell, int modelLength, int modelHeight
         return 4;
 
     std::vector<Vertex> vertices;
-    std::vector<Facet> facets;
+    std::vector<Polygon> facets;
 
     int xFactor = xCell * SCALE_FACTOR + 10;
     int yFactor = yCell * SCALE_FACTOR + 10;
@@ -1084,7 +1084,7 @@ int UsageFacade::addHouse(int xCell, int yCell, int modelLength, int modelHeight
     scene->addModel(houseModel);
 
     std::vector<Vertex> vertices2;
-    std::vector<Facet> facets2;
+    std::vector<Polygon> facets2;
 
     //крыша дома
     addTriangle(vertices2, facets2,
@@ -1143,7 +1143,7 @@ int UsageFacade::addHouse(int xCell, int yCell, int modelLength, int modelHeight
     scene->addModel(roofHouseModel);
 
     std::vector<Vertex> vertices3;
-    std::vector<Facet> facets3;
+    std::vector<Polygon> facets3;
 
     xFactor = xCell * SCALE_FACTOR + 10;
     yFactor = yCell * SCALE_FACTOR + 10;
@@ -1219,7 +1219,7 @@ int UsageFacade::addTree(int xCell, int yCell) {
     int zFactor = PLATFORM_START_Z;
 
     std::vector<Vertex> vertices2;
-    std::vector<Facet> facets2;
+    std::vector<Polygon> facets2;
 
     //нижняя часть листвы дерева
     addQuad(vertices2, facets2,
@@ -1321,7 +1321,7 @@ int UsageFacade::addTree(int xCell, int yCell) {
 
 
     std::vector<Vertex> vertices;
-    std::vector<Facet> facets;
+    std::vector<Polygon> facets;
 
 
     //ствол дерева
@@ -1376,7 +1376,7 @@ int UsageFacade::addRoad(int xCell, int yCell, Direction direction) {
 
 
     std::vector<Vertex> vertices;
-    std::vector<Facet> facets;
+    std::vector<Polygon> facets;
 
     int xFactor = xCell * SCALE_FACTOR + 10;
     int yFactor = yCell * SCALE_FACTOR + 10;
@@ -1399,7 +1399,7 @@ int UsageFacade::addRoad(int xCell, int yCell, Direction direction) {
     scene->addModel(roadAsphaltModel);
 
     std::vector<Vertex> vertices2;
-    std::vector<Facet> facets2;
+    std::vector<Polygon> facets2;
 
     // Полосы дороги
     if (direction == Horizontal) {
@@ -1467,7 +1467,7 @@ int UsageFacade::addCar(int xCell, int yCell, Direction direction, ColorCar colo
 
 
     std::vector<Vertex> vertices;
-    std::vector<Facet> facets;
+    std::vector<Polygon> facets;
 
     int xFactor = xCell * SCALE_FACTOR + 10;
     int yFactor = yCell * SCALE_FACTOR + 10 - MOVECOEF * 2;
@@ -1577,7 +1577,7 @@ int UsageFacade::addCar(int xCell, int yCell, Direction direction, ColorCar colo
     scene->addModel(carModel);
 
     std::vector<Vertex> vertices2;
-    std::vector<Facet> facets2;
+    std::vector<Polygon> facets2;
 
     xFactor = xCell * SCALE_FACTOR + 10;
     yFactor = yCell * SCALE_FACTOR + 10 - MOVECOEF * 2;
@@ -1637,7 +1637,7 @@ int UsageFacade::addCar(int xCell, int yCell, Direction direction, ColorCar colo
     scene->addModel(wheelsCarModel);
 
     std::vector<Vertex> vertices3;
-    std::vector<Facet> facets3;
+    std::vector<Polygon> facets3;
 
     xFactor = xCell * SCALE_FACTOR + 10;
     yFactor = yCell * SCALE_FACTOR + 10 - MOVECOEF * 2;

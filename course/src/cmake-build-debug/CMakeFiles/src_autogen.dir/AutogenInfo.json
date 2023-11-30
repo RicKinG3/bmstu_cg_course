@@ -83,9 +83,9 @@
 			null
 		],
 		[
-			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/headers/specialgraphicsview.hpp",
+			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/graphics/specialgraphicsview.hpp",
 			"MU",
-			"K6S233IZAZ/moc_specialgraphicsview.cpp",
+			"4NLTMHEJ4E/moc_specialgraphicsview.cpp",
 			null
 		],
 		[
@@ -98,6 +98,12 @@
 			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/obj/objects.hpp",
 			"MU",
 			"WD4GURZKSU/moc_objects.cpp",
+			null
+		],
+		[
+			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/obj/primitives/Polygon.h",
+			"MU",
+			"AT3G74AVJQ/moc_Polygon.cpp",
 			null
 		],
 		[
@@ -121,9 +127,12 @@
 	"MOC_INCLUDES" : 
 	[
 		"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/ui/header",
-		"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/headers",
+		"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/graphics",
 		"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/facade",
 		"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/config",
+		"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/obj",
+		"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/math",
+		"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/obj/primitives",
 		"/usr/include/x86_64-linux-gnu/qt5",
 		"/usr/include/x86_64-linux-gnu/qt5/QtGui",
 		"/usr/include/x86_64-linux-gnu/qt5/QtCore",
@@ -170,6 +179,11 @@
 			null
 		],
 		[
+			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/graphics/specialgraphicsview.cpp",
+			"MU",
+			null
+		],
+		[
 			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/main.cpp",
 			"MU",
 			null
@@ -185,7 +199,7 @@
 			null
 		],
 		[
-			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/specialgraphicsview.cpp",
+			"/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/obj/primitives/Polygon.cpp",
 			"MU",
 			null
 		],

@@ -2,7 +2,7 @@
 #define USAGEFACADE_HPP
 
 #include "/usr/include/eigen3/Eigen/Dense"
-#include "../obj/objects.hpp"
+#include "objects.hpp"
 #include <QGraphicsScene>
 
 
@@ -15,16 +15,16 @@ class Drawer {
 public:
     void zBufferAlg(CellScene *scene, size_t bufheight, size_t bufWidth);
 
-    void zBufForModel(std::vector<Facet> &facets, std::vector<Vertex> &vertices,
+    void zBufForModel(std::vector<Polygon> &facets, std::vector<Vertex> &vertices,
                       Eigen::Matrix4f &transMat, size_t color, CellScene *scene, size_t bufWidth, size_t bufHeight);
 
-    void generateShadowMap(std::vector<Facet> &modelFacets, std::vector<Vertex> &modelVertices,
+    void generateShadowMap(std::vector<Polygon> &modelFacets, std::vector<Vertex> &modelVertices,
                            Eigen::Matrix4f &modelTransformationMatrix, Illuminant *lightSource, size_t bufWidth,
                            size_t bufHeight);
 
     void prepareTransformationMatrices(Eigen::Matrix4f &toCenter, Eigen::Matrix4f &backToStart);
 
-    std::array<Dot3D, 3> transformFacetVertices(Facet &facet,
+    std::array<Dot3D, 3> transformFacetVertices(Polygon &facet,
                                                 const std::vector<Vertex> &modelVertices,
                                                 const Eigen::Matrix4f &modelTransformationMatrix,
                                                 const Eigen::Matrix4f &lightSourceMatrix,
@@ -100,13 +100,13 @@ private:
     CellScene *scene = nullptr;
     Drawer *drawer;
 
-    void addQuad(std::vector<Vertex> &vertices, std::vector<Facet> &facets,
+    void addQuad(std::vector<Vertex> &vertices, std::vector<Polygon> &facets,
                  int x1, int y1, int z1,
                  int x2, int y2, int z2,
                  int x3, int y3, int z3,
                  int x4, int y4, int z4);
 
-    void addTriangle(std::vector<Vertex> &vertices, std::vector<Facet> &facets,
+    void addTriangle(std::vector<Vertex> &vertices, std::vector<Polygon> &facets,
                      int x1, int y1, int z1,
                      int x2, int y2, int z2,
                      int x3, int y3, int z3);

@@ -24,8 +24,10 @@ set(PROJECT_SOURCES
         main.cpp
         ui/mainwindow.cpp
         obj/objects.cpp
-        specialgraphicsview.cpp
+        graphics/specialgraphicsview.cpp
         facade/usagefacade.cpp
+        obj/primitives/Polygon.cpp
+        obj/primitives/Polygon.h
 )
 
 # Список заголовочных файлов проекта
@@ -34,8 +36,10 @@ set(PROJECT_HEADERS
         config/config.hpp
         ui/header/mainwindow.h
         obj/objects.hpp
-        headers/specialgraphicsview.hpp
+        graphics/specialgraphicsview.hpp
         facade/usagefacade.hpp
+        obj/primitives/Polygon.cpp
+        obj/primitives/Polygon.h
 )
 
 # Список файлов формы проекта
@@ -56,9 +60,12 @@ add_executable(src
 
 target_include_directories(src PRIVATE
         ui/header
-        headers
+        graphics
         facade
         config
+        obj
+        math
+        obj/primitives
 )
 
 # Добавьте флаг OpenMP для компилятора

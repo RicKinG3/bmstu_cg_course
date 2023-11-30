@@ -15,19 +15,13 @@ const std::vector<size_t> Vertex::getUsedFacets() { return usedFacets; }
 void Vertex::setUsedFacets(std::vector<size_t> usedFacets_) { usedFacets = usedFacets_; }
 
 
-const std::vector<size_t> Facet::getUsedVertices() { return usedVertices; }
 
-void Facet::setUsedVertices(std::vector<size_t> usedVertices_) { usedVertices = usedVertices_; }
 
 
 const std::vector<Vertex> PolModel::getVertices() { return vertices; }
 
 void PolModel::setVertices(std::vector<Vertex> &vertices_) { vertices = vertices_; }
 
-
-const std::vector<Facet> PolModel::getFacets() { return facets; }
-
-void PolModel::setFacets(std::vector<Facet> facets_) { facets = facets_; }
 
 
 QString PolModel::getName() { return modelName; }
@@ -170,7 +164,7 @@ void movePointQuad(int &x1, int &x2, int &x3, int &x4, int &y1, int &y2, int &y3
     y4 += MOVECOEF;
 }
 
-void CellScene::addQuad(std::vector<Vertex> &vertices, std::vector<Facet> &facets, int x1,
+void CellScene::addQuad(std::vector<Vertex> &vertices, std::vector<Polygon> &facets, int x1,
                         int y1, int z1, int x2, int y2, int z2, int x3, int y3, int z3, int x4, int y4, int z4) {
     Dot3D dot;
     std::vector<size_t> vec;
@@ -439,9 +433,8 @@ void CellScene::toCenter() {
             0, 1, 0, 0,
             0, 0, 1, 0,
             0, 0, 0, 1;
-    //todo
-    newMat(3, 0) = CENTER_POINT_X - start.getXCoordinate() - getWidth() * SCALE_FACTOR / 2 - 500;
-    newMat(3, 1) = CENTER_POINT_Y - start.getYCoordinate() - getHeight() * SCALE_FACTOR / 2 - 500;
+    newMat(3, 0) = CENTER_POINT_X - start.getXCoordinate() - getWidth() * SCALE_FACTOR / 2 - MOVECOEF;
+    newMat(3, 1) = CENTER_POINT_Y - start.getYCoordinate() - getHeight() * SCALE_FACTOR / 2 - MOVECOEF;
     newMat(3, 2) = 0;
 
     transMatrix = newMat;
@@ -453,6 +446,11 @@ size_t CellScene::getRealModelsNum() { return realModelsNum; }
 size_t CellScene::getModelsNum() { return modelsNum; }
 
 PolModel &CellScene::getModel(size_t num) { return models.at(num); }
+
+
+const std::vector<Polygon> PolModel::getFacets() { return facets; }
+
+void PolModel::setFacets(std::vector<Polygon> facets_) { facets = facets_; }
 
 void CellScene::setModel(size_t num, PolModel &newModel) { models.at(num) = newModel; }
 
@@ -524,7 +522,7 @@ void CellScene::buildPlateModel(Dot3D startOfPlate_, Dot3D endOfPlate_) {
 //        return;
 
     std::vector<Vertex> vertices;
-    std::vector<Facet> facets;
+    std::vector<Polygon> facets;
 
     for (size_t y = startOfPlate_.getYCoordinate(); y < endOfPlate_.getYCoordinate();
          y += SCALE_FACTOR)

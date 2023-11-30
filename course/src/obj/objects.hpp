@@ -2,10 +2,12 @@
 #define OBJS_HPP
 
 #define MOVECOEF 500
-#include "../math/additivemathelements.hpp"
 #include <iostream>
 #include <vector>
 #include "/usr/include/eigen3/Eigen/Dense"
+
+#include "additivemathelements.hpp"
+#include "Polygon.h"
 
 enum Direction {
     Horizontal,
@@ -37,35 +39,22 @@ private:
     std::vector<size_t> usedFacets;
 };
 
-class Facet
-{
-public:
-    Facet() {}
-    Facet(std::vector<size_t> usedVertices_) : usedVertices(usedVertices_) {}
-
-    const std::vector<size_t> getUsedVertices();
-    void setUsedVertices(std::vector<size_t> usedVertices_);
-
-private:
-    std::vector<size_t> usedVertices;
-};
-
 class PolModel
 {
 public:
     PolModel() {}
-    PolModel(std::vector<Vertex> vertices_, std::vector<Facet> facets_)
+    PolModel(std::vector<Vertex> vertices_, std::vector<Polygon> facets_)
         : vertices(vertices_), facets(facets_) { }
 
-    PolModel(std::vector<Vertex> vertices_, std::vector<Facet> facets_, QString name_)
+    PolModel(std::vector<Vertex> vertices_, std::vector<Polygon> facets_, QString name_)
         : vertices(vertices_), facets(facets_), modelName(name_) { }
 
     ~PolModel() {}
 
     const std::vector<Vertex> getVertices();
     void setVertices(std::vector<Vertex> &vertices_);
-    const std::vector<Facet> getFacets();
-    void setFacets(std::vector<Facet> facets_);
+    const std::vector<Polygon> getFacets();
+    void setFacets(std::vector<Polygon> facets_);
 
     void moveTo(int newXCell, int newYCell);
     void rotateZ(int angle);
@@ -117,7 +106,7 @@ public:
 
 private:
     std::vector<Vertex> vertices;
-    std::vector<Facet> facets;
+    std::vector<Polygon> facets;
     QString modelName;
 
     int xCell, yCell;
@@ -215,7 +204,7 @@ private:
     void markCellsNearHouse(int xCell, int yCell, int widthModel, int heightModel);
     void clearCellsNearHouse(int xCell, int yCell, int widthModel, int heightModel);
 
-    void addQuad(std::vector<Vertex> &vertices, std::vector<Facet> &facets,
+    void addQuad(std::vector<Vertex> &vertices, std::vector<Polygon> &facets,
                  int x1, int y1, int z1,
                  int x2, int y2, int z2,
                  int x3, int y3, int z3,

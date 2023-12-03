@@ -167,8 +167,8 @@
       \strng{authorbibnamehash}{07eefc724540b96e72cb4b30ee830e3a}
       \strng{authornamehash}{07eefc724540b96e72cb4b30ee830e3a}
       \strng{authorfullhash}{07eefc724540b96e72cb4b30ee830e3a}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Построение реалистичных изображений при помощи алгоритма Варнока и сравнение эффективности различных его реализаций}
@@ -216,6 +216,13 @@
       \field{labeltitlesource}{title}
       \field{title}{Конспект лекций по дисциплине компьютерная графика}
       \field{year}{2023}
+    \endentry
+    \entry{cplusplus}{misc}{}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Режим доступа: \url{https://learn.microsoft.com/ru-ru/cpp/cpp/?view=msvc-170/} (дата обращения: 20.11.2023)}
+      \field{title}{Документация по C++20}
     \endentry
   \enddatalist
 \endrefsection

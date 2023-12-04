@@ -1,20 +1,19 @@
 \babel@toc {russian}{}\relax 
-\contentsline {chapter}{ОПРЕДЕЛЕНИЯ}{3}{chapter*.3}%
-\contentsline {chapter}{ОБОЗНАЧЕНИЯ И СОКРАЩЕНИЯ}{4}{chapter*.4}%
-\contentsline {chapter}{ВВЕДЕНИЕ}{5}{chapter*.5}%
-\contentsline {chapter}{\numberline {1}Аналитический раздел}{6}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Способы определения моделей}{6}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Методы представления трехмерных поверхностей}{7}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Формализация объектов сцены}{9}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Алгоритмы удаления скрытых линий и поверхностей}{10}{section.1.4}%
-\contentsline {section}{\numberline {1.5}Алгоритмы построения теней}{13}{section.1.5}%
-\contentsline {section}{\numberline {1.6}Постановка задачи}{15}{section.1.6}%
+\contentsline {chapter}{ОБОЗНАЧЕНИЯ И СОКРАЩЕНИЯ}{3}{chapter*.3}%
+\contentsline {chapter}{ВВЕДЕНИЕ}{4}{chapter*.4}%
+\contentsline {chapter}{\numberline {1}Аналитический раздел}{5}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Способы определения моделей}{5}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Методы представления трехмерных поверхностей}{6}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Формализация объектов сцены}{8}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Алгоритмы удаления скрытых линий и поверхностей}{9}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Алгоритмы построения теней}{12}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Постановка задачи}{14}{section.1.6}%
 \contentsline {chapter}{\numberline {2}Конструкторский раздел}{17}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Требования к программному обеспечению}{17}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Разработка алгоритмов}{17}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Выбор используемых типов и структур данных}{20}{section.2.3}%
-\contentsline {chapter}{\numberline {3}Технологический раздел}{22}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Средства реализации}{22}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Сведения о модулях программы}{22}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Реализация алгоритмов}{23}{section.3.3}%
-\contentsline {chapter}{СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ}{26}{chapter*.18}%
+\contentsline {section}{\numberline {2.3}Выбор используемых типов и структур данных}{21}{section.2.3}%
+\contentsline {chapter}{\numberline {3}Технологический раздел}{23}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Средства реализации}{23}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Сведения о модулях программы}{23}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Реализация алгоритмов}{24}{section.3.3}%
+\contentsline {chapter}{СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ}{27}{chapter*.18}%

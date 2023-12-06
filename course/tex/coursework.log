@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.9)  6 DEC 2023 21:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.9)  6 DEC 2023 23:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1967,18 +1967,18 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
  (./05-design.tex
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 2.
-<inc/img/mainAlg.pdf, id=435, 304.13625pt x 1171.37625pt>
+<inc/img/mainAlg.pdf, id=437, 304.13625pt x 1171.37625pt>
 File: inc/img/mainAlg.pdf Graphic file (type pdf)
 <use inc/img/mainAlg.pdf>
-Package pdftex.def Info: inc/img/mainAlg.pdf  used on input line 68.
+Package pdftex.def Info: inc/img/mainAlg.pdf  used on input line 47.
 (pdftex.def)             Requested size: 145.11053pt x 558.89395pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<inc/img/zbuf.pdf, id=436, 617.30624pt x 1018.80624pt>
+<inc/img/zbuf.pdf, id=438, 617.30624pt x 1018.80624pt>
 File: inc/img/zbuf.pdf Graphic file (type pdf)
 <use inc/img/zbuf.pdf>
-Package pdftex.def Info: inc/img/zbuf.pdf  used on input line 75.
+Package pdftex.def Info: inc/img/zbuf.pdf  used on input line 79.
 (pdftex.def)             Requested size: 386.95897pt x 638.64891pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1989,27 +1989,25 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 ] [17 <./inc/img/mainAlg.pdf>] [18 <./inc/img/zbuf.pdf>]
-<inc/img/zbufmod.pdf, id=489, 787.94376pt x 1068.99374pt>
+<inc/img/zbufmod.pdf, id=492, 787.94376pt x 1068.99374pt>
 File: inc/img/zbufmod.pdf Graphic file (type pdf)
 <use inc/img/zbufmod.pdf>
-Package pdftex.def Info: inc/img/zbufmod.pdf  used on input line 109.
+Package pdftex.def Info: inc/img/zbufmod.pdf  used on input line 113.
 (pdftex.def)             Requested size: 483.69687pt x 656.22836pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [19 <./inc/img/zbufmod.pdf>]
-<inc/img/idef0-1.pdf, id=524, 584.97005pt x 285.26315pt>
+<inc/img/idef0-1.pdf, id=527, 541.22202pt x 232.66925pt>
 File: inc/img/idef0-1.pdf Graphic file (type pdf)
 <use inc/img/idef0-1.pdf>
-Package pdftex.def Info: inc/img/idef0-1.pdf  used on input line 128.
-(pdftex.def)             Requested size: 483.69687pt x 235.8891pt.
- [20
+Package pdftex.def Info: inc/img/idef0-1.pdf  used on input line 124.
+(pdftex.def)             Requested size: 483.69687pt x 207.93768pt.
+) [20
 
 
- <./inc/img/idef0-1.pdf>]) [21
-
-]
+ <./inc/img/idef0-1.pdf>]
 \openout2 = `06-implementation.aux'.
 
 
@@ -2024,12 +2022,12 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: T2A).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [22
+ [21
 
 
 
 
-] [23]
+] [22]
 (c:/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
@@ -2053,8 +2051,8 @@ File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
 )
 (c:/texlive/2023/texmf-dist/tex/generic/stringenc/se-koi8-r.def
 File: se-koi8-r.def 2019/11/29 v1.12 stringenc: KOI8-R
-) [24]) [25]
-[26
+) [23]) [24]
+[25
 
 
 
@@ -2086,9 +2084,9 @@ Package logreq Info: Writing requests to 'coursework.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 51675 strings out of 474933
- 1115592 string characters out of 5763794
- 2333087 words of memory out of 5000000
+ 51674 strings out of 474933
+ 1115585 string characters out of 5763794
+ 2332089 words of memory out of 5000000
  72026 multiletter control sequences out of 15000+600000
  584424 words of font info for 167 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2107,10 +2105,10 @@ texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb><c:/texlive/2023/texmf-dist
 e1/public/cm-super/sfti2074.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/
 cm-super/sftt1200.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/s
 ftt1440.pfb>
-Output written on coursework.pdf (26 pages, 3810389 bytes).
+Output written on coursework.pdf (25 pages, 3800288 bytes).
 PDF statistics:
- 760 PDF objects out of 1000 (max. 8388607)
- 614 compressed objects within 7 object streams
- 166 named destinations out of 1000 (max. 500000)
+ 758 PDF objects out of 1000 (max. 8388607)
+ 613 compressed objects within 7 object streams
+ 165 named destinations out of 1000 (max. 500000)
  42206 words of extra memory for PDF output out of 42996 (max. 10000000)
 

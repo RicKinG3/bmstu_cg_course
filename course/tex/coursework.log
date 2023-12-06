@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.9)  4 DEC 2023 14:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.9)  6 DEC 2023 21:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1909,66 +1909,65 @@ File: inc/img/zb.pdf Graphic file (type pdf)
 Package pdftex.def Info: inc/img/zb.pdf  used on input line 410.
 (pdftex.def)             Requested size: 241.84843pt x 213.22545pt.
 [13 <./inc/img/zb.pdf>]
-<inc/img/idef0-0.pdf, id=406, 597.432pt x 844.95674pt>
+<inc/img/idef0-0.pdf, id=406, 557.1707pt x 244.07033pt>
 File: inc/img/idef0-0.pdf Graphic file (type pdf)
 <use inc/img/idef0-0.pdf>
 Package pdftex.def Info: inc/img/idef0-0.pdf  used on input line 435.
-(pdftex.def)             Requested size: 483.69687pt x 684.11469pt.
+(pdftex.def)             Requested size: 483.69687pt x 211.88882pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 458--458
+Underfull \hbox (badness 10000) in paragraph at lines 460--460
 []|\T2A/cmr/bx/n/14.4 (+20) Обратная
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 458--458
+Underfull \hbox (badness 10000) in paragraph at lines 460--460
 \T2A/cmr/bx/n/14.4 (+20) трас-си-ров-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 458--458
+Underfull \hbox (badness 10000) in paragraph at lines 460--460
 []|\T2A/cmr/bx/n/14.4 (+20) Вычисл.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 458--458
+Underfull \hbox (badness 10000) in paragraph at lines 460--460
 \T2A/cmr/bx/n/14.4 (+20) при слож-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 458--458
+Underfull \hbox (badness 10000) in paragraph at lines 460--460
 []|\T2A/cmr/bx/n/14.4 (+20) Рабочее
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 458--458
+Underfull \hbox (badness 10000) in paragraph at lines 460--460
 \T2A/cmr/bx/n/14.4 (+20) про-стран-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 458--458
+Underfull \hbox (badness 10000) in paragraph at lines 460--460
 []|\T2A/cmr/bx/n/14.4 (+20) Использов.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 458--458
+Underfull \hbox (badness 10000) in paragraph at lines 460--460
 \T2A/cmr/bx/n/14.4 (+20) ре-кур-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 458--458
+Underfull \hbox (badness 10000) in paragraph at lines 460--460
 \T2A/cmr/bx/n/14.4 (+20) сив-ных
  []
 
-) [14] [15] [16 <./inc/img/idef0-0.pdf>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+) [14 <./inc/img/idef0-0.pdf>] [15]
 \openout2 = `05-design.aux'.
 
  (./05-design.tex
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 2.
-<inc/img/mainAlg.pdf, id=439, 304.13625pt x 1171.37625pt>
+<inc/img/mainAlg.pdf, id=435, 304.13625pt x 1171.37625pt>
 File: inc/img/mainAlg.pdf Graphic file (type pdf)
 <use inc/img/mainAlg.pdf>
 Package pdftex.def Info: inc/img/mainAlg.pdf  used on input line 68.
@@ -1976,7 +1975,7 @@ Package pdftex.def Info: inc/img/mainAlg.pdf  used on input line 68.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<inc/img/zbuf.pdf, id=440, 617.30624pt x 1018.80624pt>
+<inc/img/zbuf.pdf, id=436, 617.30624pt x 1018.80624pt>
 File: inc/img/zbuf.pdf Graphic file (type pdf)
 <use inc/img/zbuf.pdf>
 Package pdftex.def Info: inc/img/zbuf.pdf  used on input line 75.
@@ -1984,13 +1983,13 @@ Package pdftex.def Info: inc/img/zbuf.pdf  used on input line 75.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[17
+[16
 
 
 
 
-] [18 <./inc/img/mainAlg.pdf>] [19 <./inc/img/zbuf.pdf>]
-<inc/img/zbufmod.pdf, id=494, 787.94376pt x 1068.99374pt>
+] [17 <./inc/img/mainAlg.pdf>] [18 <./inc/img/zbuf.pdf>]
+<inc/img/zbufmod.pdf, id=489, 787.94376pt x 1068.99374pt>
 File: inc/img/zbufmod.pdf Graphic file (type pdf)
 <use inc/img/zbufmod.pdf>
 Package pdftex.def Info: inc/img/zbufmod.pdf  used on input line 109.
@@ -1999,16 +1998,16 @@ Package pdftex.def Info: inc/img/zbufmod.pdf  used on input line 109.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[20 <./inc/img/zbufmod.pdf>]
-<inc/img/idef0-1.pdf, id=528, 584.97005pt x 285.26315pt>
+[19 <./inc/img/zbufmod.pdf>]
+<inc/img/idef0-1.pdf, id=524, 584.97005pt x 285.26315pt>
 File: inc/img/idef0-1.pdf Graphic file (type pdf)
 <use inc/img/idef0-1.pdf>
 Package pdftex.def Info: inc/img/idef0-1.pdf  used on input line 128.
 (pdftex.def)             Requested size: 483.69687pt x 235.8891pt.
- [21
+ [20
 
 
- <./inc/img/idef0-1.pdf>]) [22
+ <./inc/img/idef0-1.pdf>]) [21
 
 ]
 \openout2 = `06-implementation.aux'.
@@ -2025,12 +2024,12 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: T2A).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [23
+ [22
 
 
 
 
-] [24]
+] [23]
 (c:/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
@@ -2054,8 +2053,8 @@ File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
 )
 (c:/texlive/2023/texmf-dist/tex/generic/stringenc/se-koi8-r.def
 File: se-koi8-r.def 2019/11/29 v1.12 stringenc: KOI8-R
-) [25]) [26]
-[27
+) [24]) [25]
+[26
 
 
 
@@ -2087,9 +2086,9 @@ Package logreq Info: Writing requests to 'coursework.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 51676 strings out of 474933
- 1115599 string characters out of 5763794
- 2332087 words of memory out of 5000000
+ 51675 strings out of 474933
+ 1115592 string characters out of 5763794
+ 2333087 words of memory out of 5000000
  72026 multiletter control sequences out of 15000+600000
  584424 words of font info for 167 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2108,10 +2107,10 @@ texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb><c:/texlive/2023/texmf-dist
 e1/public/cm-super/sfti2074.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/
 cm-super/sftt1200.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/s
 ftt1440.pfb>
-Output written on coursework.pdf (27 pages, 3810481 bytes).
+Output written on coursework.pdf (26 pages, 3810389 bytes).
 PDF statistics:
- 764 PDF objects out of 1000 (max. 8388607)
- 617 compressed objects within 7 object streams
- 167 named destinations out of 1000 (max. 500000)
+ 760 PDF objects out of 1000 (max. 8388607)
+ 614 compressed objects within 7 object streams
+ 166 named destinations out of 1000 (max. 500000)
  42206 words of extra memory for PDF output out of 42996 (max. 10000000)
 

@@ -92,7 +92,8 @@ void MainWindow::on_pushButton_createScene_clicked() {
         // Проверка ответа пользователя
         if (reply == QMessageBox::Yes) {
             delete ui->graphicsView->scene();
-        } else {
+        }
+        else {
             return;
         }
 
@@ -114,28 +115,60 @@ Direction MainWindow::getDeirection() {
     if (ui->objDirection_ox->isChecked()) {
 //        qDebug() << "objDirection_ox 1 is checked";
         return Horizontal;
-    } else if (ui->objDirection_oy->isChecked()) {
+    }
+    else if (ui->objDirection_oy->isChecked()) {
         return Vertical;
 //        qDebug() << "objDirection_oy 2 is checked";
-    } else {
+    }
+    else {
 //        qDebug() << "No RadioButton is checked";
         return Nodirection;
     }
     return Nodirection;
 }
 
-//todo check add 1 light
-//need fors go back
+bool MainWindow::showWarningBox(const QString &message) {
+    QMessageBox::StandardButton reply;
+    reply = QMessageBox::warning(this, "Предупреждение",
+                                 message,
+                                 QMessageBox::Yes | QMessageBox::No);
+    // Проверка ответа пользователя
+    if (reply == QMessageBox::Yes) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+bool MainWindow::isOneLightOnScene() {
+    if (facade->getScene()->getLightNum() >= 1) {
+        return true;
+    }
+    return false;
+}
+
+//todo del if need moore light
 void MainWindow::on_pushButton_light_add_clicked() {
     if (!isSetPlatformErrMSG())
         return;
     int deg_ox = ui->deg_ox->value();
     int deg_oy = ui->deg_oy->value();
-//    qDebug() << "deg_ox = " << deg_ox;
-//    qDebug() << "deg_oy= " << deg_oy;
-    facade->addLight(deg_ox, deg_oy);
 
+    if (isOneLightOnScene()) {
+        if (showWarningBox("При установке нового источника света, старый будет удален. Продолжить?")) {
+            facade->getScene()->delLight(1);
+        }
+        else {
+            return; // Отмена добавления нового источника света
+        }
+    }
+
+    facade->addLight(deg_ox, deg_oy);
     drawThisShit();
+
+    //    qDebug() << "deg_ox = " << deg_ox;
+    //    qDebug() << "deg_oy= " << deg_oy;
 }
 
 void MainWindow::showErrorAddModel(RetCodeAddObjToScene rc) {
@@ -174,7 +207,7 @@ void MainWindow::printListObj() {
         if (modelType_ == Model::model_t::House || \
             modelType_ == Model::model_t::TreeFoliage || \
             modelType_ == Model::model_t::RoadAsphalt || \
-            modelType_ == Model::model_t::Car||
+            modelType_ == Model::model_t::Car ||
             modelType_ == Model::model_t::Bush) {
             count++;
             ui->objListActiv->addItem(
@@ -250,6 +283,7 @@ void MainWindow::on_pushButton_addModel_clicked() {
     printListObj();
     drawThisShit();
 }
+
 //  todo optimus ptime 3
 void MainWindow::on_pushButton_deleteModel_clicked() {
     if (!facade->isSceneSet()) {
@@ -283,21 +317,24 @@ void MainWindow::on_pushButton_deleteModel_clicked() {
                     QErrorMessage *err = new QErrorMessage();
                     err->showMessage("Нельзя удалить дорогу, так как на ней расположена машина");
                     return;
-                } else {
+                }
+                else {
                     scene->deleteModel(i);
 
                     flag = true;
                     modelsNum--;
                     i--;
                 }
-            } else if (flag) {
+            }
+            else if (flag) {
                 break;
             }
         }
 
         recalculationModelsNum();
         printListObj();
-    } else {
+    }
+    else {
         scene->delLight(curRow - realModelsNum);
     }
 
@@ -330,6 +367,9 @@ int MainWindow::changeModel(Model &model, int newXCell, int newYCell) {
             resultCode = facade->addCar(newXCell, newYCell,
                                         model.getDirectionCar(), model.getColorCar());
             break;
+        case Model::Bush:
+            resultCode = facade->addBush(newXCell, newYCell);
+            break;
         default:
             // Обработка неизвестного типа модели, если это необходимо
             break;
@@ -337,7 +377,7 @@ int MainWindow::changeModel(Model &model, int newXCell, int newYCell) {
     return resultCode;
 }
 
-//todo
+//todo shit_shit_shit
 void MainWindow::recalculationModelsNum() {
     Platform *scene = facade->getScene();
     size_t realModelsNum = scene->getRealModelsNum();
@@ -346,8 +386,9 @@ void MainWindow::recalculationModelsNum() {
 
     for (size_t i = 0; i < realModelsNum; i++) {
         model = scene->getModel(cur);
-        int border = (model.getModelType() == Model::House || model.getModelType() == Model::Car) ? 3 : 2;
-
+        int border = (model.getModelType() == Model::House || model.getModelType() == Model::Car ) ? 3 : 2;
+        if (model.getModelType() == Model::Bush)
+            border = 1;
         for (int j = 0; j < border; j++) {
             scene->getModel(cur++).setModelNum(i);
         }
@@ -386,7 +427,8 @@ void MainWindow::on_pushButton_moveModel_clicked() {
                 //    close();
                 showErrorMessage("Нельзя переместить дорогу, так как на ней расположена машина");
                 return;
-            } else {
+            }
+            else {
                 scene->clearUsedSquares(i);
                 rc = static_cast<RetCodeAddObjToScene>( changeModel(scene->getModel(i),
                                                                     sq_num_ox,
@@ -405,10 +447,12 @@ void MainWindow::on_pushButton_moveModel_clicked() {
                 modelsNum--;
                 i--;
             }
-        } else if (flag) {
+        }
+        else if (flag) {
             break;
         }
     }
+    printListObj();
     recalculationModelsNum();
     drawThisShit();
 }

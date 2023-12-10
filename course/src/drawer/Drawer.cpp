@@ -515,6 +515,9 @@ QGraphicsScene *Drawer::drawScene(Platform *scene, QRectF rect) {
     uint treeFoliageCol = qRgb(TREE_LEAVES_COLOR);
     uint darkTreeFoliageCol = qRgb(TREE_LEAVES_SHASOW_COLOR);
 
+    uint bush_col = qRgb(TREE_LEAVES_COLOR);
+    uint bush_shadow_col = qRgb(TREE_LEAVES_SHASOW_COLOR);
+
     uint treeTrunkCol = qRgb(TREE_TRUNK_COLOR);
     uint darkTreeTrunkCol = qRgb(TREE_TRUNK_SHADOW_COLOR);
 
@@ -587,8 +590,15 @@ QGraphicsScene *Drawer::drawScene(Platform *scene, QRectF rect) {
                 image->setPixel(i, j, glassCarCol);
             } else if (frameBuffer.at(i).at(j) == 24) {
                 image->setPixel(i, j, whiteCol);
-            } else if (frameBuffer.at(i).at(j) == 25) {
+            }
+            else if (frameBuffer.at(i).at(j) == 25) {
                 image->setPixel(i, j, blackCol);
+            }
+            else if (frameBuffer.at(i).at(j) == 26) {
+                image->setPixel(i, j, bush_shadow_col);
+            }
+            else if (frameBuffer.at(i).at(j) == 27) {
+                image->setPixel(i, j, bush_col);
             }
         }
 

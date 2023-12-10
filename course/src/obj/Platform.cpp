@@ -328,7 +328,8 @@ void Platform::addModel(Model &model) {
     if (modelType_ == Model::model_t::WindowsHouse ||
         modelType_ == Model::model_t::TreeTrunk ||
         modelType_ == Model::model_t::RoadStripe ||
-        modelType_ == Model::model_t::GlassCar) {
+        modelType_ == Model::model_t::GlassCar ||
+        modelType_ == Model::model_t::Bush) {
         markUsedSquares(models_um - 1);
         real_model_num++;
         printUsedSquares();
@@ -360,7 +361,8 @@ void Platform::deleteModel(size_t num) {
         if (modelType_ == Model::model_t::WindowsHouse || \
             modelType_ == Model::model_t::TreeTrunk || \
             modelType_ == Model::model_t::RoadStripe || \
-            modelType_ == Model::model_t::GlassCar) {
+            modelType_ == Model::model_t::GlassCar ||
+                modelType_ == Model::model_t::Bush) {
             clearUsedSquares(num);
             real_model_num--;
         }

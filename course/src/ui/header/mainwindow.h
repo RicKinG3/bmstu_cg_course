@@ -25,14 +25,6 @@ enum ObjIndex {
 };
 
 
-enum RetCodeAddObjToScene {
-    pass,
-    sq_full,
-    obj_over_range,
-    car_only_on_road,
-    road_home,
-    err
-};
 
 #define BASE_LENX_HOUSE 3
 #define BASE_LENY_HOUSE 2
@@ -130,7 +122,13 @@ private:
     Direction getDeirection();
 
     void showErrorAddModel(RetCodeAddObjToScene rc);
+
     void printListObj();
+
+    bool isOneLightOnScene();
+
+    bool showWarningBox(const QString &message);
+
 
     Ui::MainWindow *ui;
     UsageFacade *facade;

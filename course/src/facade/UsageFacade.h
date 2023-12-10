@@ -18,6 +18,15 @@
 //todo
 
 
+enum RetCodeAddObjToScene {
+    pass,
+    sq_full,
+    obj_over_range,
+    car_only_on_road,
+    road_home,
+    err
+};
+
 class UsageFacade {
 public:
     UsageFacade();
@@ -38,7 +47,7 @@ public:
 
     int addTree(int xCell, int yCell);
 
-    int addRoad(int xCell, int yCell, Direction direction);
+    int addRoad(int xCell, int y_sq, Direction direction);
 
     int addCar(int xCell, int yCell, Direction direction, ColorCar color_car);
 

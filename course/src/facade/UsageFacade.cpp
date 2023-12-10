@@ -195,9 +195,9 @@ void UsageFacade::addLight(int xAngle, int yAngle) {
 }
 
 
-bool UsageFacade::searchRoadsNearby(int x_sq, int yCell, int widthModel, int heightModel) {
+bool UsageFacade::searchRoadsNearby(int x_sq, int y_sq, int widthModel, int heightModel) {
     for (int k = 0; k < 2; k++) {
-        int i = yCell - 1 + k * (heightModel + 1);
+        int i = y_sq - 1 + k * (heightModel + 1);
         if (i < 0 || size_t(i) > scene->getHeight() - 1)
             continue;
 
@@ -230,7 +230,7 @@ bool UsageFacade::searchRoadsNearby(int x_sq, int yCell, int widthModel, int hei
         if (j < 0 || size_t(j) > scene->getWidth() - 1)
             continue;
 
-        for (int i = yCell; i < yCell + heightModel; i++) {
+        for (int i = y_sq; i < y_sq + heightModel; i++) {
             if (scene->getUsedSquares()[i][j] == 2 || scene->getUsedSquares()[i][j] == 4) {
                 qDebug() << "i = " << i << "j = " << j << "дорога рядом с домом";
                 return true;
@@ -241,24 +241,25 @@ bool UsageFacade::searchRoadsNearby(int x_sq, int yCell, int widthModel, int hei
     return false;
 }
 
-int UsageFacade::addPickup(int x_sq, int yCell, Direction direction, ColorCar color_car) {
+int UsageFacade::addPickup(int x_sq, int y_sq, Direction direction, ColorCar color_car) {
     int modelLength, modelHeight;
     if (direction == Horizontal) {
         modelHeight = 1;
         modelLength = 3; // Увеличиваем длину для пикапа
-    } else {
+    }
+    else {
         modelHeight = 3; // Увеличиваем длину для пикапа
         modelLength = 1;
     }
 
     x_sq -= 1;
-    yCell -= 1;
+    y_sq -= 1;
 
     if (x_sq + modelLength - 1 >= (int) scene->getWidth() ||
-        yCell + modelHeight - 1 >= (int) scene->getHeight())
+        y_sq + modelHeight - 1 >= (int) scene->getHeight())
         return 2;
 
-    for (int i = yCell; i < yCell + modelHeight; i++) {
+    for (int i = y_sq; i < y_sq + modelHeight; i++) {
         for (int j = x_sq; j < x_sq + modelLength; j++) {
             if (scene->getUsedSquares()[i][j] != 2) {
                 qDebug() << "i = " << i << "j = " << j << "нет дороги (пикап)";
@@ -271,7 +272,7 @@ int UsageFacade::addPickup(int x_sq, int yCell, Direction direction, ColorCar co
     std::vector<Polygon> facets;
 
     int xFactor = x_sq * SCALE_FACTOR + 10;
-    int yFactor = yCell * SCALE_FACTOR + 10 - MOVECOEF * 2;
+    int yFactor = y_sq * SCALE_FACTOR + 10 - MOVECOEF * 2;
     int zFactor = PLATFORM_START_Z + SCALE_FACTOR / 16;
 
     // Передняя часть кабины
@@ -345,7 +346,7 @@ int UsageFacade::addPickup(int x_sq, int yCell, Direction direction, ColorCar co
 
 
     Model pickupModel(vertices, facets, "Пикап");
-    pickupModel.setUsedSquare(x_sq, yCell);
+    pickupModel.setUsedSquare(x_sq, y_sq);
     pickupModel.setHeightModel(modelHeight);
     pickupModel.setWidthModel(modelLength);
     pickupModel.setDirectionCar(direction);
@@ -364,15 +365,15 @@ int UsageFacade::addPickup(int x_sq, int yCell, Direction direction, ColorCar co
 }
 
 
-int UsageFacade::addHouse(int x_sq, int yCell, int modelLength, int modelHeight, int countFloors) {
+int UsageFacade::addHouse(int x_sq, int y_sq, int modelLength, int modelHeight, int countFloors) {
     x_sq -= 1;
-    yCell -= 1;
+    y_sq -= 1;
 
     if (x_sq + modelLength - 1 >= (int) scene->getWidth() || \
-        yCell + modelHeight - 1 >= (int) scene->getHeight())
+        y_sq + modelHeight - 1 >= (int) scene->getHeight())
         return 2;
 
-    for (int i = yCell; i < yCell + modelHeight; i++) {
+    for (int i = y_sq; i < y_sq + modelHeight; i++) {
         for (int j = x_sq; j < x_sq + modelLength; j++) {
             if (scene->getUsedSquares()[i][j] != 0 && scene->getUsedSquares()[i][j] != 3) {
                 qDebug() << "i = " << i << "j = " << j << "ячейка занята (дом)";
@@ -381,14 +382,14 @@ int UsageFacade::addHouse(int x_sq, int yCell, int modelLength, int modelHeight,
         }
     }
 
-    if (searchRoadsNearby(x_sq, yCell, modelLength, modelHeight))
-        return 4;
+//    if (searchRoadsNearby(x_sq, y_sq, modelLength, modelHeight))
+//        return 4;
 
     std::vector<Vertex> vertices;
     std::vector<Polygon> facets;
 
     int xFactor = x_sq * SCALE_FACTOR + 10;
-    int yFactor = yCell * SCALE_FACTOR + 10;
+    int yFactor = y_sq * SCALE_FACTOR + 10;
     int zFactor = PLATFORM_START_Z;
 
     //стены дома
@@ -423,7 +424,7 @@ int UsageFacade::addHouse(int x_sq, int yCell, int modelLength, int modelHeight,
             yFactor += SCALE_FACTOR * modelHeight;
         }
 
-        yFactor = yCell * SCALE_FACTOR + 10;
+        yFactor = y_sq * SCALE_FACTOR + 10;
 
 
         for (int k = 0; k < 2; k++) {
@@ -452,7 +453,7 @@ int UsageFacade::addHouse(int x_sq, int yCell, int modelLength, int modelHeight,
                 yFactor += SCALE_FACTOR;
             }
 
-            yFactor = yCell * SCALE_FACTOR + 10;
+            yFactor = y_sq * SCALE_FACTOR + 10;
             xFactor += SCALE_FACTOR * modelLength;
         }
 
@@ -462,7 +463,7 @@ int UsageFacade::addHouse(int x_sq, int yCell, int modelLength, int modelHeight,
     }
 
     Model houseModel(vertices, facets, "Дом");
-    houseModel.setUsedSquare(x_sq, yCell);
+    houseModel.setUsedSquare(x_sq, y_sq);
     houseModel.setHeightModel(modelHeight);
     houseModel.setWidthModel(modelLength);
     houseModel.setHouseHeight(countFloors);
@@ -521,7 +522,7 @@ int UsageFacade::addHouse(int x_sq, int yCell, int modelLength, int modelHeight,
 
 
     Model roofHouseModel(vertices2, facets2, "Крыша дома");
-    roofHouseModel.setUsedSquare(x_sq, yCell);
+    roofHouseModel.setUsedSquare(x_sq, y_sq);
     roofHouseModel.setHeightModel(modelHeight);
     roofHouseModel.setWidthModel(modelLength);
     roofHouseModel.setHouseHeight(countFloors);
@@ -533,7 +534,7 @@ int UsageFacade::addHouse(int x_sq, int yCell, int modelLength, int modelHeight,
     std::vector<Polygon> facets3;
 
     xFactor = x_sq * SCALE_FACTOR + 10;
-    yFactor = yCell * SCALE_FACTOR + 10;
+    yFactor = y_sq * SCALE_FACTOR + 10;
     zFactor = PLATFORM_START_Z;
 
     //окна дома
@@ -553,7 +554,7 @@ int UsageFacade::addHouse(int x_sq, int yCell, int modelLength, int modelHeight,
             yFactor += SCALE_FACTOR * modelHeight;
         }
 
-        yFactor = yCell * SCALE_FACTOR + 10;
+        yFactor = y_sq * SCALE_FACTOR + 10;
 
 
         for (int k = 0; k < 2; k++) {
@@ -567,7 +568,7 @@ int UsageFacade::addHouse(int x_sq, int yCell, int modelLength, int modelHeight,
                 yFactor += SCALE_FACTOR;
             }
 
-            yFactor = yCell * SCALE_FACTOR + 10;
+            yFactor = y_sq * SCALE_FACTOR + 10;
             xFactor += SCALE_FACTOR * modelLength;
         }
 
@@ -577,7 +578,7 @@ int UsageFacade::addHouse(int x_sq, int yCell, int modelLength, int modelHeight,
     }
 
     Model windowsHouseModel(vertices3, facets3, "Окна дома");
-    windowsHouseModel.setUsedSquare(x_sq, yCell);
+    windowsHouseModel.setUsedSquare(x_sq, y_sq);
     windowsHouseModel.setHeightModel(modelHeight);
     windowsHouseModel.setWidthModel(modelLength);
     windowsHouseModel.setHouseHeight(countFloors);
@@ -588,140 +589,166 @@ int UsageFacade::addHouse(int x_sq, int yCell, int modelLength, int modelHeight,
     return 0;
 }
 
+//todo return code 
 //todo finish tut
-int UsageFacade::addBush(int x_sq, int yCell) {
+int UsageFacade::addBush(int x_sq, int y_sq) {
     x_sq -= 1;
-    yCell -= 1;
+    y_sq -= 1;
 
-    if (x_sq >= (int) scene->getWidth() || yCell >= (int) scene->getHeight())
+    if (x_sq >= (int) scene->getWidth() || y_sq >= (int) scene->getHeight())
         return 2;
 
-    if (scene->getUsedSquares()[yCell][x_sq] != 0 && scene->getUsedSquares()[yCell][x_sq] != 3) {
-        qDebug() << "i = " << x_sq << "j = " << x_sq << "ячейка занята (дерево)";
+    if (scene->getUsedSquares()[y_sq][x_sq] != 0 && scene->getUsedSquares()[y_sq][x_sq] != 3) {
+        qDebug() << "i = " << x_sq << "j = " << x_sq << "ячейка занята (куст)";
         return 1;
     }
 
     int xFactor = x_sq * SCALE_FACTOR + 10;
-    int yFactor = yCell * SCALE_FACTOR + 10;
+    int yFactor = y_sq * SCALE_FACTOR + 10;
     int zFactor = PLATFORM_START_Z;
 
-    std::vector<Vertex> vertices2;
-    std::vector<Polygon> facets2;
+    std::vector<Vertex> vertices;
+    std::vector<Polygon> facets;
 
-    //нижняя часть листвы дерева
-    addQuad(vertices2, facets2,
-            xFactor, yFactor, zFactor + SCALE_FACTOR,
-            xFactor + SCALE_FACTOR, yFactor, zFactor + SCALE_FACTOR,
-            xFactor + SCALE_FACTOR, yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR,
-            xFactor, yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR);
+    int under_platform = 1;
+    int up = 30;
 
-    addQuad(vertices2, facets2,
-            xFactor, yFactor, zFactor + SCALE_FACTOR,
-            xFactor + SCALE_FACTOR, yFactor, zFactor + SCALE_FACTOR,
-            xFactor + SCALE_FACTOR, yFactor, zFactor + SCALE_FACTOR * 3 / 2,
-            xFactor, yFactor, zFactor + SCALE_FACTOR * 3 / 2);
-    addQuad(vertices2, facets2,
-            xFactor, yFactor, zFactor + SCALE_FACTOR,
-            xFactor, yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR,
-            xFactor, yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR * 3 / 2,
-            xFactor, yFactor, zFactor + SCALE_FACTOR * 3 / 2);
-    addQuad(vertices2, facets2,
-            xFactor + SCALE_FACTOR, yFactor, zFactor + SCALE_FACTOR,
-            xFactor + SCALE_FACTOR, yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR,
-            xFactor + SCALE_FACTOR, yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR * 3 / 2,
-            xFactor + SCALE_FACTOR, yFactor, zFactor + SCALE_FACTOR * 3 / 2);
-    addQuad(vertices2, facets2,
-            xFactor, yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR,
-            xFactor + SCALE_FACTOR, yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR,
-            xFactor + SCALE_FACTOR, yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR * 3 / 2,
-            xFactor, yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR * 3 / 2);
+    int second_fl = up / 2;
+    int tree_fl = second_fl / 2;
+    int second_up = up * 1.4;
+    int tree_up = second_up * 1.4;
 
-    addQuad(vertices2, facets2,
-            xFactor, yFactor, zFactor + SCALE_FACTOR * 3 / 2,
-            xFactor + SCALE_FACTOR, yFactor, zFactor + SCALE_FACTOR * 3 / 2,
-            xFactor + SCALE_FACTOR, yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR * 3 / 2,
-            xFactor, yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR * 3 / 2);
+    // Нижняя часть куста
+    addQuad(vertices, facets,
+            xFactor, yFactor, zFactor + under_platform, // a
+            xFactor + SCALE_FACTOR, yFactor, zFactor + under_platform, //b
+            xFactor + SCALE_FACTOR, yFactor + SCALE_FACTOR, zFactor + under_platform,//c
+            xFactor, yFactor + SCALE_FACTOR, zFactor + under_platform);//d
+    addQuad(vertices, facets,
+            xFactor + SCALE_FACTOR, yFactor + SCALE_FACTOR, zFactor + under_platform, //c
+            xFactor, yFactor + SCALE_FACTOR, zFactor + under_platform, //d
+            xFactor, yFactor + SCALE_FACTOR, (zFactor + under_platform * up),
+            xFactor + SCALE_FACTOR, yFactor + SCALE_FACTOR, zFactor + under_platform * up);
+    addQuad(vertices, facets,
+            xFactor + SCALE_FACTOR, yFactor, zFactor + under_platform, //b
+            xFactor + SCALE_FACTOR, yFactor + SCALE_FACTOR, zFactor + under_platform, //c
+            xFactor + SCALE_FACTOR, yFactor + SCALE_FACTOR, zFactor + under_platform * up,
+            xFactor + SCALE_FACTOR, yFactor, zFactor + under_platform * up);
+    addQuad(vertices, facets,
+            xFactor, yFactor, zFactor + under_platform, // a
+            xFactor + SCALE_FACTOR, yFactor, zFactor + under_platform,//b
+            xFactor + SCALE_FACTOR, yFactor, zFactor + under_platform * up,
+            xFactor, yFactor, zFactor + under_platform * up);
+    addQuad(vertices, facets,
+            xFactor, yFactor + SCALE_FACTOR, zFactor + under_platform, // d
+            xFactor, yFactor, zFactor + under_platform, // a
+            xFactor, yFactor, zFactor + under_platform * up,
+            xFactor, yFactor + SCALE_FACTOR, zFactor + under_platform * up
+    );
+    addQuad(vertices, facets,
+            xFactor, yFactor, zFactor + under_platform * up, // a
+            xFactor + SCALE_FACTOR, yFactor, zFactor + under_platform * up, //b
+            xFactor + SCALE_FACTOR, yFactor + SCALE_FACTOR, zFactor + under_platform * up,//c
+            xFactor, yFactor + SCALE_FACTOR, zFactor + under_platform * up);//d
+    // вторая часть куста
+    addQuad(vertices, facets,
+            xFactor + second_fl, yFactor + second_fl, zFactor + under_platform * up, // a
+            xFactor + SCALE_FACTOR - second_fl, yFactor + second_fl, zFactor + under_platform * up, //b
+            xFactor + SCALE_FACTOR - second_fl, yFactor - second_fl + SCALE_FACTOR, zFactor + under_platform * up,//c
+            xFactor + second_fl, yFactor + SCALE_FACTOR - second_fl, zFactor + under_platform * up);//d
 
-    //верхняя часть листвы дерева (вдоль Ox)
-    addQuad(vertices2, facets2,
-            xFactor, yFactor + SCALE_FACTOR / 3, zFactor + SCALE_FACTOR * 3 / 2,
-            xFactor + SCALE_FACTOR, yFactor + SCALE_FACTOR / 3, zFactor + SCALE_FACTOR * 3 / 2,
-            xFactor + SCALE_FACTOR, yFactor + SCALE_FACTOR / 3, zFactor + SCALE_FACTOR * 2,
-            xFactor, yFactor + SCALE_FACTOR / 3, zFactor + SCALE_FACTOR * 2);
-    addQuad(vertices2, facets2,
-            xFactor, yFactor + SCALE_FACTOR / 3, zFactor + SCALE_FACTOR * 3 / 2,
-            xFactor, yFactor + SCALE_FACTOR * 2 / 3, zFactor + SCALE_FACTOR * 3 / 2,
-            xFactor, yFactor + SCALE_FACTOR * 2 / 3, zFactor + SCALE_FACTOR * 2,
-            xFactor, yFactor + SCALE_FACTOR / 3, zFactor + SCALE_FACTOR * 2);
-    addQuad(vertices2, facets2,
-            xFactor + SCALE_FACTOR, yFactor + SCALE_FACTOR / 3, zFactor + SCALE_FACTOR * 3 / 2,
-            xFactor + SCALE_FACTOR, yFactor + SCALE_FACTOR * 2 / 3, zFactor + SCALE_FACTOR * 3 / 2,
-            xFactor + SCALE_FACTOR, yFactor + SCALE_FACTOR * 2 / 3, zFactor + SCALE_FACTOR * 2,
-            xFactor + SCALE_FACTOR, yFactor + SCALE_FACTOR / 3, zFactor + SCALE_FACTOR * 2);
-    addQuad(vertices2, facets2,
-            xFactor, yFactor + SCALE_FACTOR * 2 / 3, zFactor + SCALE_FACTOR * 3 / 2,
-            xFactor + SCALE_FACTOR, yFactor + SCALE_FACTOR * 2 / 3, zFactor + SCALE_FACTOR * 3 / 2,
-            xFactor + SCALE_FACTOR, yFactor + SCALE_FACTOR * 2 / 3, zFactor + SCALE_FACTOR * 2,
-            xFactor, yFactor + SCALE_FACTOR * 2 / 3, zFactor + SCALE_FACTOR * 2);
+    addQuad(vertices, facets,
+            xFactor + SCALE_FACTOR - second_fl, yFactor + SCALE_FACTOR - second_fl, zFactor + under_platform * up, //c
+            xFactor + second_fl, yFactor + SCALE_FACTOR - second_fl, zFactor + under_platform * up, //d
+            xFactor + second_fl, yFactor + SCALE_FACTOR - second_fl, (zFactor + under_platform * second_up),
+            xFactor + SCALE_FACTOR - second_fl, yFactor + SCALE_FACTOR - second_fl,
+            zFactor + under_platform * second_up);
+    addQuad(vertices, facets,
+            xFactor + SCALE_FACTOR - second_fl, yFactor + second_fl, zFactor + under_platform * up, //b
+            xFactor + SCALE_FACTOR - second_fl, yFactor + SCALE_FACTOR - second_fl, zFactor + under_platform * up, //c
+            xFactor + SCALE_FACTOR - second_fl, yFactor + SCALE_FACTOR - second_fl,
+            zFactor + under_platform * second_up,
+            xFactor + SCALE_FACTOR - second_fl, yFactor + second_fl, zFactor + under_platform * second_up);
+    addQuad(vertices, facets,
+            xFactor + second_fl, yFactor + second_fl, zFactor + under_platform * up, // a
+            xFactor + SCALE_FACTOR - second_fl, yFactor + second_fl, zFactor + under_platform * up,//b
+            xFactor + SCALE_FACTOR - second_fl, yFactor + second_fl, zFactor + under_platform * second_up,
+            xFactor + second_fl, yFactor + second_fl, zFactor + under_platform * second_up);
+    addQuad(vertices, facets,
+            xFactor + second_fl, yFactor - second_fl + SCALE_FACTOR, zFactor + under_platform * up, // d
+            xFactor + second_fl, yFactor + second_fl, zFactor + under_platform * up, // a
+            xFactor + second_fl, yFactor + second_fl, zFactor + under_platform * second_up,
+            xFactor + second_fl, yFactor + SCALE_FACTOR - second_fl, zFactor + under_platform * second_up
+    );
+    addQuad(vertices, facets,
+            xFactor + second_fl, yFactor + second_fl, zFactor + under_platform * second_up, // a
+            xFactor + SCALE_FACTOR - second_fl, yFactor + second_fl, zFactor + under_platform * second_up, //b
+            xFactor + SCALE_FACTOR - second_fl, yFactor - second_fl + SCALE_FACTOR,
+            zFactor + under_platform * second_up,//c
+            xFactor + second_fl, yFactor + SCALE_FACTOR - second_fl, zFactor + under_platform * second_up);//d
+    // третья часть куста
+    addQuad(vertices, facets,
+            xFactor + tree_up, yFactor + tree_up, zFactor + under_platform * second_up, // a
+            xFactor + SCALE_FACTOR - tree_up, yFactor + tree_up, zFactor + under_platform * second_up, //b
+            xFactor + SCALE_FACTOR - tree_up, yFactor - tree_up + SCALE_FACTOR, zFactor + under_platform * second_up,//c
+            xFactor + tree_up, yFactor + SCALE_FACTOR - tree_up, zFactor + under_platform * second_up);//d
 
-    addQuad(vertices2, facets2,
-            xFactor, yFactor + SCALE_FACTOR / 3, zFactor + SCALE_FACTOR * 2,
-            xFactor + SCALE_FACTOR, yFactor + SCALE_FACTOR / 3, zFactor + SCALE_FACTOR * 2,
-            xFactor + SCALE_FACTOR, yFactor + SCALE_FACTOR * 2 / 3, zFactor + SCALE_FACTOR * 2,
-            xFactor, yFactor + SCALE_FACTOR * 2 / 3, zFactor + SCALE_FACTOR * 2);
+    addQuad(vertices, facets,
+            xFactor + SCALE_FACTOR - tree_up, yFactor + SCALE_FACTOR - tree_up,
+            zFactor + under_platform * second_up, //c
+            xFactor + tree_up, yFactor + SCALE_FACTOR - tree_up, zFactor + under_platform * second_up, //d
+            xFactor + tree_up, yFactor + SCALE_FACTOR - tree_up, (zFactor + under_platform * tree_up),
+            xFactor + SCALE_FACTOR - tree_up, yFactor + SCALE_FACTOR - tree_up,
+            zFactor + under_platform * tree_up);
+    addQuad(vertices, facets,
+            xFactor + SCALE_FACTOR - tree_up, yFactor + tree_up, zFactor + under_platform * second_up, //b
+            xFactor + SCALE_FACTOR - tree_up, yFactor + SCALE_FACTOR - tree_up,
+            zFactor + under_platform * second_up, //c
+            xFactor + SCALE_FACTOR - tree_up, yFactor + SCALE_FACTOR - tree_up,
+            zFactor + under_platform * tree_up,
+            xFactor + SCALE_FACTOR - tree_up, yFactor + tree_up, zFactor + under_platform * tree_up);
+    addQuad(vertices, facets,
+            xFactor + tree_up, yFactor + tree_up, zFactor + under_platform * second_up, // a
+            xFactor + SCALE_FACTOR - tree_up, yFactor + tree_up, zFactor + under_platform * second_up,//b
+            xFactor + SCALE_FACTOR - tree_up, yFactor + tree_up, zFactor + under_platform * tree_up,
+            xFactor + tree_up, yFactor + tree_up, zFactor + under_platform * tree_up);
+    addQuad(vertices, facets,
+            xFactor + tree_up, yFactor - tree_up + SCALE_FACTOR, zFactor + under_platform * second_up, // d
+            xFactor + tree_up, yFactor + tree_up, zFactor + under_platform * second_up, // a
+            xFactor + tree_up, yFactor + tree_up, zFactor + under_platform * tree_up,
+            xFactor + tree_up, yFactor + SCALE_FACTOR - tree_up, zFactor + under_platform * tree_up
+    );
+    addQuad(vertices, facets,
+            xFactor + tree_up, yFactor + tree_up, zFactor + under_platform * tree_up, // a
+            xFactor + SCALE_FACTOR - tree_up, yFactor + tree_up, zFactor + under_platform * tree_up, //b
+            xFactor + SCALE_FACTOR - tree_up, yFactor - tree_up + SCALE_FACTOR, zFactor + under_platform * tree_up,//c
+            xFactor + tree_up, yFactor + SCALE_FACTOR - tree_up, zFactor + under_platform * tree_up);//d
 
-    //верхняя часть листвы дерева (вдоль Oy)
-    addQuad(vertices2, facets2,
-            xFactor + SCALE_FACTOR / 3, yFactor, zFactor + SCALE_FACTOR * 3 / 2,
-            xFactor + SCALE_FACTOR * 2 / 3, yFactor, zFactor + SCALE_FACTOR * 3 / 2,
-            xFactor + SCALE_FACTOR * 2 / 3, yFactor, zFactor + SCALE_FACTOR * 2,
-            xFactor + SCALE_FACTOR / 3, yFactor, zFactor + SCALE_FACTOR * 2);
-    addQuad(vertices2, facets2,
-            xFactor + SCALE_FACTOR / 3, yFactor, zFactor + SCALE_FACTOR * 3 / 2,
-            xFactor + SCALE_FACTOR / 3, yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR * 3 / 2,
-            xFactor + SCALE_FACTOR / 3, yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR * 2,
-            xFactor + SCALE_FACTOR / 3, yFactor, zFactor + SCALE_FACTOR * 2);
-    addQuad(vertices2, facets2,
-            xFactor + SCALE_FACTOR * 2 / 3, yFactor, zFactor + SCALE_FACTOR * 3 / 2,
-            xFactor + SCALE_FACTOR * 2 / 3, yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR * 3 / 2,
-            xFactor + SCALE_FACTOR * 2 / 3, yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR * 2,
-            xFactor + SCALE_FACTOR * 2 / 3, yFactor, zFactor + SCALE_FACTOR * 2);
-    addQuad(vertices2, facets2,
-            xFactor + SCALE_FACTOR / 3, yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR * 3 / 2,
-            xFactor + SCALE_FACTOR * 2 / 3, yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR * 3 / 2,
-            xFactor + SCALE_FACTOR * 2 / 3, yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR * 2,
-            xFactor + SCALE_FACTOR / 3, yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR * 2);
+    Model bush_model(vertices, facets, "Куст");
+    bush_model.setUsedSquare(x_sq, y_sq);
+    bush_model.setHeightModel(1);
+    bush_model.setWidthModel(1);
+    bush_model.setModelType(Model::Bush);
+    bush_model.setModelNum(scene->getRealModelsNum());
+    scene->addModel(bush_model);
 
-    addQuad(vertices2, facets2,
-            xFactor + SCALE_FACTOR / 3, yFactor, zFactor + SCALE_FACTOR * 2,
-            xFactor + SCALE_FACTOR * 2 / 3, yFactor, zFactor + SCALE_FACTOR * 2,
-            xFactor + SCALE_FACTOR * 2 / 3, yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR * 2,
-            xFactor + SCALE_FACTOR / 3, yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR * 2);
-
-    Model treeFoliageModel(vertices2, facets2,"Куст");
-    treeFoliageModel.setUsedSquare(x_sq, yCell);
-    treeFoliageModel.setHeightModel(1);
-    treeFoliageModel.setWidthModel(1);
-    treeFoliageModel.setModelType(Model::TreeFoliage);
-    treeFoliageModel.setModelNum(scene->getRealModelsNum());
-    scene->addModel(treeFoliageModel);
     return 0;
 }
 
-int UsageFacade::addTree(int x_sq, int yCell) {
+int UsageFacade::addTree(int x_sq, int y_sq) {
     x_sq -= 1;
-    yCell -= 1;
+    y_sq -= 1;
 
-    if (x_sq >= (int) scene->getWidth() || yCell >= (int) scene->getHeight())
+    if (x_sq >= (int) scene->getWidth() || y_sq >= (int) scene->getHeight())
         return 2;
 
-    if (scene->getUsedSquares()[yCell][x_sq] != 0 && scene->getUsedSquares()[yCell][x_sq] != 3) {
+    if (scene->getUsedSquares()[y_sq][x_sq] != 0 && scene->getUsedSquares()[y_sq][x_sq] != 3) {
         qDebug() << "i = " << x_sq << "j = " << x_sq << "ячейка занята (дерево)";
         return 1;
     }
 
     int xFactor = x_sq * SCALE_FACTOR + 10;
-    int yFactor = yCell * SCALE_FACTOR + 10;
+    int yFactor = y_sq * SCALE_FACTOR + 10;
     int zFactor = PLATFORM_START_Z;
 
     std::vector<Vertex> vertices2;
@@ -818,7 +845,7 @@ int UsageFacade::addTree(int x_sq, int yCell) {
             xFactor + SCALE_FACTOR / 3, yFactor + SCALE_FACTOR, zFactor + SCALE_FACTOR * 2);
 
     Model treeFoliageModel(vertices2, facets2, "Дерево");
-    treeFoliageModel.setUsedSquare(x_sq, yCell);
+    treeFoliageModel.setUsedSquare(x_sq, y_sq);
     treeFoliageModel.setHeightModel(1);
     treeFoliageModel.setWidthModel(1);
     treeFoliageModel.setModelType(Model::TreeFoliage);
@@ -853,7 +880,7 @@ int UsageFacade::addTree(int x_sq, int yCell) {
             xFactor + SCALE_FACTOR * 2 / 5, yFactor + SCALE_FACTOR * 3 / 5, zFactor + SCALE_FACTOR);
 
     Model treeTrunkModel(vertices, facets, "Ствол дерева");
-    treeTrunkModel.setUsedSquare(x_sq, yCell);
+    treeTrunkModel.setUsedSquare(x_sq, y_sq);
     treeTrunkModel.setHeightModel(1);
     treeTrunkModel.setWidthModel(1);
     treeTrunkModel.setModelType(Model::TreeTrunk);
@@ -864,20 +891,20 @@ int UsageFacade::addTree(int x_sq, int yCell) {
 }
 
 
-int UsageFacade::addRoad(int x_sq, int yCell, Direction direction) {
+int UsageFacade::addRoad(int x_sq, int y_sq, Direction direction) {
     x_sq -= 1;
-    yCell -= 1;
+    y_sq -= 1;
 
-    if (x_sq >= (int) scene->getWidth() || yCell >= (int) scene->getHeight())
-        return 2;
+    if (x_sq >= (int) scene->getWidth() || y_sq >= (int) scene->getHeight())
+        return obj_over_range;
 
-    if (scene->getUsedSquares()[yCell][x_sq] == 3) {
-        qDebug() << "i = " << x_sq << "j = " << x_sq << "ячейка рядом с домом (дорога)";
-        return 4;
-    }
-    if (scene->getUsedSquares()[yCell][x_sq] != 0) {
+//    if (scene->getUsedSquares()[y_sq][x_sq] == 3) {
+//        qDebug() << "i = " << x_sq << "j = " << x_sq << "ячейка рядом с домом (дорога)";
+//        return 4;
+//    }
+    if (scene->getUsedSquares()[y_sq][x_sq] != 0) {
         qDebug() << "i = " << x_sq << "j = " << x_sq << "ячейка занята (дорога)";
-        return 1;
+        return sq_full;
     }
 
 
@@ -885,7 +912,7 @@ int UsageFacade::addRoad(int x_sq, int yCell, Direction direction) {
     std::vector<Polygon> facets;
 
     int xFactor = x_sq * SCALE_FACTOR + 10;
-    int yFactor = yCell * SCALE_FACTOR + 10;
+    int yFactor = y_sq * SCALE_FACTOR + 10;
     int zFactor = PLATFORM_START_Z;
 
     //асфальт
@@ -896,7 +923,7 @@ int UsageFacade::addRoad(int x_sq, int yCell, Direction direction) {
             xFactor, yFactor + SCALE_FACTOR, zFactor + 1);
 
     Model roadAsphaltModel(vertices, facets, "Дорога");
-    roadAsphaltModel.setUsedSquare(x_sq, yCell);
+    roadAsphaltModel.setUsedSquare(x_sq, y_sq);
     roadAsphaltModel.setHeightModel(1);
     roadAsphaltModel.setWidthModel(1);
     roadAsphaltModel.setDirectionRoad(direction);
@@ -918,7 +945,8 @@ int UsageFacade::addRoad(int x_sq, int yCell, Direction direction) {
                     xFactor + SCALE_FACTOR, yFactor + yOffset + SCALE_FACTOR / 20, zFactor + 2,
                     xFactor, yFactor + yOffset + SCALE_FACTOR / 20, zFactor + 2);
         }
-    } else {
+    }
+    else {
         // Добавляем полосы по обеим сторонам вертикальной дороги
         for (int i = 0; i < 2; ++i) {
             double xOffset = (i == 0) ? SCALE_FACTOR / 10 : SCALE_FACTOR * 9 / 10;
@@ -931,7 +959,7 @@ int UsageFacade::addRoad(int x_sq, int yCell, Direction direction) {
     }
 
     Model roadStripeModel(vertices2, facets2, "Полоса дороги");
-    roadStripeModel.setUsedSquare(x_sq, yCell);
+    roadStripeModel.setUsedSquare(x_sq, y_sq);
     roadStripeModel.setHeightModel(1);
     roadStripeModel.setWidthModel(1);
     roadStripeModel.setDirectionRoad(direction);
@@ -943,26 +971,27 @@ int UsageFacade::addRoad(int x_sq, int yCell, Direction direction) {
 }
 
 
-int UsageFacade::addCar(int x_sq, int yCell, Direction direction, ColorCar color_car) {
+int UsageFacade::addCar(int x_sq, int y_sq, Direction direction, ColorCar color_car) {
     int modelLength;
     int modelHeight;
 
     if (direction == Horizontal) {
         modelHeight = 1;
         modelLength = 2;
-    } else {
+    }
+    else {
         modelHeight = 2;
         modelLength = 1;
     }
 
     x_sq -= 1;
-    yCell -= 1;
+    y_sq -= 1;
 
     if (x_sq + modelLength - 1 >= (int) scene->getWidth() || \
-        yCell + modelHeight - 1 >= (int) scene->getHeight())
+        y_sq + modelHeight - 1 >= (int) scene->getHeight())
         return 2;
 
-    for (int i = yCell; i < yCell + modelHeight; i++) {
+    for (int i = y_sq; i < y_sq + modelHeight; i++) {
         for (int j = x_sq; j < x_sq + modelLength; j++) {
             if (scene->getUsedSquares()[i][j] != 2) {
                 qDebug() << "i = " << i << "j = " << j << "нет дороги (машина)";
@@ -976,7 +1005,7 @@ int UsageFacade::addCar(int x_sq, int yCell, Direction direction, ColorCar color
     std::vector<Polygon> facets;
 
     int xFactor = x_sq * SCALE_FACTOR + 10;
-    int yFactor = yCell * SCALE_FACTOR + 10 - MOVECOEF * 2;
+    int yFactor = y_sq * SCALE_FACTOR + 10 - MOVECOEF * 2;
     int zFactor = PLATFORM_START_Z + SCALE_FACTOR / 16;
 
     //рама машины
@@ -1070,7 +1099,7 @@ int UsageFacade::addCar(int x_sq, int yCell, Direction direction, ColorCar color
 
 
     Model carModel(vertices, facets, "Машина");
-    carModel.setUsedSquare(x_sq, yCell);
+    carModel.setUsedSquare(x_sq, y_sq);
     carModel.setHeightModel(modelHeight);
     carModel.setWidthModel(modelLength);
     carModel.setDirectionCar(direction);
@@ -1086,7 +1115,7 @@ int UsageFacade::addCar(int x_sq, int yCell, Direction direction, ColorCar color
     std::vector<Polygon> facets2;
 
     xFactor = x_sq * SCALE_FACTOR + 10;
-    yFactor = yCell * SCALE_FACTOR + 10 - MOVECOEF * 2;
+    yFactor = y_sq * SCALE_FACTOR + 10 - MOVECOEF * 2;
     zFactor = PLATFORM_START_Z;
 
     //колёса машины
@@ -1124,13 +1153,13 @@ int UsageFacade::addCar(int x_sq, int yCell, Direction direction, ColorCar color
         }
 
         xFactor = x_sq * SCALE_FACTOR + 10;
-        yFactor = yCell * SCALE_FACTOR + 10 - MOVECOEF * 2;
+        yFactor = y_sq * SCALE_FACTOR + 10 - MOVECOEF * 2;
 
         yFactor += SCALE_FACTOR / 2 + 4;
     }
 
     Model wheelsCarModel(vertices2, facets2, "Колёса машина");
-    wheelsCarModel.setUsedSquare(x_sq, yCell);
+    wheelsCarModel.setUsedSquare(x_sq, y_sq);
     wheelsCarModel.setHeightModel(modelHeight);
     wheelsCarModel.setWidthModel(modelLength);
     wheelsCarModel.setDirectionCar(direction);
@@ -1146,7 +1175,7 @@ int UsageFacade::addCar(int x_sq, int yCell, Direction direction, ColorCar color
     std::vector<Polygon> facets3;
 
     xFactor = x_sq * SCALE_FACTOR + 10;
-    yFactor = yCell * SCALE_FACTOR + 10 - MOVECOEF * 2;
+    yFactor = y_sq * SCALE_FACTOR + 10 - MOVECOEF * 2;
     zFactor = PLATFORM_START_Z + SCALE_FACTOR * 19 / 48;
 
     //лобовое стекло
@@ -1188,7 +1217,7 @@ int UsageFacade::addCar(int x_sq, int yCell, Direction direction, ColorCar color
                 xFactor + SCALE_FACTOR * 9 / 6, yFactor + SCALE_FACTOR * 5 / 6 + 1, zFactor);
 
     Model glassCarModel(vertices3, facets3, "Стёкла машины");
-    glassCarModel.setUsedSquare(x_sq, yCell);
+    glassCarModel.setUsedSquare(x_sq, y_sq);
     glassCarModel.setHeightModel(modelHeight);
     glassCarModel.setWidthModel(modelLength);
     glassCarModel.setDirectionCar(direction);

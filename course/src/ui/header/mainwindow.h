@@ -19,7 +19,8 @@ enum ObjIndex {
     sidewalk,
     carGrey,
     tree,
-    bush
+    bush,
+    light
 };
 
 

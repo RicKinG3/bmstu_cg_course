@@ -84,7 +84,7 @@ public:
         Pickup,
         Bush,
         Sidewalk,
-        Baborder
+        Baborder,
     };
     Direction getDirectionSidewalk();
     void setDirectionSidewalk(Direction direction);

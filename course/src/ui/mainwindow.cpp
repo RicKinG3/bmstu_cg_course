@@ -163,7 +163,7 @@ void MainWindow::on_pushButton_light_add_clicked() {
             return; // Отмена добавления нового источника света
         }
     }
-
+    printListObj();
     facade->addLight(deg_ox, deg_oy);
     drawThisShit();
 
@@ -199,6 +199,17 @@ void MainWindow::printListObj() {
     Model::model_t modelType_;
     int count = 0;
     ui->objListActiv->clear();
+
+//    int count_ligt = scene->getLightNum();
+//    while (count_ligt!= 0)
+//    {
+//        Light cur_light = scene->getLight(count);
+//        count++;
+//        ui->objListActiv->addItem(
+//                QString::number(count) + ". " + "Источник света" + "(" +
+//                cur_light.getXAngle() + " " + cur_light.getYAngle() + ")" );
+//        count_ligt--;
+//    }
 
     for (size_t i = 0; i < scene->getModelsNum(); i++) {
         model = scene->getModel(i);
@@ -391,7 +402,7 @@ void MainWindow::recalculationModelsNum() {
 
     for (size_t i = 0; i < realModelsNum; i++) {
         model = scene->getModel(cur);
-        int border = (model.getModelType() == Model::House || model.getModelType() == Model::Car ) ? 3 : 2;
+        int border = (model.getModelType() == Model::House || model.getModelType() == Model::Car) ? 3 : 2;
         if (model.getModelType() == Model::Bush)
             border = 1;
         for (int j = 0; j < border; j++) {

@@ -27,6 +27,19 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="1" rowspan="4">
+     <widget class="SpecialGraphicsView" name="graphicsView">
+      <property name="minimumSize">
+       <size>
+        <width>500</width>
+        <height>500</height>
+       </size>
+      </property>
+      <property name="cursor" stdset="0">
+       <cursorShape>CrossCursor</cursorShape>
+      </property>
+     </widget>
+    </item>
     <item row="0" column="0" rowspan="4">
      <widget class="QTabWidget" name="mainMain">
       <property name="maximumSize">
@@ -40,7 +53,7 @@
       </property>
       <widget class="QWidget" name="scene_tab">
        <attribute name="title">
-        <string>Сцена</string>
+        <string>Платформа</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout">
         <item>
@@ -54,20 +67,20 @@
              <property name="font">
               <font>
                <family>Ubuntu</family>
-               <pointsize>11</pointsize>
+               <pointsize>10</pointsize>
                <italic>false</italic>
                <bold>true</bold>
               </font>
              </property>
              <property name="text">
-              <string>В начальное положение сцены</string>
+              <string>В начальное положение платформу</string>
              </property>
             </widget>
            </item>
            <item row="0" column="0">
             <widget class="QGroupBox" name="groupBox_4">
              <property name="title">
-              <string>Размер сцены</string>
+              <string>Размер платформа</string>
              </property>
              <layout class="QGridLayout" name="gridLayout_7">
               <item row="0" column="0">
@@ -126,13 +139,13 @@
              <property name="font">
               <font>
                <family>Ubuntu</family>
-               <pointsize>12</pointsize>
+               <pointsize>10</pointsize>
                <italic>false</italic>
                <bold>true</bold>
               </font>
              </property>
              <property name="text">
-              <string>Создать сцену</string>
+              <string>Создать платформу</string>
              </property>
             </widget>
            </item>
@@ -142,7 +155,7 @@
         <item>
          <widget class="QGroupBox" name="groupBox_2">
           <property name="title">
-           <string>Масштабирование сцены</string>
+           <string>Масштабирование платформы</string>
           </property>
           <layout class="QGridLayout" name="gridLayout_4">
            <item row="1" column="0">
@@ -165,7 +178,7 @@
         <item>
          <widget class="QGroupBox" name="groupBox_3">
           <property name="title">
-           <string>Перемещение сцены</string>
+           <string>Перемещение платформы</string>
           </property>
           <layout class="QGridLayout" name="gridLayout_6">
            <item row="1" column="1">
@@ -202,7 +215,7 @@
         <item>
          <widget class="QGroupBox" name="groupBox_5">
           <property name="title">
-           <string>Вращение сцены </string>
+           <string>Вращение платформы </string>
           </property>
           <layout class="QGridLayout" name="gridLayout_8">
            <item row="1" column="1">
@@ -401,12 +414,7 @@
             <widget class="QComboBox" name="choose_obj">
              <item>
               <property name="text">
-               <string>Стандартный дом</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Премиальный дом</string>
+               <string>Дом</string>
               </property>
              </item>
              <item>
@@ -416,17 +424,12 @@
              </item>
              <item>
               <property name="text">
-               <string>Тротуар?</string>
+               <string>Тротуар</string>
               </property>
              </item>
              <item>
               <property name="text">
-               <string>Машина серая</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Машина красная?</string>
+               <string>Машина</string>
               </property>
              </item>
              <item>
@@ -436,7 +439,7 @@
              </item>
              <item>
               <property name="text">
-               <string>Куст?</string>
+               <string>Куст</string>
               </property>
              </item>
             </widget>
@@ -519,25 +522,6 @@
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="tab">
-       <attribute name="title">
-        <string>Tab 1</string>
-       </attribute>
-       <layout class="QGridLayout" name="gridLayout_3"/>
-      </widget>
-     </widget>
-    </item>
-    <item row="0" column="1" rowspan="4">
-     <widget class="SpecialGraphicsView" name="graphicsView">
-      <property name="minimumSize">
-       <size>
-        <width>500</width>
-        <height>500</height>
-       </size>
-      </property>
-      <property name="cursor" stdset="0">
-       <cursorShape>CrossCursor</cursorShape>
-      </property>
      </widget>
     </item>
    </layout>
@@ -567,12 +551,12 @@
   </action>
   <action name="action">
    <property name="text">
-    <string>ИНФО</string>
+    <string>Инфо</string>
    </property>
   </action>
   <action name="action_3">
    <property name="text">
-    <string>ЧТО-ТО</string>
+    <string>Автор</string>
    </property>
   </action>
   <action name="action_4">

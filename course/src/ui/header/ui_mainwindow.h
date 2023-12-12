@@ -41,6 +41,7 @@ public:
     QAction *action_4;
     QWidget *centralwidget;
     QGridLayout *gridLayout;
+    SpecialGraphicsView *graphicsView;
     QTabWidget *mainMain;
     QWidget *scene_tab;
     QVBoxLayout *verticalLayout;
@@ -104,9 +105,6 @@ public:
     QLabel *label_6;
     QSpinBox *deg_oy;
     QPushButton *pushButton_addModel;
-    QWidget *tab;
-    QGridLayout *gridLayout_3;
-    SpecialGraphicsView *graphicsView;
     QMenuBar *menubar;
     QMenu *menu;
 
@@ -136,6 +134,13 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         gridLayout = new QGridLayout(centralwidget);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        graphicsView = new SpecialGraphicsView(centralwidget);
+        graphicsView->setObjectName(QString::fromUtf8("graphicsView"));
+        graphicsView->setMinimumSize(QSize(500, 500));
+        graphicsView->viewport()->setProperty("cursor", QVariant(QCursor(Qt::CrossCursor)));
+
+        gridLayout->addWidget(graphicsView, 0, 1, 4, 1);
+
         mainMain = new QTabWidget(centralwidget);
         mainMain->setObjectName(QString::fromUtf8("mainMain"));
         mainMain->setMaximumSize(QSize(400, 16777215));
@@ -149,12 +154,7 @@ public:
         gridLayout_5->setObjectName(QString::fromUtf8("gridLayout_5"));
         pushButton_sceneToInitianPosition = new QPushButton(groupBox);
         pushButton_sceneToInitianPosition->setObjectName(QString::fromUtf8("pushButton_sceneToInitianPosition"));
-        QFont font1;
-        font1.setFamily(QString::fromUtf8("Ubuntu"));
-        font1.setPointSize(11);
-        font1.setBold(true);
-        font1.setItalic(false);
-        pushButton_sceneToInitianPosition->setFont(font1);
+        pushButton_sceneToInitianPosition->setFont(font);
 
         gridLayout_5->addWidget(pushButton_sceneToInitianPosition, 2, 0, 1, 1);
 
@@ -195,12 +195,7 @@ public:
 
         pushButton_createScene = new QPushButton(groupBox);
         pushButton_createScene->setObjectName(QString::fromUtf8("pushButton_createScene"));
-        QFont font2;
-        font2.setFamily(QString::fromUtf8("Ubuntu"));
-        font2.setPointSize(12);
-        font2.setBold(true);
-        font2.setItalic(false);
-        pushButton_createScene->setFont(font2);
+        pushButton_createScene->setFont(font);
 
         gridLayout_5->addWidget(pushButton_createScene, 1, 0, 1, 1);
 
@@ -390,8 +385,6 @@ public:
         choose_obj->addItem(QString());
         choose_obj->addItem(QString());
         choose_obj->addItem(QString());
-        choose_obj->addItem(QString());
-        choose_obj->addItem(QString());
         choose_obj->setObjectName(QString::fromUtf8("choose_obj"));
 
         verticalLayout_2->addWidget(choose_obj);
@@ -444,20 +437,8 @@ public:
         gridLayout_2->addWidget(pushButton_addModel, 4, 0, 1, 1);
 
         mainMain->addTab(obj, QString());
-        tab = new QWidget();
-        tab->setObjectName(QString::fromUtf8("tab"));
-        gridLayout_3 = new QGridLayout(tab);
-        gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
-        mainMain->addTab(tab, QString());
 
         gridLayout->addWidget(mainMain, 0, 0, 4, 1);
-
-        graphicsView = new SpecialGraphicsView(centralwidget);
-        graphicsView->setObjectName(QString::fromUtf8("graphicsView"));
-        graphicsView->setMinimumSize(QSize(500, 500));
-        graphicsView->viewport()->setProperty("cursor", QVariant(QCursor(Qt::CrossCursor)));
-
-        gridLayout->addWidget(graphicsView, 0, 1, 4, 1);
 
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
@@ -483,26 +464,26 @@ public:
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "\320\234\320\260\320\272\320\265\321\202\320\270\321\200\320\276\320\262\320\260\320\275\320\270\320\265 \320\270 \320\262\320\270\320\267\321\203\320\260\320\273\320\270\320\267\320\260\321\206\320\270\321\217 \320\267\320\260\320\263\320\276\321\200\320\276\320\264\320\275\320\276\320\271 \320\274\320\265\321\201\321\202\320\275\320\276\321\201\321\202\320\270", nullptr));
         action_2->setText(QCoreApplication::translate("MainWindow", "\320\240\321\203\320\272\320\276\320\262\320\276\320\264\321\201\321\202\320\262\320\276 \320\277\320\276\320\273\321\214\320\267\320\276\320\262\320\260\321\202\320\265\320\273\321\217", nullptr));
-        action->setText(QCoreApplication::translate("MainWindow", "\320\230\320\235\320\244\320\236", nullptr));
-        action_3->setText(QCoreApplication::translate("MainWindow", "\320\247\320\242\320\236-\320\242\320\236", nullptr));
+        action->setText(QCoreApplication::translate("MainWindow", "\320\230\320\275\321\204\320\276", nullptr));
+        action_3->setText(QCoreApplication::translate("MainWindow", "\320\220\320\262\321\202\320\276\321\200", nullptr));
         action_4->setText(QCoreApplication::translate("MainWindow", "1", nullptr));
         groupBox->setTitle(QString());
-        pushButton_sceneToInitianPosition->setText(QCoreApplication::translate("MainWindow", "\320\222 \320\275\320\260\321\207\320\260\320\273\321\214\320\275\320\276\320\265 \320\277\320\276\320\273\320\276\320\266\320\265\320\275\320\270\320\265 \321\201\321\206\320\265\320\275\321\213", nullptr));
-        groupBox_4->setTitle(QCoreApplication::translate("MainWindow", "\320\240\320\260\320\267\320\274\320\265\321\200 \321\201\321\206\320\265\320\275\321\213", nullptr));
+        pushButton_sceneToInitianPosition->setText(QCoreApplication::translate("MainWindow", "\320\222 \320\275\320\260\321\207\320\260\320\273\321\214\320\275\320\276\320\265 \320\277\320\276\320\273\320\276\320\266\320\265\320\275\320\270\320\265 \320\277\320\273\320\260\321\202\321\204\320\276\321\200\320\274\321\203", nullptr));
+        groupBox_4->setTitle(QCoreApplication::translate("MainWindow", "\320\240\320\260\320\267\320\274\320\265\321\200 \320\277\320\273\320\260\321\202\321\204\320\276\321\200\320\274\320\260", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "\320\232\320\276\320\273-\320\262\320\276 \320\272\320\262\320\260\320\264\321\200\320\260\321\202\320\276\320\262\n"
 " \320\262 \320\264\320\273\320\270\320\275\321\203", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "\320\232\320\276\320\273-\320\262\320\276 \320\272\320\262\320\260\320\264\321\200\320\260\321\202\320\276\320\262 \n"
 "\320\262 \321\210\320\270\321\200\320\270\320\275\321\203", nullptr));
-        pushButton_createScene->setText(QCoreApplication::translate("MainWindow", "\320\241\320\276\320\267\320\264\320\260\321\202\321\214 \321\201\321\206\320\265\320\275\321\203", nullptr));
-        groupBox_2->setTitle(QCoreApplication::translate("MainWindow", "\320\234\320\260\321\201\321\210\321\202\320\260\320\261\320\270\321\200\320\276\320\262\320\260\320\275\320\270\320\265 \321\201\321\206\320\265\320\275\321\213", nullptr));
+        pushButton_createScene->setText(QCoreApplication::translate("MainWindow", "\320\241\320\276\320\267\320\264\320\260\321\202\321\214 \320\277\320\273\320\260\321\202\321\204\320\276\321\200\320\274\321\203", nullptr));
+        groupBox_2->setTitle(QCoreApplication::translate("MainWindow", "\320\234\320\260\321\201\321\210\321\202\320\260\320\261\320\270\321\200\320\276\320\262\320\260\320\275\320\270\320\265 \320\277\320\273\320\260\321\202\321\204\320\276\321\200\320\274\321\213", nullptr));
         pushButton_distance->setText(QCoreApplication::translate("MainWindow", "-", nullptr));
         pushButton_zoom->setText(QCoreApplication::translate("MainWindow", "+", nullptr));
-        groupBox_3->setTitle(QCoreApplication::translate("MainWindow", "\320\237\320\265\321\200\320\265\320\274\320\265\321\211\320\265\320\275\320\270\320\265 \321\201\321\206\320\265\320\275\321\213", nullptr));
+        groupBox_3->setTitle(QCoreApplication::translate("MainWindow", "\320\237\320\265\321\200\320\265\320\274\320\265\321\211\320\265\320\275\320\270\320\265 \320\277\320\273\320\260\321\202\321\204\320\276\321\200\320\274\321\213", nullptr));
         pushButton_right_scene->setText(QCoreApplication::translate("MainWindow", "\342\206\222", nullptr));
         pushButton_up_scene->setText(QCoreApplication::translate("MainWindow", "\342\206\221", nullptr));
         pushButton_left_scene->setText(QCoreApplication::translate("MainWindow", "\342\206\220", nullptr));
         pushButton_down_scene->setText(QCoreApplication::translate("MainWindow", "\342\206\223", nullptr));
-        groupBox_5->setTitle(QCoreApplication::translate("MainWindow", "\320\222\321\200\320\260\321\211\320\265\320\275\320\270\320\265 \321\201\321\206\320\265\320\275\321\213 ", nullptr));
+        groupBox_5->setTitle(QCoreApplication::translate("MainWindow", "\320\222\321\200\320\260\321\211\320\265\320\275\320\270\320\265 \320\277\320\273\320\260\321\202\321\204\320\276\321\200\320\274\321\213 ", nullptr));
         groupBox_6->setTitle(QString());
         pushButton_left->setText(QCoreApplication::translate("MainWindow", "\342\206\220", nullptr));
         pushButton_down->setText(QCoreApplication::translate("MainWindow", "\342\206\223", nullptr));
@@ -511,7 +492,7 @@ public:
         pushButton_rightCircle->setText(QCoreApplication::translate("MainWindow", "\342\206\273", nullptr));
         pushButton_up->setText(QCoreApplication::translate("MainWindow", "\342\206\221", nullptr));
         pushButton_leftCircle->setText(QCoreApplication::translate("MainWindow", "\342\206\272", nullptr));
-        mainMain->setTabText(mainMain->indexOf(scene_tab), QCoreApplication::translate("MainWindow", "\320\241\321\206\320\265\320\275\320\260", nullptr));
+        mainMain->setTabText(mainMain->indexOf(scene_tab), QCoreApplication::translate("MainWindow", "\320\237\320\273\320\260\321\202\321\204\320\276\321\200\320\274\320\260", nullptr));
 #if QT_CONFIG(tooltip)
         obj->setToolTip(QCoreApplication::translate("MainWindow", "<html><head/><body><p>\320\276\320\261\321\212\320\265\320\272\321\202\321\213 \321\201\321\206\320\265\320\275\321\213 </p><p><br/></p></body></html>", nullptr));
 #endif // QT_CONFIG(tooltip)
@@ -530,14 +511,12 @@ public:
         objDirection_ox->setText(QCoreApplication::translate("MainWindow", "\320\222\320\264\320\276\320\273\321\214 \320\263\320\276\321\200\320\270\320\267\320\276\320\275\321\202\320\260\320\273\321\214\320\275\320\276\320\271 \320\276\321\201\320\270", nullptr));
         objDirection_oy->setText(QCoreApplication::translate("MainWindow", "\320\222\320\264\320\276\320\273\321\214 \320\262\320\265\321\200\321\202\320\270\320\272\320\260\320\273\321\214\320\275\320\276\320\271 \320\276\321\201\320\270", nullptr));
         groupBox_8->setTitle(QCoreApplication::translate("MainWindow", "\320\222\321\213\320\261\320\276\321\200 \320\276\320\261\321\212\320\265\320\272\321\202\320\260", nullptr));
-        choose_obj->setItemText(0, QCoreApplication::translate("MainWindow", "\320\241\321\202\320\260\320\275\320\264\320\260\321\200\321\202\320\275\321\213\320\271 \320\264\320\276\320\274", nullptr));
-        choose_obj->setItemText(1, QCoreApplication::translate("MainWindow", "\320\237\321\200\320\265\320\274\320\270\320\260\320\273\321\214\320\275\321\213\320\271 \320\264\320\276\320\274", nullptr));
-        choose_obj->setItemText(2, QCoreApplication::translate("MainWindow", "\320\224\320\276\321\200\320\276\320\263\320\260", nullptr));
-        choose_obj->setItemText(3, QCoreApplication::translate("MainWindow", "\320\242\321\200\320\276\321\202\321\203\320\260\321\200?", nullptr));
-        choose_obj->setItemText(4, QCoreApplication::translate("MainWindow", "\320\234\320\260\321\210\320\270\320\275\320\260 \321\201\320\265\321\200\320\260\321\217", nullptr));
-        choose_obj->setItemText(5, QCoreApplication::translate("MainWindow", "\320\234\320\260\321\210\320\270\320\275\320\260 \320\272\321\200\320\260\321\201\320\275\320\260\321\217?", nullptr));
-        choose_obj->setItemText(6, QCoreApplication::translate("MainWindow", "\320\224\320\265\321\200\320\265\320\262\320\276", nullptr));
-        choose_obj->setItemText(7, QCoreApplication::translate("MainWindow", "\320\232\321\203\321\201\321\202?", nullptr));
+        choose_obj->setItemText(0, QCoreApplication::translate("MainWindow", "\320\224\320\276\320\274", nullptr));
+        choose_obj->setItemText(1, QCoreApplication::translate("MainWindow", "\320\224\320\276\321\200\320\276\320\263\320\260", nullptr));
+        choose_obj->setItemText(2, QCoreApplication::translate("MainWindow", "\320\242\321\200\320\276\321\202\321\203\320\260\321\200", nullptr));
+        choose_obj->setItemText(3, QCoreApplication::translate("MainWindow", "\320\234\320\260\321\210\320\270\320\275\320\260", nullptr));
+        choose_obj->setItemText(4, QCoreApplication::translate("MainWindow", "\320\224\320\265\321\200\320\265\320\262\320\276", nullptr));
+        choose_obj->setItemText(5, QCoreApplication::translate("MainWindow", "\320\232\321\203\321\201\321\202", nullptr));
 
         groupBox_11->setTitle(QCoreApplication::translate("MainWindow", "\320\230\321\201\321\202\320\276\321\207\320\275\320\270\320\272 \321\201\320\262\320\265\321\202\320\260", nullptr));
         pushButton_light_add->setText(QCoreApplication::translate("MainWindow", "\320\243\321\201\321\202\320\260\320\275\320\276\320\262\320\270\321\202\321\214 \320\270\321\201\321\202\320\276\321\207\320\275\320\270\320\272 \321\201\320\262\320\265\321\202\320\260", nullptr));
@@ -547,7 +526,6 @@ public:
 "\320\262\320\265\321\200\321\202\320\270\320\272\320\260\320\273\321\214\320\275\320\276\320\271 \320\276\321\201\320\270 ", nullptr));
         pushButton_addModel->setText(QCoreApplication::translate("MainWindow", "\320\243\321\201\321\202\320\260\320\275\320\276\320\262\320\270\321\202\321\214 \320\276\320\261\321\212\320\265\320\272\321\202", nullptr));
         mainMain->setTabText(mainMain->indexOf(obj), QCoreApplication::translate("MainWindow", "\320\236\320\261\321\212\320\265\320\272\321\202\321\213", nullptr));
-        mainMain->setTabText(mainMain->indexOf(tab), QCoreApplication::translate("MainWindow", "Tab 1", nullptr));
         menu->setTitle(QCoreApplication::translate("MainWindow", "\320\241\320\277\321\200\320\260\320\262\320\272\320\260", nullptr));
     } // retranslateUi
 

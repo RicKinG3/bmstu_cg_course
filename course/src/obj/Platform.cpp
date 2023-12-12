@@ -87,9 +87,9 @@ void Platform::markUsedSquares(size_t num) {
         key = 4;
     else
         key = 1;
-
-    if (modelType_ == Model::model_t::WindowsHouse)
-        markSquareNearHouse(xCell, yCell, widthModel, heightModel);
+//
+//    if (modelType_ == Model::model_t::WindowsHouse)
+//        markSquareNearHouse(xCell, yCell, widthModel, heightModel);
 
 
     for (int i = yCell; i < yCell + heightModel; i++) {
@@ -153,8 +153,8 @@ void Platform::clearUsedSquares(size_t num) {
     else
         key = 0;
 
-    if (modelType_ == Model::model_t::WindowsHouse)
-        clearSquareNearHouse(xCell, yCell, widthModel, heightModel);
+//    if (modelType_ == Model::model_t::WindowsHouse)
+//        clearSquareNearHouse(xCell, yCell, widthModel, heightModel);
 
 
     for (int i = yCell; i < yCell + heightModel; i++) {

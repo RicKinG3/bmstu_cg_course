@@ -244,12 +244,12 @@ void MainWindow::on_pushButton_addModel_clicked() {
             rc = static_cast<RetCodeAddObjToScene>(facade->addHouse(sq_num_ox, sq_num_oy, BASE_LENX_HOUSE,
                                                                     BASE_LENY_HOUSE, BASE_LENZ_HOUSE));
             break;
-        case premiumHome:
-            //todo add garaj
-//            qDebug() << "choose premiumHome";
-            rc = static_cast<RetCodeAddObjToScene>(facade->addHouse(sq_num_ox, sq_num_oy, PREMIUM_LENX_HOUSE,
-                                                                    PREMIUM_LENY_HOUSE, PREMIUM_LENZ_HOUSE));
-            break;
+//        case premiumHome:
+//            //todo add garaj
+////            qDebug() << "choose premiumHome";
+//            rc = static_cast<RetCodeAddObjToScene>(facade->addHouse(sq_num_ox, sq_num_oy, PREMIUM_LENX_HOUSE,
+//                                                                    PREMIUM_LENY_HOUSE, PREMIUM_LENZ_HOUSE));
+//            break;
         case road:
             rc = static_cast<RetCodeAddObjToScene>(facade->addRoad(sq_num_ox, sq_num_oy, objDirection));
 //            qDebug() << "choose road";
@@ -263,11 +263,11 @@ void MainWindow::on_pushButton_addModel_clicked() {
             color_car = grey;
             rc = static_cast<RetCodeAddObjToScene>(facade->addCar(sq_num_ox, sq_num_oy, objDirection, color_car));
             break;
-        case carRed:
-            //todo
-            qDebug() << "choose carRed";
-            rc = static_cast<RetCodeAddObjToScene>(facade->addPickup(sq_num_ox, sq_num_oy, objDirection, color_car));
-            break;
+//        case carRed:
+//            //todo
+//            qDebug() << "choose carRed";
+//            rc = static_cast<RetCodeAddObjToScene>(facade->addPickup(sq_num_ox, sq_num_oy, objDirection, color_car));
+//            break;
         case tree:
 //            qDebug() << "choose tree";
             rc = static_cast<RetCodeAddObjToScene>(facade->addTree(sq_num_ox, sq_num_oy));

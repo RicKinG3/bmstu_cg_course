@@ -980,6 +980,7 @@ int UsageFacade::addSidewalk(int x_sq, int y_sq, Direction direction) {
         return obj_over_range;
 
 //    if (scene->getUsedSquares()[y_sq][x_sq] == 3) {
+//    if (scene->getUsedSquares()[y_sq][x_sq] == 3) {
 //        qDebug() << "i = " << x_sq << "j = " << x_sq << "ячейка рядом с домом (дорога)";
 //        return 4;
 //    }
@@ -989,8 +990,8 @@ int UsageFacade::addSidewalk(int x_sq, int y_sq, Direction direction) {
     }
 
 
-    std::vector <Vertex> vertices;
-    std::vector <Polygon> facets;
+    std::vector<Vertex> vertices;
+    std::vector<Polygon> facets;
 
     int xFactor = x_sq * SCALE_FACTOR + 10;
     int yFactor = y_sq * SCALE_FACTOR + 10;
@@ -1016,8 +1017,8 @@ int UsageFacade::addSidewalk(int x_sq, int y_sq, Direction direction) {
     scene->addModel(sidewalk_model);
 
 
-    std::vector <Vertex> vertices2;
-    std::vector <Polygon> facets2;
+    std::vector<Vertex> vertices2;
+    std::vector<Polygon> facets2;
     float y_offset_far = 0.25;
     int koef_blizko = 20;
     float y_offset_near = SCALE_FACTOR - SCALE_FACTOR / koef_blizko;
@@ -1148,7 +1149,10 @@ int UsageFacade::addCar(int x_sq, int y_sq, Direction direction, ColorCar color_
     std::vector<Polygon> facets;
 
     int xFactor = x_sq * SCALE_FACTOR + 10;
-    int yFactor = y_sq * SCALE_FACTOR + 10 - MOVECOEF * 2;
+
+    int yFactor = y_sq * SCALE_FACTOR + 10;
+    if (direction != Horizontal) yFactor = yFactor - MOVECOEF * 2;
+
     int zFactor = PLATFORM_START_Z + SCALE_FACTOR / 16;
 
     //рама машины
@@ -1258,7 +1262,8 @@ int UsageFacade::addCar(int x_sq, int y_sq, Direction direction, ColorCar color_
     std::vector<Polygon> facets2;
 
     xFactor = x_sq * SCALE_FACTOR + 10;
-    yFactor = y_sq * SCALE_FACTOR + 10 - MOVECOEF * 2;
+    yFactor = y_sq * SCALE_FACTOR + 10 ;
+    if (direction != Horizontal) yFactor = yFactor - MOVECOEF * 2;
     zFactor = PLATFORM_START_Z;
 
     //колёса машины
@@ -1296,8 +1301,10 @@ int UsageFacade::addCar(int x_sq, int y_sq, Direction direction, ColorCar color_
         }
 
         xFactor = x_sq * SCALE_FACTOR + 10;
-        yFactor = y_sq * SCALE_FACTOR + 10 - MOVECOEF * 2;
 
+        yFactor = y_sq * SCALE_FACTOR + 10 ;
+
+        if (direction != Horizontal) yFactor = yFactor - MOVECOEF * 2;
         yFactor += SCALE_FACTOR / 2 + 4;
     }
 
@@ -1318,7 +1325,8 @@ int UsageFacade::addCar(int x_sq, int y_sq, Direction direction, ColorCar color_
     std::vector<Polygon> facets3;
 
     xFactor = x_sq * SCALE_FACTOR + 10;
-    yFactor = y_sq * SCALE_FACTOR + 10 - MOVECOEF * 2;
+    yFactor = y_sq * SCALE_FACTOR + 10;
+    if (direction != Horizontal) yFactor = yFactor - MOVECOEF * 2;
     zFactor = PLATFORM_START_Z + SCALE_FACTOR * 19 / 48;
 
     //лобовое стекло

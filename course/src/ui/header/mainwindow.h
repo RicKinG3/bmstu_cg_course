@@ -15,13 +15,11 @@ QT_END_NAMESPACE
 
 enum ObjIndex {
     baseHome,
-    premiumHome,
     road,
     sidewalk,
     carGrey,
-    carRed,
     tree,
-    bush,
+    bush
 };
 
 

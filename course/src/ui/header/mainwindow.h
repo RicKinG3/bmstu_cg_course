@@ -104,7 +104,7 @@ private slots:
     void on_pushButton_zoom_clicked();
 
     void on_pushButton_distance_clicked();
-
+    void on_pushButton_light_del_clicked();
 private:
     int changeModel(Model &model, int newXCell, int newYCell);
 

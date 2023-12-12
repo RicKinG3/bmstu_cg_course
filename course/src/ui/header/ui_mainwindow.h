@@ -99,11 +99,12 @@ public:
     QComboBox *choose_obj;
     QGroupBox *groupBox_11;
     QGridLayout *gridLayout_11;
-    QPushButton *pushButton_light_add;
-    QLabel *label_5;
-    QSpinBox *deg_ox;
     QLabel *label_6;
     QSpinBox *deg_oy;
+    QSpinBox *deg_ox;
+    QPushButton *pushButton_light_add;
+    QLabel *label_5;
+    QPushButton *pushButton_light_del;
     QPushButton *pushButton_addModel;
     QMenuBar *menubar;
     QMenu *menu;
@@ -396,24 +397,6 @@ public:
         groupBox_11->setObjectName(QString::fromUtf8("groupBox_11"));
         gridLayout_11 = new QGridLayout(groupBox_11);
         gridLayout_11->setObjectName(QString::fromUtf8("gridLayout_11"));
-        pushButton_light_add = new QPushButton(groupBox_11);
-        pushButton_light_add->setObjectName(QString::fromUtf8("pushButton_light_add"));
-
-        gridLayout_11->addWidget(pushButton_light_add, 2, 0, 1, 2);
-
-        label_5 = new QLabel(groupBox_11);
-        label_5->setObjectName(QString::fromUtf8("label_5"));
-
-        gridLayout_11->addWidget(label_5, 0, 0, 1, 1);
-
-        deg_ox = new QSpinBox(groupBox_11);
-        deg_ox->setObjectName(QString::fromUtf8("deg_ox"));
-        deg_ox->setMinimum(-10000);
-        deg_ox->setMaximum(10000);
-        deg_ox->setValue(30);
-
-        gridLayout_11->addWidget(deg_ox, 1, 0, 1, 1);
-
         label_6 = new QLabel(groupBox_11);
         label_6->setObjectName(QString::fromUtf8("label_6"));
 
@@ -426,6 +409,29 @@ public:
         deg_oy->setValue(30);
 
         gridLayout_11->addWidget(deg_oy, 1, 1, 1, 1);
+
+        deg_ox = new QSpinBox(groupBox_11);
+        deg_ox->setObjectName(QString::fromUtf8("deg_ox"));
+        deg_ox->setMinimum(-10000);
+        deg_ox->setMaximum(10000);
+        deg_ox->setValue(30);
+
+        gridLayout_11->addWidget(deg_ox, 1, 0, 1, 1);
+
+        pushButton_light_add = new QPushButton(groupBox_11);
+        pushButton_light_add->setObjectName(QString::fromUtf8("pushButton_light_add"));
+
+        gridLayout_11->addWidget(pushButton_light_add, 3, 0, 1, 2);
+
+        label_5 = new QLabel(groupBox_11);
+        label_5->setObjectName(QString::fromUtf8("label_5"));
+
+        gridLayout_11->addWidget(label_5, 0, 0, 1, 1);
+
+        pushButton_light_del = new QPushButton(groupBox_11);
+        pushButton_light_del->setObjectName(QString::fromUtf8("pushButton_light_del"));
+
+        gridLayout_11->addWidget(pushButton_light_del, 4, 0, 1, 2);
 
 
         gridLayout_2->addWidget(groupBox_11, 5, 0, 1, 1);
@@ -519,11 +525,12 @@ public:
         choose_obj->setItemText(5, QCoreApplication::translate("MainWindow", "\320\232\321\203\321\201\321\202", nullptr));
 
         groupBox_11->setTitle(QCoreApplication::translate("MainWindow", "\320\230\321\201\321\202\320\276\321\207\320\275\320\270\320\272 \321\201\320\262\320\265\321\202\320\260", nullptr));
+        label_6->setText(QCoreApplication::translate("MainWindow", "\320\243\320\263\320\276\320\273 \320\277\320\276 \n"
+"\320\262\320\265\321\200\321\202\320\270\320\272\320\260\320\273\321\214\320\275\320\276\320\271 \320\276\321\201\320\270 ", nullptr));
         pushButton_light_add->setText(QCoreApplication::translate("MainWindow", "\320\243\321\201\321\202\320\260\320\275\320\276\320\262\320\270\321\202\321\214 \320\270\321\201\321\202\320\276\321\207\320\275\320\270\320\272 \321\201\320\262\320\265\321\202\320\260", nullptr));
         label_5->setText(QCoreApplication::translate("MainWindow", "\320\243\320\263\320\276\320\273 \320\277\320\276 \n"
 "\320\263\320\276\321\200\320\270\320\267\320\276\320\275\321\202\320\260\320\273\321\214\320\275\320\276\320\271 \320\276\321\201\320\270", nullptr));
-        label_6->setText(QCoreApplication::translate("MainWindow", "\320\243\320\263\320\276\320\273 \320\277\320\276 \n"
-"\320\262\320\265\321\200\321\202\320\270\320\272\320\260\320\273\321\214\320\275\320\276\320\271 \320\276\321\201\320\270 ", nullptr));
+        pushButton_light_del->setText(QCoreApplication::translate("MainWindow", "\320\243\320\264\320\260\320\273\320\270\321\202\321\214 \320\270\321\201\321\202\320\276\321\207\320\275\320\270\320\272 \321\201\320\262\320\265\321\202\320\260", nullptr));
         pushButton_addModel->setText(QCoreApplication::translate("MainWindow", "\320\243\321\201\321\202\320\260\320\275\320\276\320\262\320\270\321\202\321\214 \320\276\320\261\321\212\320\265\320\272\321\202", nullptr));
         mainMain->setTabText(mainMain->indexOf(obj), QCoreApplication::translate("MainWindow", "\320\236\320\261\321\212\320\265\320\272\321\202\321\213", nullptr));
         menu->setTitle(QCoreApplication::translate("MainWindow", "\320\241\320\277\321\200\320\260\320\262\320\272\320\260", nullptr));

@@ -148,6 +148,23 @@ bool MainWindow::isOneLightOnScene() {
     return false;
 }
 
+void MainWindow::on_pushButton_light_del_clicked() {
+
+    if (!isSetPlatformErrMSG())
+        return;
+    qDebug() << "sdsdf";
+
+    if (isOneLightOnScene()) {
+        facade->getScene()->delLight(0);
+        drawThisShit();
+
+    }
+    else {
+        showErrorMessage("Невозможно удалить источник света, так как его нет");
+    }
+
+}
+
 //todo del if need moore light
 void MainWindow::on_pushButton_light_add_clicked() {
     if (!isSetPlatformErrMSG())
@@ -163,7 +180,7 @@ void MainWindow::on_pushButton_light_add_clicked() {
             return; // Отмена добавления нового источника света
         }
     }
-    printListObj();
+
     facade->addLight(deg_ox, deg_oy);
     drawThisShit();
 

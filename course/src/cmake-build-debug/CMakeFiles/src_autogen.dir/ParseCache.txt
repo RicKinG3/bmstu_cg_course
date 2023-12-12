@@ -596,8 +596,8 @@
 /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/obj/Platform.h
 /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/obj/primitives/Vertex.h
 /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/obj/light/Light.cpp
-/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/drawer/Drawer.cpp
 /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/obj/model/Model.cpp
+/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/drawer/Drawer.cpp
 /home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/graphics/SpecialGraphicsView.h
  mmc:Q_OBJECT
  mdp:/home/max/c/bmstu_cg_course_project/bmstu_cg_course/course/src/cmake-build-debug/src_autogen/moc_predefs.h

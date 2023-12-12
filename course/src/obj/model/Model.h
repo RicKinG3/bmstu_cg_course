@@ -82,8 +82,12 @@ public:
         WheelsCar,
         GlassCar,
         Pickup,
-        Bush
+        Bush,
+        Sidewalk,
+        Baborder
     };
+    Direction getDirectionSidewalk();
+    void setDirectionSidewalk(Direction direction);
 
     Direction getDirectionRoad();
 
@@ -113,6 +117,7 @@ private:
     int house_height = -1;
 
     Direction direction_road = Horizontal;
+    Direction direction_sidewalk = Horizontal;
     Direction direction_car = Horizontal;
 
     size_t model_num;

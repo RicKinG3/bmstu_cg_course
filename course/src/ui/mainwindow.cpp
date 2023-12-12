@@ -208,7 +208,8 @@ void MainWindow::printListObj() {
             modelType_ == Model::model_t::TreeFoliage || \
             modelType_ == Model::model_t::RoadAsphalt || \
             modelType_ == Model::model_t::Car ||
-            modelType_ == Model::model_t::Bush) {
+            modelType_ == Model::model_t::Bush ||
+            modelType_ == Model::model_t::Sidewalk) {
             count++;
             ui->objListActiv->addItem(
                     QString::number(count) + ". " +
@@ -253,8 +254,9 @@ void MainWindow::on_pushButton_addModel_clicked() {
             rc = static_cast<RetCodeAddObjToScene>(facade->addRoad(sq_num_ox, sq_num_oy, objDirection));
 //            qDebug() << "choose road";
             break;
-        case tratuaru:
-            qDebug() << "choose tratuaru";
+        case sidewalk:
+            qDebug() << "choose sidewalk";
+            rc = static_cast<RetCodeAddObjToScene>(facade->addSidewalk(sq_num_ox, sq_num_oy, objDirection));
             break;
         case carGrey:
 //            qDebug() << "choose carGrey";
@@ -369,6 +371,9 @@ int MainWindow::changeModel(Model &model, int newXCell, int newYCell) {
             break;
         case Model::Bush:
             resultCode = facade->addBush(newXCell, newYCell);
+            break;
+        case Model::Sidewalk:
+            resultCode = facade->addSidewalk(newXCell, newYCell, model.getDirectionSidewalk());
             break;
         default:
             // Обработка неизвестного типа модели, если это необходимо

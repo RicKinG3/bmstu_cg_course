@@ -916,11 +916,12 @@ int UsageFacade::addRoad(int x_sq, int y_sq, Direction direction) {
     int zFactor = PLATFORM_START_Z;
 
     //асфальт
+    int up = 1;
     addQuad(vertices, facets,
-            xFactor, yFactor, zFactor + 1,
-            xFactor + SCALE_FACTOR, yFactor, zFactor + 1,
-            xFactor + SCALE_FACTOR, yFactor + SCALE_FACTOR, zFactor + 1,
-            xFactor, yFactor + SCALE_FACTOR, zFactor + 1);
+            xFactor, yFactor, zFactor + up,
+            xFactor + SCALE_FACTOR, yFactor, zFactor + up,
+            xFactor + SCALE_FACTOR, yFactor + SCALE_FACTOR, zFactor + up,
+            xFactor, yFactor + SCALE_FACTOR, zFactor + up);
 
     Model roadAsphaltModel(vertices, facets, "Дорога");
     roadAsphaltModel.setUsedSquare(x_sq, y_sq);
@@ -966,6 +967,148 @@ int UsageFacade::addRoad(int x_sq, int y_sq, Direction direction) {
     roadStripeModel.setModelType(Model::RoadStripe);
     roadStripeModel.setModelNum(scene->getRealModelsNum());
     scene->addModel(roadStripeModel);
+
+    return 0;
+}
+
+
+int UsageFacade::addSidewalk(int x_sq, int y_sq, Direction direction) {
+    x_sq -= 1;
+    y_sq -= 1;
+
+    if (x_sq >= (int) scene->getWidth() || y_sq >= (int) scene->getHeight())
+        return obj_over_range;
+
+//    if (scene->getUsedSquares()[y_sq][x_sq] == 3) {
+//        qDebug() << "i = " << x_sq << "j = " << x_sq << "ячейка рядом с домом (дорога)";
+//        return 4;
+//    }
+    if (scene->getUsedSquares()[y_sq][x_sq] != 0) {
+        qDebug() << "i = " << x_sq << "j = " << x_sq << "ячейка занята (дорога)";
+        return sq_full;
+    }
+
+
+    std::vector <Vertex> vertices;
+    std::vector <Polygon> facets;
+
+    int xFactor = x_sq * SCALE_FACTOR + 10;
+    int yFactor = y_sq * SCALE_FACTOR + 10;
+    int zFactor = PLATFORM_START_Z;
+
+    //асфальт
+
+    int up = 1;
+    addQuad(vertices, facets,
+            xFactor, yFactor, zFactor + up,
+            xFactor + SCALE_FACTOR, yFactor, zFactor + up,
+            xFactor + SCALE_FACTOR, yFactor + SCALE_FACTOR, zFactor + up,
+            xFactor, yFactor + SCALE_FACTOR, zFactor + up);
+
+
+    Model sidewalk_model(vertices, facets, "Тротуар");
+    sidewalk_model.setUsedSquare(x_sq, y_sq);
+    sidewalk_model.setHeightModel(1);
+    sidewalk_model.setWidthModel(1);
+    sidewalk_model.setDirectionSidewalk(direction);
+    sidewalk_model.setModelType(Model::Sidewalk);
+    sidewalk_model.setModelNum(scene->getRealModelsNum());
+    scene->addModel(sidewalk_model);
+
+
+    std::vector <Vertex> vertices2;
+    std::vector <Polygon> facets2;
+    float y_offset_far = 0.25;
+    int koef_blizko = 20;
+    float y_offset_near = SCALE_FACTOR - SCALE_FACTOR / koef_blizko;
+
+    int under = 2;
+    float up_under = under + 2;
+
+    // бардюры
+    if (direction == Horizontal) {
+        for (int i = 0; i < 2; ++i) {
+            double yOffset = (i == 0) ? y_offset_far : y_offset_near;
+
+            addQuad(vertices2, facets2,
+                    xFactor, yFactor + yOffset, zFactor + under, //a
+                    xFactor + SCALE_FACTOR, yFactor + yOffset, zFactor + under,//b
+                    xFactor + SCALE_FACTOR, yFactor + yOffset + SCALE_FACTOR / koef_blizko, zFactor + under,//c
+                    xFactor, yFactor + yOffset + SCALE_FACTOR / koef_blizko, zFactor + under); // d
+            addQuad(vertices2, facets2,
+                    xFactor, yFactor + yOffset, zFactor + under, // a
+                    xFactor + SCALE_FACTOR, yFactor + yOffset, zFactor + under, // b
+                    xFactor + SCALE_FACTOR, yFactor + yOffset, zFactor + up_under,
+                    xFactor, yFactor + yOffset, zFactor + up_under);
+            addQuad(vertices2, facets2,
+                    xFactor + SCALE_FACTOR, yFactor + yOffset + SCALE_FACTOR / koef_blizko, zFactor + under, //c
+                    xFactor, yFactor + yOffset + SCALE_FACTOR / koef_blizko, zFactor + under, // d
+                    xFactor, yFactor + yOffset + SCALE_FACTOR / koef_blizko, zFactor + up_under,
+                    xFactor + SCALE_FACTOR, yFactor + yOffset + SCALE_FACTOR / koef_blizko, zFactor + up_under);
+            addQuad(vertices2, facets2,
+                    xFactor, yFactor + yOffset, zFactor + under, // a
+                    xFactor, yFactor + yOffset + SCALE_FACTOR / koef_blizko, zFactor + under, //d
+                    xFactor, yFactor + yOffset + SCALE_FACTOR / koef_blizko, zFactor + up_under,
+                    xFactor, yFactor + yOffset, zFactor + up_under); //
+            addQuad(vertices2, facets2,
+                    xFactor + SCALE_FACTOR, yFactor + yOffset, zFactor + under,//b
+                    xFactor + SCALE_FACTOR, yFactor + yOffset + SCALE_FACTOR / koef_blizko, zFactor + under,//c
+                    xFactor + SCALE_FACTOR, yFactor + yOffset + SCALE_FACTOR / koef_blizko, zFactor + up_under,
+                    xFactor + SCALE_FACTOR, yFactor + yOffset, zFactor + up_under);
+            addQuad(vertices2, facets2,
+                    xFactor, yFactor + yOffset, zFactor + up_under, //a
+                    xFactor + SCALE_FACTOR, yFactor + yOffset, zFactor + up_under,//b
+                    xFactor + SCALE_FACTOR, yFactor + yOffset + SCALE_FACTOR / koef_blizko, zFactor + up_under,//c
+                    xFactor, yFactor + yOffset + SCALE_FACTOR / koef_blizko, zFactor + up_under); // d
+        }
+    }
+    else {
+        // Добавляем полосы по обеим сторонам вертикальной дороги
+        for (int i = 0; i < 2; ++i) {
+            double xOffset = (i == 0) ? y_offset_far : y_offset_near;
+
+
+            addQuad(vertices2, facets2,
+                    xFactor + xOffset, yFactor, zFactor + under, //a
+                    xFactor + SCALE_FACTOR / koef_blizko + xOffset, yFactor, zFactor + under,//b
+                    xFactor + SCALE_FACTOR / koef_blizko + xOffset, yFactor + SCALE_FACTOR, zFactor + under,//c
+                    xFactor + xOffset, yFactor + SCALE_FACTOR, zFactor + under); // d
+            addQuad(vertices2, facets2,
+                    xFactor + xOffset, yFactor, zFactor + under, //a
+                    xFactor + SCALE_FACTOR / koef_blizko + xOffset, yFactor, zFactor + under,//b
+                    xFactor + xOffset, yFactor, zFactor + up_under, //a
+                    xFactor + SCALE_FACTOR / koef_blizko + xOffset, yFactor, zFactor + up_under);
+            addQuad(vertices2, facets2,
+                    xFactor + SCALE_FACTOR / koef_blizko + xOffset, yFactor + SCALE_FACTOR, zFactor + under,//c
+                    xFactor + xOffset, yFactor + SCALE_FACTOR, zFactor + under, // d
+                    xFactor + SCALE_FACTOR / koef_blizko + xOffset, yFactor + SCALE_FACTOR, zFactor + up_under,//c
+                    xFactor + xOffset, yFactor + SCALE_FACTOR, zFactor + up_under); // d
+            addQuad(vertices2, facets2,
+                    xFactor + xOffset, yFactor, zFactor + under, //a
+                    xFactor + xOffset, yFactor + SCALE_FACTOR, zFactor + under,// d
+                    xFactor + xOffset, yFactor + SCALE_FACTOR, zFactor + up_under,// d
+                    xFactor + xOffset, yFactor, zFactor + up_under); //a
+            addQuad(vertices2, facets2,
+                    xFactor + SCALE_FACTOR / koef_blizko + xOffset, yFactor, zFactor + under,//b
+                    xFactor + SCALE_FACTOR / koef_blizko + xOffset, yFactor + SCALE_FACTOR, zFactor + under,//c
+                    xFactor + SCALE_FACTOR / koef_blizko + xOffset, yFactor + SCALE_FACTOR, zFactor + up_under,//c
+                    xFactor + SCALE_FACTOR / koef_blizko + xOffset, yFactor, zFactor + up_under);
+            addQuad(vertices2, facets2,
+                    xFactor + xOffset, yFactor, zFactor + up_under, //a
+                    xFactor + SCALE_FACTOR / koef_blizko + xOffset, yFactor, zFactor + up_under,//b
+                    xFactor + SCALE_FACTOR / koef_blizko + xOffset, yFactor + SCALE_FACTOR, zFactor + up_under,//c
+                    xFactor + xOffset, yFactor + SCALE_FACTOR, zFactor + up_under); // d
+        }
+    }
+
+    Model border_model(vertices2, facets2, "Бордюр");
+    border_model.setUsedSquare(x_sq, y_sq);
+    border_model.setHeightModel(1);
+    border_model.setWidthModel(1);
+    border_model.setDirectionSidewalk(direction);
+    border_model.setModelType(Model::Baborder);
+    border_model.setModelNum(scene->getRealModelsNum());
+    scene->addModel(border_model);
 
     return 0;
 }

@@ -30,6 +30,9 @@ Direction Model::getDirectionRoad() { return direction_road; }
 
 void Model::setDirectionRoad(Direction direction_road_) { direction_road = direction_road_; }
 
+Direction Model::getDirectionSidewalk() { return direction_sidewalk; }
+
+void Model::setDirectionSidewalk(Direction direction) { direction_sidewalk = direction; }
 
 Direction Model::getDirectionCar() { return direction_car; }
 

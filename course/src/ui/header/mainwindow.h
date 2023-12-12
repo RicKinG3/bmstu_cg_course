@@ -17,11 +17,11 @@ enum ObjIndex {
     baseHome,
     premiumHome,
     road,
-    tratuaru,
+    sidewalk,
     carGrey,
     carRed,
     tree,
-    bush
+    bush,
 };
 
 

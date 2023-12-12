@@ -60,6 +60,12 @@
 #define CAR_GLASS_COLOR         118, 180, 217
 #define DARK_CAR_GLASS_COLOR    70, 138, 178
 
+#define SIDEWALK_COLOR         168, 175, 185
+#define SIDEWALK_SHADOW_COLOR    205, 211, 220
+
+#define BORDER_COLOR         129, 129, 129
+#define BORDER_SHADOW_COLOR    192, 192, 192
+
 
 #define EPS 1e-3
 

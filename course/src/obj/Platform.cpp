@@ -318,7 +318,6 @@ void Model::setPolygons(std::vector<Polygon> polygons_) { polygons = polygons_; 
 
 void Platform::setModel(size_t num, Model &new_model) { models.at(num) = new_model; }
 
-
 void Platform::addModel(Model &model) {
     models_um++;
     models.push_back(model);
@@ -329,7 +328,9 @@ void Platform::addModel(Model &model) {
         modelType_ == Model::model_t::TreeTrunk ||
         modelType_ == Model::model_t::RoadStripe ||
         modelType_ == Model::model_t::GlassCar ||
-        modelType_ == Model::model_t::Bush) {
+        modelType_ == Model::model_t::Bush ||
+        modelType_ == Model::model_t::Baborder) {
+
         markUsedSquares(models_um - 1);
         real_model_num++;
         printUsedSquares();
@@ -362,7 +363,9 @@ void Platform::deleteModel(size_t num) {
             modelType_ == Model::model_t::TreeTrunk || \
             modelType_ == Model::model_t::RoadStripe || \
             modelType_ == Model::model_t::GlassCar ||
-                modelType_ == Model::model_t::Bush) {
+            modelType_ == Model::model_t::Bush ||
+            modelType_ == Model::model_t::Baborder
+            ) {
             clearUsedSquares(num);
             real_model_num--;
         }

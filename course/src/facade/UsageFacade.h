@@ -48,6 +48,7 @@ public:
     int addTree(int xCell, int yCell);
 
     int addRoad(int xCell, int y_sq, Direction direction);
+    int addSidewalk(int x_sq, int y_sq, Direction direction);
 
     int addCar(int xCell, int yCell, Direction direction, ColorCar color_car);
 

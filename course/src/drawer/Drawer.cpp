@@ -536,6 +536,13 @@ QGraphicsScene *Drawer::drawScene(Platform *scene, QRectF rect) {
     uint glassCarCol = qRgb(CAR_GLASS_COLOR);
     uint darkGlassCarCol = qRgb(DARK_CAR_GLASS_COLOR);
 
+    uint sidewalk_col = qRgb(SIDEWALK_COLOR);
+    uint shadow_sidewalk_col = qRgb(SIDEWALK_SHADOW_COLOR);
+
+    uint border_col = qRgb(BORDER_COLOR);
+    uint shadow_border_col = qRgb(BORDER_SHADOW_COLOR);
+
+
     uint whiteCol = qRgb(WHITE_COLOR);
 
     nanoseconds start2 = duration_cast<nanoseconds>(system_clock::now().time_since_epoch());
@@ -599,6 +606,18 @@ QGraphicsScene *Drawer::drawScene(Platform *scene, QRectF rect) {
             }
             else if (frameBuffer.at(i).at(j) == 27) {
                 image->setPixel(i, j, bush_col);
+            }
+            else if (frameBuffer.at(i).at(j) == 28) {
+                image->setPixel(i, j, sidewalk_col);
+            }
+            else if (frameBuffer.at(i).at(j) == 29) {
+                image->setPixel(i, j, shadow_sidewalk_col);
+            }
+            else if (frameBuffer.at(i).at(j) == 30) {
+                image->setPixel(i, j, border_col);
+            }
+            else if (frameBuffer.at(i).at(j) == 31) {
+                image->setPixel(i, j, shadow_border_col);
             }
         }
 

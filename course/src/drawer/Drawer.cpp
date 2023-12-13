@@ -1,4 +1,6 @@
 #include "Drawer.h"
+#include <ctime>
+
 //todo
 
 void Drawer::specBorderPut(int x, int y, double z) {
@@ -62,6 +64,7 @@ void Drawer::interpolateRowIntoShadowMap(
             shadowMap->at(x).at(curY) = z;
     }
 }
+
 
 // Функция для подготовки матриц трансформации
 void Drawer::prepareTransformationMatrices(Eigen::Matrix4f &toCenter, Eigen::Matrix4f &backToStart) {
@@ -127,7 +130,7 @@ void Drawer::generateShadowMap(std::vector<Polygon> &modelFacets, std::vector<Ve
         int y2 = round(dotsArr[1].getYCoord());
         int y3 = round(dotsArr[2].getYCoord());
 
-#pragma omp parallel for
+//#pragma omp parallel for
         // Используется OpenMP для распараллеливания цикла for по разным потокам, ускоряя вычисления
         for (int curY = (y1 < 0) ? 0 : y1;
              curY < ((y2 >= (int) bufHeight) ? (int) bufHeight - 1 : y2); curY++) {
@@ -159,7 +162,7 @@ void Drawer::generateShadowMap(std::vector<Polygon> &modelFacets, std::vector<Ve
             interpolateRowIntoShadowMap(shadowMap, xA, xB, zA, zB, curY);
         }
 
-#pragma omp parallel for
+//#pragma omp parallel for
         // Аналогичный параллельный цикл для обработки другого диапазона значений Y
         for (int curY = (y2 < 0) ? 0 : y2;
              curY <= ((y3 >= (int) bufHeight) ? (int) bufHeight - 1 : y3); curY++) {
@@ -196,7 +199,7 @@ void Drawer::zBufForModel(std::vector<Polygon> &facets, std::vector<Vertex> &ver
                           Eigen::Matrix4f &transMat, size_t color, Platform *scene, size_t bufWidth,
                           size_t bufHeight) {
     std::array<Point, 3> dotsArr;
-
+    int x_tmp1, x_tmp2, x_tmp3, y_tmp1, y_tmp2, y_tmp3, z_tmp1, z_tmp2, z_tmp3;
     // Подготовка матриц трансформации
     Eigen::Matrix4f toCenter, backToStart;
     prepareTransformationMatrices(toCenter, backToStart);
@@ -253,7 +256,7 @@ void Drawer::zBufForModel(std::vector<Polygon> &facets, std::vector<Vertex> &ver
         int y2 = round(dotsArr[1].getYCoord());
         int y3 = round(dotsArr[2].getYCoord());
         // Параллельный цикл для обработки пикселей вдоль Y-координаты
-#pragma omp parallel for
+//#pragma omp parallel for
         for (int curY = (y1 < 0) ? 0 : y1;
              curY < ((y2 >= (int) bufHeight) ? (int) bufHeight - 1 : y2); curY++) {
             // Цикл обрабатывает строки сканирования от y1 до y2, учитывая границы буфера.
@@ -324,7 +327,8 @@ void Drawer::zBufForModel(std::vector<Polygon> &facets, std::vector<Vertex> &ver
                         if (curY - MOVECOEF >= 0 && curX - MOVECOEF >= 0)
                             // Если пиксель видим, обновляем буфер кадра соответствующим цветом и признаком видимости.
                             frameBuffer.at(curX - MOVECOEF).at(curY - MOVECOEF) = color + visible;
-                    } else if (curY - MOVECOEF >= 0 && curX - MOVECOEF >= 0)
+                    }
+                    else if (curY - MOVECOEF >= 0 && curX - MOVECOEF >= 0)
                         // Если нет источников света, обновляем буфер кадра цветом плюс 1.
                         frameBuffer.at(curX - MOVECOEF).at(curY - MOVECOEF) = color + 1;
                 }
@@ -332,7 +336,7 @@ void Drawer::zBufForModel(std::vector<Polygon> &facets, std::vector<Vertex> &ver
             }
         }
         // Аналогичные операции выполняются для следующей части треугольника (от y2 до y3)
-#pragma omp parallel for
+//#pragma omp parallel for
         for (int curY = (y2 < 0) ? 0 : y2;
              curY <= ((y3 >= (int) bufHeight) ? (int) bufHeight - 1 : y3); curY++) {
             double aInc = 0;
@@ -385,15 +389,18 @@ void Drawer::zBufForModel(std::vector<Polygon> &facets, std::vector<Vertex> &ver
                     if (scene->getLightNum()) {
                         if (curY - MOVECOEF >= 0 && curX - MOVECOEF >= 0)
                             frameBuffer.at(curX - MOVECOEF).at(curY - MOVECOEF) = color + visible;
-                    } else if (curY - MOVECOEF >= 0 && curX - MOVECOEF >= 0)
+                    }
+                    else if (curY - MOVECOEF >= 0 && curX - MOVECOEF >= 0)
                         frameBuffer.at(curX - MOVECOEF).at(curY - MOVECOEF) = color + 1;
                 }
             }
 
         }
+
         DDABordersForPolygon(x1, y1, z1, x2, y2, z2);
         DDABordersForPolygon(x1, y1, z1, x3, y3, z3);
         DDABordersForPolygon(x2, y2, z2, x3, y3, z3);
+
 
     }
 }
@@ -448,7 +455,6 @@ void Drawer::zBufferAlg(Platform *scene, size_t bufHeight, size_t bufWidth) {
         facets = model.getPolygons();
         vertices = model.getVertices();
         typeModel = model.getModelType();
-        qDebug() << typeModel;
 
         // Рассчитываем видимость каждой модели с учетом ее типа
         zBufForModel(
@@ -472,9 +478,10 @@ void Drawer::zBufferAlg(Platform *scene, size_t bufHeight, size_t bufWidth) {
 
 }
 
+#define MAX_ITER 10
+#define MAX_ITER_PIXMAP 1
+
 QGraphicsScene *Drawer::drawScene(Platform *scene, QRectF rect) {
-
-
     size_t width = scene->getWidth() * SCALE_FACTOR;
     size_t height = scene->getHeight() * SCALE_FACTOR;
     qDebug() << "Сцена" << scene->getWidth() << " x " << scene->getHeight();
@@ -483,10 +490,14 @@ QGraphicsScene *Drawer::drawScene(Platform *scene, QRectF rect) {
 
     using namespace std::chrono;
     nanoseconds start = duration_cast<nanoseconds>(system_clock::now().time_since_epoch());
-    zBufferAlg(scene, rect.size().height() + MOVECOEF * 2, rect.size().width() + MOVECOEF * 2);
-    nanoseconds end = duration_cast<nanoseconds>(system_clock::now().time_since_epoch());
+    int count = 1;
+    if (scene->getRealModelsNum() % 3 == 0)
+        count = MAX_ITER;
+    for (int i = 0; i < count; ++i)
+        zBufferAlg(scene, rect.size().height() + MOVECOEF * 2, rect.size().width() + MOVECOEF * 2);
 
-    qDebug() << "Время выполнения z-буфера" << size_t((end - start).count() / 1000000);
+    nanoseconds end = duration_cast<nanoseconds>(system_clock::now().time_since_epoch());
+    qDebug() << "Время выполнения z-буфера" << size_t(((end - start).count() / count) / 1000000);
 
 
     QGraphicsScene *outScene = new QGraphicsScene;
@@ -546,83 +557,106 @@ QGraphicsScene *Drawer::drawScene(Platform *scene, QRectF rect) {
     uint whiteCol = qRgb(WHITE_COLOR);
 
     nanoseconds start2 = duration_cast<nanoseconds>(system_clock::now().time_since_epoch());
-
-    for (size_t i = 0; i < rect.size().width() - 1; i++)
-        for (size_t j = 0; j < rect.size().height() - 1; j++) {
-            if (frameBuffer.at(i).at(j) == 1) {
-                image->setPixel(i, j, darkPlateCol);
-            } else if (frameBuffer.at(i).at(j) == 2) {
-                image->setPixel(i, j, plateCol);
-            } else if (frameBuffer.at(i).at(j) == 3) {
-                image->setPixel(i, j, blackCol);
-            } else if (frameBuffer.at(i).at(j) == 4) {
-                image->setPixel(i, j, darkHouseCol);
-            } else if (frameBuffer.at(i).at(j) == 5) {
-                image->setPixel(i, j, houseCol);
-            } else if (frameBuffer.at(i).at(j) == 6) {
-                image->setPixel(i, j, darkRoofHouseCol);
-            } else if (frameBuffer.at(i).at(j) == 7) {
-                image->setPixel(i, j, roofHouseCol);
-            } else if (frameBuffer.at(i).at(j) == 8) {
-                image->setPixel(i, j, darkWindowsHouseCol);
-            } else if (frameBuffer.at(i).at(j) == 9) {
-                image->setPixel(i, j, windowsHouseCol);
-            } else if (frameBuffer.at(i).at(j) == 10) {
-                image->setPixel(i, j, darkTreeFoliageCol);
-            } else if (frameBuffer.at(i).at(j) == 11) {
-                image->setPixel(i, j, treeFoliageCol);
-            } else if (frameBuffer.at(i).at(j) == 12) {
-                image->setPixel(i, j, darkTreeTrunkCol);
-            } else if (frameBuffer.at(i).at(j) == 13) {
-                image->setPixel(i, j, treeTrunkCol);
-            } else if (frameBuffer.at(i).at(j) == 14) {
-                image->setPixel(i, j, darkRoadAsphaltCol);
-            } else if (frameBuffer.at(i).at(j) == 15) {
-                image->setPixel(i, j, roadAsphaltCol);
-            } else if (frameBuffer.at(i).at(j) == 16) {
-                image->setPixel(i, j, darkRoadStripeCol);
-            } else if (frameBuffer.at(i).at(j) == 17) {
-                image->setPixel(i, j, roadStripeCol);
-            } else if (frameBuffer.at(i).at(j) == 18) {
-                image->setPixel(i, j, darkCarCol);
-            } else if (frameBuffer.at(i).at(j) == 19) {
-                image->setPixel(i, j, carCol);
-            } else if (frameBuffer.at(i).at(j) == 20) {
-                image->setPixel(i, j, darkWheelsCarCol);
-            } else if (frameBuffer.at(i).at(j) == 21) {
-                image->setPixel(i, j, wheelsCarCol);
-            } else if (frameBuffer.at(i).at(j) == 22) {
-                image->setPixel(i, j, darkGlassCarCol);
-            } else if (frameBuffer.at(i).at(j) == 23) {
-                image->setPixel(i, j, glassCarCol);
-            } else if (frameBuffer.at(i).at(j) == 24) {
-                image->setPixel(i, j, whiteCol);
+    for (int o = 0; o < MAX_ITER_PIXMAP; ++o)
+        for (size_t i = 0; i < rect.size().width() - 1; i++)
+            for (size_t j = 0; j < rect.size().height() - 1; j++) {
+                if (frameBuffer.at(i).at(j) == 1) {
+                    image->setPixel(i, j, darkPlateCol);
+                }
+                else if (frameBuffer.at(i).at(j) == 2) {
+                    image->setPixel(i, j, plateCol);
+                }
+                else if (frameBuffer.at(i).at(j) == 3) {
+                    image->setPixel(i, j, blackCol);
+                }
+                else if (frameBuffer.at(i).at(j) == 4) {
+                    image->setPixel(i, j, darkHouseCol);
+                }
+                else if (frameBuffer.at(i).at(j) == 5) {
+                    image->setPixel(i, j, houseCol);
+                }
+                else if (frameBuffer.at(i).at(j) == 6) {
+                    image->setPixel(i, j, darkRoofHouseCol);
+                }
+                else if (frameBuffer.at(i).at(j) == 7) {
+                    image->setPixel(i, j, roofHouseCol);
+                }
+                else if (frameBuffer.at(i).at(j) == 8) {
+                    image->setPixel(i, j, darkWindowsHouseCol);
+                }
+                else if (frameBuffer.at(i).at(j) == 9) {
+                    image->setPixel(i, j, windowsHouseCol);
+                }
+                else if (frameBuffer.at(i).at(j) == 10) {
+                    image->setPixel(i, j, darkTreeFoliageCol);
+                }
+                else if (frameBuffer.at(i).at(j) == 11) {
+                    image->setPixel(i, j, treeFoliageCol);
+                }
+                else if (frameBuffer.at(i).at(j) == 12) {
+                    image->setPixel(i, j, darkTreeTrunkCol);
+                }
+                else if (frameBuffer.at(i).at(j) == 13) {
+                    image->setPixel(i, j, treeTrunkCol);
+                }
+                else if (frameBuffer.at(i).at(j) == 14) {
+                    image->setPixel(i, j, darkRoadAsphaltCol);
+                }
+                else if (frameBuffer.at(i).at(j) == 15) {
+                    image->setPixel(i, j, roadAsphaltCol);
+                }
+                else if (frameBuffer.at(i).at(j) == 16) {
+                    image->setPixel(i, j, darkRoadStripeCol);
+                }
+                else if (frameBuffer.at(i).at(j) == 17) {
+                    image->setPixel(i, j, roadStripeCol);
+                }
+                else if (frameBuffer.at(i).at(j) == 18) {
+                    image->setPixel(i, j, darkCarCol);
+                }
+                else if (frameBuffer.at(i).at(j) == 19) {
+                    image->setPixel(i, j, carCol);
+                }
+                else if (frameBuffer.at(i).at(j) == 20) {
+                    image->setPixel(i, j, darkWheelsCarCol);
+                }
+                else if (frameBuffer.at(i).at(j) == 21) {
+                    image->setPixel(i, j, wheelsCarCol);
+                }
+                else if (frameBuffer.at(i).at(j) == 22) {
+                    image->setPixel(i, j, darkGlassCarCol);
+                }
+                else if (frameBuffer.at(i).at(j) == 23) {
+                    image->setPixel(i, j, glassCarCol);
+                }
+                else if (frameBuffer.at(i).at(j) == 24) {
+                    image->setPixel(i, j, whiteCol);
+                }
+                else if (frameBuffer.at(i).at(j) == 25) {
+                    image->setPixel(i, j, blackCol);
+                }
+                else if (frameBuffer.at(i).at(j) == 26) {
+                    image->setPixel(i, j, bush_shadow_col);
+                }
+                else if (frameBuffer.at(i).at(j) == 27) {
+                    image->setPixel(i, j, bush_col);
+                }
+                else if (frameBuffer.at(i).at(j) == 28) {
+                    image->setPixel(i, j, sidewalk_col);
+                }
+                else if (frameBuffer.at(i).at(j) == 29) {
+                    image->setPixel(i, j, shadow_sidewalk_col);
+                }
+                else if (frameBuffer.at(i).at(j) == 30) {
+                    image->setPixel(i, j, border_col);
+                }
+                else if (frameBuffer.at(i).at(j) == 31) {
+                    image->setPixel(i, j, shadow_border_col);
+                }
             }
-            else if (frameBuffer.at(i).at(j) == 25) {
-                image->setPixel(i, j, blackCol);
-            }
-            else if (frameBuffer.at(i).at(j) == 26) {
-                image->setPixel(i, j, bush_shadow_col);
-            }
-            else if (frameBuffer.at(i).at(j) == 27) {
-                image->setPixel(i, j, bush_col);
-            }
-            else if (frameBuffer.at(i).at(j) == 28) {
-                image->setPixel(i, j, sidewalk_col);
-            }
-            else if (frameBuffer.at(i).at(j) == 29) {
-                image->setPixel(i, j, shadow_sidewalk_col);
-            }
-            else if (frameBuffer.at(i).at(j) == 30) {
-                image->setPixel(i, j, border_col);
-            }
-            else if (frameBuffer.at(i).at(j) == 31) {
-                image->setPixel(i, j, shadow_border_col);
-            }
-        }
 
     nanoseconds end2 = duration_cast<nanoseconds>(system_clock::now().time_since_epoch());
-    qDebug() << "Время отрисовки" << size_t((end2 - start2).count() / 1000000);
+    qDebug() << "Время отрисовки" << size_t(((end2 - start2).count() / MAX_ITER_PIXMAP) / 1000000);
     qDebug() << "Общее время" << size_t((end2 - start2).count() / 1000000) +
                                  size_t((end - start).count() / 1000000);
 

@@ -43,7 +43,6 @@
 #define TREE_TRUNK_SHADOW_COLOR   57, 39, 12
 
 //ROAD
-//todo check add 2 road
 #define ROAD_COLOR      27, 25, 43
 #define ROAD_SHADOW_COLOR 21, 20, 31
 

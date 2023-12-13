@@ -598,7 +598,6 @@ int UsageFacade::addHouse(int x_sq, int y_sq, int modelLength, int modelHeight, 
 }
 
 //todo return code 
-//todo finish tut
 int UsageFacade::addBush(int x_sq, int y_sq) {
     x_sq -= 1;
     y_sq -= 1;

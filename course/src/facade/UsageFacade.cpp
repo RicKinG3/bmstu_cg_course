@@ -537,6 +537,8 @@ int UsageFacade::addHouse(int x_sq, int y_sq, int modelLength, int modelHeight, 
     yFactor = y_sq * SCALE_FACTOR + 10;
     zFactor = PLATFORM_START_Z;
 
+    double frameThickness = SCALE_FACTOR / 10; // Толщина рамы окна
+
     //окна дома
     for (int i = 0; i < countFloors; i++) {
         for (int k = 0; k < 2; k++) {
@@ -577,6 +579,9 @@ int UsageFacade::addHouse(int x_sq, int y_sq, int modelLength, int modelHeight, 
         zFactor += SCALE_FACTOR;
     }
 
+
+
+
     Model windowsHouseModel(vertices3, facets3, "Окна дома");
     windowsHouseModel.setUsedSquare(x_sq, y_sq);
     windowsHouseModel.setHeightModel(modelHeight);
@@ -585,6 +590,9 @@ int UsageFacade::addHouse(int x_sq, int y_sq, int modelLength, int modelHeight, 
     windowsHouseModel.setModelType(Model::WindowsHouse);
     windowsHouseModel.setModelNum(scene->getRealModelsNum());
     scene->addModel(windowsHouseModel);
+
+
+
 
     return 0;
 }

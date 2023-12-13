@@ -270,7 +270,7 @@ void MainWindow::on_pushButton_addModel_clicked() {
         case baseHome:
 //            qDebug() << "choose base home";
             rc = static_cast<RetCodeAddObjToScene>(facade->addHouse(sq_num_ox, sq_num_oy, BASE_LENX_HOUSE,
-                                                                    BASE_LENY_HOUSE, BASE_LENZ_HOUSE));
+                                                                    BASE_LENX_HOUSE, BASE_LENZ_HOUSE));
             break;
 //        case premiumHome:
 //            //todo add garaj

@@ -131,6 +131,7 @@ void Drawer::generateShadowMap(std::vector<Polygon> &modelFacets, std::vector<Ve
         int y3 = round(dotsArr[2].getYCoord());
 
 //#pragma omp parallel for
+
         // Используется OpenMP для распараллеливания цикла for по разным потокам, ускоряя вычисления
         for (int curY = (y1 < 0) ? 0 : y1;
              curY < ((y2 >= (int) bufHeight) ? (int) bufHeight - 1 : y2); curY++) {
@@ -428,6 +429,8 @@ void Drawer::zBufferAlg(Platform *scene, size_t bufHeight, size_t bufWidth) {
         model = scene->getModel(i);
         facets = model.getPolygons();
         vertices = model.getVertices();
+        qDebug() << "obj " <<  model.getName() << "count pol " << facets.size()  << "count v = " << vertices.size();
+
 
 
 
@@ -477,8 +480,9 @@ void Drawer::zBufferAlg(Platform *scene, size_t bufHeight, size_t bufWidth) {
 
 
 }
+#include <ctime>
 
-#define MAX_ITER 10
+#define MAX_ITER 1
 #define MAX_ITER_PIXMAP 1
 
 QGraphicsScene *Drawer::drawScene(Platform *scene, QRectF rect) {
@@ -493,11 +497,15 @@ QGraphicsScene *Drawer::drawScene(Platform *scene, QRectF rect) {
     int count = 1;
     if (scene->getRealModelsNum() % 3 == 0)
         count = MAX_ITER;
+    clock_t start_ = clock();
     for (int i = 0; i < count; ++i)
         zBufferAlg(scene, rect.size().height() + MOVECOEF * 2, rect.size().width() + MOVECOEF * 2);
-
+    clock_t end_ = clock();
     nanoseconds end = duration_cast<nanoseconds>(system_clock::now().time_since_epoch());
     qDebug() << "Время выполнения z-буфера" << size_t(((end - start).count() / count) / 1000000);
+    // Вычисляем и выводим затраченное процессорное время в миллисекундах
+    double elapsed_time_ms = (double(end_- start_) / CLOCKS_PER_SEC) * 1000.0;
+    std::cout << "Процессорное время: " << elapsed_time_ms << " миллисекунд." << std::endl;
 
 
     QGraphicsScene *outScene = new QGraphicsScene;
